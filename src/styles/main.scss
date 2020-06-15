@@ -16,21 +16,25 @@
     &[data-hightlight="0"] {
       ::selection {
         background-color: $blue;
+        color: #0e1726;
       }
     }
     &[data-hightlight="1"] {
       ::selection {
         background-color: $blue;
+        color: #0e1726;
       }
     }
     &[data-hightlight="2"] {
       ::selection {
         background-color: $red;
+        color: #0e1726;
       }
     }
     &[data-hightlight="3"] {
       ::selection {
         background-color: $mustard;
+        color: #0e1726;
       }
     }
   }

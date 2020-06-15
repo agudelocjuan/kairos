@@ -95,6 +95,47 @@
 }
 
 @media (max-width: map-get($grid-breakpoints,md)) {
+  #email-form-outer {
+    height: 100%;
+    width: 100%;
+    #email-signup-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      #email-cta {
+      }
+      form {
+        width: 100%;
+        height: 70px;
+        padding: 0px 4px 0px 15px;
+        margin: 15px 0px;
+        background-color: $white;
+        display: flex;
+        border-radius: 40px;
+        justify-content: space-between;
+        align-items: center;
+        #email-input {
+          background-color: $transparent;
+          color: $black;
+          width: 75%;
+          border: none;
+          &:focus,
+          &:active {
+            border: none;
+            outline: none;
+          }
+        }
+        #submit-button {
+          background-color: $black;
+          height: 90%;
+          border-radius: 50%;
+          color: $white;
+        }
+      }
+    }
+  }
   .email-form-main {
     margin-top: auto;
     width: 90%;

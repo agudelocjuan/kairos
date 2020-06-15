@@ -21,7 +21,7 @@ const Footer = ({ color, mobile }) => {
         <Row id="footer-link-section">
           <Col id="footer-email-column" md="6">
             <div id="footer-email-container">
-              <Email />
+              <Email footer />
             </div>
           </Col>
           <Col id="footer-page-links" md="6">

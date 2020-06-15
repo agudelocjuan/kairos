@@ -1,0 +1,147 @@
+#email-form-outer {
+  height: 100%;
+  width: 100%;
+  #email-signup-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    #email-cta {
+    }
+    form {
+      width: 100%;
+      height: 52px;
+      padding: 0px 4px 0px 15px;
+      margin: 0;
+      background-color: $white;
+      display: flex;
+      border-radius: 40px;
+      justify-content: space-between;
+      align-items: center;
+      #email-input {
+        background-color: $transparent;
+        color: $black;
+        border: none;
+        &:focus,
+        &:active {
+          border: none;
+          outline: none;
+        }
+      }
+      #submit-button {
+        background-color: $black;
+        height: 90%;
+        border-radius: 50%;
+        color: $white;
+      }
+    }
+  }
+}
+
+.email-form-main {
+  margin-top: auto;
+  width: 100%;
+  form {
+    width: 90%;
+    height: 60px;
+    display: flex;
+    #email-input-main {
+      width: 90%;
+      background-color: $black;
+      color: $white;
+      border: none;
+      border-bottom: 1px solid $white;
+      border-radius: 0;
+      height: 100%;
+      font-size: 48px;
+      &::placeholder {
+        font-size: 48px;
+      }
+      &:focus,
+      &:active {
+        border: none;
+        border-bottom: 1px solid $white;
+        outline: none;
+      }
+    }
+    #submit-button-main {
+      height: 100%;
+      width: 10%;
+      font-size: 49px;
+      background-color: $black;
+      img {
+        opacity: 0;
+        transition: opacity 250ms linear;
+      }
+
+      border: none;
+      border-bottom: 1px solid $white;
+      border-radius: 0;
+      &:focus,
+      &:active {
+        border: none;
+        border-bottom: 1px solid $white;
+        outline: none;
+      }
+      &.show {
+        img {
+          opacity: 1;
+          transition: opacity 250ms linear;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  .email-form-main {
+    margin-top: auto;
+    width: 90%;
+    margin: 30px 0px;
+    form {
+      width: 100%;
+      height: 60px;
+      #email-input-main {
+        width: 80%;
+        background-color: $black;
+        color: $white;
+        border: none;
+        border-bottom: 1px solid $white;
+        border-radius: 0;
+        height: 100%;
+        font-size: 24px;
+        &::placeholder {
+          font-size: 24px;
+        }
+        &:focus,
+        &:active {
+          border: none;
+          border-bottom: 1px solid $white;
+          outline: none;
+        }
+      }
+      #submit-button-main {
+        height: 100%;
+        width: 20%;
+        font-size: 25px;
+        background-color: $black;
+        img {
+          opacity: 1;
+          width: 100%;
+          transition: opacity 250ms linear;
+        }
+
+        border: none;
+        border-bottom: 1px solid $white;
+        border-radius: 0;
+        &:focus,
+        &:active {
+          border: none;
+          border-bottom: 1px solid $white;
+          outline: none;
+        }
+      }
+    }
+  }
+}

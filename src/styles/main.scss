@@ -1,0 +1,57 @@
+#site-background {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #f4f4f4;
+  #site-container {
+    position: absolute;
+    background-color: $white;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 98%;
+    width: 98%;
+    overflow-x: hidden;
+
+    &[data-hightlight="0"] {
+      ::selection {
+        background-color: $blue;
+      }
+    }
+    &[data-hightlight="1"] {
+      ::selection {
+        background-color: $blue;
+      }
+    }
+    &[data-hightlight="2"] {
+      ::selection {
+        background-color: $red;
+      }
+    }
+    &[data-hightlight="3"] {
+      ::selection {
+        background-color: $mustard;
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    #site-container {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.p-button-padding {
+  padding-bottom: 16px;
+}
+
+.button-inline {
+  background-color: $yellow;
+  padding: 16px 24px;
+  border-radius: 40px;
+  &.black {
+    background-color: $black;
+    color: $white;
+  }
+}

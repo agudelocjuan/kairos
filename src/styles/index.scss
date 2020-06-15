@@ -1,0 +1,67 @@
+// Required Boostrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Override Bootstrap Variables
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+);
+
+$white: #fff;
+$black: #000;
+$salmon: #f15953;
+$mustard: #ecc86f;
+$blue: #c0e7ed;
+$yellow: #ebe4a3;
+$transparent: transparent;
+
+$theme-colors: (
+  "white": $white,
+  "black": $black,
+  "transparent": $transparent,
+  "salmon": $salmon,
+  "mustard": $mustard,
+  "blue": $blue,
+  "yellow": $yellow,
+);
+
+// Optional Bootstrap
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+// @import "../../node_modules/bootstrap/scss/modal";
+// @import "../../node_modules/bootstrap/scss/transitions";
+// @import "../../node_modules/bootstrap/scss/images";
+// @import "../../node_modules/bootstrap/scss/buttons";
+// @import "../../node_modules/bootstrap/scss/dropdown";
+// @import "../../node_modules/bootstrap/scss/card";
+// @import "../../node_modules/bootstrap/scss/type";
+// @import "../../node_modules/bootstrap/scss/card";
+// @import "../../node_modules/bootstrap/scss/breadcrumb";
+// @import "../../node_modules/bootstrap/scss/navbar";
+
+// Additional Scripts
+
+// Global Styles
+@import "./layout.scss";
+@import "./main.scss";
+@import "./header.scss";
+@import "./footer.scss";
+@import "./layout.scss";
+@import "./typography.scss";
+@import "./email.scss";
+
+// Home Page Styles
+@import "./homeHero.scss";
+@import "./homeAbout.scss";
+@import "./homeOurCompanies.scss";
+@import "./homeEmailCapture.scss";
+
+// About Page Styles

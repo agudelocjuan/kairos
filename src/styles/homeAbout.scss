@@ -1,0 +1,21 @@
+#homeAbout {
+  height: 700px;
+  .left-container {
+    padding: 100px;
+  }
+  .right-container {
+    padding: 100px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #homeAbout {
+    height: 720px;
+    .left-container {
+      padding: 56px 20px 5px 20px;
+    }
+    .right-container {
+      padding: 5px 20px 56px 20px;
+    }
+  }
+}

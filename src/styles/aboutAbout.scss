@@ -1,0 +1,84 @@
+#aboutAbout {
+  margin-top: 24px;
+  #the-problem {
+    .left-container {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    .right-container {
+      padding-top: 0px;
+      padding-bottom: 100px;
+      p {
+        width: 75%;
+      }
+    }
+  }
+  #the-demand {
+    .left-container {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    .right-container {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      display: flex;
+      flex-direction: column;
+      .eyebrow {
+        padding-bottom: 16px;
+      }
+      p {
+        width: 75%;
+      }
+      .inline-text-link {
+        margin-top: auto;
+        color: $salmon;
+        width: 165px;
+        border-bottom: 1px solid $salmon;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #aboutAbout {
+    margin-top: 24px;
+    #the-problem {
+      .left-container {
+        padding-top: 40px;
+        padding-bottom: 0px;
+      }
+      .right-container {
+        padding-top: 0px;
+        padding-bottom: 40px;
+        p {
+          width: 100%;
+        }
+      }
+    }
+    #the-demand {
+      .left-container {
+        margin-top: 32px;
+      }
+      .right-container {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        .eyebrow {
+          padding-bottom: 16px;
+        }
+        p {
+          width: 100%;
+        }
+        .inline-text-link {
+          margin-top: auto;
+          color: $salmon;
+          width: 165px;
+          border-bottom: 1px solid $salmon;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+}

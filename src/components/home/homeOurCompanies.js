@@ -35,19 +35,17 @@ const HomeOurCompanies = ({ mobile }) => {
         className="d-flex justify-content-center pb-4 pb-md-5"
       >
         <Col
-          md="6"
+          md="8"
           className="d-flex flex-column align-items-center text-center"
         >
-          <div className="navigational-graffiti text-salmon pt-4 pt-md-5">
-            what's happening
-            <br />
-            right now
-          </div>
-          <h2 className="py-4">
+          <h3 className="text-salmon pt-4 pt-md-5">
+            what's happening right now
+          </h3>
+          <div className="pb-4 cta-graffiti">
             We're creating
             <br />
             10,000 Jobs!
-          </h2>
+          </div>
           <div className="pb-3 w-75 text-center">
             Start a new career in as little as 10 days by becoming a homecare
             hero. We need more people on the frontlines right now, supporting

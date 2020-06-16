@@ -16,6 +16,7 @@ $grid-breakpoints: (
 
 $white: #fff;
 $black: #0e1726;
+$light-black: rgba(14, 23, 38, 0.5);
 $salmon: #f15953;
 $mustard: #ecc86f;
 $blue: #c0e7ed;
@@ -25,6 +26,7 @@ $transparent: transparent;
 $theme-colors: (
   "white": $white,
   "black": $black,
+  "light-black": $light-black,
   "transparent": $transparent,
   "salmon": $salmon,
   "mustard": $mustard,
@@ -57,6 +59,7 @@ $theme-colors: (
 @import "./layout.scss";
 @import "./typography.scss";
 @import "./email.scss";
+@import "./menu.scss";
 
 // Home Page Styles
 @import "./homeHero.scss";
@@ -65,3 +68,6 @@ $theme-colors: (
 @import "./homeEmailCapture.scss";
 
 // About Page Styles
+@import "./aboutHero.scss";
+@import "./aboutAbout.scss";
+@import "./aboutUs.scss";

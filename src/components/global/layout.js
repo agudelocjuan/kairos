@@ -7,6 +7,7 @@ import { setMobile } from "../../state/global"
 
 import Header from "./header"
 import Footer from "./footer"
+import Menu from "./menu"
 
 import "../../styles/index.scss"
 import bg from "../../images/global/site-background.png"
@@ -45,12 +46,13 @@ const Layout = ({ children, dispatch, footerColor }) => {
         backgroundSize: `cover`,
       }}
     >
+      <Header />
+      <Menu />
       <div
         id="site-container"
         data-hightlight={colorIndex}
         onMouseDown={_onSelect.bind(this)}
       >
-        <Header />
         <main>{children}</main>
         <Footer color={footerColor} />
       </div>

@@ -1,0 +1,62 @@
+#companiesHero {
+  height: 90vh;
+  min-height: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .hero-title-row {
+    padding-top: 100px;
+    text-align: center;
+    z-index: 10;
+    img {
+      z-index: 0;
+      position: absolute;
+      transform: translate(-50%, 0%);
+      left: 50%;
+      bottom: -10%;
+      width: 75%;
+    }
+    h1 {
+      z-index: 100;
+      position: relative;
+    }
+  }
+  .hero-cta-row {
+    margin-top: auto;
+    text-align: center;
+    padding-bottom: 50px;
+    .arrow {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #homeHero {
+    height: 700px;
+    .hero-title-row {
+      padding-top: 100px;
+      text-align: center;
+      z-index: 10;
+      img {
+        z-index: 0;
+        position: absolute;
+        transform: translate(-50%, 0%);
+        left: 50%;
+        bottom: 0%;
+        width: 75%;
+      }
+      h1 {
+        z-index: 100;
+        position: relative;
+      }
+    }
+    .hero-cta-row {
+      margin-top: auto;
+      text-align: center;
+      .arrow {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

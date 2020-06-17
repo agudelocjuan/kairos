@@ -12,7 +12,7 @@ import Menu from "./menu"
 import "../../styles/index.scss"
 import bg from "../../images/global/site-background.png"
 
-const Layout = ({ children, dispatch, footerColor }) => {
+const Layout = ({ children, dispatch, footerColor, jobs = false }) => {
   let [colorIndex, setColorIndex] = useState(0)
   let colorCount = 3
   useEffect(() => {
@@ -54,7 +54,7 @@ const Layout = ({ children, dispatch, footerColor }) => {
         onMouseDown={_onSelect.bind(this)}
       >
         <main>{children}</main>
-        <Footer color={footerColor} />
+        <Footer jobs={jobs} color={footerColor} />
       </div>
     </div>
   )

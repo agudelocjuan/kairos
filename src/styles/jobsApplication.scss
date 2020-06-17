@@ -1,0 +1,82 @@
+#jobsApplication {
+  .header-row {
+    .cta-graffiti {
+      margin-top: -50px;
+    }
+  }
+  .form-row {
+    .information-column {
+      padding: 96px;
+    }
+    .form-column {
+      form {
+        margin-top: 96px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        input {
+          height: 72px;
+          width: 75%;
+          border: 1px solid $light-black;
+          padding: 0px 25px;
+          border-radius: 400px;
+          min-width: 500px;
+          margin-bottom: 24px;
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            color: $light-black;
+          }
+        }
+        button {
+          height: 72px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #jobsApplication {
+    .header-row {
+      .cta-graffiti {
+        margin-top: 40px;
+        width: 75%;
+        text-align: center;
+      }
+    }
+    .form-row {
+      .information-column {
+        display: none;
+      }
+      .form-column {
+        form {
+          margin-top: 48px;
+          margin-bottom: 48px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          input {
+            height: 64px;
+            width: 100%;
+            border: 1px solid $light-black;
+            padding: 0px 25px;
+            border-radius: 400px;
+            margin-bottom: 24px;
+            min-width: 250px;
+            &:focus {
+              outline: none;
+            }
+            &::placeholder {
+              color: $light-black;
+            }
+          }
+          button {
+            height: 64px;
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+}

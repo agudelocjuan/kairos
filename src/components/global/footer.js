@@ -9,12 +9,16 @@ import degree from "../../images/icons/degree-icon.png"
 import recycle from "../../images/icons/recycle-icon.svg"
 import twitter from "../../images/icons/twitter-icon.svg"
 
-const Footer = ({ color, mobile }) => {
+const Footer = ({ color, mobile, jobs }) => {
   return (
     <Container fluid id="footer" className={`bg-${color}`}>
       <Row id="footer-header-section" className="">
         <Col className="d-flex">
-          <h2>I got 99 problems and money could solve about 86 of them</h2>
+          {jobs ? (
+            <h2>Know someone who needs a job ASAP?  Just share this.</h2>
+          ) : (
+            <h2>I got 99 problems and money could solve about 86 of them</h2>
+          )}
         </Col>
       </Row>
       {mobile ? (
@@ -29,6 +33,7 @@ const Footer = ({ color, mobile }) => {
               <Link to="/">Home</Link>
               <Link to="/about">About Us</Link>
               <Link to="/our-companies">Our Companies</Link>
+              <Link to="/10k-jobs">10k Jobs</Link>
               <Link to="/contact">Contact Us</Link>
               <Link to="/">Terms</Link>
               <Link to="/about">Privacy Policy</Link>
@@ -52,6 +57,7 @@ const Footer = ({ color, mobile }) => {
               <Link to="/contact">Contact Us</Link>
             </div>
             <div className="footer-link-column">
+              <Link to="/10k-jobs">10k Jobs</Link>
               <Link to="/">Terms</Link>
               <Link to="/about">Privacy Policy</Link>
             </div>

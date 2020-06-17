@@ -71,3 +71,13 @@ $theme-colors: (
 @import "./aboutHero.scss";
 @import "./aboutAbout.scss";
 @import "./aboutUs.scss";
+
+// Companies Page Styles
+@import "./companiesHero.scss";
+@import "./companiesAbout.scss";
+@import "./companiesCompanies.scss";
+
+// Jobs Page Styles
+@import "./jobsHero.scss";
+@import "./jobsAbout.scss";
+@import "./jobsApplication.scss";

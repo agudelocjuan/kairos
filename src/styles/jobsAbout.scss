@@ -1,0 +1,102 @@
+#jobsAbout {
+  position: relative;
+  .offset-button-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 15px;
+  }
+  #logo-row {
+    padding: 100px 0px 50px;
+    .logo-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 200px;
+      }
+    }
+  }
+  .image-rows {
+    position: relative;
+    margin-bottom: 48px;
+    .floating-col {
+      position: absolute;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      span {
+        font-family: "summer loving reg";
+        color: $salmon;
+        font-size: 40px;
+        margin-right: 8px;
+      }
+    }
+  }
+  .list-item-row {
+    padding-top: 48px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    ul {
+      list-style: none;
+      li::before {
+        content: "\2022";
+        color: $salmon;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #jobsAbout {
+    position: relative;
+    .offset-button-container {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 2px;
+    }
+    #logo-row {
+      padding: 100px 0px 50px;
+      .logo-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 150px;
+        }
+      }
+    }
+    .image-rows {
+      position: relative;
+      margin-bottom: 48px;
+      .floating-col {
+        position: relative;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        span {
+          font-family: "summer loving reg";
+          color: $salmon;
+          font-size: 40px;
+          margin-right: 8px;
+        }
+      }
+    }
+    .list-item-row {
+      padding-top: 48px;
+      padding-bottom: 100px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

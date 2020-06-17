@@ -21,7 +21,7 @@ const Menu = ({ dispatch, mobile, menu }) => {
           <Link to="/about" onClick={() => dispatch(setMenu(false))}>
             <h2>About Us</h2>
           </Link>
-          <Link to="/our-comanies" onClick={() => dispatch(setMenu(false))}>
+          <Link to="/our-companies" onClick={() => dispatch(setMenu(false))}>
             <h2>Our Companies</h2>
           </Link>
           <Link onClick={() => dispatch(setMenu(false))}>

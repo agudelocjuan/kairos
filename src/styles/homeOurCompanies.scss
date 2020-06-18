@@ -25,6 +25,11 @@
       padding-bottom: 5px;
     }
   }
+  #ten-k-jobs-row {
+    .cta-graffiti {
+      margin-top: -30px;
+    }
+  }
 }
 
 @media (max-width: map-get($grid-breakpoints,md)) {

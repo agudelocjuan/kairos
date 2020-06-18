@@ -37,10 +37,20 @@ const JobsReviews = ({ mobile }) => {
   ]
   return (
     <Container fluid id="jobsReviews">
+      <Row className="hero-row">
+        <Col className="d-flex flex-column align-items-center text-center">
+          <h2>Dont Just Take{mobile ? <br /> : " "}It From Us</h2>
+          <div className="cta-graffiti text-salmon">
+            Hear from our
+            <br />
+            healthcare heros
+          </div>
+        </Col>
+      </Row>
       <Row id="reviewsRow">
         {reviews.map((i, idx) => {
           return (
-            <Col md="4" className="review-container">
+            <Col key={idx} md="4" className="review-container">
               <div className={`review-box border border-${i.color}`}>
                 <p>{i.review}</p>
                 <div className="meta-container">

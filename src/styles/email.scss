@@ -23,6 +23,7 @@
         background-color: $transparent;
         color: $black;
         border: none;
+        width: 80%;
         &:focus,
         &:active {
           border: none;
@@ -44,7 +45,7 @@
   width: 100%;
   form {
     width: 90%;
-    height: 60px;
+    height: 100px;
     display: flex;
     #email-input-main {
       width: 90%;
@@ -54,9 +55,10 @@
       border-bottom: 1px solid $white;
       border-radius: 0;
       height: 100%;
-      font-size: 48px;
+      font-size: 72px;
       &::placeholder {
-        font-size: 48px;
+        font-family: "franklin gothic std";
+        font-size: 72px;
       }
       &:focus,
       &:active {

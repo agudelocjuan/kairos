@@ -1,9 +1,15 @@
 const MOBILE = "mobile"
 const MENU = "menu"
+const USER = "user"
 
 const initialState = {
   mobile: false,
   menu: false,
+  user: {
+    firstName: null,
+    lastName: null,
+    email: null,
+  },
 }
 
 export const setMobile = bool => {
@@ -20,6 +26,13 @@ export const setMenu = bool => {
   }
 }
 
+export const setUser = obj => {
+  return {
+    type: USER,
+    obj,
+  }
+}
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case MOBILE:
@@ -31,7 +44,11 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         menu: action.bool,
       })
-
+    case USER:
+      console.log(action.obj)
+      return Object.assign({}, state, {
+        user: action.obj,
+      })
     default:
       return state
   }

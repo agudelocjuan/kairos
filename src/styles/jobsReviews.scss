@@ -1,4 +1,12 @@
 #jobsReviews {
+  .hero-row {
+    h2 {
+      margin-top: -50px;
+    }
+    .cta-graffiti {
+      margin-top: -75px;
+    }
+  }
   #reviewsRow {
     margin: 48px 16px 152px;
     .review-container {
@@ -39,6 +47,14 @@
 
 @media (max-width: map-get($grid-breakpoints,md)) {
   #jobsReviews {
+    .hero-row {
+      h2 {
+        margin-top: 50px;
+      }
+      .cta-graffiti {
+        margin-top: 0px;
+      }
+    }
     #reviewsRow {
       margin: 48px 16px 48px;
       .review-container {

@@ -58,7 +58,7 @@ const Email = ({ mobile, footer = false }) => {
           type="text"
           htmlFor="email"
           name="email"
-          placeholder="ENTER YOUR EMAIL"
+          placeholder="Sign Up For Updates"
         />
         <button
           className={`${showSubmit ? "show" : ""}`}

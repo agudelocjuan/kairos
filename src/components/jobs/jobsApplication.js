@@ -1,10 +1,52 @@
-import React, { useRef } from "react"
-import { Link } from "gatsby"
+import React, { useRef, useState } from "react"
+import { Link, navigate } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 
-const JobsApplication = ({ mobile }) => {
-  function _handleSubmit() {}
+import { setUser } from "../../state/global"
+
+const JobsApplication = ({ dispatch, mobile, user }) => {
+  let [subscribed, setSubscribed] = useState(false)
+  let [showSubmit, setShowSubmit] = useState(false)
+  function _submit(e) {
+    e.preventDefault()
+    let first = e.target[0].value
+    let last = e.target[1].value
+    let em = e.target[2].value
+    if (checkValues(first, last)) {
+      if (validateEmail(em)) {
+        dispatch(
+          setUser({
+            firstName: first,
+            lastName: last,
+            email: em,
+          })
+        )
+
+        addToMailchimp(em).then(data => {
+          if ((data.result = "success")) {
+            setSubscribed(true)
+            navigate("/application")
+          }
+        })
+      }
+    }
+  }
+  function checkValues(first, last) {
+    if (first.length > 0 && last.length > 0) {
+      return true
+    }
+    alert("Please enter your name")
+    return false
+  }
+  function validateEmail(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+      return true
+    }
+    alert("You have entered an invalid email address!")
+    return false
+  }
   return (
     <Container fluid id="jobsApplication" className="bg-blue">
       <Row className="header-row">
@@ -29,7 +71,7 @@ const JobsApplication = ({ mobile }) => {
           </ol>
         </Col>
         <Col xs="12" md="6" className="form-column">
-          <form action="">
+          <form action="" onSubmit={e => _submit(e)}>
             <input
               id="jobs-firstName"
               type="text"
@@ -51,7 +93,7 @@ const JobsApplication = ({ mobile }) => {
               name="email"
               placeholder="Email*"
             />
-            <button className="cta button-inline black" onClick={_handleSubmit}>
+            <button type="submit" className="cta button-inline black">
               start your application
             </button>
           </form>
@@ -61,6 +103,6 @@ const JobsApplication = ({ mobile }) => {
   )
 }
 export default connect(
-  state => ({ mobile: state.global.mobile }),
+  state => ({ mobile: state.global.mobile, user: state.global.user }),
   null
 )(JobsApplication)

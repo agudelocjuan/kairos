@@ -8,6 +8,7 @@ import arrow from "../../images/icons/arrow-diag-red.svg"
 import img_1 from "../../images/home/img-lineup-one.png"
 import img_2 from "../../images/home/img-lineup-two.png"
 import img_3 from "../../images/home/img-lineup-three.png"
+import img_4 from "../../images/home/img-lineup-four.png"
 import ig from "../../images/icons/instagram-icon.svg"
 
 const HomeOurCompanies = ({ mobile }) => {
@@ -57,14 +58,17 @@ const HomeOurCompanies = ({ mobile }) => {
         </Col>
       </Row>
       <Row id="image-frames-row">
-        <Col md="4" className="pb-4 pb-md-0">
+        <Col md="3" className="pb-4 pb-md-0">
           <img src={img_1} alt="" />
         </Col>
-        <Col md="4" className="pb-4 pb-md-0">
+        <Col md="3" className="pb-4 pb-md-0">
           <img src={img_2} alt="" />
         </Col>
-        <Col md="4" className="pb-4 pb-md-0">
+        <Col md="3" className="pb-4 pb-md-0">
           <img src={img_3} alt="" />
+        </Col>
+        <Col md="3" className="pb-4 pb-md-0">
+          <img src={img_4} alt="" />
         </Col>
       </Row>
       <Row className="pb-4 pb-md-5 d-flex justify-content-center">

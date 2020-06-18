@@ -59,6 +59,7 @@ $theme-colors: (
 @import "./layout.scss";
 @import "./typography.scss";
 @import "./email.scss";
+@import "./accordion.scss";
 @import "./menu.scss";
 
 // Home Page Styles
@@ -81,3 +82,5 @@ $theme-colors: (
 @import "./jobsHero.scss";
 @import "./jobsAbout.scss";
 @import "./jobsApplication.scss";
+@import "./jobsReviews.scss";
+@import "./jobsFAQ.scss";

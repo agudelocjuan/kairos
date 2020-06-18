@@ -7,6 +7,8 @@ import SEO from "../components/global/seo"
 import JobsHero from "../components/jobs/jobsHero"
 import JobsAbout from "../components/jobs/jobsAbout"
 import JobsApplication from "../components/jobs/jobsApplication"
+import JobsReviews from "../components/jobs/jobsReviews"
+import JobsFAQ from "../components/jobs/jobsFAQ"
 
 const JobsPage = () => {
   let pageColor = "salmon"
@@ -16,6 +18,8 @@ const JobsPage = () => {
       <JobsHero color={pageColor} />
       <JobsAbout />
       <JobsApplication />
+      <JobsReviews />
+      <JobsFAQ />
     </Layout>
   )
 }

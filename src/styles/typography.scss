@@ -90,6 +90,24 @@ h3 {
   }
 }
 
+.faq-header {
+  font-family: "franklin gothic std";
+  font-weight: 400;
+  font-size: 120px;
+  color: $black;
+  line-height: 100px;
+  letter-spacing: -2.5px;
+  margin-top: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    font-size: 40px;
+    line-height: 36px;
+    letter-spacing: -0.7px;
+  }
+}
+
 .franklin-cta {
   font-family: "franklin gothic std";
   font-size: 96px;

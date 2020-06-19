@@ -5,6 +5,13 @@
   flex-direction: column;
   justify-content: space-between;
   #footer-header-section {
+    .social-icons {
+      img {
+        cursor: pointer;
+        width: 75px;
+        margin-right: 16px;
+      }
+    }
   }
   #footer-link-section {
     #footer-page-links {
@@ -39,6 +46,14 @@
     flex-direction: column;
     justify-content: space-between;
     #footer-header-section {
+      .social-icons {
+        img {
+          cursor: pointer;
+          width: 50px;
+          margin-bottom: 16px;
+          margin-right: 16px;
+        }
+      }
     }
     #footer-link-section {
       .footer-icon {

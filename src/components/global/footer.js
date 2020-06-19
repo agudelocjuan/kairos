@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
@@ -9,16 +9,40 @@ import degree from "../../images/icons/degree-icon.png"
 import recycle from "../../images/icons/recycle-icon.svg"
 import twitter from "../../images/icons/twitter-icon.svg"
 
+const slogans = [
+  "Know someone who needs a job ASAP?  Just share this.",
+  "I got 99 problems and money could solve about 86 of them",
+  "Anyone else feel like they know less about COVID now than they did 2 months ago?",
+]
+
 const Footer = ({ color, mobile, jobs }) => {
+  let [index, setIndex] = useState(_getRandomInt(slogans.length))
+
+  function _getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+  function _cycle() {
+    setIndex(index => _getRandomInt(slogans.length))
+  }
+  console.log(index)
   return (
     <Container fluid id="footer" className={`bg-${color}`}>
       <Row id="footer-header-section" className="">
-        <Col className="d-flex">
-          {jobs ? (
-            <h2>Know someone who needs a job ASAP?  Just share this.</h2>
-          ) : (
-            <h2>I got 99 problems and money could solve about 86 of them</h2>
-          )}
+        <Col className="d-flex flex-column">
+          <h2>{slogans[index]}</h2>
+          <div className="social-icons">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://twitter.com/intent/tweet?text=${slogans[
+                index
+              ].replace(" ", "+")}`}
+            >
+              <img src={twitter} alt="" />
+            </a>
+
+            <img onClick={() => _cycle()} src={recycle} alt="" />
+          </div>
         </Col>
       </Row>
       {mobile ? (

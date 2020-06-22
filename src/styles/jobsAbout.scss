@@ -44,7 +44,10 @@
           font-family: "summer loving reg";
           color: $salmon;
           font-size: 40px;
+          margin-right: 8px;
           span {
+            left: 8px;
+            position: relative;
             font-family: helvetica;
             font-size: 20px;
             font-weight: 400;

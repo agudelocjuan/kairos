@@ -34,7 +34,7 @@ const HomeAbout = ({ mobile }) => {
           </p>
           <p className="p-button-padding">Let’s make it how it should be.</p>
           <Link className="cta button-inline" to="/about">
-            tell me more
+            <span>tell me more</span>
           </Link>
         </Col>
       </Row>

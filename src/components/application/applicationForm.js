@@ -5,8 +5,10 @@ import { Container, Row, Col } from "reactstrap"
 import axios from "axios"
 import moment from "moment"
 
+import exit from "../../images/icons/exit-menu.svg"
+
 const ApplicationForm = ({ mobile, user }) => {
-  console.log(user)
+  let [verified, setVerified] = useState(false)
   function _handleSubmit(e) {
     e.preventDefault()
     let firstName = e.target[0].value
@@ -64,14 +66,22 @@ const ApplicationForm = ({ mobile, user }) => {
     )
   }
 
+  function _verify() {
+    setVerified(verified => !verified)
+  }
+
   function _generateId() {
     return Math.random().toString(36).substr(2, 9)
   }
+  console.log(verified)
   return (
     <Container fluid id="applicationForm" className="bg-yellow">
       <Row className="d-flex justify-content-center">
         <Col md="11" className="bg-white text-center application-column">
-          <Link to="/">Exit</Link>
+          <Link to="/10k-jobs" className="exit-button">
+            <img src={exit} alt="" className="mr-1 pb-1" width="17" />
+            EXIT
+          </Link>
           <h1>
             Complete Your
             <br />
@@ -145,9 +155,25 @@ const ApplicationForm = ({ mobile, user }) => {
                 placeholder="Zip Code*"
               />
             </div>
-            <button type="submit" className="cta button-inline">
-              Submit
-            </button>
+            <div id="verification-container">
+              <button
+                type={verified ? "submit" : "text"}
+                className={`cta button-inline ${!verified && "disabled"}`}
+              >
+                Submit
+              </button>
+              <div id="verification">
+                <input
+                  type="checkbox"
+                  name="verification"
+                  checked={verified}
+                  onChange={() => _verify()}
+                />
+                <label htmlFor="verification" for="verification">
+                  I am not a robot
+                </label>
+              </div>
+            </div>
           </form>
         </Col>
       </Row>

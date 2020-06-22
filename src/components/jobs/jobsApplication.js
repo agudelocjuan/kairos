@@ -55,7 +55,7 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
         </Col>
       </Row>
       <Row className="form-row">
-        <Col md="6" className="information-column">
+        <Col md={{ size: 4, offset: 1 }} className="information-column">
           <h3>How it works</h3>
           <ol>
             <li>Fill out your information below and click Apply</li>
@@ -70,7 +70,7 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
             <li>Find your next job and join the ranks of homecare heroes!</li>
           </ol>
         </Col>
-        <Col xs="12" md="6" className="form-column">
+        <Col xs="12" md={{ size: 6, offset: 1 }} className="form-column">
           <form action="" onSubmit={e => _submit(e)}>
             <input
               id="jobs-firstName"

@@ -102,8 +102,8 @@ h3 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 40px;
-    line-height: 36px;
+    font-size: 60px;
+    line-height: 53px;
     letter-spacing: -0.7px;
   }
 }
@@ -164,6 +164,7 @@ h3 {
 
 .headline-graffiti {
   font-family: "summer loving reg";
+  text-transform: lowercase;
   font-size: 160px;
   line-height: 80px;
   font-weight: 400;
@@ -181,6 +182,7 @@ h3 {
 
 .cta-graffiti {
   font-family: "summer loving reg";
+  text-transform: lowercase;
   font-size: 200px;
   line-height: 102px;
   font-weight: 400;
@@ -198,6 +200,7 @@ h3 {
 
 .navigational-graffiti {
   font-family: "summer loving reg";
+  text-transform: lowercase;
   font-size: 120px;
   line-height: 96px;
   font-weight: 400;

@@ -5,6 +5,10 @@
     transform: translate(-50%, -50%);
     left: 50%;
     top: 15px;
+    .button-inline {
+      padding-left: 88px;
+      padding-right: 88px;
+    }
   }
   #logo-row {
     padding: 100px 0px 50px;
@@ -23,7 +27,7 @@
     .floating-col {
       position: absolute;
       height: 100%;
-      padding: 20px;
+      padding: 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -32,6 +36,8 @@
         color: $salmon;
         font-size: 40px;
         margin-right: 8px;
+      }
+      h3 {
       }
     }
   }
@@ -62,6 +68,10 @@
       transform: translate(-50%, -50%);
       left: 50%;
       top: 2px;
+      .button-inline {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
     }
     #logo-row {
       padding: 100px 0px 50px;

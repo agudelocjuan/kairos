@@ -33,14 +33,14 @@
   &--icon {
     // style an icon
     img {
-      transform: rotate(315deg);
+      transform: rotate(0deg);
       transition: transform 250ms cubic-bezier(0.33, 1, 0.33, 1);
     }
 
     .is-open & {
       // change style for open accordion
       img {
-        transform: rotate(0deg);
+        transform: rotate(315deg);
         transition: transform 250ms cubic-bezier(0.33, 1, 0.33, 1);
       }
     }

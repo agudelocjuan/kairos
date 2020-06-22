@@ -16,11 +16,17 @@ $grid-breakpoints: (
 
 $white: #fff;
 $black: #0e1726;
-$light-black: rgba(14, 23, 38, 0.5);
+$light-black: rgba(14, 23, 38, 0.6);
 $salmon: #f15953;
 $mustard: #ecc86f;
 $blue: #c0e7ed;
 $yellow: #ebe4a3;
+$light-yellow: rgba(235, 228, 163, 0.6);
+$company-purple: #ececfc;
+$company-blue: #e6f7fa;
+$company-green: #ebfbf4;
+$company-pink: #fce4dc;
+$company-yellow: #f9f4ea;
 $transparent: transparent;
 
 $theme-colors: (
@@ -32,6 +38,12 @@ $theme-colors: (
   "mustard": $mustard,
   "blue": $blue,
   "yellow": $yellow,
+  "light-yellow": $light-yellow,
+  "company-purple": $company-purple,
+  "company-blue": $company-blue,
+  "company-green": $company-green,
+  "company-pink": $company-pink,
+  "company-yellow": $company-yellow,
 );
 
 // Optional Bootstrap

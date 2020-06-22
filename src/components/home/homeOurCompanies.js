@@ -14,11 +14,11 @@ import ig from "../../images/icons/instagram-icon.svg"
 const HomeOurCompanies = ({ mobile }) => {
   return (
     <Container fluid id="homeOurCompanies">
-      <Row id="our-companies-row" className="pb-4 pb-md-5">
-        <Col xs="12" md="6" className="left-container">
+      <Row id="our-companies-row" className="pb-4 pb-md-4">
+        <Col xs="12" md="7" className="left-container">
           <img src={companies} alt="" />
         </Col>
-        <Col xs="12" md="6" className="right-container">
+        <Col xs="12" md="5" className="right-container">
           <div className="eyebrow">why we're here</div>
           <h3>It’s time to demand more from businesses.</h3>
           <p>
@@ -33,7 +33,7 @@ const HomeOurCompanies = ({ mobile }) => {
       </Row>
       <Row
         id="ten-k-jobs-row"
-        className="d-flex justify-content-center pb-4 pb-md-5"
+        className="d-flex justify-content-center pb-4 pb-md-5 bg-blue"
       >
         <Col
           md="8"
@@ -57,7 +57,7 @@ const HomeOurCompanies = ({ mobile }) => {
           </a>
         </Col>
       </Row>
-      <Row id="image-frames-row">
+      <Row id="image-frames-row bg-white" className="pt-5">
         <Col md="3" className="pb-4 pb-md-0">
           <img src={img_1} alt="" />
         </Col>
@@ -73,7 +73,8 @@ const HomeOurCompanies = ({ mobile }) => {
       </Row>
       <Row className="pb-4 pb-md-5 d-flex justify-content-center">
         <a href="" className="cta button-inline my-4 my-md-5">
-          <img src={ig} alt="" /> see our stories
+          <img src={ig} alt="" style={{ paddingBottom: "2px" }} /> see our
+          stories
         </a>
       </Row>
     </Container>

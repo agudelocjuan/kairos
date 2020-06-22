@@ -1,11 +1,12 @@
 #jobsHero {
-  height: 90vh;
-  min-height: 700px;
+  // height: 90vh;
+  // min-height: 700px;
+  min-height: 95vh;
   position: relative;
   display: flex;
   flex-direction: column;
   .hero-title-row {
-    padding-top: 100px;
+    padding-top: 18%;
     text-align: center;
     z-index: 10;
     img {
@@ -13,7 +14,7 @@
       position: absolute;
       transform: translate(-50%, 0%);
       left: 50%;
-      bottom: -10%;
+      bottom: -18%;
       width: 75%;
     }
     h1 {
@@ -34,9 +35,9 @@
 
 @media (max-width: map-get($grid-breakpoints,md)) {
   #jobsHero {
-    height: 700px;
+    min-height: 700px;
     .hero-title-row {
-      padding-top: 100px;
+      padding-top: 50%;
       text-align: center;
       z-index: 10;
       img {

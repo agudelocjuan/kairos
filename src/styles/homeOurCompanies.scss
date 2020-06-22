@@ -1,7 +1,7 @@
 #homeOurCompanies {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, $white, $blue);
+  // background: linear-gradient(to bottom, $white, $blue);
   .left-container {
     img {
       width: 100%;
@@ -18,14 +18,15 @@
       width: 75%;
     }
     .inline-text-link {
-      margin-top: auto;
-      color: $salmon;
       width: 225px;
-      border-bottom: 1px solid $salmon;
-      padding-bottom: 5px;
     }
   }
   #ten-k-jobs-row {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .cta-graffiti {
       margin-top: -30px;
     }
@@ -48,12 +49,7 @@
         width: 100%;
       }
       .inline-text-link {
-        margin-top: auto;
-        color: $salmon;
         width: 60%;
-        margin-top: 50px;
-        border-bottom: 1px solid $salmon;
-        padding-bottom: 5px;
       }
     }
   }

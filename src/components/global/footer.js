@@ -24,7 +24,6 @@ const Footer = ({ color, mobile, jobs }) => {
   function _cycle() {
     setIndex(index => _getRandomInt(slogans.length))
   }
-  console.log(index)
   return (
     <Container fluid id="footer" className={`bg-${color}`}>
       <Row id="footer-header-section" className="">

@@ -22,7 +22,7 @@ const CompaniesCompanies = ({ mobile }) => {
       cta: "go to rhino",
       link: "https://www.kairos.com",
       image: rhino,
-      color: "blue",
+      color: "company-purple",
     },
     {
       title: "Bilt",
@@ -33,7 +33,7 @@ const CompaniesCompanies = ({ mobile }) => {
       cta: "get updates on bilt",
       link: "https://www.kairos.com",
       image: bilt,
-      color: "salmon",
+      color: "company-blue",
     },
     {
       title: "Little Spoon",
@@ -44,7 +44,7 @@ const CompaniesCompanies = ({ mobile }) => {
       cta: "go to little spoon",
       link: "https://www.kairos.com",
       image: little_spoon,
-      color: "yellow",
+      color: "company-green",
     },
     {
       title: "Alloy",
@@ -55,7 +55,7 @@ const CompaniesCompanies = ({ mobile }) => {
       cta: "get updates on alloy",
       link: "https://www.kairos.com",
       image: alloy,
-      color: "blue",
+      color: "company-pink",
     },
     {
       title: "Cera",
@@ -66,7 +66,7 @@ const CompaniesCompanies = ({ mobile }) => {
       cta: "Kairos X Ceta 10k Jobs Campaign",
       link: "https://www.kairos.com",
       image: cera,
-      color: "mustard",
+      color: "company-yellow",
     },
   ]
   return (
@@ -90,7 +90,7 @@ const CompaniesCompanies = ({ mobile }) => {
             <p>{i.body}</p>
             <div>
               <a
-                className="cta button-inline black mb-4 mt-3 mb-md-5"
+                className={`cta button-inline black mb-4 mt-3 mb-md-5 text-${i.color}`}
                 href={i.link}
               >
                 {i.cta}
@@ -99,7 +99,7 @@ const CompaniesCompanies = ({ mobile }) => {
           </Col>
         )
         return (
-          <Row className={`company-row`}>
+          <Row key={idx} className={`company-row`}>
             {img_left || mobile ? img_col : ""}
             {about_col}
             {!img_left && !mobile ? img_col : ""}
@@ -118,7 +118,7 @@ const CompaniesCompanies = ({ mobile }) => {
             question!
           </p>
           <Link to="/">
-            <h3>Our Openings</h3>
+            <div className="franklin-cta">Our Openings</div>
           </Link>
         </Col>
       </Row>

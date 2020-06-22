@@ -12,7 +12,13 @@ import Menu from "./menu"
 import "../../styles/index.scss"
 import bg from "../../images/global/site-background.png"
 
-const Layout = ({ children, dispatch, footerColor, jobs = false }) => {
+const Layout = ({
+  children,
+  dispatch,
+  footerColor,
+  applicationPage = false,
+  jobs = false,
+}) => {
   let [colorIndex, setColorIndex] = useState(0)
   let colorCount = 3
   useEffect(() => {
@@ -46,7 +52,7 @@ const Layout = ({ children, dispatch, footerColor, jobs = false }) => {
         backgroundSize: `cover`,
       }}
     >
-      <Header />
+      {!applicationPage && <Header />}
       <Menu />
       <div
         id="site-container"

@@ -42,7 +42,7 @@ const JobsHero = ({ mobile }) => {
         </Col>
       </Row>
       <Row className="image-rows">
-        {mobile ? "" : <img src={hands} alt="" />}
+        {!mobile && <img src={hands} alt="" />}
         <Col md={{ size: 6, offset: 1 }} className="floating-col">
           <div className="cta-graffiti text-salmon pb-5">Need A Job?</div>
           <h3>
@@ -51,18 +51,16 @@ const JobsHero = ({ mobile }) => {
           </h3>
           <h3>Join the Care Campaign.</h3>
         </Col>
-        {mobile ? (
+        {mobile && (
           <Col>
             <img src={hands_mobile} alt="" />
           </Col>
-        ) : (
-          ""
         )}
       </Row>
       <Row className="image-rows">
         {mobile ? "" : <img src={flowers} alt="" />}
 
-        <Col md={{ size: 6, offset: 6 }} className="floating-col">
+        <Col md={{ size: 5, offset: 6 }} className="floating-col">
           <h3>how this works</h3>
           <p>
             The COVID 19 pandemic has overwhelmed our healthcare system, put
@@ -97,7 +95,7 @@ const JobsHero = ({ mobile }) => {
         )}
       </Row>
       <Row className="list-item-row">
-        <Col md={{ size: 6 }} className="text-center">
+        <Col md={{ size: 7 }} className="text-center">
           <Row>
             <Col>
               <div className="cta-graffiti">We Need You!</div>

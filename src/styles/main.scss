@@ -3,6 +3,10 @@
   width: 100vw;
   position: relative;
   background-color: #f4f4f4;
+  &.stop-scroll {
+    overflow-y: hidden;
+  }
+
   #site-container {
     position: absolute;
     background-color: $white;
@@ -67,6 +71,7 @@
   }
   &.disabled {
     background-color: #d8d8d8;
+    opacity: 50%;
     cursor: default;
   }
   &.black {

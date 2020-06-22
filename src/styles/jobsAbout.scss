@@ -39,6 +39,26 @@
       }
       h3 {
       }
+      ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: li;
+        list-style-position: outside;
+
+        li {
+          display: block;
+          &:before {
+            content: counter(li) ".";
+            counter-increment: li;
+            color: $salmon;
+            float: left;
+            font-size: 40px;
+            margin-right: 16px;
+            font-family: "summer loving reg";
+          }
+        }
+      }
     }
   }
   .list-item-row {

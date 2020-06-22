@@ -16,6 +16,7 @@ const Layout = ({
   children,
   dispatch,
   footerColor,
+  menu,
   applicationPage = false,
   jobs = false,
 }) => {
@@ -45,6 +46,7 @@ const Layout = ({
   return (
     <div
       id="site-background"
+      className={`${menu && "stop-scroll"}`}
       style={{
         backgroundImage: `url(${bg})`,
         backgroundPosition: `center`,
@@ -66,4 +68,7 @@ const Layout = ({
   )
 }
 
-export default connect(state => ({ mobile: state.global.mobile }), null)(Layout)
+export default connect(
+  state => ({ mobile: state.global.mobile, menu: state.global.menu }),
+  null
+)(Layout)

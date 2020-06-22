@@ -11,8 +11,8 @@ import menu_open from "../../images/icons/menu-open.svg"
 const Header = ({ mobile, menu, dispatch }) => {
   return (
     <div id="header">
-      <Link to="/">
-        <img id="header-logo" src={logo} alt="" />
+      <Link id="header-logo" to="/">
+        <img src={logo} alt="" />
       </Link>
       <img
         id="menu-button"

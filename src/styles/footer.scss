@@ -1,5 +1,5 @@
 #footer {
-  min-height: 750px;
+  min-height: 100vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
 
 @media (max-width: map-get($grid-breakpoints,md)) {
   #footer {
-    min-height: 550px;
+    min-height: 100vh;
     padding: 20px;
     display: flex;
     flex-direction: column;

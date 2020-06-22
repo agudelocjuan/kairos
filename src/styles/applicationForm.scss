@@ -1,5 +1,6 @@
 #applicationForm {
   .application-column {
+    margin: 0px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +66,7 @@
                 outline: none;
               }
               &:checked {
-                background: $blue;
+                background: $salmon;
               }
             }
           }

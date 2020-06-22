@@ -7,7 +7,7 @@ import arrow from "../../images/icons/arrow-down-black.svg"
 
 const AboutHero = ({ mobile, color }) => {
   return (
-    <Container fluid id="homeHero" className={`bg-${color}`}>
+    <Container fluid id="aboutHero" className={`bg-${color}`}>
       <Row className="hero-title-row">
         <Col className="position-relative">
           <h1>

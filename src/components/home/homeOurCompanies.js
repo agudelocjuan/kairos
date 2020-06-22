@@ -33,7 +33,7 @@ const HomeOurCompanies = ({ mobile }) => {
       </Row>
       <Row
         id="ten-k-jobs-row"
-        className="d-flex justify-content-center pb-4 pb-md-5 bg-blue"
+        className="d-flex justify-content-center bg-blue"
       >
         <Col
           md="8"
@@ -52,9 +52,12 @@ const HomeOurCompanies = ({ mobile }) => {
             hero. We need more people on the frontlines right now, supporting
             the most vulnerable members of our community.
           </div>
-          <a className="cta button-inline black mb-4 mt-3 mb-md-5" href="">
+          <Link
+            to="/10k-jobs"
+            className="cta button-inline black mb-4 mt-3 mb-md-5"
+          >
             Join the care campaign
-          </a>
+          </Link>
         </Col>
       </Row>
       <Row id="image-frames-row bg-white" className="pt-5">
@@ -72,7 +75,12 @@ const HomeOurCompanies = ({ mobile }) => {
         </Col>
       </Row>
       <Row className="pb-4 pb-md-5 d-flex justify-content-center">
-        <a href="" className="cta button-inline my-4 my-md-5">
+        <a
+          href="https://instagram.com/kairoshq"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta button-inline my-4 my-md-5"
+        >
           <img src={ig} alt="" style={{ paddingBottom: "2px" }} /> see our
           stories
         </a>

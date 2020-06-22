@@ -76,8 +76,8 @@ const ApplicationForm = ({ mobile, user }) => {
   console.log(verified)
   return (
     <Container fluid id="applicationForm" className="bg-yellow">
-      <Row className="d-flex justify-content-center">
-        <Col md="11" className="bg-white text-center application-column">
+      <Row className="d-flex justify-content-center bg-yellow">
+        <Col className="bg-white text-center application-column">
           <Link to="/10k-jobs" className="exit-button">
             <img src={exit} alt="" className="mr-1 pb-1" width="17" />
             EXIT

@@ -63,7 +63,7 @@ const CompaniesCompanies = ({ mobile }) => {
       header: "creating jobs and the future of our healthcare workforce.",
       body:
         "With Cera, we make it easier to get affordable care in the comfort and independence of your own home. We arrange the best possible home care in our network within 24 hours, using artificial intelligence to predict the care your loved ones will need—and making sure your in-laws never have to move back in with you.",
-      cta: "Kairos X Ceta 10k Jobs Campaign",
+      cta: "Kairos X Cera 10k Jobs Campaign",
       link: "https://www.kairos.com",
       image: cera,
       color: "company-yellow",
@@ -86,7 +86,7 @@ const CompaniesCompanies = ({ mobile }) => {
         let about_col = (
           <Col md="6" className={`bg-${i.color} company-information`}>
             <div className="eyebrow">{i.eyebrow}</div>
-            <h3>{i.title}</h3>
+            <h3>{i.header}</h3>
             <p>{i.body}</p>
             <div>
               <a

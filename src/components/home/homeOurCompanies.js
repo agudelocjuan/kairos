@@ -36,7 +36,7 @@ const HomeOurCompanies = ({ mobile }) => {
         className="d-flex justify-content-center bg-blue"
       >
         <Col
-          md="8"
+          md="7"
           className="d-flex flex-column align-items-center text-center"
         >
           <h3 className="text-salmon pt-4 pt-md-5">

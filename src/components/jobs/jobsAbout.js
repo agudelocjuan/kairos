@@ -71,16 +71,26 @@ const JobsHero = ({ mobile }) => {
             new careers caring for our most vulnerable population
           </p>
           <ol>
-            <li>Start your appliacation below to kick off your new career</li>
             <li>
-              Get certified through CareAcademy's digital training in as little
-              as 10 days (no previous experience needed)
+              <span>
+                Start your appliacation below to kick off your new career
+              </span>
             </li>
             <li>
-              Once certified, our partners at Care.com will match you with a
-              home
+              <span>
+                Get certified through CareAcademy's digital training in as
+                little as 10 days (no previous experience needed)
+              </span>
             </li>
-            <li>Begin your new career!</li>
+            <li>
+              <span>
+                Once certified, our partners at Care.com will match you with a
+                home
+              </span>
+            </li>
+            <li>
+              <span>Begin your new career!</span>
+            </li>
           </ol>
         </Col>
         {mobile ? (

@@ -10,9 +10,16 @@ import menu_open from "../../images/icons/menu-open.svg"
 
 const Header = ({ mobile, menu, dispatch }) => {
   return (
-    <div id="header" onClick={() => dispatch(setMenu(!menu))}>
-      <img id="header-logo" src={logo} alt="" />
-      <img id="menu-button" src={menu ? menu_close : menu_open} alt="" />
+    <div id="header">
+      <Link to="/">
+        <img id="header-logo" src={logo} alt="" />
+      </Link>
+      <img
+        id="menu-button"
+        onClick={() => dispatch(setMenu(!menu))}
+        src={menu ? menu_close : menu_open}
+        alt=""
+      />
     </div>
   )
 }

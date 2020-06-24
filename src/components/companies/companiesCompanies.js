@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
 import hero from "../../images/companies/companiesHero.png"
+import hero_mobile from "../../images/companies/companiesHero_mobile.png"
 import openings from "../../images/companies/openings.png"
 import alloy from "../../images/companies/alloy.png"
 import bilt from "../../images/companies/bilt.png"
@@ -73,15 +74,21 @@ const CompaniesCompanies = ({ mobile }) => {
     <Container fluid id="companiesCompanies">
       <Row>
         <Col className="px-0">
-          <img src={hero} alt="" />
+          <img src={mobile ? hero_mobile : hero} alt="" />
         </Col>
       </Row>
       {companies.map((i, idx) => {
         let img_left = idx % 2 === 0
         let img_col = (
-          <Col md="6" className="px-0">
-            <img src={i.image} alt="" />
-          </Col>
+          <Col
+            md="6"
+            className="px-0"
+            style={{
+              background: `url(${i.image})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></Col>
         )
         let about_col = (
           <Col md="6" className={`bg-${i.color} company-information`}>
@@ -106,22 +113,26 @@ const CompaniesCompanies = ({ mobile }) => {
           </Row>
         )
       })}
-      <Row className="cta-row">
-        <Col md="6" className="px-0">
-          <img src={openings} alt="" />
-        </Col>
-        <Col md="6" className={`bg-yellow information`}>
-          <div className="cta-graffiti">Join The Family</div>
-          <p>
-            It might feel scary, but we’re here to help. We’ve got the resources
-            to help you adjust to this new normal. Reach out and ask us a
-            question!
-          </p>
-          <Link to="/">
-            <div className="franklin-cta">Our Openings</div>
-          </Link>
-        </Col>
-      </Row>
+
+      {/*
+        <Row className="cta-row">
+          <Col md="6" className="px-0">
+            <img src={openings} alt="" />
+          </Col>
+          <Col md="6" className={`bg-yellow information`}>
+            <div className="cta-graffiti">Join The Family</div>
+            <p>
+              It might feel scary, but we’re here to help. We’ve got the resources
+              to help you adjust to this new normal. Reach out and ask us a
+              question!
+            </p>
+            <Link to="/">
+              <div className="franklin-cta">Our Openings</div>
+            </Link>
+          </Col>
+        </Row>
+
+      */}
     </Container>
   )
 }

@@ -31,6 +31,11 @@ const JobsHero = ({ mobile }) => {
         </div>
       </div>
       <Row id="logo-row">
+        <Col xs="12">
+          <div className="navigational-graffiti text-salmon text-center pb-3">
+            brought to you by
+          </div>
+        </Col>
         <Col className="logo-col" xs="4">
           <img src={care_logo} alt="" />
         </Col>
@@ -41,7 +46,7 @@ const JobsHero = ({ mobile }) => {
           <img src={care_academy_logo} alt="" />
         </Col>
       </Row>
-      <Row className="image-rows">
+      <Row className="image-rows top">
         {!mobile && <img src={hands} alt="" />}
         <Col md={{ size: 6, offset: 1 }} className="floating-col">
           <div className="cta-graffiti text-salmon pb-5">Need A Job?</div>
@@ -57,7 +62,7 @@ const JobsHero = ({ mobile }) => {
           </Col>
         )}
       </Row>
-      <Row className="image-rows">
+      <Row className="image-rows bottom">
         {mobile ? "" : <img src={flowers} alt="" />}
 
         <Col md={{ size: 5, offset: 6 }} className="floating-col">
@@ -105,7 +110,7 @@ const JobsHero = ({ mobile }) => {
         <Col md={{ size: 7 }} className="text-center">
           <Row>
             <Col>
-              <div className="cta-graffiti">We Need You!</div>
+              {/*<div className="cta-graffiti">We Need You!</div>*/}
               <h3 className="pt-5 pb-4">what is the job like?</h3>
               <ul className="text-left">
                 <li>

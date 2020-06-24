@@ -9,25 +9,21 @@ const CompaniesAbout = ({ mobile }) => {
   return (
     <Container fluid id="companiesAbout">
       <Row id="our-situation">
-        <Col md="7" className="left-container">
+        <Col md={{ size: 10 }} className="left-container">
           <div className="cta-graffiti text-blue">Our Situation</div>
           <h2>
             We wish we didn't need brands to help us meet basic needs, but here
             we are.
           </h2>
         </Col>
-        <Col md="5" className="right-container">
-          <img src={header} alt="" />
-          <p className="pt-5">
+        <Col md={{ size: 10 }} className="right-container">
+          <p className="">
             Kairos brands offer a better life you don’t have to buy. We’re
             taking on foundational issues (AKA rent, homebuying, keeping your
             kid healthy, getting a new job) and working on that whole
-            life-affordability thing.
-          </p>
-          <p className="pt-md-2">
-            So if it's broke, our brands are here to fix it. Where the systems
-            have failed us, we take on the folks who made the damn thing. See
-            the brands that have your back.
+            life-affordability thing. So if it's broke, our brands are here to
+            fix it. Where the systems have failed us, we take on the folks who
+            made the damn thing. See the brands that have your back.
           </p>
         </Col>
       </Row>

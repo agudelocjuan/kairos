@@ -32,8 +32,7 @@ const Email = ({ mobile, footer = false }) => {
       ) : (
         <div id="email-signup-container">
           <div id="email-cta">
-            Want more Kairos?{mobile ? <br /> : " "}Sign up for our newsletter
-            today!
+            Want more Kairos?{mobile ? <br /> : " "}Plug in your email.
           </div>
           <form action="" onSubmit={e => _submit(e)}>
             <input

@@ -1,14 +1,15 @@
 #jobsReviews {
+  background-color: $white;
   .hero-row {
     h2 {
-      margin-top: -30px;
+      margin-top: 24px;
     }
     .cta-graffiti {
       margin-top: -75px;
     }
   }
   #reviewsRow {
-    margin: 48px 16px 152px;
+    padding: 48px 16px 152px;
     .review-container {
       .review-box {
         padding: 8%;

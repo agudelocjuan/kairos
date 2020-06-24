@@ -28,6 +28,182 @@ const AboutUs = ({ mobile }) => {
           }
         }
       }
+      alex_fiance: file(relativePath: { eq: "team/alex_fiance.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      angela_vranich: file(relativePath: { eq: "team/angela_vranich.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ankur_jain: file(relativePath: { eq: "team/ankur_jain.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      anne_fullenwider: file(
+        relativePath: { eq: "team/anne_fullenwider.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ben_lewis: file(relativePath: { eq: "team/ben_lewis.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bobbi_brown: file(relativePath: { eq: "team/bobbi_brown.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ciara_osullivan: file(relativePath: { eq: "team/ciara_osullivan.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      cyrus_ferguson: file(relativePath: { eq: "team/cyrus_ferguson.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      david_carey: file(relativePath: { eq: "team/david_carey.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      joyce_ok: file(relativePath: { eq: "team/joyce_ok.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      lisa_barnett: file(relativePath: { eq: "team/lisa_barnett.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      mahiben_maruthappu: file(
+        relativePath: { eq: "team/mahiben_maruthappu.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      mark_thompson: file(relativePath: { eq: "team/mark_thompson.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      marta_fox: file(relativePath: { eq: "team/marta_fox.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      mary_martha_stasinopoulus: file(
+        relativePath: { eq: "team/mary_martha_stasinopoulus.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      mehmet_oz: file(relativePath: { eq: "team/mehmet_oz.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      michael_dubin: file(relativePath: { eq: "team/michael_dubin.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      michelle_mueller: file(
+        relativePath: { eq: "team/michelle_mueller.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      monica_molenaar: file(relativePath: { eq: "team/monica_molenaar.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      paraag_sarva: file(relativePath: { eq: "team/paraag_sarva.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      roger_goodell: file(relativePath: { eq: "team/roger_goodell.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ronan_dunne: file(relativePath: { eq: "team/ronan_dunne.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      vicente_fox: file(relativePath: { eq: "team/vicente_fox.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      zoe_oz: file(relativePath: { eq: "team/zoe_oz.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   const team = [
@@ -35,19 +211,19 @@ const AboutUs = ({ mobile }) => {
       name: "Ankur Jain",
       title: "Co-Founder & Co-CEO",
       team: "operating",
-      img: "placeholder",
+      img: "ankur_jain",
     },
     {
       name: "Andrew Fiance",
       title: "Co-Founder & Co-CEO",
       team: "operating",
-      img: "placeholder",
+      img: "alex_fiance",
     },
     {
       name: "Zoe Oz",
       title: "Head of Product & Brand",
       team: "operating",
-      img: "placeholder",
+      img: "zoe_oz",
     },
     {
       name: "Ryan Bloomer",
@@ -59,7 +235,7 @@ const AboutUs = ({ mobile }) => {
       name: "Joyce Ok",
       title: "Assocaite",
       team: "operating",
-      img: "placeholder",
+      img: "joyce_ok",
     },
     {
       name: "Andrew Wang",
@@ -71,7 +247,7 @@ const AboutUs = ({ mobile }) => {
       name: "Ciara O'Sullivan",
       title: "People & Operations Manager",
       team: "operating",
-      img: "placeholder",
+      img: "ciara_osullivan",
     },
     {
       name: "Alex Klokus",
@@ -83,13 +259,13 @@ const AboutUs = ({ mobile }) => {
       name: "Angela Vranich",
       title: "Operating Partner, Little Spoon",
       team: "operating",
-      img: "placeholder",
+      img: "angela_vranich",
     },
     {
       name: "Anne Fulenwider",
       title: "Operating Partner, Doyen",
       team: "operating",
-      img: "placeholder",
+      img: "anne_fullenwider",
     },
     {
       name: "Ben Lantos",
@@ -101,13 +277,13 @@ const AboutUs = ({ mobile }) => {
       name: "Ben Lewis",
       title: "Operating Partner, Little Spoon",
       team: "operating",
-      img: "placeholder",
+      img: "ben_lewis",
     },
     {
       name: "Ben Marathappu",
       title: "Operating Partner, Cera",
       team: "operating",
-      img: "placeholder",
+      img: "mahiben_maruthappu",
     },
     {
       name: "Bryan Woods",
@@ -119,67 +295,85 @@ const AboutUs = ({ mobile }) => {
       name: "Lisa Barnett",
       title: "Operating Partner, Little Spoon",
       team: "operating",
-      img: "placeholder",
+      img: "lisa_barnett",
     },
     {
       name: "Michelle Muller",
       title: "Operating Partner, Little Spoon",
       team: "operating",
-      img: "placeholder",
+      img: "michelle_mueller",
     },
     {
       name: "Monica Molenaar",
       title: "Operating Partner, Doyen",
       team: "operating",
-      img: "placeholder",
+      img: "monica_molenaar",
     },
     {
       name: "Paraag Sarva",
       title: "Operating Partner, Rhinn",
       team: "operating",
-      img: "placeholder",
+      img: "paraag_sarva",
     },
     {
-      name: "Ankur Jain",
-      title: "Co-Founder & Co-CEO",
+      name: "Bobbi Brown",
+      title: "Founder, Bobbi Brown",
       team: "advisory",
-      img: "placeholder",
+      img: "bobbi_brown",
     },
     {
-      name: "Andrew Fiance",
-      title: "Co-Founder & Co-CEO",
+      name: "David Carey",
+      title: "President, Hearst Magazines",
       team: "advisory",
-      img: "placeholder",
+      img: "david_carey",
     },
     {
-      name: "Zoe Oz",
-      title: "Head of Product & Brand",
+      name: "Dr. Mehmet Oz",
+      title: "Host, Dr. Oz Show",
       team: "advisory",
-      img: "placeholder",
+      img: "mehmet_oz",
     },
     {
-      name: "Ryan Bloomer",
-      title: "Partner",
+      name: "Michael Dubin",
+      title: "Co-Founder, Dollar Shave Club",
       team: "advisory",
-      img: "placeholder",
+      img: "michael_dubin",
     },
     {
-      name: "Joyce Ok",
-      title: "Associate",
+      name: "Mark Thompson",
+      title: "CEO, New York Times",
       team: "advisory",
-      img: "placeholder",
+      img: "mark_thompson",
     },
     {
-      name: "Andrew Wang",
-      title: "Chair of Investment Committee",
+      name: "Marta Fox",
+      title: "Founder, Centro Fox",
       team: "advisory",
-      img: "placeholder",
+      img: "marta_fox",
+    },
+    {
+      name: "Roger Goodell",
+      title: "Commissioner, National Football League",
+      team: "advisory",
+      img: "roger_goodell",
+    },
+    {
+      name: "Ronan Dunne",
+      title: "President, Verizon Wireless",
+      team: "advisory",
+      img: "ronan_dunne",
+    },
+    {
+      name: "Vicente Fox",
+      title: "Former President of Mexico",
+      team: "advisory",
+      img: "vicente_fox",
     },
   ]
   return (
     <Container fluid id="aboutUs" className={`bg-white`}>
       <Row className="header-row">
-        <Col>
+        <Col md="9">
           <div className="cta-graffiti text-mustard">Who we are</div>
           <h2>
             We’re a group of entrepreneurs, activists, and creators dedicated to
@@ -188,7 +382,7 @@ const AboutUs = ({ mobile }) => {
         </Col>
       </Row>
       <Row className="subheader-row">
-        <Col>
+        <Col md="9">
           <img src={graffiti} alt="" />
           <h2>
             We believe life should be simple and affordable. We’re on a mission

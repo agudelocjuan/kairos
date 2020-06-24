@@ -77,7 +77,9 @@ const Footer = ({ color, mobile, jobs }) => {
               <Link to="/">Home</Link>
               <Link to="/about">About Us</Link>
               <Link to="/our-companies">Our Companies</Link>
-              <Link to="/contact">Contact Us</Link>
+              <a href="mailto:team@kairoshq.com?subject=Inquiry About (***Your Inquiry Here***)">
+                Contact Us
+              </a>
             </div>
             <div className="footer-link-column">
               <Link to="/10k-jobs">10k Jobs</Link>

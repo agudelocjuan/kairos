@@ -1,12 +1,10 @@
 #homeHero {
-  // height: 90vh;
-  // min-height: 700px;
   min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   .hero-title-row {
-    padding-top: 120px;
+    padding-top: 100px;
     text-align: center;
     z-index: 10;
     img {

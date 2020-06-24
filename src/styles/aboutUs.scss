@@ -1,15 +1,18 @@
 #aboutUs {
-  margin-top: 24px;
+  padding-top: 24px;
   padding-bottom: 48px;
-  background: linear-gradient(to bottom, $white, $blue);
+  // background: linear-gradient(to bottom, $white, $blue);
+  background-color: $white;
   .header-row {
+    position: relative;
+    z-index: 10;
     h2 {
       padding: 16px 0px;
     }
   }
   .subheader-row {
     position: relative;
-    margin: 48px 0px 24px 0px;
+    margin: 0px 0px 24px 0px;
     h2 {
       z-index: 10;
       position: relative;

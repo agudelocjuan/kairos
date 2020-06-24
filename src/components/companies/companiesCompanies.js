@@ -74,7 +74,7 @@ const CompaniesCompanies = ({ mobile }) => {
     <Container fluid id="companiesCompanies">
       <Row>
         <Col className="px-0">
-          <img src={mobile ? hero_mobile : hero} alt="" />
+          <img src={mobile ? hero_mobile : hero} alt="" className="w-100" />
         </Col>
       </Row>
       {companies.map((i, idx) => {

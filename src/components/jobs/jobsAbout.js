@@ -18,6 +18,7 @@ const JobsHero = ({ mobile }) => {
     ref.current.scrollIntoView({
       behavior: "smooth",
       block: "start",
+      offset: "50px",
     })
   }
   return (
@@ -143,7 +144,7 @@ const JobsHero = ({ mobile }) => {
                   patience, and a good sense of humor.
                 </li>
                 <li>You want a flexible schedule with competitive pay.</li>
-                <li>
+                <li ref={ref}>
                   You’re ready to start a new career with growth potential.
                 </li>
               </ul>
@@ -151,7 +152,6 @@ const JobsHero = ({ mobile }) => {
           </Row>
         </Col>
       </Row>
-      <div ref={ref} />
     </Container>
   )
 }

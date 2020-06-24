@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Kairos`,
-    description: `placeholder description for Kairos`,
+    description: `We build and fund companies to tackle global problems.`,
     author: `Tucker Schoos`,
     url: "https://www.kairos.com",
     image: "/logos/share-image.png",

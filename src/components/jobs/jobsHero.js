@@ -22,7 +22,7 @@ const JobsHero = ({ mobile, color }) => {
         </Col>
       </Row>
       <Row className="hero-cta-row">
-        <Col className="d-flex flex-column">
+        <Col className="">
           <img src={arrow} alt="" className="arrow" />
         </Col>
       </Row>

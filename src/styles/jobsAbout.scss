@@ -14,7 +14,10 @@
     }
   }
   #logo-row {
-    padding: 120px 0px 120px;
+    padding: 88px 0px 88px;
+    .navigational-graffiti {
+      padding-bottom: 2rem;
+    }
     .logo-col {
       display: flex;
       justify-content: center;

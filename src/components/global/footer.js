@@ -13,6 +13,11 @@ const slogans = [
   "Know someone who needs a job ASAP?  Just share this.",
   "I got 99 problems and money could solve about 86 of them",
   "Anyone else feel like they know less about COVID now than they did 2 months ago?",
+  "Meeting our basic needs should be basic.",
+  "Did you know 'status quo' is Latin for 'outdated bullshit'?",
+  "We buy $5 lattes because they're cheaper than therapy.",
+  "The only thing we feel 'entitled' to is change.",
+  "We shouldn't have to work this hard just to break even.",
 ]
 
 const Footer = ({ color, mobile, jobs }) => {

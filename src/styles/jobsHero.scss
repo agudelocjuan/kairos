@@ -1,7 +1,7 @@
 #jobsHero {
   // height: 90vh;
   // min-height: 700px;
-  min-height: 95vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,8 @@
     padding-bottom: 50px;
     position: relative;
     .arrow {
-      padding-bottom: 50px;
+      width: 24px;
+      padding-bottom: 80px;
     }
   }
 }

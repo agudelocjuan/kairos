@@ -204,6 +204,34 @@ const AboutUs = ({ mobile }) => {
           }
         }
       }
+      andrew_wang: file(relativePath: { eq: "team/andrew_wang.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ryan_bloomer: file(relativePath: { eq: "team/ryan_bloomer.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ben_lantos: file(relativePath: { eq: "team/ben_lantos.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bryan_woods: file(relativePath: { eq: "team/bryan_woods.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   const team = [
@@ -229,7 +257,7 @@ const AboutUs = ({ mobile }) => {
       name: "Ryan Bloomer",
       title: "Partner",
       team: "operating",
-      img: "placeholder",
+      img: "ryan_bloomer",
     },
     {
       name: "Joyce Ok",
@@ -241,19 +269,13 @@ const AboutUs = ({ mobile }) => {
       name: "Andrew Wang",
       title: "Chair of Investment Committee",
       team: "operating",
-      img: "placeholder",
+      img: "andrew_wang",
     },
     {
       name: "Ciara O'Sullivan",
       title: "People & Operations Manager",
       team: "operating",
       img: "ciara_osullivan",
-    },
-    {
-      name: "Alex Klokus",
-      title: "Operating Partner, Casa",
-      team: "operating",
-      img: "placeholder",
     },
     {
       name: "Angela Vranich",
@@ -271,7 +293,7 @@ const AboutUs = ({ mobile }) => {
       name: "Ben Lantos",
       title: "Operating Partner, Rhino",
       team: "operating",
-      img: "placeholder",
+      img: "ben_lantos",
     },
     {
       name: "Ben Lewis",
@@ -289,7 +311,7 @@ const AboutUs = ({ mobile }) => {
       name: "Bryan Woods",
       title: "Operating Partner, Rhino",
       team: "operating",
-      img: "placeholder",
+      img: "bryan_woods",
     },
     {
       name: "Lisa Barnett",

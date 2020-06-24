@@ -32,7 +32,7 @@ const JobsHero = ({ mobile }) => {
       </div>
       <Row id="logo-row">
         <Col xs="12">
-          <div className="navigational-graffiti text-salmon text-center pb-3">
+          <div className="navigational-graffiti text-salmon text-center">
             brought to you by
           </div>
         </Col>

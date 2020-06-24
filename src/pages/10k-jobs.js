@@ -10,10 +10,16 @@ import JobsApplication from "../components/jobs/jobsApplication"
 import JobsReviews from "../components/jobs/jobsReviews"
 import JobsFAQ from "../components/jobs/jobsFAQ"
 
-const JobsPage = () => {
+const JobsPage = ({ location }) => {
   let pageColor = "salmon"
+  let borderColor = "site-border-yellow"
   return (
-    <Layout jobs footerColor={pageColor}>
+    <Layout
+      path={location.pathname}
+      borderColor={borderColor}
+      jobs
+      footerColor={pageColor}
+    >
       <SEO title="10k Jobs" />
       <JobsHero color={pageColor} />
       <JobsAbout />

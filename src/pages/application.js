@@ -6,10 +6,16 @@ import SEO from "../components/global/seo"
 
 import ApplicationForm from "../components/application/applicationForm"
 
-const ApplicationPage = ({}) => {
+const ApplicationPage = ({ location }) => {
   let pageColor = "yellow"
+  let borderColor = "site-border-yellow"
   return (
-    <Layout applicationPage footerColor={pageColor}>
+    <Layout
+      path={location.pathname}
+      borderColor={borderColor}
+      applicationPage
+      footerColor={pageColor}
+    >
       <SEO title="Apply" />
       <ApplicationForm />
     </Layout>

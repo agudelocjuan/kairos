@@ -28,6 +28,10 @@ $company-green: #ebfbf4;
 $company-pink: #fce4dc;
 $company-yellow: #f9f4ea;
 $transparent: transparent;
+$site-border-black: #101725;
+$site-border-blue: #c8e6ec;
+$site-border-orange: #df6359;
+$site-border-yellow: #e6c87c;
 
 $theme-colors: (
   "white": $white,
@@ -44,6 +48,10 @@ $theme-colors: (
   "company-green": $company-green,
   "company-pink": $company-pink,
   "company-yellow": $company-yellow,
+  "site-border-black": $site-border-black,
+  "site-border-blue": $site-border-blue,
+  "site-border-orange": $site-border-orange,
+  "site-border-yellow": $site-border-yellow,
 );
 
 // Optional Bootstrap

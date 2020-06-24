@@ -17,6 +17,8 @@ const Layout = ({
   dispatch,
   footerColor,
   menu,
+  path,
+  borderColor,
   applicationPage = false,
   jobs = false,
 }) => {
@@ -46,13 +48,7 @@ const Layout = ({
   return (
     <div
       id="site-background"
-      className={`${menu && "stop-scroll"}`}
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundPosition: `center`,
-        backgroundRepeat: `no-repeat`,
-        backgroundSize: `cover`,
-      }}
+      className={`${menu && "stop-scroll"} bg-${borderColor}`}
     >
       {!applicationPage && <Header />}
       <Menu />

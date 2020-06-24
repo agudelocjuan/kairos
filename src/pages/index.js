@@ -9,10 +9,16 @@ import HomeAbout from "../components/home/homeAbout"
 import HomeOurCompanies from "../components/home/homeOurCompanies"
 import HomeEmailCapture from "../components/home/homeEmailCapture"
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
+  console.log(location)
   let pageColor = "salmon"
+  let borderColor = "site-border-black"
   return (
-    <Layout footerColor={pageColor}>
+    <Layout
+      path={location.pathname}
+      borderColor={borderColor}
+      footerColor={pageColor}
+    >
       <SEO title="Home" />
       <HomeHero color={pageColor} />
       <HomeAbout />

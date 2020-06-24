@@ -2,14 +2,17 @@
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color: #f4f4f4;
   &.stop-scroll {
     overflow-y: hidden;
   }
 
   #site-container {
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 98%;
+    width: 98%;
     overflow-x: hidden;
     &[data-hightlight="0"] {
       ::selection {

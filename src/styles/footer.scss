@@ -1,4 +1,21 @@
 #footer {
+  h2 {
+    font-family: "franklin gothic std";
+    font-weight: 400;
+    font-size: 160px;
+    color: $black;
+    line-height: 124px;
+    letter-spacing: -4.5px;
+    margin-top: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      font-size: 60px;
+      line-height: 54px;
+      letter-spacing: -1.3px;
+    }
+  }
   min-height: 100vh;
   padding: 20px;
   display: flex;

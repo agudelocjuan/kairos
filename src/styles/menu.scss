@@ -1,7 +1,7 @@
 #menu {
   position: absolute;
   z-index: 9999;
-  padding: 0px 8px;
+  padding: 0px 20px;
   opacity: 0;
   transition: opacity 500ms cubic-bezier(0.33, 1, 0.33, 1);
   pointer-events: none;
@@ -15,8 +15,8 @@
   left: 50%;
   top: 50%;
   height: 98%;
+  width: 99%;
   min-height: 700px;
-  width: 98%;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@
       justify-content: center;
       h2 {
         color: $blue;
-        margin: 16px 0px;
+        margin: 8px 0px;
       }
     }
   }

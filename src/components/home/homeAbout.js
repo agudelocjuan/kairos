@@ -20,21 +20,20 @@ const HomeAbout = ({ mobile }) => {
           }}
         >
           <h3>
-            We’re a home for brands that have your back on the issues that
-            matter.
+            We build companies that have your back on the issues that matter.
           </h3>
         </Col>
         <Col md="6" className="right-container">
           <p>
-            From the moment we hit adulthood, we're slammed with never ending
-            costs—working to breakeven from the time we step into the “real
-            world.” Our generation’s had enough. We’re here to create sweeping
-            change by dismantling tired structures, and putting in the work to
-            build new ones.
+            From the moment we hit adulthood, we're slammed with never-ending
+            costs—working to break even from the time we step into the “real
+            world.” Our generation’s had enough. We’re here to create change by
+            dismantling tired structures and putting in the work to build new
+            ones.
           </p>
           <p className="p-button-padding">Let’s make it how it should be.</p>
           <Link className="cta button-inline" to="/about">
-            <span>tell me more</span>
+            <span>find out more</span>
           </Link>
         </Col>
       </Row>

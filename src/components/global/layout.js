@@ -58,7 +58,7 @@ const Layout = ({
         onMouseDown={_onSelect.bind(this)}
       >
         <main>{children}</main>
-        <Footer jobs={jobs} color={footerColor} />
+        <Footer jobs={jobs} color={footerColor} borderColor={borderColor} />
       </div>
     </div>
   )

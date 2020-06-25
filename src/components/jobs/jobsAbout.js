@@ -52,8 +52,7 @@ const JobsHero = ({ mobile }) => {
         <Col md={{ size: 6, offset: 1 }} className="floating-col">
           <div className="cta-graffiti text-salmon pb-5">Need A Job?</div>
           <h3>
-            Start a new career in the next 10 days and be a hero for our
-            healthcare system.
+            Start a new career in the next 10 days and become a homecare hero.
           </h3>
           <h3>Join the Care Campaign.</h3>
         </Col>
@@ -64,17 +63,33 @@ const JobsHero = ({ mobile }) => {
         )}
       </Row>
       <Row className="image-rows bottom">
-        {mobile ? "" : <img src={flowers} alt="" />}
+        {!mobile && (
+          <Col md="6">
+            <div
+              className="h-100 w-100"
+              style={{
+                background: `url(${flowers})`,
+                backgroundPosition: `center`,
+                backgroundSize: `cover`,
+              }}
+            ></div>
+          </Col>
+        )}
 
-        <Col md={{ size: 5, offset: 6 }} className="floating-col">
+        <Col md={{ size: 5, offset: 0 }} className="floating-col">
           <h3>how this works</h3>
           <p>
             The COVID 19 pandemic has overwhelmed our healthcare system, put
-            senior citizens across the country at risk, and destroyed millions
-            of jobs. We{"'"}re equipping a generation to actually do something
-            about it. Kairos, CareAcademy and Care.com will train, certify, and
-            provide access for 10,000 professional caregivers to build rewarding
-            new careers caring for our most vulnerable population
+            older adults across the country at risk, and destroyed millions of
+            jobs. At the same time, there is a growing shortage for senior care
+            professionals, to help care for this at-risk population. We’re
+            equipping a generation of homecare heroes to actually do something
+            about it.
+          </p>
+          <p>
+            Kairos, CareAcademy and Care.com will train, certify, and provide
+            access for 10,000 professional caregivers to build rewarding new
+            careers caring for our most vulnerable communities.
           </p>
           <ol>
             <li>
@@ -90,8 +105,9 @@ const JobsHero = ({ mobile }) => {
             </li>
             <li>
               <span>
-                Once certified, our partners at Care.com will match you with a
-                home
+                Once trained, our partners at Care.com will provide you with the
+                platform to search for, find and match with your first care
+                role.
               </span>
             </li>
             <li>
@@ -115,25 +131,26 @@ const JobsHero = ({ mobile }) => {
               <h3 className="pt-5 pb-4">what is the job like?</h3>
               <ul className="text-left">
                 <li>
-                  Professional caregivers provide personal care in the comfort
-                  and safety of a client’s home.
+                  Professional caregivers provide the support necessary for our
+                  older adults to remain secure, independent and happy while
+                  living at home.
                 </li>
                 <li>
-                  Personal care is tailored to the unique needs of each client
-                  and includes everyday tasks such as managing medication,
-                  preparing meals, supporting mobility, and assisting with
-                  hygiene.
+                  Care is tailored to the unique needs of each client and
+                  includes everyday tasks such as meals & errands,
+                  transportation, personal care, and mobility assistance.
                 </li>
                 <li>
-                  While challenging and diverse, caregiving is also highly
-                  rewarding. Our caregivers build real relationships with
-                  clients and their families
+                  Caregivers have the ultimate discretion on job types they want
+                  to apply to, schedules they want to entertain, and hours they
+                  want to work.
                 </li>
               </ul>
               <h3 className="pt-5 pb-4">How do i know if it's right for me?</h3>
               <ul className="text-left">
                 <li>
-                  You enjoy helping others and giving back to your community.
+                  You are compassionate and enjoy helping others and giving back
+                  to your community.
                 </li>
                 <li>
                   You have experience in customer facing roles like retail,

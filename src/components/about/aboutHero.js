@@ -11,11 +11,11 @@ const AboutHero = ({ mobile, color }) => {
       <Row className="hero-title-row">
         <Col className="position-relative">
           <h1>
-            We're going
+            Fulfilling basic
             <br />
-            to get through
+            needs should
             <br />
-            this. together.
+            be basic
           </h1>
         </Col>
       </Row>

@@ -19,11 +19,11 @@ const AboutAbout = ({ mobile }) => {
           {mobile ? "" : <img src={img_1} alt="" />}
 
           <p className="pt-md-5">
-            We’re the first generation (hello, fellow millennials) that is
-            projected to do worse than our parents financially. Baby boomers
-            only had to work 306 hours to pay off college debt, our generation
-            needs to work 4,459. We’re overworked and underpaid. Our most
-            fundamental needs are inaccessible and unaffordable.
+            We’re the first generation that is projected to do worse than our
+            parents financially. Baby boomers only had to work 306 hours to pay
+            off college debt, our generation needs to work 4,459. We’re
+            overworked and underpaid. Our most fundamental needs are
+            inaccessible and unaffordable.
           </p>
           {mobile ? <img src={img_1} alt="" /> : ""}
         </Col>
@@ -37,7 +37,7 @@ const AboutAbout = ({ mobile }) => {
           <h3>Let’s paint a picture</h3>
           <p>
             We graduate from college with thousands of dollars of debt. We rent
-            an apartment that demands an arm and a leg in upfront costs. We try
+            an apartment that requires an arm and a leg in upfront costs. We try
             to start a family without the savings or knowledge to keep them
             healthy. We think about buying a home, but realize it's completely
             out of reach. And just like that, you realize the system has set you

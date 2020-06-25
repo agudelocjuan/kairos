@@ -13,11 +13,11 @@ const JobsHero = ({ mobile, color }) => {
         <Col className="position-relative d-flex justify-content-center align-items-center">
           <img src={graffiti} alt="" />
           <h1>
-            Lorem Ipsum
-            <br />
             We're creating
             <br />
-            10,000 Jobs
+            10,000 homecare
+            <br />
+            heroes
           </h1>
         </Col>
       </Row>

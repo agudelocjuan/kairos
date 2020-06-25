@@ -1,4 +1,13 @@
 #footer {
+  a,
+  .recycle {
+    opacity: 1;
+    transition: opacity 150ms linear;
+    &:hover {
+      opacity: 65%;
+      transition: opacity 150ms linear;
+    }
+  }
   h2 {
     font-family: "franklin gothic std";
     font-weight: 400;
@@ -48,9 +57,9 @@
       }
       .footer-icon {
         align-self: flex-end;
-        margin-bottom: 5px;
-        width: 56px;
-        height: 56px;
+        margin-bottom: -10px;
+        width: 88px;
+        height: 88px;
       }
     }
   }

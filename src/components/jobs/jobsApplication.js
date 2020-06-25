@@ -58,16 +58,21 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
         <Col md={{ size: 4, offset: 1 }} className="information-column">
           <h3>How it works</h3>
           <ol>
-            <li>Fill out your information below and click Apply</li>
+            <li>Fill out your information below & click apply</li>
             <li>
-              We’ll navigate you to Care.com where you will complete Phase 1 of
-              your training NOTE: This step will require a background check
+              We’ll navigate you to CareAcademy.com where you will complete
+              Phase 1 of your training
             </li>
             <li>
-              You’ll receive your COVID-19 Responder Certificate and you’ll be
-              placed in a new job
+              Once you complete Phase 1, you’ll be asked to register as a care
+              provider on Care.com This step will require you to pass a
+              background check
             </li>
-            <li>Find your next job and join the ranks of homecare heroes!</li>
+            <li>
+              Once your profile is approved, you will receive your COVID-19 Home
+              Care Responder Certificate and will be eligible to start looking
+              for your new role.
+            </li>
           </ol>
         </Col>
         <Col xs="12" md={{ size: 6, offset: 1 }} className="form-column">

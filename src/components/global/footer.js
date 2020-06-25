@@ -6,6 +6,13 @@ import { Container, Row, Col } from "reactstrap"
 import Email from "./email"
 
 import degree from "../../images/icons/degree-icon.png"
+
+import degree_blue from "../../images/icons/degree_blue.svg"
+import degree_navy from "../../images/icons/degree_navy.svg"
+import degree_orange from "../../images/icons/degree_orange.svg"
+import degree_yellow from "../../images/icons/degree_yellow.svg"
+import degree_gif from "../../images/icons/degree_gif.gif"
+
 import recycle from "../../images/icons/recycle-icon.svg"
 import twitter from "../../images/icons/twitter-icon.svg"
 
@@ -20,8 +27,25 @@ const slogans = [
   "We shouldn't have to work this hard just to break even.",
 ]
 
-const Footer = ({ color, mobile, jobs }) => {
+const Footer = ({ color, borderColor, mobile, jobs }) => {
   let [index, setIndex] = useState(_getRandomInt(slogans.length))
+  let [hover, setHover] = useState(false)
+
+  let icon = degree_navy
+  if (borderColor === "site-border-black") {
+    icon = degree_navy
+  }
+  if (borderColor === "site-border-blue") {
+    icon = degree_blue
+  }
+  if (borderColor === "site-border-orange") {
+    icon = degree_orange
+  }
+  if (borderColor === "site-border-yellow") {
+    icon = degree_yellow
+  }
+
+  console.log(borderColor)
 
   function _getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max))
@@ -45,7 +69,12 @@ const Footer = ({ color, mobile, jobs }) => {
               <img src={twitter} alt="" />
             </a>
 
-            <img onClick={() => _cycle()} src={recycle} alt="" />
+            <img
+              onClick={() => _cycle()}
+              src={recycle}
+              alt=""
+              className="recycle"
+            />
           </div>
         </Col>
       </Row>
@@ -102,7 +131,13 @@ const Footer = ({ color, mobile, jobs }) => {
             <div id="footer-email-container">
               <Email footer />
             </div>
-            <img src={degree} className="footer-icon" alt="" />
+            <img
+              onMouseOver={() => setHover(true)}
+              onMouseOut={() => setHover(false)}
+              src={hover ? degree_gif : icon}
+              className="footer-icon"
+              alt=""
+            />
           </Col>
         </Row>
       )}

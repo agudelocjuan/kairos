@@ -20,14 +20,14 @@ const HomeOurCompanies = ({ mobile }) => {
         </Col>
         <Col xs="12" md="5" className="right-container">
           <div className="eyebrow">why we're here</div>
-          <h3>It’s time to demand more from businesses.</h3>
+          <h3>It’s time to demand more from companies.</h3>
           <p>
             Our brands give you more than just another thing to buy. Whether
             it's lowering the upfront cost of rent or getting your child the
             nutrition they need, we’ve got you covered.
           </p>
           <Link to="/our-companies" className="cta inline-text-link">
-            check out our brands <img src={arrow} alt="" />
+            meet our solutions <img src={arrow} alt="" />
           </Link>
         </Col>
       </Row>
@@ -49,14 +49,14 @@ const HomeOurCompanies = ({ mobile }) => {
           </div>
           <div className="pb-3 w-75 text-center">
             Start a new career in as little as 10 days by becoming a homecare
-            hero. We need more people on the frontlines right now, supporting
-            the most vulnerable members of our community.
+            hero. We need more people on the frontlines of healthcare right now,
+            supporting the most vulnerable members of our community.
           </div>
           <Link
             to="/10k-jobs"
             className="cta button-inline black mb-4 mt-3 mb-md-5"
           >
-            Join the care campaign
+            Apply Now
           </Link>
         </Col>
       </Row>

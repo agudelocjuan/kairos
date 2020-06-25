@@ -29,6 +29,7 @@
   }
   .image-rows {
     position: relative;
+    height: auto;
     &.top {
       margin-bottom: 104px;
       .floating-col {
@@ -42,8 +43,11 @@
     }
     &.bottom {
       margin-bottom: 0px;
+      .desktop-img {
+        // width: 50%;
+      }
       .floating-col {
-        position: absolute;
+        // position: absolute;
         height: 100%;
         padding: 0px 56px;
         display: flex;

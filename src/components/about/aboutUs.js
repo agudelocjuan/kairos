@@ -407,17 +407,19 @@ const AboutUs = ({ mobile }) => {
         <Col md="9">
           <img src={graffiti} alt="" />
           <h2>
-            We believe life should be simple and affordable. We’re on a mission
-            to get it there.
+            We believe life should be simple and affordable. And we’re on a
+            mission to get it there.
           </h2>
         </Col>
       </Row>
       <Row>
         <Col md={{ size: 4, offset: 8 }}>
-          <p className="mb-0 text-light-black">Operating Team</p>
+          <p className="mb-0 text-light-black">Our Team</p>
           <p className="w-75">
-            We work with industry leaders to identify and select the global
-            probelms that Kairos focuses on each year.
+            We’re a team of entrepreneurs, activists, and creators dedicated to
+            building a better future for our generation. We believe life should
+            be simple and affordable. And we’re on a mission to get it there
+            through this studio.
           </p>
         </Col>
       </Row>
@@ -453,10 +455,10 @@ const AboutUs = ({ mobile }) => {
 
       <Row>
         <Col md={{ size: 4, offset: 8 }}>
-          <p className="mb-0 mt-4 text-light-black">Advisory Team</p>
+          <p className="mb-0 mt-4 text-light-black">Our Advisors</p>
           <p className="w-75">
-            We work with industry leaders to identify and select the global
-            probelms that Kairos focuses on each year.
+            We work with a team of badass experts from healthcare to government
+            to media.
           </p>
         </Col>
       </Row>

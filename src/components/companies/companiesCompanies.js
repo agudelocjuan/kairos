@@ -17,9 +17,9 @@ const CompaniesCompanies = ({ mobile }) => {
     {
       title: "Rhino",
       eyebrow: "FOUNDED 2017 • NEW YORK CITY, NY",
-      header: "upfront cost of rent.",
+      header: "Lowering the Upfront Cost of Rent.",
       body:
-        "How would you like to never pay a security deposit again? With Rhino, you can pay as little as $5/month and we’ll insure the landlord for you. Renting is already expensive enough and moving sucks. Let us help make it less shitty.",
+        "Between a broker’s fee, first and last month’s rent, and a security deposit, we get crushed in upfront costs while renting. Rhino gives you back your security deposit and replaces it with a low-cost insurance replacement (like, as low as $5), so both you & your landlord are covered. We’ve already saved renters $100 million. Ready to get that cash back?",
       cta: "go to rhino",
       link: "https://www.kairos.com",
       image: rhino,
@@ -30,7 +30,7 @@ const CompaniesCompanies = ({ mobile }) => {
       eyebrow: "Pre-Launch • NEW YORK CITY, NY",
       header: "A path to home ownership",
       body:
-        "Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Eventually, you do plan to have dinosaurs on your dinosaur tour, right? Must go faster. My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard!",
+        "We pay rent every month and we have nothing to show for it. It feels like we’re lighting our money on fire. Bilt is the first ever credit card that can be used to pay rent at any apartment with no fees. You can boost your credit score with each rent payment & earn points on that enormous expense. Then, when you’re ready, you can use those points towards a down payment on a home.",
       cta: "get updates on bilt",
       link: "https://www.kairos.com",
       image: bilt,
@@ -41,7 +41,7 @@ const CompaniesCompanies = ({ mobile }) => {
       eyebrow: "Founded 2016 • NEW YORK CITY, NY",
       header: "Keeping your kid healthy.",
       body:
-        "Feeding your baby should be easy, affordable, and healthy. At Little Spoon, we deliver nutritional, organic, and incredibly tasty food right to your door at an affordable price. We swear it totally tastes good, and you will probably like eating it as much as your baby does. (We won’t judge if you order for yourself…)",
+        "Being a parent now is very different than being a parent 20 years ago, and figuring out how keep our kids healthy is a daily challenge. Little spoon makes it easy (and affordable) to get our kids the nutrition they need, delivering fresh food, vitamins, and natural remedies straight to you. And if you’re looking for way to get all your parenting questions answered, their editorial site Is This Normal will be your new best friend.",
       cta: "go to little spoon",
       link: "https://www.kairos.com",
       image: little_spoon,
@@ -50,9 +50,9 @@ const CompaniesCompanies = ({ mobile }) => {
     {
       title: "Alloy",
       eyebrow: "pre-launch • NEW YORK CITY, NY",
-      header: "taking care of your health as you age",
+      header: "Keeping Yourself Healthy",
       body:
-        "Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Eventually, you do plan to have dinosaurs on your dinosaur tour, right? Must go faster. My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard!",
+        "We all want the best for our parents as they age, but it’s hard to find care we can trust and afford. Cera helps keep loved ones out of nursing homes and brings the care they need to the comfort of their homes (for a cost that makes sense). They’re also creating thousands of jobs for your community, providing the digital platform used to train thousands of new homecare workers & kickstart new careers.",
       cta: "get updates on alloy",
       link: "https://www.kairos.com",
       image: alloy,
@@ -61,7 +61,7 @@ const CompaniesCompanies = ({ mobile }) => {
     {
       title: "Cera",
       eyebrow: "founded 2016 • london, uk",
-      header: "creating jobs and the future of our healthcare workforce.",
+      header: "Care for Your Parents Healthy, Jobs for You",
       body:
         "With Cera, we make it easier to get affordable care in the comfort and independence of your own home. We arrange the best possible home care in our network within 24 hours, using artificial intelligence to predict the care your loved ones will need—and making sure your in-laws never have to move back in with you.",
       cta: "Kairos X Cera 10k Jobs Campaign",

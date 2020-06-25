@@ -10,10 +10,9 @@ const HomeHero = ({ mobile, color }) => {
   let [index, setIndex] = useState(0)
   const slogans = [
     "rent.",
-    "staying healthy.",
-    "finances.",
-    "buying a home.",
-    "student loans.",
+    "student loans",
+    "buying a home",
+    "healthcare",
     "the big questions.",
     "the little questions.",
     "real life shit.",
@@ -38,7 +37,7 @@ const HomeHero = ({ mobile, color }) => {
         <Col className="position-relative">
           <img src={graffiti} alt="" />
           <h1>
-            We are Kairos.
+            We're Kairos HQ.
             <br />
             We help you navigate
             <br />

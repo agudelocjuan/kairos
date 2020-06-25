@@ -4,6 +4,7 @@
   // background: linear-gradient(to bottom, $white, $blue);
   background-color: $white;
   .header-row {
+    padding: 96px 0px;
     position: relative;
     z-index: 10;
     h2 {
@@ -37,8 +38,11 @@
     padding-bottom: 48px;
     background: linear-gradient(to bottom, $white, $blue);
     .header-row {
+      padding: 24px 0px 48px;
+      position: relative;
+      z-index: 10;
       h2 {
-        padding: 16px 0px;
+        padding: 0px 0px;
       }
     }
     .subheader-row {

@@ -82,7 +82,7 @@ const CompaniesCompanies = ({ mobile }) => {
         let img_col = (
           <Col
             md="6"
-            className="px-0"
+            className="px-0 company-image"
             style={{
               background: `url(${i.image})`,
               backgroundPosition: "center",

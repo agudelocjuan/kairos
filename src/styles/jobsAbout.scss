@@ -136,7 +136,32 @@
     }
     .image-rows {
       position: relative;
-      margin-bottom: 48px;
+      height: auto;
+      &.top {
+        min-height: auto;
+        margin-bottom: 48px;
+        img {
+          width: 100%;
+          float: right;
+        }
+        .floating-col {
+          height: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      &.bottom {
+        .floating-col {
+          // position: absolute;
+          height: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+      }
       .floating-col {
         position: relative;
         height: 100%;
@@ -154,7 +179,7 @@
     }
     .list-item-row {
       padding-top: 48px;
-      padding-bottom: 100px;
+      padding-bottom: 48px;
       display: flex;
       justify-content: center;
     }

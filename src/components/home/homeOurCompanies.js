@@ -61,16 +61,16 @@ const HomeOurCompanies = ({ mobile }) => {
         </Col>
       </Row>
       <Row id="image-frames-row bg-white" className="pt-5">
-        <Col md="3" className="pb-4 pb-md-0">
+        <Col xs="6" md="3" className="pb-4 pb-md-0">
           <img src={img_1} alt="" />
         </Col>
-        <Col md="3" className="pb-4 pb-md-0">
+        <Col xs="6" md="3" className="pb-4 pb-md-0">
           <img src={img_2} alt="" />
         </Col>
-        <Col md="3" className="pb-4 pb-md-0">
+        <Col xs="6" md="3" className="pb-4 pb-md-0">
           <img src={img_3} alt="" />
         </Col>
-        <Col md="3" className="pb-4 pb-md-0">
+        <Col xs="6" md="3" className="pb-4 pb-md-0">
           <img src={img_4} alt="" />
         </Col>
       </Row>

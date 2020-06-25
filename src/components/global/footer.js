@@ -100,7 +100,7 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               <a href="https://www.Linkedin.com">Linkedin</a>
               <a href="https://www.Instagram.com">Instagram</a>
               <a href="https://www.Twitter.com">Twitter</a>
-              <img src={degree} className="footer-icon" alt="" />
+              <img src={icon} className="footer-icon" alt="" />
             </div>
           </Col>
         </Row>

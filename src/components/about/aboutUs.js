@@ -438,7 +438,7 @@ const AboutUs = ({ mobile }) => {
             .filter(i => i.team === "operating")
             .map((i, idx) => {
               return (
-                <Col key={idx} className="px-0">
+                <Col key={idx} className="w-75">
                   <Img fluid={data[i.img].childImageSharp.fluid} />
                   <p className="mt-2 mb-1">{i.name}</p>
                   <p className="text-light-black">{i.title}</p>
@@ -478,7 +478,7 @@ const AboutUs = ({ mobile }) => {
             .filter(i => i.team === "advisory")
             .map((i, idx) => {
               return (
-                <Col key={idx} className="px-0">
+                <Col key={idx} className="w-75">
                   <Img fluid={data[i.img].childImageSharp.fluid} />
                   <p className="mt-2 mb-1">{i.name}</p>
                   <p className="text-light-black">{i.title}</p>

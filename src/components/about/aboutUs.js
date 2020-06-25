@@ -242,7 +242,7 @@ const AboutUs = ({ mobile }) => {
       img: "ankur_jain",
     },
     {
-      name: "Andrew Fiance",
+      name: "Alex Fiance",
       title: "Co-Founder & Co-CEO",
       team: "operating",
       img: "alex_fiance",

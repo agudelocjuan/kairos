@@ -4,7 +4,9 @@
   left: 50%;
   top: 60px;
   z-index: 99999;
-  width: 200px;
+  min-width: 175px;
+  width: 10vw;
+  max-width: 200px;
   height: 64px;
   border-radius: 40px;
   background-color: $white;

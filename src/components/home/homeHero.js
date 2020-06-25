@@ -20,7 +20,7 @@ const HomeHero = ({ mobile, color }) => {
   useEffect(() => {
     const updateIdx = setInterval(() => {
       _updateIndex()
-    }, 2000)
+    }, 1000)
     return () => {
       clearInterval(updateIdx)
     }

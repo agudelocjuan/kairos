@@ -7,10 +7,8 @@ import care_logo from "../../images/jobs/care-logo.png"
 import kairos_logo from "../../images/jobs/kairos-logo.png"
 import care_academy_logo from "../../images/jobs/care-academy-logo.png"
 
-import hands from "../../images/jobs/hands.png"
-import flowers from "../../images/jobs/flowers.png"
-import hands_mobile from "../../images/jobs/hands-mobile.png"
-import flowers_mobile from "../../images/jobs/flowers-mobile.png"
+import job from "../../images/jobs/need-a-job.png"
+import works from "../../images/jobs/how-this-works.png"
 
 const JobsHero = ({ mobile }) => {
   const ref = React.createRef()
@@ -48,17 +46,30 @@ const JobsHero = ({ mobile }) => {
         </Col>
       </Row>
       <Row className="image-rows top">
-        {!mobile && <img src={hands} alt="" />}
-        <Col md={{ size: 6, offset: 1 }} className="floating-col">
+        <Col md={{ size: 6 }} className="floating-col">
           <div className="cta-graffiti text-salmon pb-5">Need A Job?</div>
           <h3>
             Start a new career in the next 10 days and become a homecare hero.
           </h3>
           <h3>Join the Care Campaign.</h3>
         </Col>
+        {!mobile && (
+          <Col md={{ size: 6 }}>
+            <div
+              className="h-100 w-100"
+              style={{
+                background: `url(${job})`,
+                backgroundPosition: `center center`,
+                backgroundSize: `cover`,
+                backgroundRepeat: `no-repeat`,
+              }}
+            ></div>
+          </Col>
+        )}
+
         {mobile && (
           <Col>
-            <img src={hands_mobile} alt="" />
+            <img src={job} alt="" />
           </Col>
         )}
       </Row>
@@ -68,9 +79,10 @@ const JobsHero = ({ mobile }) => {
             <div
               className="h-100 w-100"
               style={{
-                background: `url(${flowers})`,
-                backgroundPosition: `center`,
+                background: `url(${works})`,
+                backgroundPosition: `center top`,
                 backgroundSize: `cover`,
+                backgroundRepeat: `no-repeat`,
               }}
             ></div>
           </Col>
@@ -117,7 +129,7 @@ const JobsHero = ({ mobile }) => {
         </Col>
         {mobile ? (
           <Col>
-            <img src={flowers_mobile} alt="" />
+            <img src={works} alt="" />
           </Col>
         ) : (
           ""

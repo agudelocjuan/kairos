@@ -46,10 +46,7 @@ const Layout = ({
   }
 
   return (
-    <div
-      id="site-background"
-      className={`${menu && "stop-scroll"} bg-${borderColor}`}
-    >
+    <div id="site-background" className={`${menu && "stop-scroll"}`}>
       {!applicationPage && <Header />}
       <Menu />
       <div

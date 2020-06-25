@@ -32,9 +32,15 @@
     height: auto;
     &.top {
       margin-bottom: 104px;
+      min-height: 70vh;
+      img {
+        width: 75%;
+        float: right;
+      }
       .floating-col {
-        position: absolute;
+        // position: absolute;
         height: 100%;
+
         padding: 56px;
         display: flex;
         flex-direction: column;

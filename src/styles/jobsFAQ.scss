@@ -2,3 +2,6 @@
   padding-bottom: 48px;
   background-color: $white;
 }
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+}

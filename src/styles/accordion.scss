@@ -53,3 +53,63 @@
     padding: 20px 0px; // set some padding to the accordion inner
   }
 }
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  .accordion {
+    &--toggle {
+      // style for the accordion toggle
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $white;
+      transition: background-color 250ms cubic-bezier(0.33, 1, 0.33, 1);
+      border: none;
+      border-top: 1px solid $black;
+      padding: 0px 10px 0px 0px;
+      height: 75px;
+      &:focus {
+        outline: none;
+      }
+      .accordion-titles {
+        display: flex;
+        justify-content: flex-start;
+        text-align: left;
+        width: 80%;
+        #title {
+          margin-left: 0%;
+        }
+      }
+      &.is-open {
+        background-color: $white;
+        transition: background-color 250ms cubic-bezier(0.33, 1, 0.33, 1);
+      }
+      &.lastChild {
+        border-bottom: 1px solid $black;
+      }
+    }
+
+    &--icon {
+      // style an icon
+      img {
+        transform: rotate(0deg);
+        transition: transform 250ms cubic-bezier(0.33, 1, 0.33, 1);
+      }
+
+      .is-open & {
+        // change style for open accordion
+        img {
+          transform: rotate(315deg);
+          transition: transform 250ms cubic-bezier(0.33, 1, 0.33, 1);
+        }
+      }
+    }
+
+    &--content {
+      overflow: hidden;
+    }
+    &--inner {
+      padding: 20px 0px; // set some padding to the accordion inner
+    }
+  }
+}

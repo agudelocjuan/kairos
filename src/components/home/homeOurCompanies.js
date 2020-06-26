@@ -62,15 +62,36 @@ const HomeOurCompanies = ({ mobile }) => {
       </Row>
       <Row id="image-frames-row bg-white" className="pt-5">
         <Col xs="6" md="3" className="pb-4 pb-md-0">
-          <img src={img_1} alt="" />
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href=" https://www.instagram.com/p/CAi-lawD3xo/"
+          >
+            <img src={img_1} alt="" />
+          </a>
         </Col>
         <Col xs="6" md="3" className="pb-4 pb-md-0">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/p/B-knrW3D37G/"
+          ></a>
           <img src={img_2} alt="" />
         </Col>
         <Col xs="6" md="3" className="pb-4 pb-md-0">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/p/B-u6piPDtDj/"
+          ></a>
           <img src={img_3} alt="" />
         </Col>
         <Col xs="6" md="3" className="pb-4 pb-md-0">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/p/CAJGqp_D-ib/"
+          ></a>
           <img src={img_4} alt="" />
         </Col>
       </Row>

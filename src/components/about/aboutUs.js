@@ -249,7 +249,7 @@ const AboutUs = ({ mobile }) => {
     },
     {
       name: "Zoe Oz",
-      title: "Head of Product & Brand",
+      title: "Chief Marketing Officer",
       team: "operating",
       img: "zoe_oz",
     },
@@ -288,12 +288,6 @@ const AboutUs = ({ mobile }) => {
       title: "Chair of Investment Committee",
       team: "operating",
       img: "andrew_wang",
-    },
-    {
-      name: "Ciara O'Sullivan",
-      title: "People & Operations Manager",
-      team: "operating",
-      img: "ciara_osullivan",
     },
     {
       name: "Angela Vranich",
@@ -412,8 +406,8 @@ const AboutUs = ({ mobile }) => {
   ]
   return (
     <Container fluid id="aboutUs" className={`bg-white`}>
-      <Row className="header-row text-center">
-        <Col md={{ size: 10, offset: 1 }}>
+      <Row className="header-row text-left">
+        <Col md={{ size: 10 }}>
           <div className="cta-graffiti text-mustard mb-5">Who we are</div>
           <h2>
             We believe life should be simple and affordable. And we’re on a
@@ -423,7 +417,7 @@ const AboutUs = ({ mobile }) => {
       </Row>
       <Row>
         <Col md={{ size: 4, offset: 0 }}>
-          <h3 className="mb-0 text-light-black">Our Team</h3>
+          <h3 className="mb-0 text-salmon">Our Team</h3>
           <p className="w-75">
             We’re a team of entrepreneurs, activists, and creators dedicated to
             building a better future for our generation. We believe life should
@@ -464,7 +458,7 @@ const AboutUs = ({ mobile }) => {
 
       <Row>
         <Col md={{ size: 4, offset: 0 }}>
-          <h3 className="mb-0 mt-4 text-light-black">Our Advisors</h3>
+          <h3 className="mb-0 mt-4 text-salmon">Our Advisors</h3>
           <p className="w-75">
             We work with a team of badass experts from healthcare to government
             to media.

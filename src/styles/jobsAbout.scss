@@ -92,7 +92,7 @@
     }
   }
   .list-item-row {
-    background-color: $mustard;
+    background-color: $white;
     padding-top: 48px;
     padding-bottom: 100px;
     display: flex;
@@ -148,6 +148,7 @@
         .floating-col {
           height: 100%;
           padding: 20px;
+          padding-top: 88px;
           display: flex;
           flex-direction: column;
           justify-content: center;

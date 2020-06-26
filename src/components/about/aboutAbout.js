@@ -3,17 +3,17 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
-import img_1 from "../../images/about/about-the-problem.png"
-import img_2 from "../../images/about/about-paint-a-picture.png"
+import img_1 from "../../images/about/about_1.png"
+import img_2 from "../../images/about/about_2.png"
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
 const AboutAbout = ({ mobile }) => {
   return (
     <Container fluid id="aboutAbout" className={`bg-white`}>
       <Row id="the-problem">
-        <Col md="7" className="left-container">
+        <Col md={{ size: 6, offset: 1 }} className="left-container">
           <div className="cta-graffiti text-salmon">The Problem</div>
-          <h2>Fulfilling basic needs should be basic.</h2>
+          <h2>We've been set up to fail.</h2>
         </Col>
         <Col md="5" className="right-container">
           {mobile ? "" : <img src={img_1} alt="" />}

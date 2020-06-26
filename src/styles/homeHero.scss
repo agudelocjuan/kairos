@@ -33,9 +33,9 @@
 
 @media (max-width: map-get($grid-breakpoints,md)) {
   #homeHero {
-    min-height: 90vh;
+    min-height: 85vh;
     .hero-title-row {
-      padding-top: 28%;
+      padding-top: 30%;
       text-align: center;
       z-index: 10;
       img {

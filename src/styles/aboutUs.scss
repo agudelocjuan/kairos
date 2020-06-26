@@ -36,9 +36,9 @@
   #aboutUs {
     margin-top: 24px;
     padding-bottom: 48px;
-    background: linear-gradient(to bottom, $white, $blue);
+    background: $white;
     .header-row {
-      padding: 24px 0px 48px;
+      padding: 24px 0px 48;
       position: relative;
       z-index: 10;
       h2 {

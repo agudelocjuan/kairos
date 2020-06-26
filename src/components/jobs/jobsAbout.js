@@ -29,22 +29,25 @@ const JobsHero = ({ mobile }) => {
           Apply Now
         </div>
       </div>
-      <Row id="logo-row">
-        <Col xs="12">
-          <div className="navigational-graffiti text-salmon text-center">
-            brought to you by
-          </div>
-        </Col>
-        <Col className="logo-col" xs="4">
-          <img src={care_logo} alt="" />
-        </Col>
-        <Col className="logo-col" xs="4">
-          <img src={kairos_logo} alt="" />
-        </Col>
-        <Col className="logo-col" xs="4">
-          <img src={care_academy_logo} alt="" />
-        </Col>
-      </Row>
+      {/*
+        <Row id="logo-row">
+          <Col xs="12">
+            <div className="navigational-graffiti text-salmon text-center">
+              brought to you by
+            </div>
+          </Col>
+          <Col className="logo-col" xs="4">
+            <img src={care_logo} alt="" />
+          </Col>
+          <Col className="logo-col" xs="4">
+            <img src={kairos_logo} alt="" />
+          </Col>
+          <Col className="logo-col" xs="4">
+            <img src={care_academy_logo} alt="" />
+          </Col>
+        </Row>
+        */}
+
       <Row className="image-rows top">
         <Col md={{ size: 6 }} className="floating-col">
           <div className="cta-graffiti text-salmon pb-5">Need A Job?</div>

@@ -30,30 +30,30 @@ const Menu = ({ dispatch, mobile, menu }) => {
         </Col>
       </Row>
       <Row className="cta-row">
-        {mobile ? (
-          ""
-        ) : (
-          <Col md="8" className="d-flex align-items-center">
-            <div className="pr-5">
-              <p>General Inqueries</p>
-              <a href="mailto:team@kairoshq.com" className="">
-                team@kairoshq.com
-              </a>
-            </div>
-            <div className="px-5">
-              <p>Press</p>
-              <a href="mailto:pr@kairoshq.com" className="">
-                pr@kairoshq.com
-              </a>
-            </div>
-            <div className="pl-5">
-              <p>Investments</p>
-              <a href="mailto:investments@kairoshq.com" className="">
-                investments@kairoshq.com
-              </a>
-            </div>
-          </Col>
-        )}
+        <Col
+          xs="12"
+          md="8"
+          className="d-flex flex-column align-items-center text-center flex-md-row align-items-md-center"
+        >
+          <div className="pr-md-5">
+            <p>General Inqueries</p>
+            <a href="mailto:team@kairoshq.com" className="">
+              team@kairoshq.com
+            </a>
+          </div>
+          <div className="px-md-5">
+            <p>Press</p>
+            <a href="mailto:pr@kairoshq.com" className="">
+              pr@kairoshq.com
+            </a>
+          </div>
+          <div className="pl-md-5">
+            <p>Investments</p>
+            <a href="mailto:investments@kairoshq.com" className="">
+              investments@kairoshq.com
+            </a>
+          </div>
+        </Col>
 
         <Col
           md="4"

@@ -169,9 +169,7 @@ const ApplicationForm = ({ mobile, user }) => {
                   checked={verified}
                   onChange={() => _verify()}
                 />
-                <label htmlFor="verification" for="verification">
-                  I am not a robot
-                </label>
+                <label htmlFor="verification">I am not a robot</label>
               </div>
             </div>
           </form>

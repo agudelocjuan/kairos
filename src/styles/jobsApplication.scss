@@ -1,5 +1,5 @@
 #jobsApplication {
-  padding-bottom: 120px;
+  padding-bottom: 0px;
   .header-row {
     .cta-graffiti {
       margin-top: -50px;
@@ -8,6 +8,24 @@
   .form-row {
     .information-column {
       padding-top: 96px;
+      ol {
+        li {
+          font-family: "summer loving reg";
+          color: $salmon;
+          font-size: 40px;
+          margin-right: 8px;
+          span {
+            left: 8px;
+            position: relative;
+            font-family: helvetica;
+            font-size: 20px;
+            font-weight: 400;
+            color: $black;
+            line-height: 26px;
+            letter-spacing: -0.25px;
+          }
+        }
+      }
     }
     .form-column {
       form {
@@ -33,6 +51,24 @@
         button {
           height: 52px;
         }
+      }
+    }
+  }
+  .list-item-row {
+    background-color: $white;
+    padding-top: 48px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    ul {
+      list-style: none;
+      li::before {
+        content: "\2022";
+        color: $salmon;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
       }
     }
   }
@@ -78,6 +114,12 @@
           }
         }
       }
+    }
+    .list-item-row {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      display: flex;
+      justify-content: center;
     }
   }
 }

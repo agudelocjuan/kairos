@@ -50,11 +50,12 @@ const JobsHero = ({ mobile }) => {
 
       <Row className="image-rows top">
         <Col md={{ size: 6 }} className="floating-col">
-          <div className="cta-graffiti text-salmon pb-5">Need A Job?</div>
-          <h3>
-            Start a new career in the next 10 days and become a homecare hero.
-          </h3>
-          <h3>Join the Care Campaign.</h3>
+          <h2 className="pb-3">Join us on the front lines of healthcare.</h2>
+          <p>
+            We’re helping 10,000 people begin a new career in home care. Apply
+            now to begin your training and start earning income in as little as
+            10 days.
+          </p>
         </Col>
         {!mobile && (
           <Col md={{ size: 6 }}>
@@ -92,43 +93,23 @@ const JobsHero = ({ mobile }) => {
         )}
 
         <Col md={{ size: 5, offset: 0 }} className="floating-col">
-          <h3>how this works</h3>
+          <h3>About The Campaign</h3>
           <p>
-            The COVID 19 pandemic has overwhelmed our healthcare system, put
-            older adults across the country at risk, and destroyed millions of
-            jobs. At the same time, there is a growing shortage for senior care
-            professionals, to help care for this at-risk population. We’re
-            equipping a generation of homecare heroes to actually do something
-            about it.
+            In the past few months, over 40 million Americans have lost their
+            jobs. We want to help.
           </p>
           <p>
-            Kairos, CareAcademy and Care.com will train, certify, and provide
-            access for 10,000 professional caregivers to build rewarding new
-            careers caring for our most vulnerable communities.
+            After successfully launching a job creation plan in the UK with our
+            healthcare company, Cera, and the Ministry of Health - we are now
+            bringing this effort Stateside. Kairos has partnered with Care
+            Academy and Care.com to place 10,000 Americans into jobs as Home
+            Care providers. To help prepare you for these jobs, we are providing
+            applicants free training and certification to become a Home Health
+            Aid (HHA). It’s an opportunity to begin a rewarding career in
+            healthcare taking care of our nation’s most vulnerable, during a
+            time of unprecedented need.
           </p>
-          <ol>
-            <li>
-              <span>
-                Start your appliacation below to kick off your new career
-              </span>
-            </li>
-            <li>
-              <span>
-                Get certified through CareAcademy's digital training in as
-                little as 10 days (no previous experience needed)
-              </span>
-            </li>
-            <li>
-              <span>
-                Once trained, our partners at Care.com will provide you with the
-                platform to search for, find and match with your first care
-                role.
-              </span>
-            </li>
-            <li>
-              <span>Begin your new career!</span>
-            </li>
-          </ol>
+          <p>Welcome to the Home Care Heroes Campaign.</p>
         </Col>
         {mobile ? (
           <Col>
@@ -137,52 +118,6 @@ const JobsHero = ({ mobile }) => {
         ) : (
           ""
         )}
-      </Row>
-      <Row className="list-item-row">
-        <Col md={{ size: 7 }} className="text-center">
-          <Row>
-            <Col>
-              {/*<div className="cta-graffiti">We Need You!</div>*/}
-              <h3 className="pt-5 pb-4">what is the job like?</h3>
-              <ul className="text-left">
-                <li>
-                  Professional caregivers provide the support necessary for our
-                  older adults to remain secure, independent and happy while
-                  living at home.
-                </li>
-                <li>
-                  Care is tailored to the unique needs of each client and
-                  includes everyday tasks such as meals & errands,
-                  transportation, personal care, and mobility assistance.
-                </li>
-                <li>
-                  Caregivers have the ultimate discretion on job types they want
-                  to apply to, schedules they want to entertain, and hours they
-                  want to work.
-                </li>
-              </ul>
-              <h3 className="pt-5 pb-4">How do i know if it's right for me?</h3>
-              <ul className="text-left">
-                <li>
-                  You are compassionate and enjoy helping others and giving back
-                  to your community.
-                </li>
-                <li>
-                  You have experience in customer facing roles like retail,
-                  hospitality, or food service.
-                </li>
-                <li>
-                  You’re a “people person” with strong communication skills,
-                  patience, and a good sense of humor.
-                </li>
-                <li>You want a flexible schedule with competitive pay.</li>
-                <li ref={ref}>
-                  You’re ready to start a new career with growth potential.
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </Col>
       </Row>
     </Container>
   )

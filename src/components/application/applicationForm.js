@@ -50,11 +50,17 @@ const ApplicationForm = ({ mobile, user }) => {
     }
 
     console.log(payload)
+    let username = "5ee03033-5d0d-4b22-829a-ae8f5e224094"
+    let password = "06b280c6-7106-42be-a9da-00dca4ece1ae"
+    const token = Buffer.from(`${username}:${password}`, "utf8").toString(
+      "base64"
+    )
     axios.defaults.headers.post["Content-Type"] = "application/json"
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*"
+    axios.defaults.headers.post["Authorization"] = `Basic${token}`
     axios({
       method: "post",
-      url: "https://staging.careacademy.com/api/v1/practitioners",
+      url: "https://https://go.careacademy.com/practitioners",
       data: JSON.stringify(payload),
     }).then(
       response => {

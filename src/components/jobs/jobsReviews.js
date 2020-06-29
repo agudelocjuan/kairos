@@ -14,7 +14,7 @@ const JobsReviews = ({ mobile }) => {
       name: "Tom",
       company_logo: cera,
       review:
-        "You know what? It is beets. I've crashed into a beet truck. I gave it a cold? I gave it a virus. A computer virus. Did he just throw my cat out of the window? Just my luck, no ice.",
+        "Finding homecare has been a game changer for me! I have the flexibility to set my own schedule and I finally feel like I'm doing something that matters. The effort and energy I bring everyday helps my clients have a better, safer life.",
       image: tom,
       color: "blue",
     },
@@ -22,7 +22,7 @@ const JobsReviews = ({ mobile }) => {
       name: "Gary",
       company_logo: cera,
       review:
-        "You know what? It is beets. I've crashed into a beet truck. I gave it a cold? I gave it a virus. A computer virus. Did he just throw my cat out of the window? Just my luck, no ice.",
+        "One of the most rewarding parts of being a caregiver is that you're making real connections with real people. The level of trust I have with the people I care for feels almost like family.",
       image: gary,
       color: "salmon",
     },
@@ -30,7 +30,7 @@ const JobsReviews = ({ mobile }) => {
       name: "Elle",
       company_logo: cera,
       review:
-        "You know what? It is beets. I've crashed into a beet truck. I gave it a cold? I gave it a virus. A computer virus. Did he just throw my cat out of the window? Just my luck, no ice.",
+        "I feel lucky right now that I'm in a career where my skills are needed and there's lots of room to grow. I'm always learning and improving and I know that I can work towards becoming a supervisor or getting a higher certification if I want to.",
       image: elle,
       color: "mustard",
     },

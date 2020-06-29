@@ -14,6 +14,7 @@ const Accordion = ({
 }) => {
   const [expanded, setExpanded] = useState(null)
   const isOpen = id === expanded
+  console.log(children.length)
   return (
     <div key={id} className={`accordion`}>
       <motion.button
@@ -46,7 +47,17 @@ const Accordion = ({
             transition={{ duration: 0.5, ease: [0.19, 1.0, 0.22, 1.0] }}
             className="accordion--content"
           >
-            <div className="accordion--inner">{children}</div>
+            <div className="accordion--inner">
+              {children.length > 1 ? (
+                <ul>
+                  {children.map((i, idx) => {
+                    return <li key={idx}>{i}</li>
+                  })}
+                </ul>
+              ) : (
+                children
+              )}
+            </div>
           </motion.section>
         )}
       </AnimatePresence>

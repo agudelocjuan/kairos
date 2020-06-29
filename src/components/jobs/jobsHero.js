@@ -15,9 +15,9 @@ const JobsHero = ({ mobile, color }) => {
           <h1>
             We're creating
             <br />
-            10,000 homecare
+            10,000 new jobs
             <br />
-            heroes
+            #HomeCareHeroes
           </h1>
         </Col>
       </Row>

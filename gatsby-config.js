@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Kairos`,
+    title: `Kairos HQ`,
     description: `We build and fund companies to tackle global problems.`,
     author: `Tucker Schoos`,
     url: "https://kairos.netlify.app",

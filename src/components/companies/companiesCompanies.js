@@ -28,9 +28,9 @@ const CompaniesCompanies = ({ mobile }) => {
     {
       title: "Bilt",
       eyebrow: "Coming Soon • NEW YORK CITY, NY",
-      header: "Bilt will be the first ever credit card",
+      header: "A Path to Home Ownership",
       body:
-        "We pay rent every month and we have nothing to show for it. It feels like we’re lighting our money on fire. Bilt is the first ever credit card that can be used to pay rent at any apartment with no fees. You can boost your credit score with each rent payment & earn points on that enormous expense. Then, when you’re ready, you can use those points towards a down payment on a home.",
+        "We pay rent every month and we have nothing to show for it. It feels like we’re lighting our money on fire. Bilt will be the first ever credit card that can be used to pay rent at any apartment with no fees. You can boost your credit score with each rent payment & earn points on that enormous expense. Then, when you’re ready, you can use those points towards a down payment on a home.",
       cta: "get updates on bilt",
       link: "https://www.kairos.com",
       image: bilt,

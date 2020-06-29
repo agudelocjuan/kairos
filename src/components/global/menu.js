@@ -33,22 +33,22 @@ const Menu = ({ dispatch, mobile, menu }) => {
         <Col
           xs="12"
           md="8"
-          className="d-flex flex-column align-items-center text-center flex-md-row align-items-md-center"
+          className="d-flex flex-column align-items-start text-left flex-md-row align-items-md-center"
         >
           <div className="pr-md-5">
-            <p>General Inqueries</p>
+            {!mobile && <p>General Inqueries</p>}
             <a href="mailto:team@kairoshq.com" className="">
               team@kairoshq.com
             </a>
           </div>
           <div className="px-md-5">
-            <p>Press</p>
+            {!mobile && <p>Press</p>}
             <a href="mailto:pr@kairoshq.com" className="">
               pr@kairoshq.com
             </a>
           </div>
           <div className="pl-md-5">
-            <p>Investments</p>
+            {!mobile && <p>Investments</p>}
             <a href="mailto:investments@kairoshq.com" className="">
               investments@kairoshq.com
             </a>

@@ -55,12 +55,13 @@ const ApplicationForm = ({ mobile, user }) => {
     const token = Buffer.from(`${username}:${password}`, "utf8").toString(
       "base64"
     )
+    console.log(token)
     axios.defaults.headers.post["Content-Type"] = "application/json"
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*"
     axios.defaults.headers.post["Authorization"] = `Basic${token}`
     axios({
       method: "post",
-      url: "https://https://go.careacademy.com/practitioners",
+      url: "https://go.careacademy.com/api/v1/practitioners",
       data: JSON.stringify(payload),
     }).then(
       response => {

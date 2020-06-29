@@ -115,13 +115,9 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
           </form>
         </Col>
       </Row>
-      <Row>
-        <Col>
-          <img
-            src={mobile ? slider_mobile : slider}
-            alt="jobs-gif"
-            className="w-100"
-          />
+      <Row className="gif-row">
+        <Col className="d-flex justify-content-center">
+          <img src={mobile ? slider_mobile : slider} alt="jobs-gif" />
         </Col>
       </Row>
       <Row className="list-item-row bg-white">

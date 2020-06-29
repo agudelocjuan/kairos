@@ -75,24 +75,28 @@ const HomeOurCompanies = ({ mobile }) => {
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.instagram.com/p/B-knrW3D37G/"
-          ></a>
-          <img src={img_2} alt="" />
+          >
+            <img src={img_2} alt="" />
+          </a>
         </Col>
         <Col xs="6" md="3" className="pb-4 pb-md-0">
           <a
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.instagram.com/p/B-u6piPDtDj/"
-          ></a>
-          <img src={img_3} alt="" />
+          >
+            <img src={img_3} alt="" />
+          </a>
         </Col>
         <Col xs="6" md="3" className="pb-4 pb-md-0">
           <a
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.instagram.com/p/CAJGqp_D-ib/"
-          ></a>
-          <img src={img_4} alt="" />
+          >
+            {" "}
+            <img src={img_4} alt="" />
+          </a>
         </Col>
       </Row>
       <Row className="pb-4 pb-md-5 d-flex justify-content-center">

@@ -32,6 +32,7 @@
     height: auto;
     &.top {
       margin-bottom: 104px;
+      margin-top: 40px;
       min-height: 70vh;
       img {
         width: 75%;
@@ -49,6 +50,7 @@
     }
     &.bottom {
       margin-bottom: 0px;
+      min-height: 80vh;
       .desktop-img {
         // width: 50%;
       }
@@ -140,6 +142,7 @@
       height: auto;
       &.top {
         min-height: auto;
+        margin-top: 40px;
         margin-bottom: 48px;
         img {
           width: 100%;

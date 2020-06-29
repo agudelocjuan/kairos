@@ -1,11 +1,17 @@
 #jobsApplication {
   padding-bottom: 0px;
+  .gif-row {
+    img {
+      width: 75%;
+    }
+  }
   .header-row {
     .cta-graffiti {
       margin-top: -50px;
     }
   }
   .form-row {
+    min-height: 85vh;
     .information-column {
       padding-top: 96px;
       ol {
@@ -75,6 +81,11 @@
 }
 @media (max-width: map-get($grid-breakpoints,md)) {
   #jobsApplication {
+    .gif-row {
+      img {
+        width: 100%;
+      }
+    }
     .header-row {
       .cta-graffiti {
         margin-top: 40px;

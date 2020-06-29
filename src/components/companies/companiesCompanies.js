@@ -33,7 +33,7 @@ const CompaniesCompanies = ({ mobile }) => {
       body:
         "We pay rent every month and we have nothing to show for it. It feels like we’re lighting our money on fire. Bilt will be the first ever credit card that can be used to pay rent at any apartment with no fees. You can boost your credit score with each rent payment & earn points on that enormous expense. Then, when you’re ready, you can use those points towards a down payment on a home.",
       cta: "get updates on bilt",
-      link: "https://www.kairos.com",
+      link: "https://mailchi.mp/kairoshq/kairos-hq",
       internal_link: false,
       image: bilt,
       color: "company-blue",
@@ -57,7 +57,7 @@ const CompaniesCompanies = ({ mobile }) => {
       body:
         "We all want the best for our parents as they age, but it’s hard to find care we can trust and afford. Cera helps keep loved ones out of nursing homes and brings the care they need to the comfort of their homes (for a cost that makes sense). They’re also creating thousands of jobs for your community, providing the digital platform used to train thousands of new homecare workers & kickstart new careers.",
       cta: "get updates on alloy",
-      link: "https://www.kairos.com",
+      link: "https://mailchi.mp/kairoshq/kairos-hq",
       internal_link: false,
       image: alloy,
       color: "company-pink",

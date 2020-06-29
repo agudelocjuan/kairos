@@ -377,12 +377,6 @@ const AboutUs = ({ mobile }) => {
       img: "mehmet_oz",
     },
     {
-      name: "Michael Dubin",
-      title: "Co-Founder, Dollar Shave Club",
-      team: "advisory",
-      img: "michael_dubin",
-    },
-    {
       name: "Mark Thompson",
       title: "CEO, New York Times",
       team: "advisory",

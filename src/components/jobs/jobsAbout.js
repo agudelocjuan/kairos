@@ -109,7 +109,7 @@ const JobsHero = ({ mobile }) => {
             healthcare taking care of our nation’s most vulnerable, during a
             time of unprecedented need.
           </p>
-          <p>Welcome to the Home Care Heroes Campaign.</p>
+          <p ref={ref}>Welcome to the Home Care Heroes Campaign.</p>
         </Col>
         {mobile ? (
           <Col>

@@ -117,7 +117,11 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
       </Row>
       <Row>
         <Col>
-          <img src={mobile ? slider_mobile : slider} alt="" />
+          <img
+            src={mobile ? slider_mobile : slider}
+            alt="jobs-gif"
+            className="w-100"
+          />
         </Col>
       </Row>
       <Row className="list-item-row bg-white">

@@ -232,6 +232,15 @@ const AboutUs = ({ mobile }) => {
           }
         }
       }
+      omar_sultan_al_olama: file(
+        relativePath: { eq: "team/omar_sultan_al_olama.jpeg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   const team = [
@@ -403,11 +412,17 @@ const AboutUs = ({ mobile }) => {
       team: "advisory",
       img: "vicente_fox",
     },
+    {
+      name: "Omar Sultan Al Olama",
+      title: "Minster for AI, United Arab Emirates",
+      team: "advisory",
+      img: "omar_sultan_al_olama",
+    },
   ]
   return (
     <Container fluid id="aboutUs" className={`bg-white`}>
-      <Row className="header-row text-left">
-        <Col md={{ size: 10 }}>
+      <Row className="header-row text-center">
+        <Col md={{ size: 10, offset: 1 }}>
           <div className="cta-graffiti text-mustard mb-5">Who we are</div>
           <h2>
             We believe life should be simple and affordable. And we’re on a
@@ -416,7 +431,7 @@ const AboutUs = ({ mobile }) => {
         </Col>
       </Row>
       <Row>
-        <Col md={{ size: 4, offset: 0 }}>
+        <Col md={{ size: 5, offset: 0 }}>
           <h3 className="mb-0 text-salmon">Our Team</h3>
           <p className="w-75">
             We’re a team of entrepreneurs, activists, and creators dedicated to
@@ -457,7 +472,7 @@ const AboutUs = ({ mobile }) => {
       )}
 
       <Row>
-        <Col md={{ size: 4, offset: 0 }}>
+        <Col md={{ size: 5, offset: 0 }}>
           <h3 className="mb-0 mt-4 text-salmon">Our Advisors</h3>
           <p className="w-75">
             We work with a team of badass experts from healthcare to government

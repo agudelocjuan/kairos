@@ -10,7 +10,10 @@ const CompaniesAbout = ({ mobile }) => {
     <Container fluid id="companiesAbout">
       <Row id="our-situation">
         <Col md={{ size: 10 }} className="left-container">
-          <div className="cta-graffiti text-blue">Our Situation</div>
+          {/*
+            <div className="cta-graffiti text-blue">Our Situation</div>
+            */}
+
           <h2>
             We wish we didn’t need companies to help us meet basic needs, but
             here we are.
@@ -18,12 +21,12 @@ const CompaniesAbout = ({ mobile }) => {
         </Col>
         <Col md={{ size: 10 }} className="right-container">
           <p className="">
-            Kairos products offer a better life you don’t have to buy. We’re
-            taking on foundational issues (AKA rent, homebuying, keeping your
-            kid healthy, getting a new job) and working on that whole
-            life-affordability thing. So if it's broke, our brands are here to
-            fix it. Where the systems have failed us, we take on the folks who
-            made the damn thing. See the brands that have your back.
+            Kairos products change the status quo. We’re taking on foundational
+            issues (AKA rent, homebuying, keeping your kid healthy, getting a
+            new job) and working on that whole life-affordability thing. So if
+            it's broke, our brands are here to fix it. Where the systems have
+            failed us, we take on the folks who made the damn thing. See the
+            brands that have your back.
           </p>
         </Col>
       </Row>

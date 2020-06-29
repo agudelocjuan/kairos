@@ -3,7 +3,7 @@ module.exports = {
     title: `Kairos`,
     description: `We build and fund companies to tackle global problems.`,
     author: `Tucker Schoos`,
-    url: "https://www.kairos.com",
+    url: "https://kairos.netlify.app",
     image: "/logos/share-image.png",
   },
   plugins: [

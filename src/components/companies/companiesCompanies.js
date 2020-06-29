@@ -27,8 +27,8 @@ const CompaniesCompanies = ({ mobile }) => {
     },
     {
       title: "Bilt",
-      eyebrow: "Pre-Launch • NEW YORK CITY, NY",
-      header: "A path to home ownership",
+      eyebrow: "Coming Soon • NEW YORK CITY, NY",
+      header: "Bilt will be the first ever credit card",
       body:
         "We pay rent every month and we have nothing to show for it. It feels like we’re lighting our money on fire. Bilt is the first ever credit card that can be used to pay rent at any apartment with no fees. You can boost your credit score with each rent payment & earn points on that enormous expense. Then, when you’re ready, you can use those points towards a down payment on a home.",
       cta: "get updates on bilt",
@@ -49,7 +49,7 @@ const CompaniesCompanies = ({ mobile }) => {
     },
     {
       title: "Alloy",
-      eyebrow: "pre-launch • NEW YORK CITY, NY",
+      eyebrow: "Coming Soon • NEW YORK CITY, NY",
       header: "Keeping Yourself Healthy",
       body:
         "We all want the best for our parents as they age, but it’s hard to find care we can trust and afford. Cera helps keep loved ones out of nursing homes and brings the care they need to the comfort of their homes (for a cost that makes sense). They’re also creating thousands of jobs for your community, providing the digital platform used to train thousands of new homecare workers & kickstart new careers.",

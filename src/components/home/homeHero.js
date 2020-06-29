@@ -11,16 +11,14 @@ const HomeHero = ({ mobile, color }) => {
   const slogans = [
     "rent.",
     "student loans",
-    "buying a home",
     "healthcare",
-    "the big questions.",
-    "the little questions.",
+    "buying a home",
     "real life shit.",
   ]
   useEffect(() => {
     const updateIdx = setInterval(() => {
       _updateIndex()
-    }, 1000)
+    }, 1500)
     return () => {
       clearInterval(updateIdx)
     }

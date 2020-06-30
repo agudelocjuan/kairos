@@ -20,10 +20,7 @@ const HomeOurCompanies = ({ mobile }) => {
         </Col>
         <Col xs="12" md="5" className="right-container">
           <div className="eyebrow">why we're here</div>
-          <h3>
-            It's time we stopped waiting for someone else to step up and fix
-            this
-          </h3>
+          <h3>It's time we stopped waiting for someone else to fix this</h3>
           <p>
             From the moment we hit adulthood, we're slammed with never-ending
             costs—working to break even from the time we step into the "real

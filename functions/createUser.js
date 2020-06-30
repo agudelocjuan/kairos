@@ -21,11 +21,10 @@ exports.handler = async function (event, context, callback) {
     }
   }
 
-  let username = "5ee03033-5d0d-4b22-829a-ae8f5e224094"
-  let password = "06b280c6-7106-42be-a9da-00dca4ece1ae"
-  const token = Buffer.from(`${username}:${password}`, "utf8").toString(
-    "base64"
-  )
+  const token = Buffer.from(
+    `${process.env.CAREACADEMY_USERNAME}:${process.env.CAREACADEMY_PASSWORD}`,
+    "utf8"
+  ).toString("base64")
 
   axios({
     method: "post",
@@ -37,23 +36,22 @@ exports.handler = async function (event, context, callback) {
     },
   })
     .then(res => {
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify({ success: true }),
-      })
-
       console.log(res)
       console.log("hits response")
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ success: true }),
+      }
     })
     .catch(err => {
       console.log(err.response.status)
       console.log(err.response.statusText)
       console.log(err.response.headers)
       console.log("hits error")
-      callback(null, {
+      return {
         statusCode: 500,
-        body: JSON.stringify({ error: true }),
-      })
+        body: JSON.stringify({ success: false }),
+      }
     })
 
   // try {

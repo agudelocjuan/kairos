@@ -1,5 +1,4 @@
-import React, { useRef } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"
-import PropTypes from "prop-types"
 import { connect } from "react-redux"
-import { useStaticQuery, graphql } from "gatsby"
 
 import { setMobile } from "../../state/global"
 
@@ -10,7 +8,6 @@ import Footer from "./footer"
 import Menu from "./menu"
 
 import "../../styles/index.scss"
-import bg from "../../images/global/site-background.png"
 
 const Layout = ({
   children,

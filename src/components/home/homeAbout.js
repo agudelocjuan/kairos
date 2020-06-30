@@ -24,16 +24,13 @@ const HomeAbout = ({ mobile }) => {
           </h3>
         </Col>
         <Col md="6" className="right-container">
-          <p>
-            From the moment we hit adulthood, we're slammed with never-ending
-            costs—working to break even from the time we step into the “real
-            world.” Our generation’s had enough. We’re here to create change by
-            dismantling tired structures and putting in the work to build new
-            ones.
+          <p className="p-button-padding">
+            Our brands give you more than just another thing to buy. Whether
+            it's lowering the upfront cost of rent or getting your child the
+            nutrition they need, we've got you covered.
           </p>
-          <p className="p-button-padding">Let’s make it how it should be.</p>
-          <Link className="cta button-inline" to="/about">
-            <span>find out more</span>
+          <Link className="cta button-inline" to="/our-companies">
+            <span>Our Solutions</span>
           </Link>
         </Col>
       </Row>

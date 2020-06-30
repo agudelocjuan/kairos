@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
@@ -20,14 +20,20 @@ const HomeOurCompanies = ({ mobile }) => {
         </Col>
         <Col xs="12" md="5" className="right-container">
           <div className="eyebrow">why we're here</div>
-          <h3>It’s time to demand more from companies.</h3>
+          <h3>
+            It's time we stopped waiting for someone else to step up and fix
+            this
+          </h3>
           <p>
-            Our brands give you more than just another thing to buy. Whether
-            it's lowering the upfront cost of rent or getting your child the
-            nutrition they need, we’ve got you covered.
+            From the moment we hit adulthood, we're slammed with never-ending
+            costs—working to break even from the time we step into the "real
+            world." Our generation's had enough. We{"'"}re here to create change
+            by dismantling tired structures and putting in the work to build new
+            ones.
           </p>
+          <p>Let's make it how it should be.</p>
           <Link to="/our-companies" className="cta inline-text-link">
-            meet our solutions <img src={arrow} alt="" />
+            Learn More <img src={arrow} alt="" />
           </Link>
         </Col>
       </Row>

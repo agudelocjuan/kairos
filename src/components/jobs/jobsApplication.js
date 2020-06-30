@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react"
-import { Link, navigate } from "gatsby"
+import React from "react"
+import { navigate } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 import addToMailchimp from "gatsby-plugin-mailchimp"
@@ -10,8 +10,6 @@ import slider from "../../images/jobs/jobs_slider.gif"
 import slider_mobile from "../../images/jobs/jobs_slider_mobile.gif"
 
 const JobsApplication = ({ dispatch, mobile, user }) => {
-  let [subscribed, setSubscribed] = useState(false)
-  let [showSubmit, setShowSubmit] = useState(false)
   function _submit(e) {
     e.preventDefault()
     let first = e.target[0].value
@@ -29,7 +27,6 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
 
         addToMailchimp(em).then(data => {
           if ((data.result = "success")) {
-            setSubscribed(true)
             navigate("/application")
           }
         })
@@ -44,7 +41,7 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
     return false
   }
   function validateEmail(mail) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
       return true
     }
     alert("You have entered an invalid email address!")

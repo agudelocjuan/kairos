@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
 import hero from "../../images/companies/companiesHero.png"
 import hero_mobile from "../../images/companies/companiesHero_mobile.png"
-import openings from "../../images/companies/openings.png"
 import alloy from "../../images/companies/alloy.png"
 import bilt from "../../images/companies/bilt.png"
 import cera from "../../images/companies/cera.png"

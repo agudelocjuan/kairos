@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
@@ -9,19 +9,20 @@ import exit from "../../images/icons/exit-menu.svg"
 
 const ApplicationForm = ({ mobile, user }) => {
   let [verified, setVerified] = useState(false)
+  let [success, setSucess] = useState(null)
   function _handleSubmit(e) {
     e.preventDefault()
-    let firstName = e.target[0].value
-    let lastName = e.target[1].value
+
+    let firstName = user && user.firstName ? user.firstName : e.target[0].value
+    let lastName = user && user.lastName ? user.lastName : e.target[1].value
     let fullName = firstName + " " + lastName
-    let email = e.target[2].value
-    let phoneNumber = e.target[3].value
-    let userState = e.target[3].value
-    let zipCode = e.target[3].value
+    let email = user && user.email ? user.email : e.target[2].value
+    let phoneNumber = user && user.email ? e.target[0].value : e.target[3].value
+    let userState = user && user.email ? e.target[1].value : e.target[4].value
+    let zipCode = user && user.email ? e.target[2].value : e.target[5].value
     let adminIntegrationId = _generateId()
     let date = moment().format("YYYY-MM-DD")
     let organizationId = "kairos-1"
-    console.log(adminIntegrationId)
     let payload = {
       name: [
         {
@@ -49,28 +50,22 @@ const ApplicationForm = ({ mobile, user }) => {
       isInitialTrainingRequired: true,
     }
 
-    console.log(payload)
-    let username = "5ee03033-5d0d-4b22-829a-ae8f5e224094"
-    let password = "06b280c6-7106-42be-a9da-00dca4ece1ae"
-    const token = Buffer.from(`${username}:${password}`, "utf8").toString(
-      "base64"
-    )
-    console.log(token)
-    axios.defaults.headers.post["Content-Type"] = "application/json"
-    axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*"
-    axios.defaults.headers.post["Authorization"] = `Basic${token}`
     axios({
       method: "post",
-      url: "https://go.careacademy.com/api/v1/practitioners",
-      data: JSON.stringify(payload),
-    }).then(
-      response => {
-        console.log(response)
-      },
-      error => {
-        console.log(error)
-      }
-    )
+      url: "/.netlify/functions/createUser",
+      data: payload,
+    })
+      .then(res => {
+        console.log(res)
+        console.log("success")
+        setSucess(true)
+      })
+      .catch(err => {
+        console.log(err)
+        console.log("fail")
+        setSucess(false)
+        alert("Oops, something went wrong. Please try again!")
+      })
   }
 
   function _verify() {
@@ -80,7 +75,6 @@ const ApplicationForm = ({ mobile, user }) => {
   function _generateId() {
     return Math.random().toString(36).substr(2, 9)
   }
-  console.log(verified)
   return (
     <Container fluid id="applicationForm" className="bg-yellow">
       <Row className="d-flex justify-content-center bg-yellow">
@@ -100,86 +94,101 @@ const ApplicationForm = ({ mobile, user }) => {
             submitting, you will receive an email invitation to begin your
             certification.
           </p>
-          <form action="" onSubmit={e => _handleSubmit(e)}>
-            <div className="input-container">
-              {user && user.firstName ? (
-                <div className="pre-filled-input">{user.firstName}</div>
-              ) : (
-                <input
-                  id="application-firstName"
-                  type="text"
-                  htmlFor="firstName"
-                  name="firstName"
-                  placeholder="First Name*"
-                />
-              )}
-              {user && user.lastName ? (
-                <div className="pre-filled-input">{user.lastName}</div>
-              ) : (
-                <input
-                  id="application-lastName"
-                  type="text"
-                  htmlFor="lastName"
-                  name="lastName"
-                  placeholder="Last Name*"
-                />
-              )}
-            </div>
-            <div className="input-container">
-              {user && user.email ? (
-                <div className="pre-filled-input">{user.email}</div>
-              ) : (
-                <input
-                  id="application-email"
-                  type="text"
-                  htmlFor="email"
-                  name="email"
-                  placeholder="Email*"
-                />
-              )}
 
-              <input
-                id="application-phoneNumber"
-                type="text"
-                htmlFor="phoneNumber"
-                name="phoneNumber"
-                placeholder="Phone Number*"
-              />
+          {success ? (
+            <div>
+              <h2>
+                Thanks for submitting! Please go check your email for next steps
+              </h2>
             </div>
-            <div className="input-container">
-              <input
-                id="application-state"
-                type="text"
-                htmlFor="state"
-                name="state"
-                placeholder="Your State*"
-              />
-              <input
-                id="application-zipCode"
-                type="text"
-                htmlFor="zipCode"
-                name="zipCode"
-                placeholder="Zip Code*"
-              />
-            </div>
-            <div id="verification-container">
-              <button
-                type={verified ? "submit" : "text"}
-                className={`cta button-inline ${!verified && "disabled"}`}
-              >
-                Submit
-              </button>
-              <div id="verification">
-                <input
-                  type="checkbox"
-                  name="verification"
-                  checked={verified}
-                  onChange={() => _verify()}
-                />
-                <label htmlFor="verification">I am not a robot</label>
+          ) : (
+            <form action="" onSubmit={e => _handleSubmit(e)}>
+              <div className="input-container">
+                {user && user.firstName ? (
+                  <div className="pre-filled-input">{user.firstName}</div>
+                ) : (
+                  <input
+                    id="application-firstName"
+                    label="firtsName"
+                    type="text"
+                    htmlFor="firstName"
+                    name="firstName"
+                    placeholder="First Name*"
+                  />
+                )}
+                {user && user.lastName ? (
+                  <div className="pre-filled-input">{user.lastName}</div>
+                ) : (
+                  <input
+                    id="application-lastName"
+                    label="lastName"
+                    type="text"
+                    htmlFor="lastName"
+                    name="lastName"
+                    placeholder="Last Name*"
+                  />
+                )}
               </div>
-            </div>
-          </form>
+              <div className="input-container">
+                {user && user.email ? (
+                  <div className="pre-filled-input">{user.email}</div>
+                ) : (
+                  <input
+                    id="application-email"
+                    label="email"
+                    type="text"
+                    htmlFor="email"
+                    name="email"
+                    placeholder="Email*"
+                  />
+                )}
+
+                <input
+                  id="application-phoneNumber"
+                  label="phoneNumber"
+                  type="text"
+                  htmlFor="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Phone Number*"
+                />
+              </div>
+              <div className="input-container">
+                <input
+                  id="application-state"
+                  label="state"
+                  type="text"
+                  htmlFor="state"
+                  name="state"
+                  placeholder="Your State*"
+                />
+                <input
+                  id="application-zipCode"
+                  label="zipCode"
+                  type="text"
+                  htmlFor="zipCode"
+                  name="zipCode"
+                  placeholder="Zip Code*"
+                />
+              </div>
+              <div id="verification-container">
+                <button
+                  type={verified ? "submit" : "text"}
+                  className={`cta button-inline ${!verified && "disabled"}`}
+                >
+                  Submit
+                </button>
+                <div id="verification">
+                  <input
+                    type="checkbox"
+                    name="verification"
+                    checked={verified}
+                    onChange={() => _verify()}
+                  />
+                  <label htmlFor="verification">I am not a robot</label>
+                </div>
+              </div>
+            </form>
+          )}
         </Col>
       </Row>
     </Container>

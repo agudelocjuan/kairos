@@ -1,11 +1,6 @@
-import React, { useRef } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
-
-import care_logo from "../../images/jobs/care-logo.png"
-import kairos_logo from "../../images/jobs/kairos-logo.png"
-import care_academy_logo from "../../images/jobs/care-academy-logo.png"
 
 import job from "../../images/jobs/need-a-job.png"
 import works from "../../images/jobs/how-this-works.png"
@@ -59,15 +54,7 @@ const JobsHero = ({ mobile }) => {
         </Col>
         {!mobile && (
           <Col md={{ size: 6 }}>
-            <div
-              className="h-100 w-100"
-              style={{
-                background: `url(${job})`,
-                backgroundPosition: `center center`,
-                backgroundSize: `cover`,
-                backgroundRepeat: `no-repeat`,
-              }}
-            ></div>
+            <img src={job} className="w-100" alt="" />
           </Col>
         )}
 

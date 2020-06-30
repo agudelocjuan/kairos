@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { Link, useStaticQuery } from "gatsby"
+import React from "react"
+import { useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 import Flickity from "react-flickity-component"
 import Img from "gatsby-image"
-
-import graffiti from "../../images/about/about-graffiti.png"
 
 const AboutUs = ({ mobile }) => {
   let options = {

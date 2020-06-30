@@ -14,7 +14,6 @@ const Accordion = ({
 }) => {
   const [expanded, setExpanded] = useState(null)
   const isOpen = id === expanded
-  console.log(children.length)
   return (
     <div key={id} className={`accordion`}>
       <motion.button

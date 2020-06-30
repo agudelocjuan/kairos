@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
-
-import header from "../../images/companies/companiesHeader.png"
 
 const CompaniesAbout = ({ mobile }) => {
   return (

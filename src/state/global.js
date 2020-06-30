@@ -45,7 +45,6 @@ export default (state = initialState, action) => {
         menu: action.bool,
       })
     case USER:
-      console.log(action.obj)
       return Object.assign({}, state, {
         user: action.obj,
       })

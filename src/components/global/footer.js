@@ -1,11 +1,9 @@
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
 import Email from "./email"
-
-import degree from "../../images/icons/degree-icon.png"
 
 import degree_blue from "../../images/icons/degree_blue.svg"
 import degree_navy from "../../images/icons/degree_navy.svg"
@@ -44,8 +42,6 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
   if (borderColor === "site-border-yellow") {
     icon = degree_yellow
   }
-
-  console.log(borderColor)
 
   function _getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max))

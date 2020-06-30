@@ -139,7 +139,7 @@ h3 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 17px;
     letter-spacing: 0.95px;
   }

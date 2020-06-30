@@ -35,11 +35,11 @@ const ApplicationForm = ({ mobile, user }) => {
       telecom: [
         {
           system: "email",
-          value: email,
+          value: `test-user-${adminIntegrationId}@gmail.com`,
         },
         {
           system: "phone",
-          value: phoneNumber,
+          value: null,
         },
       ],
       integrationId: adminIntegrationId,

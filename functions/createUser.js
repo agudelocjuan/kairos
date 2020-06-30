@@ -1,7 +1,7 @@
 const axios = require("axios")
 const fetch = require("node-fetch")
 
-exports.handler = async function (event, context) {
+exports.handler = async function (event, context, callback) {
   if (event.httpMethod !== "POST" || !event.body) {
     return {
       statusCode: 400,
@@ -21,12 +21,6 @@ exports.handler = async function (event, context) {
     }
   }
 
-  // if (payload) {
-  //   return {
-  //     statusCode: 200,
-  //     body: JSON.stringify({ message: "it worked" }),
-  //   }
-  // }
   let username = "5ee03033-5d0d-4b22-829a-ae8f5e224094"
   let password = "06b280c6-7106-42be-a9da-00dca4ece1ae"
   const token = Buffer.from(`${username}:${password}`, "utf8").toString(
@@ -43,23 +37,23 @@ exports.handler = async function (event, context) {
     },
   })
     .then(res => {
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({ success: true }),
+      })
+
       console.log(res)
       console.log("hits response")
-
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ message: "Success" }),
-      }
     })
     .catch(err => {
       console.log(err.response.status)
       console.log(err.response.statusText)
       console.log(err.response.headers)
       console.log("hits error")
-      return {
+      callback(null, {
         statusCode: 500,
-        body: JSON.stringify({ message: "Error" }),
-      }
+        body: JSON.stringify({ error: true }),
+      })
     })
 
   // try {

@@ -52,8 +52,8 @@ h1 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 72px;
-    line-height: 62px;
+    font-size: 68px;
+    line-height: 60px;
     letter-spacing: -1.75px;
   }
 }

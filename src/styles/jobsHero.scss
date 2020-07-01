@@ -36,7 +36,7 @@
 
 @media (max-width: map-get($grid-breakpoints,md)) {
   #jobsHero {
-    min-height: 80vh;
+    min-height: 85vh;
     .hero-title-row {
       padding-top: 50%;
       text-align: center;
@@ -58,7 +58,7 @@
       margin-top: auto;
       text-align: center;
       .arrow {
-        padding-bottom: 20px;
+        padding-bottom: 120px;
       }
     }
   }

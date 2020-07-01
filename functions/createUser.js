@@ -26,8 +26,6 @@ exports.handler = async function (event, context, callback) {
     }
   }
 
-  console.log(CAREACADEMY_ENDPOINT)
-
   const token = Buffer.from(
     `${CAREACADEMY_USERNAME}:${CAREACADEMY_PASSWORD}`,
     "utf8"

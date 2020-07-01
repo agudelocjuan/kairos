@@ -35,11 +35,11 @@ const ApplicationForm = ({ mobile, user }) => {
       telecom: [
         {
           system: "email",
-          value: `test-user-${adminIntegrationId}@gmail.com`,
+          value: email,
         },
         {
           system: "phone",
-          value: null,
+          value: phoneNumber,
         },
       ],
       integrationId: adminIntegrationId,
@@ -56,15 +56,13 @@ const ApplicationForm = ({ mobile, user }) => {
       data: payload,
     })
       .then(res => {
-        console.log(res)
-        console.log("success")
         setSucess(true)
       })
       .catch(err => {
-        console.log(err)
-        console.log("fail")
         setSucess(false)
-        alert("Oops, something went wrong. Please try again!")
+        alert(
+          "Oops, something went wrong. Either you've already registered or there is a problem with your information!"
+        )
       })
   }
 

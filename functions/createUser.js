@@ -1,5 +1,10 @@
 const axios = require("axios")
 const fetch = require("node-fetch")
+const {
+  CAREACADEMY_PASSWORD,
+  CAREACADEMY_USERNAME,
+  CAREACADEMY_ENDPOINT,
+} = process.env
 
 exports.handler = async function (event, context, callback) {
   if (event.httpMethod !== "POST" || !event.body) {
@@ -21,17 +26,14 @@ exports.handler = async function (event, context, callback) {
     }
   }
 
-  console.log(process.env.GATSBY_CAREACADEMY_ENDPOINT)
-  console.log(process.env.CAREACADEMY_ENDPOINT)
-
   const token = Buffer.from(
-    `5ee03033-5d0d-4b22-829a-ae8f5e224094:06b280c6-7106-42be-a9da-00dca4ece1ae`,
+    `${CAREACADEMY_USERNAME}:${CAREACADEMY_PASSWORD}`,
     "utf8"
   ).toString("base64")
 
-  axios({
+  const request = await axios({
     method: "post",
-    url: `https://go.careacademy.com/api/v1/practitioners`,
+    url: `${CAREACADEMY_ENDPOINT}v1/practitioners`,
     data: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/json",
@@ -55,32 +57,5 @@ exports.handler = async function (event, context, callback) {
       }
     })
 
-  // try {
-  //   const review = await fetch(
-  //     `https://go.careacademy.com/api/v1/practitioners`,
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(payload),
-  //     }
-  //   )
-  //
-  //   const body = await review.json()
-  //
-  //   return {
-  //     statusCode: 200,
-  //     body: JSON.stringify(body),
-  //   }
-  // } catch (error) {
-  //   console.log(error)
-  //
-  //   return {
-  //     statusCode: 500,
-  //     body: JSON.stringify({
-  //       message: "Successful",
-  //     }),
-  //   }
-  // }
+  return request
 }

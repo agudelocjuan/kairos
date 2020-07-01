@@ -98,7 +98,9 @@ const ApplicationForm = ({ mobile, user }) => {
           {success ? (
             <div>
               <h2>
-                Thanks for submitting! Please go check your email for next steps
+                Thanks for submitting!
+                <br />
+                Please go check your email for next steps
               </h2>
             </div>
           ) : (

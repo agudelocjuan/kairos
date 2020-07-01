@@ -35,7 +35,7 @@ exports.handler = async function (event, context, callback) {
 
   const request = await axios({
     method: "post",
-    url: `${CAREACADEMY_ENDPOINT}v1/practitioners`,
+    url: `${CAREACADEMY_ENDPOINT}/v1/practitioners`,
     data: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/json",

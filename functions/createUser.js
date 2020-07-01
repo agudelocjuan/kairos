@@ -21,14 +21,17 @@ exports.handler = async function (event, context, callback) {
     }
   }
 
+  console.log(process.env.GATSBY_CAREACADEMY_ENDPOINT)
+  console.log(process.env.CAREACADEMY_ENDPOINT)
+
   const token = Buffer.from(
-    `${process.env.CAREACADEMY_USERNAME}:${process.env.CAREACADEMY_PASSWORD}`,
+    `5ee03033-5d0d-4b22-829a-ae8f5e224094:06b280c6-7106-42be-a9da-00dca4ece1ae`,
     "utf8"
   ).toString("base64")
 
   axios({
     method: "post",
-    url: "https://go.careacademy.com/api/v1/practitioners",
+    url: `https://go.careacademy.com/api/v1/practitioners`,
     data: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/json",
@@ -37,20 +40,18 @@ exports.handler = async function (event, context, callback) {
   })
     .then(res => {
       console.log(res)
-      console.log("hits response")
       return {
         statusCode: 200,
-        body: JSON.stringify({ success: true }),
+        body: JSON.stringify({ message: "Success" }),
       }
     })
     .catch(err => {
       console.log(err.response.status)
       console.log(err.response.statusText)
       console.log(err.response.headers)
-      console.log("hits error")
       return {
         statusCode: 500,
-        body: JSON.stringify({ success: false }),
+        body: JSON.stringify({ message: err.response.statusText }),
       }
     })
 

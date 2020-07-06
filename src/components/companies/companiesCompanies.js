@@ -64,7 +64,7 @@ const CompaniesCompanies = ({ mobile }) => {
     {
       title: "Cera",
       eyebrow: "founded 2016 • london, uk",
-      header: "Care for Your Parents Healthy, Jobs for You",
+      header: "Care for Your Parents, Jobs for You",
       body:
         "With Cera, we make it easier to get affordable care in the comfort and independence of your own home. We arrange the best possible home care in our network within 24 hours, using artificial intelligence to predict the care your loved ones will need—and making sure your in-laws never have to move back in with you.",
       cta: "Go to Cera",

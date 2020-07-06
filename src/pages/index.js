@@ -9,7 +9,6 @@ import HomeOurCompanies from "../components/home/homeOurCompanies"
 import HomeEmailCapture from "../components/home/homeEmailCapture"
 
 const IndexPage = ({ location }) => {
-  console.log(location)
   let pageColor = "salmon"
   let borderColor = "site-border-black"
   return (

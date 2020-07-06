@@ -117,10 +117,10 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               <Link to="/about">Privacy Policy</Link>
             </div>
             <div className="footer-link-column">
-              <a href="https://www.facebook.com">Facebook</a>
-              <a href="https://www.Linkedin.com">Linkedin</a>
-              <a href="https://www.Instagram.com">Instagram</a>
-              <a href="https://www.Twitter.com">Twitter</a>
+              <a href="https://www.facebook.com/TheKairosSociety">Facebook</a>
+              <a href="https://www.Linkedin.com/kairoshq">Linkedin</a>
+              <a href="https://www.Instagram.com/kairoshq">Instagram</a>
+              <a href="https://www.Twitter.com/kairoshq">Twitter</a>
             </div>
           </Col>
           <Col id="footer-email-column" md="6">

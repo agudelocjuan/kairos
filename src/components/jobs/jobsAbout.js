@@ -95,10 +95,10 @@ const JobsHero = ({ mobile }) => {
             home care providers.
           </p>
           <p>
-            COVID-19 has disproportionately affected our elderly population,
-            requiring they stay at home and out of hospitals. The need for home
-            care is needed now more than ever, and it's on us to step up to the
-            frontlines during this unprecedented time.
+            As COVID-19 surges across the country, the health and homecare
+            sectors are more strained now than ever before – with workers in
+            high demand, and a critical need to immediately train and deploy
+            more frontline health workers.
           </p>
           <p>
             Through this program you will have an opportunity to earn a Home
@@ -107,7 +107,7 @@ const JobsHero = ({ mobile }) => {
           </p>
           <p>
             Kairos has also partnered with Care.com to provide all applicants
-            access to additional job opportunities.
+            free access to additional job opportunities.
           </p>
           <p ref={ref}>Welcome to the Home Care Heroes Campaign.</p>
         </Col>

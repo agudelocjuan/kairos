@@ -175,11 +175,11 @@
       #submit-button-main {
         height: 100%;
         width: 20%;
-        font-size: 25px;
+        padding-right: 0px;
         background-color: $black;
         img {
           opacity: 1;
-          width: 100%;
+          width: 95%;
           transition: opacity 250ms linear;
         }
 

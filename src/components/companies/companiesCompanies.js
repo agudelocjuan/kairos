@@ -67,9 +67,9 @@ const CompaniesCompanies = ({ mobile }) => {
       header: "Care for Your Parents Healthy, Jobs for You",
       body:
         "With Cera, we make it easier to get affordable care in the comfort and independence of your own home. We arrange the best possible home care in our network within 24 hours, using artificial intelligence to predict the care your loved ones will need—and making sure your in-laws never have to move back in with you.",
-      cta: "Kairos X Cera 10k Jobs Campaign",
-      link: "10k-jobs",
-      internal_link: true,
+      cta: "Go to Cera",
+      link: "https://ceracare.co.uk/",
+      internal_link: false,
       image: cera,
       color: "company-yellow",
     },

@@ -104,8 +104,10 @@ const JobsHero = ({ mobile }) => {
             Through this program you will have an opportunity to earn a Home
             Health Aid Certification (HHA), which will open up immediate
             employment opportunities supporting families across the country.
+          </p>
+          <p>
             Kairos has also partnered with Care.com to provide all applicants
-            access to additional job opportunities.{" "}
+            access to additional job opportunities.
           </p>
           <p ref={ref}>Welcome to the Home Care Heroes Campaign.</p>
         </Col>

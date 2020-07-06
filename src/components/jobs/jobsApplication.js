@@ -78,8 +78,8 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
             </li>
             <li>
               <span>
-                Our partners at Care.co will also grant you access to additional
-                employment opportunities via their platform
+                Our partners at Care.com will also grant you access to
+                additional employment opportunities via their platform
               </span>
             </li>
 

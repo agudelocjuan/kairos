@@ -9,15 +9,14 @@ const JobsHero = ({ mobile, color }) => {
   return (
     <Container fluid id="jobsHero" className={`bg-${color}`}>
       <Row className="hero-title-row">
-        <Col className="position-relative d-flex justify-content-center align-items-center">
+        <Col className="position-relative d-flex flex-column justify-content-center align-items-center">
           <img src={graffiti} alt="" />
           <h1>
             We're creating
             <br />
             10,000 new jobs
-            <br />
-            #HomeCareHeroes
           </h1>
+          <h2>#HomeCareHeroes</h2>
         </Col>
       </Row>
       <Row className="hero-cta-row">

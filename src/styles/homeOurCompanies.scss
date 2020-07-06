@@ -31,6 +31,10 @@
     .cta-graffiti {
       margin-top: -30px;
     }
+    .body-text {
+      width: 75%;
+      text-align: center;
+    }
   }
 }
 
@@ -51,6 +55,20 @@
       }
       .inline-text-link {
         width: 33%;
+      }
+    }
+    #ten-k-jobs-row {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .cta-graffiti {
+        margin-top: -30px;
+      }
+      .body-text {
+        width: 100%;
+        text-align: center;
       }
     }
   }

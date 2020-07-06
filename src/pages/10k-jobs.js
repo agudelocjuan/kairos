@@ -23,8 +23,8 @@ const JobsPage = ({ location }) => {
       <JobsHero color={pageColor} />
       <JobsAbout />
       <JobsApplication />
-      <JobsReviews />
       <JobsFAQ />
+      <JobsReviews />
     </Layout>
   )
 }

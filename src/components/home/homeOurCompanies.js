@@ -50,7 +50,7 @@ const HomeOurCompanies = ({ mobile }) => {
             <br />
             10,000 Jobs!
           </div>
-          <div className="pb-3 w-75 text-center">
+          <div className="pb-3 body-text">
             Start a new career in as little as 10 days by becoming a homecare
             hero. We need more people on the frontlines of healthcare right now,
             supporting the most vulnerable members of our community.

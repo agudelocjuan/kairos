@@ -274,7 +274,7 @@ const AboutUs = ({ mobile }) => {
     },
     {
       name: "Joyce Ok",
-      title: "Assocaite",
+      title: "Financial Strategy",
       team: "operating",
       img: "joyce_ok",
     },
@@ -304,7 +304,7 @@ const AboutUs = ({ mobile }) => {
     },
     {
       name: "Anne Fulenwider",
-      title: "Operating Partner, Doyen",
+      title: "Operating Partner, Alloy",
       team: "operating",
       img: "anne_fullenwider",
     },
@@ -346,13 +346,13 @@ const AboutUs = ({ mobile }) => {
     },
     {
       name: "Monica Molenaar",
-      title: "Operating Partner, Doyen",
+      title: "Operating Partner, Alloy",
       team: "operating",
       img: "monica_molenaar",
     },
     {
       name: "Paraag Sarva",
-      title: "Operating Partner, Rhinn",
+      title: "Operating Partner, Rhino",
       team: "operating",
       img: "paraag_sarva",
     },

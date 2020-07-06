@@ -12,8 +12,8 @@ const CompaniesAbout = ({ mobile }) => {
             */}
 
           <h2>
-            We wish we didn’t need companies to help us meet basic needs, but
-            here we are.
+            We wish we didn’t need companies to help us meet{" "}
+            <span className="text-salmon">basic needs,</span> but here we are.
           </h2>
         </Col>
         <Col md={{ size: 10 }} className="right-container">

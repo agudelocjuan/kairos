@@ -23,13 +23,24 @@ const JobsFAQ = ({ mobile }) => {
       ],
     },
     {
-      question: "Do I need any previous training or experience in care?",
-      answer: ["Nope! No prior experience is required."],
+      question: "What qualifications would make me a good fit for this job?",
+      answer: [
+        "No prior experience is required, though this career is especially well-suited for people who have worked in hospitality & service industries.",
+      ],
+    },
+    {
+      question: "Are there any other types of training available?",
+      answer: [
+        "Home Health Aide Training: Becoming a HHA is the first step in the training process. Home Health Aides assist their patients with everyday tasks like mobility, medication, and meals to name a few.",
+        "Certified Nursing Assistant Training: CNAs work in a wide variety of settings including nursing homes, hospitals, and rehabilitation centers. Because of their additional medical training, they are responsible for monitoring their patients’ health, taking vitals, tracking their symptoms, and speaking with clients about health concerns. CareAcademy offers training to become a CNA (which includes the certification program, a written exam, and a practical exam). This training can take anywhere from 4-12 weeks.",
+        "Restorative Nurse’s Aide Training: You can become an RNA after receiving your CNA certification. RNAs have additional training in restorative nursing care, helping patients gain an improved quality of life by increasing their strength and mobility.",
+        "Licensed Practical Nurse Training: An LPN works directly with doctors and registered nurses to take vitals, collect samples, administer medications, and ensure their patients are comfortable. Becoming an LPN typically takes about 12 months to complete (a combination of classroom and clinical work).",
+      ],
     },
     {
       question: "What are the hours like and who will I report to?",
       answer: [
-        "You’re your own boss – the hours, days and duration of work are up to you. You will be working for a family of your choosing, operating your own business. Welcome to entrepreneurship!",
+        "You will be working with a local agency to find clients that best fit your skills. Your hours will depend on the needs of those you care for, as well as your own schedule.",
       ],
     },
     {
@@ -43,7 +54,7 @@ const JobsFAQ = ({ mobile }) => {
     {
       question: "What salary can I expect?",
       answer: [
-        "This will vary by where you live and the care market in your area. Hourly rates are typical in this industry.",
+        "The HHA certification is an entry into a long, fulfilling career. The salary associated with this type of training will vary by where you live and the care market in your area, but hourly rates are typical. If you choose to continue your education towards the CNA, LPN or RNA certifications, you can expect higher salaries.",
       ],
     },
     {

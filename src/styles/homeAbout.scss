@@ -1,5 +1,5 @@
 #homeAbout {
-  height: 65vh;
+  height: 75vh;
   max-height: 700px;
   .left-container {
     padding: 10% 0% 0% 10%;
@@ -11,8 +11,8 @@
 
 @media (max-width: map-get($grid-breakpoints,md)) {
   #homeAbout {
-    height: 720px;
-    max-height: 720px;
+    height: 545px;
+    max-height: 545px;
     .left-container {
       padding: 56px 20px 5px 20px;
     }

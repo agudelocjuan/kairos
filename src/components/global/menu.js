@@ -57,7 +57,7 @@ const Menu = ({ dispatch, mobile, menu }) => {
 
         <Col
           md="4"
-          className="d-flex justify-content-center justify-content-md-end align-items-center"
+          className="d-flex justify-content-center justify-content-md-end align-items-start align-items-md-center"
         >
           <a href="https://www.facebook.com" className="pl-2">
             <img src={facebook} alt="" />

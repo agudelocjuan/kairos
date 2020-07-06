@@ -47,9 +47,18 @@ const JobsHero = ({ mobile }) => {
         <Col md={{ size: 6 }} className="floating-col">
           <h2 className="pb-3">Join us on the front lines of healthcare.</h2>
           <p>
+            In the past few months, over 40 million American’s have lost their
+            jobs. We want to help.
+          </p>
+          <p>
+            After successfully launching a job creation plan in the UK with our
+            healthcare company, Cera, and the Ministry of Health - we are now
+            bringing this effort Stateside.
+          </p>
+          <p>
             We’re helping 10,000 people begin a new career in home care. Apply
-            now to begin your training and start earning income in as little as
-            10 days.
+            now to begin your training and earn your certification as a Home
+            Health Aid (HHA) - your first step in a new, fulfilling career.
           </p>
         </Col>
         {!mobile && (
@@ -82,19 +91,21 @@ const JobsHero = ({ mobile }) => {
         <Col md={{ size: 5, offset: 0 }} className="floating-col">
           <h3>About The Campaign</h3>
           <p>
-            In the past few months, over 40 million Americans have lost their
-            jobs. We want to help.
+            Kairos has partnered with Care Academy to train 10,000 Americans as
+            home care providers.
           </p>
           <p>
-            After successfully launching a job creation plan in the UK with our
-            healthcare company, Cera, and the Ministry of Health - we are now
-            bringing this effort Stateside. Kairos has partnered with Care
-            Academy and Care.com to place 10,000 Americans into jobs as Home
-            Care providers. To help prepare you for these jobs, we are providing
-            applicants free training and certification to become a Home Health
-            Aid (HHA). It’s an opportunity to begin a rewarding career in
-            healthcare taking care of our nation’s most vulnerable, during a
-            time of unprecedented need.
+            COVID-19 has disproportionately affected our elderly population,
+            requiring they stay at home and out of hospitals. The need for home
+            care is needed now more than ever, and it's on us to step up to the
+            frontlines during this unprecedented time.
+          </p>
+          <p>
+            Through this program you will have an opportunity to earn a Home
+            Health Aid Certification (HHA), which will open up immediate
+            employment opportunities supporting families across the country.
+            Kairos has also partnered with Care.com to provide all applicants
+            access to additional job opportunities.{" "}
           </p>
           <p ref={ref}>Welcome to the Home Care Heroes Campaign.</p>
         </Col>

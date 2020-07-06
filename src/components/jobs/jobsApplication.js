@@ -60,26 +60,34 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
           <ol>
             <li>
               <span>
-                Start your appliacation below to kick off your new career
+                Start your application below to kick off your new career
               </span>
             </li>
             <li>
               <span>
-                Take an introductory course on home care and start getting
-                placed into initial job opportunities with our partners at
-                Care.com
+                You receive an email inviting you to start your HHA training --
+                60 hours of digital courses and 15 hours of in-person training
               </span>
             </li>
             <li>
               <span>
-                Meanwhile, continue your training with our partners at
-                CareAcademy to get certified and hired into an agency as a
-                licensed Home Health Aid (HHA) - your first major milestone in a
-                new healthcare career.
+                Our local agency partners will work with you to complete your
+                in-person training and background checks, after which you’ll be
+                placed in your first job!
               </span>
             </li>
             <li>
-              <span>Start your new career!</span>
+              <span>
+                Our partners at Care.co will also grant you access to additional
+                employment opportunities via their platform
+              </span>
+            </li>
+
+            <li>
+              <span>
+                Congratulations on your new career! This is the first milestone
+                on your path towards earning your LPN and RN degrees.
+              </span>
             </li>
           </ol>
         </Col>
@@ -110,11 +118,6 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
               start your application
             </button>
           </form>
-        </Col>
-      </Row>
-      <Row className="gif-row">
-        <Col className="d-flex justify-content-center">
-          <img src={mobile ? slider_mobile : slider} alt="jobs-gif" />
         </Col>
       </Row>
       <Row className="list-item-row bg-white">

@@ -24,7 +24,7 @@ const Menu = ({ dispatch, mobile, menu }) => {
           <Link to="/our-companies" onClick={() => dispatch(setMenu(false))}>
             <h2>Our Companies</h2>
           </Link>
-          <Link to="/10k-jobs" onClick={() => dispatch(setMenu(false))}>
+          <Link to="/10kjobs" onClick={() => dispatch(setMenu(false))}>
             <h2>10k Jobs</h2>
           </Link>
         </Col>

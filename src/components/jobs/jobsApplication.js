@@ -49,48 +49,102 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
   }
   return (
     <Container fluid id="jobsApplication" className="">
+      {mobile && (
+        <Row className="form-row">
+          <Col
+            xs={{ size: 10, offset: 1 }}
+            md={{ size: 4, offset: 1 }}
+            className="information-column mb-4"
+          >
+            <h3>How it works</h3>
+            <ol>
+              <li>
+                <span>
+                  Start your application below to kick off your new career
+                </span>
+              </li>
+              <li>
+                <span>
+                  You receive an email inviting you to start your HHA training
+                  -- 60 hours of digital courses and 15 hours of in-person
+                  training
+                </span>
+              </li>
+              <li>
+                <span>
+                  Our local agency partners will work with you to complete your
+                  in-person training and background checks, after which you’ll
+                  be placed in your first job!
+                </span>
+              </li>
+              <li>
+                <span>
+                  Our partners at Care.com will also grant you access to
+                  additional employment opportunities via their platform
+                </span>
+              </li>
+
+              <li>
+                <span>
+                  Congratulations on your new career! This is the first
+                  milestone on your path towards earning your LPN and RN
+                  degrees.
+                </span>
+              </li>
+            </ol>
+          </Col>
+        </Row>
+      )}
       <Row className="header-row bg-blue">
         <Col className="d-flex justify-content-center">
           <div className="cta-graffiti">Apply for this job</div>
         </Col>
       </Row>
       <Row className="form-row bg-blue">
-        <Col md={{ size: 4, offset: 1 }} className="information-column">
-          <h3>How it works</h3>
-          <ol>
-            <li>
-              <span>
-                Start your application below to kick off your new career
-              </span>
-            </li>
-            <li>
-              <span>
-                You receive an email inviting you to start your HHA training --
-                60 hours of digital courses and 15 hours of in-person training
-              </span>
-            </li>
-            <li>
-              <span>
-                Our local agency partners will work with you to complete your
-                in-person training and background checks, after which you’ll be
-                placed in your first job!
-              </span>
-            </li>
-            <li>
-              <span>
-                Our partners at Care.com will also grant you access to
-                additional employment opportunities via their platform
-              </span>
-            </li>
+        {!mobile && (
+          <Col
+            xs={{ size: 10, offset: 1 }}
+            md={{ size: 4, offset: 1 }}
+            className="information-column"
+          >
+            <h3>How it works</h3>
+            <ol>
+              <li>
+                <span>
+                  Start your application below to kick off your new career
+                </span>
+              </li>
+              <li>
+                <span>
+                  You receive an email inviting you to start your HHA training
+                  -- 60 hours of digital courses and 15 hours of in-person
+                  training
+                </span>
+              </li>
+              <li>
+                <span>
+                  Our local agency partners will work with you to complete your
+                  in-person training and background checks, after which you’ll
+                  be placed in your first job!
+                </span>
+              </li>
+              <li>
+                <span>
+                  Our partners at Care.com will also grant you access to
+                  additional employment opportunities via their platform
+                </span>
+              </li>
 
-            <li>
-              <span>
-                Congratulations on your new career! This is the first milestone
-                on your path towards earning your LPN and RN degrees.
-              </span>
-            </li>
-          </ol>
-        </Col>
+              <li>
+                <span>
+                  Congratulations on your new career! This is the first
+                  milestone on your path towards earning your LPN and RN
+                  degrees.
+                </span>
+              </li>
+            </ol>
+          </Col>
+        )}
         <Col xs="12" md={{ size: 6, offset: 1 }} className="form-column">
           <form action="" onSubmit={e => _submit(e)}>
             <input

@@ -56,7 +56,7 @@ const HomeOurCompanies = ({ mobile }) => {
             supporting the most vulnerable members of our community.
           </div>
           <Link
-            to="/10k-jobs"
+            to="/10kjobs"
             className="cta button-inline black mb-4 mt-3 mb-md-5"
           >
             Apply Now

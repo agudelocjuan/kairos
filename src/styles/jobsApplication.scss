@@ -96,7 +96,8 @@
     .form-row {
       min-height: 60vh;
       .information-column {
-        display: none;
+        // display: none;
+        padding-top: 48px;
       }
       .form-column {
         form {

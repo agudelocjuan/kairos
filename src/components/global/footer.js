@@ -86,7 +86,7 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               <Link to="/">Home</Link>
               <Link to="/about">About Us</Link>
               <Link to="/our-companies">Our Companies</Link>
-              <Link to="/10k-jobs">10k Jobs</Link>
+              <Link to="/10kjobs">10k Jobs</Link>
               <Link to="/contact">Contact Us</Link>
               <Link to="/">Terms</Link>
               <Link to="/about">Privacy Policy</Link>
@@ -112,7 +112,7 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               </a>
             </div>
             <div className="footer-link-column">
-              <Link to="/10k-jobs">10k Jobs</Link>
+              <Link to="/10kjobs">10k Jobs</Link>
               <Link to="/">Terms</Link>
               <Link to="/about">Privacy Policy</Link>
             </div>

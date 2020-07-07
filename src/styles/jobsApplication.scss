@@ -11,9 +11,12 @@
     }
   }
   .form-row {
-    min-height: 85vh;
+    min-height: 65vh;
     .information-column {
       padding-top: 96px;
+      .button-inline {
+        padding: 20px 24px;
+      }
       ol {
         li {
           font-family: "summer loving reg";

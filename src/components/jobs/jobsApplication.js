@@ -104,10 +104,10 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
         {!mobile && (
           <Col
             xs={{ size: 10, offset: 1 }}
-            md={{ size: 4, offset: 1 }}
+            md={{ size: 10, offset: 1 }}
             className="information-column"
           >
-            <h3>How it works</h3>
+            <h3 className="text-center">How it works</h3>
             <ol>
               <li>
                 <span>
@@ -143,42 +143,23 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
                 </span>
               </li>
             </ol>
+            <div className="d-flex justify-content-center w-100 mt-5">
+              <a
+                className="cta button-inline black mb-4 mt-3 mb-md-5 w-75 text-center"
+                href="https://team882226.typeform.com/to/OdNt3N0v"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apply
+              </a>
+            </div>
           </Col>
         )}
-        <Col xs="12" md={{ size: 6, offset: 1 }} className="form-column">
-          <form action="" onSubmit={e => _submit(e)}>
-            <input
-              id="jobs-firstName"
-              type="text"
-              htmlFor="firstName"
-              name="firstName"
-              placeholder="First Name*"
-            />
-            <input
-              id="jobs-lastName"
-              type="text"
-              htmlFor="lastName"
-              name="lastName"
-              placeholder="Last Name*"
-            />
-            <input
-              id="jobs-email"
-              type="text"
-              htmlFor="email"
-              name="email"
-              placeholder="Email*"
-            />
-            <button type="submit" className="cta button-inline black">
-              start your application
-            </button>
-          </form>
-        </Col>
       </Row>
       <Row className="list-item-row bg-white">
         <Col md={{ size: 7 }} className="text-center">
           <Row>
             <Col>
-              {/*<div className="cta-graffiti">We Need You!</div>*/}
               <h3 className="pt-5 pb-4">what is the job like?</h3>
               <ul className="text-left">
                 <li>

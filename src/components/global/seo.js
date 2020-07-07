@@ -35,7 +35,7 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={"Kairos HQ"}
+      title={title}
       titleTemplate={`${site.siteMetadata.title} | ${title}`}
       meta={[
         {
@@ -44,7 +44,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: "Kairos HQ",
+          content: title,
         },
         {
           property: `og:image`,

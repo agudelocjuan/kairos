@@ -96,12 +96,25 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
         </Row>
       )}
       <Row className="header-row bg-blue">
-        <Col className="d-flex justify-content-center">
+        <Col className="d-flex flex-column align-items-center justify-content-center">
           <div className="cta-graffiti">Apply for this job</div>
+          {mobile && (
+            <div className="d-flex justify-content-center w-100 mt-5">
+              <a
+                className="cta button-inline black mb-4 mt-3 mb-md-5 w-75 text-center"
+                href="https://team882226.typeform.com/to/OdNt3N0v"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apply
+              </a>
+            </div>
+          )}
         </Col>
       </Row>
-      <Row className="form-row bg-blue">
-        {!mobile && (
+
+      {!mobile && (
+        <Row className="form-row bg-blue">
           <Col
             xs={{ size: 10, offset: 1 }}
             md={{ size: 10, offset: 1 }}
@@ -154,8 +167,9 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
               </a>
             </div>
           </Col>
-        )}
-      </Row>
+        </Row>
+      )}
+
       <Row className="list-item-row bg-white">
         <Col md={{ size: 7 }} className="text-center">
           <Row>

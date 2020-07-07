@@ -18,12 +18,21 @@ module.exports = {
     title: `Kairos HQ`,
     description: `We build and fund companies to tackle global problems.`,
     author: `Tucker Schoos`,
-    url: "https://kairos.netlify.app",
+    url: "https://www.kairoshq.com",
     image: "/logos/share-image.png",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-171785557-1",
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -54,7 +54,7 @@ const CompaniesCompanies = ({ mobile }) => {
       eyebrow: "Coming Soon • NEW YORK CITY, NY",
       header: "Keeping Yourself Healthy",
       body:
-        "We all want the best for our parents as they age, but it’s hard to find care we can trust and afford. Cera helps keep loved ones out of nursing homes and brings the care they need to the comfort of their homes (for a cost that makes sense). They’re also creating thousands of jobs for your community, providing the digital platform used to train thousands of new homecare workers & kickstart new careers.",
+        "Aging doesn't need to be shitty. And being a woman shouldn't mean you get worse healthcare (read: menopause, osteoporosis, weight gain and many others). Alloy Health is a women's health care solution for living healthier, longer lives. They're bringing affordable and transparent healthcare directly to women, including a line of natural, FDA-approved products to help our generation age healthfully.",
       cta: "get updates on alloy",
       link: "https://mailchi.mp/kairoshq/kairos-hq",
       internal_link: false,

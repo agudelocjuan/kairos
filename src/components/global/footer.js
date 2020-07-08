@@ -88,8 +88,8 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               <Link to="/our-companies">Our Companies</Link>
               <Link to="/10kjobs">10k Jobs</Link>
               <Link to="/contact">Contact Us</Link>
-              <Link to="/">Terms</Link>
-              <Link to="/about">Privacy Policy</Link>
+              <Link to="/terms">Terms</Link>
+              <Link to="/privacy">Privacy Policy</Link>
             </div>
             <div className="footer-link-column">
               <a href="https://www.facebook.com/TheKairosSociety/">Facebook</a>
@@ -113,8 +113,8 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
             </div>
             <div className="footer-link-column">
               <Link to="/10kjobs">10k Jobs</Link>
-              <Link to="/">Terms</Link>
-              <Link to="/about">Privacy Policy</Link>
+              <Link to="/terms">Terms</Link>
+              <Link to="/privacy">Privacy Policy</Link>
             </div>
             <div className="footer-link-column">
               <a href="https://www.facebook.com/TheKairosSociety">Facebook</a>

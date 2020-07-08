@@ -1,0 +1,23 @@
+.page-template {
+  margin-top: 150px;
+  padding-bottom: 120px;
+  h2 {
+    margin: 64px 0px 32px;
+  }
+  .bold {
+    font-weight: 700;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  .page-template {
+    margin-top: 100px;
+    padding-bottom: 120px;
+    h2 {
+      margin: 48px 0px 24px;
+    }
+    .bold {
+      font-weight: 700;
+    }
+  }
+}

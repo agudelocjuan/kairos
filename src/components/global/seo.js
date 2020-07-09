@@ -27,8 +27,10 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+  const og_img =
+    title === "10k Jobs" ? "/logos/10k_og.png" : site.siteMetadata.image
   const metaDescription = description || site.siteMetadata.description
-  const image = site.siteMetadata.url + site.siteMetadata.image
+  const image = site.siteMetadata.url + og_img
 
   return (
     <Helmet

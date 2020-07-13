@@ -42,7 +42,7 @@ const JobsReviews = ({ mobile }) => {
           <div className="cta-graffiti text-salmon">
             Hear from our
             <br />
-            healthcare heros
+            healthcare heroes
           </div>
         </Col>
       </Row>

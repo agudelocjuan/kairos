@@ -16,7 +16,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Kairos HQ`,
-    description: `We build and fund companies to tackle global problems.`,
+    description: `We build companies that have your back on the issues that matter`,
     author: `Tucker Schoos`,
     url: "https://www.kairoshq.com",
     image: "/logos/share-image.png",

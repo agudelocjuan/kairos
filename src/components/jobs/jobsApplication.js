@@ -65,9 +65,9 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
               </li>
               <li>
                 <span>
-                  You receive an email inviting you to start your HHA training
-                  -- 60 hours of digital courses and 15 hours of in-person
-                  training
+                  You receive an email inviting you to start your training -- up
+                  to 60 hours of digital courses and 16 hours of in-person
+                  training with a qualified nurse instructor
                 </span>
               </li>
               <li>
@@ -129,9 +129,9 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
               </li>
               <li>
                 <span>
-                  You receive an email inviting you to start your HHA training
-                  -- 60 hours of digital courses and 15 hours of in-person
-                  training
+                  You receive an email inviting you to start your training -- up
+                  to 60 hours of digital courses and 16 hours of in-person
+                  training with a qualified nurse instructor
                 </span>
               </li>
               <li>
@@ -187,9 +187,9 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
                   transportation, personal care, and mobility assistance.
                 </li>
                 <li>
-                  Caregivers have the ultimate discretion on job types they want
-                  to apply to, schedules they want to entertain, and hours they
-                  want to work.
+                  Caregivers can have the ultimate discretion on job types they
+                  want to apply to, schedules they want to entertain, and hours
+                  they want to work.
                 </li>
               </ul>
             </Col>

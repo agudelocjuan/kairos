@@ -57,8 +57,8 @@ const JobsHero = ({ mobile }) => {
           </p>
           <p>
             We’re helping 10,000 people begin a new career in home care. Apply
-            now to begin your training and earn your certification as a Home
-            Health Aid (HHA) - your first step in a new, fulfilling career.
+            now to begin your training and earn your qualification as a Home
+            Health Aide (HHA) - your first step in a new, fulfilling career.
           </p>
         </Col>
         {!mobile && (
@@ -102,7 +102,7 @@ const JobsHero = ({ mobile }) => {
           </p>
           <p>
             Through this program you will have an opportunity to earn a Home
-            Health Aid Certification (HHA), which will open up immediate
+            Health Aide qualification (HHA), which will open up immediate
             employment opportunities supporting families across the country.
           </p>
           <p>

@@ -9,6 +9,7 @@ const initialState = {
     firstName: null,
     lastName: null,
     email: null,
+    zip: null,
   },
 }
 

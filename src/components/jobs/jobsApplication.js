@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import { navigate } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import axios from "axios"
+import moment from "moment"
 
 import { setUser } from "../../state/global"
 
@@ -10,38 +12,83 @@ import slider from "../../images/jobs/jobs_slider.gif"
 import slider_mobile from "../../images/jobs/jobs_slider_mobile.gif"
 
 const JobsApplication = ({ dispatch, mobile, user }) => {
+  let [verified, setVerified] = useState(false)
+  let [success, setSucess] = useState(null)
   function _submit(e) {
     e.preventDefault()
     let first = e.target[0].value
     let last = e.target[1].value
     let em = e.target[2].value
-    if (checkValues(first, last)) {
+    let zip = e.target[3].value
+    if (checkValues(first, last, zip)) {
       if (validateEmail(em)) {
         dispatch(
           setUser({
             firstName: first,
             lastName: last,
             email: em,
+            zip: zip,
           })
         )
 
         addToMailchimp(em).then(data => {
           if ((data.result = "success")) {
-            navigate("/application")
+            submitApplication(first, last, em, zip)
           }
         })
       }
     }
   }
-  function checkValues(first, last) {
-    if (first.length > 0 && last.length > 0) {
+  function submitApplication(first, last, email, zipCode) {
+    let payload = {
+      name: [
+        {
+          use: "official",
+          text: `${first} ${last}`,
+          family: last,
+          given: [first],
+        },
+      ],
+      telecom: [
+        {
+          system: "email",
+          value: email,
+        },
+      ],
+      integrationId: _generateId(),
+      hireDate: moment().format("YYYY-MM-DD"),
+      organizationIntegrationId: "kairos-1",
+      licenseNumber: zipCode,
+      isInitialTrainingRequired: true,
+    }
+    axios({
+      method: "post",
+      url: "/.netlify/functions/createUser",
+      data: payload,
+    })
+      .then(res => {
+        setSucess(true)
+      })
+      .catch(err => {
+        setSucess(false)
+        console.log(err)
+        alert(
+          "Oops, something went wrong. Either you've already registered or there is a problem with your information!"
+        )
+      })
+  }
+  function checkValues(first, last, zip) {
+    if (first.length > 0 && last.length > 0 && zip.length) {
       return true
     }
-    alert("Please enter your name")
+    alert("Please fill all required fields")
     return false
   }
+  function _generateId() {
+    return Math.random().toString(36).substr(2, 9)
+  }
   function validateEmail(mail) {
-    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
       return true
     }
     alert("You have entered an invalid email address!")
@@ -98,77 +145,92 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
       <Row className="header-row bg-blue">
         <Col className="d-flex flex-column align-items-center justify-content-center">
           <div className="cta-graffiti">Apply for this job</div>
-          {mobile && (
-            <div className="d-flex justify-content-center w-100 mt-5">
-              <a
-                className="cta button-inline black mb-4 mt-3 mb-md-5 w-75 text-center"
-                href="https://team882226.typeform.com/to/OdNt3N0v"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apply
-              </a>
-            </div>
-          )}
         </Col>
       </Row>
 
-      {!mobile && (
-        <Row className="form-row bg-blue">
+      <Row className="form-row bg-blue">
+        {!mobile && (
           <Col
             xs={{ size: 10, offset: 1 }}
-            md={{ size: 10, offset: 1 }}
+            md={{ size: 4, offset: 1 }}
             className="information-column"
           >
-            <h3 className="text-center">How it works</h3>
-            <ol>
-              <li>
-                <span>
-                  Start your application below to kick off your new career
-                </span>
-              </li>
-              <li>
-                <span>
-                  You receive an email inviting you to start your training -- up
-                  to 60 hours of digital courses and 16 hours of in-person
-                  training with a qualified nurse instructor
-                </span>
-              </li>
-              <li>
-                <span>
-                  Our local agency partners will work with you to complete your
-                  in-person training and background checks, after which you’ll
-                  be placed in your first job!
-                </span>
-              </li>
-              <li>
-                <span>
-                  Our partners at Care.com will also grant you access to
-                  additional employment opportunities via their platform
-                </span>
-              </li>
+            <>
+              <h3 className="">How it works</h3>
+              <ol>
+                <li>
+                  <span>
+                    Start your application below to kick off your new career
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    You receive an email inviting you to start your training --
+                    up to 60 hours of digital courses and 16 hours of in-person
+                    training with a qualified nurse instructor
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Our local agency partners will work with you to complete
+                    your in-person training and background checks, after which
+                    you’ll be placed in your first job!
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    Our partners at Care.com will also grant you access to
+                    additional employment opportunities via their platform
+                  </span>
+                </li>
 
-              <li>
-                <span>
-                  Congratulations on your new career! This is the first
-                  milestone on your path towards earning your LPN and RN
-                  degrees.
-                </span>
-              </li>
-            </ol>
-            <div className="d-flex justify-content-center w-100 mt-5">
-              <a
-                className="cta button-inline black mb-4 mt-3 mb-md-5 w-75 text-center"
-                href="https://team882226.typeform.com/to/OdNt3N0v"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apply
-              </a>
-            </div>
+                <li>
+                  <span>
+                    Congratulations on your new career! This is the first
+                    milestone on your path towards earning your LPN and RN
+                    degrees.
+                  </span>
+                </li>
+              </ol>
+            </>
           </Col>
-        </Row>
-      )}
+        )}
+        <Col xs="12" md={{ size: 6, offset: 1 }} className="form-column">
+          <form action="" onSubmit={e => _submit(e)}>
+            <input
+              id="jobs-firstName"
+              type="text"
+              htmlFor="firstName"
+              name="firstName"
+              placeholder="First Name*"
+            />
+            <input
+              id="jobs-lastName"
+              type="text"
+              htmlFor="lastName"
+              name="lastName"
+              placeholder="Last Name*"
+            />
+            <input
+              id="jobs-email"
+              type="text"
+              htmlFor="email"
+              name="email"
+              placeholder="Email*"
+            />
+            <input
+              id="jobs-zip"
+              type="text"
+              htmlFor="zip"
+              name="zip"
+              placeholder="Zip Code*"
+            />
+            <button type="submit" className="cta button-inline black">
+              start your application
+            </button>
+          </form>
+        </Col>
+      </Row>
 
       <Row className="list-item-row bg-white">
         <Col md={{ size: 7 }} className="text-center">

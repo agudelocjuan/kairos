@@ -195,40 +195,55 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
             </>
           </Col>
         )}
-        <Col xs="12" md={{ size: 6, offset: 1 }} className="form-column">
-          <form action="" onSubmit={e => _submit(e)}>
-            <input
-              id="jobs-firstName"
-              type="text"
-              htmlFor="firstName"
-              name="firstName"
-              placeholder="First Name*"
-            />
-            <input
-              id="jobs-lastName"
-              type="text"
-              htmlFor="lastName"
-              name="lastName"
-              placeholder="Last Name*"
-            />
-            <input
-              id="jobs-email"
-              type="text"
-              htmlFor="email"
-              name="email"
-              placeholder="Email*"
-            />
-            <input
-              id="jobs-zip"
-              type="text"
-              htmlFor="zip"
-              name="zip"
-              placeholder="Zip Code*"
-            />
-            <button type="submit" className="cta button-inline black">
-              start your application
-            </button>
-          </form>
+
+        <Col
+          xs="12"
+          md={{ size: 6, offset: 1 }}
+          className={`form-column ${
+            success ? "d-flex align-items-center" : ""
+          }`}
+        >
+          {success ? (
+            <div className="success-container text-center">
+              <div className="cta-graffiti text-salmon">
+                Thanks for signing up! Check your email for next steps.
+              </div>
+            </div>
+          ) : (
+            <form action="" onSubmit={e => _submit(e)}>
+              <input
+                id="jobs-firstName"
+                type="text"
+                htmlFor="firstName"
+                name="firstName"
+                placeholder="First Name*"
+              />
+              <input
+                id="jobs-lastName"
+                type="text"
+                htmlFor="lastName"
+                name="lastName"
+                placeholder="Last Name*"
+              />
+              <input
+                id="jobs-email"
+                type="text"
+                htmlFor="email"
+                name="email"
+                placeholder="Email*"
+              />
+              <input
+                id="jobs-zip"
+                type="text"
+                htmlFor="zip"
+                name="zip"
+                placeholder="Zip Code*"
+              />
+              <button type="submit" className="cta button-inline black">
+                start your application
+              </button>
+            </form>
+          )}
         </Col>
       </Row>
 

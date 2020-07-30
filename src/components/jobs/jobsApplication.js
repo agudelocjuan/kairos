@@ -19,8 +19,9 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
     let first = e.target[0].value
     let last = e.target[1].value
     let em = e.target[2].value
-    let zip = e.target[3].value
-    if (checkValues(first, last, zip)) {
+    let phone = e.target[3].value
+    let zip = e.target[4].value
+    if (checkValues(first, last, zip, phone)) {
       if (validateEmail(em)) {
         dispatch(
           setUser({
@@ -28,18 +29,19 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
             lastName: last,
             email: em,
             zip: zip,
+            phoneNumber: phone,
           })
         )
 
         addToMailchimp(em).then(data => {
           if ((data.result = "success")) {
-            submitApplication(first, last, em, zip)
+            submitApplication(first, last, em, zip, phone)
           }
         })
       }
     }
   }
-  function submitApplication(first, last, email, zipCode) {
+  function submitApplication(first, last, email, zipCode, phone) {
     let payload = {
       name: [
         {
@@ -53,6 +55,10 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
         {
           system: "email",
           value: email,
+        },
+        {
+          system: "phone",
+          value: phone,
         },
       ],
       integrationId: _generateId(),
@@ -77,8 +83,13 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
         )
       })
   }
-  function checkValues(first, last, zip) {
-    if (first.length > 0 && last.length > 0 && zip.length) {
+  function checkValues(first, last, zip, phone) {
+    if (
+      first.length > 0 &&
+      last.length > 0 &&
+      zip.length > 0 &&
+      phone.length > 0
+    ) {
       return true
     }
     alert("Please fill all required fields")
@@ -231,6 +242,13 @@ const JobsApplication = ({ dispatch, mobile, user }) => {
                 htmlFor="email"
                 name="email"
                 placeholder="Email*"
+              />
+              <input
+                id="jobs-phone"
+                type="text"
+                htmlFor="phone"
+                name="phone"
+                placeholder="Phone Number*"
               />
               <input
                 id="jobs-zip"

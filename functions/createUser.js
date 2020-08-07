@@ -18,7 +18,6 @@ exports.handler = async function (event, context, callback) {
 
   try {
     payload = JSON.parse(event.body)
-    console.log(payload)
   } catch (error) {
     return {
       statusCode: 400,
@@ -41,16 +40,12 @@ exports.handler = async function (event, context, callback) {
     },
   })
     .then(res => {
-      console.log(res)
       return {
         statusCode: 200,
         body: JSON.stringify({ message: "Success" }),
       }
     })
     .catch(err => {
-      console.log(err.response.status)
-      console.log(err.response.statusText)
-      console.log(err.response.headers)
       return {
         statusCode: 500,
         body: JSON.stringify({ message: err.response.statusText }),

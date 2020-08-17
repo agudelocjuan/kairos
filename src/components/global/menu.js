@@ -36,7 +36,7 @@ const Menu = ({ dispatch, mobile, menu }) => {
           className="d-flex flex-column align-items-start text-left flex-md-row align-items-md-center"
         >
           <div className="pr-md-5">
-            {!mobile && <p>General Inqueries</p>}
+            {!mobile && <p>General Inquiries</p>}
             <a href="mailto:team@kairoshq.com" className="">
               team@kairoshq.com
             </a>

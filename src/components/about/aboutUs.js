@@ -230,6 +230,13 @@ const AboutUs = ({ mobile }) => {
           }
         }
       }
+      esther_lee: file(relativePath: { eq: "team/esther_lee.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       omar_sultan_al_olama: file(
         relativePath: { eq: "team/omar_sultan_al_olama.jpeg" }
       ) {
@@ -409,6 +416,12 @@ const AboutUs = ({ mobile }) => {
       title: "Minster for AI, United Arab Emirates",
       team: "advisory",
       img: "omar_sultan_al_olama",
+    },
+    {
+      name: "Esther Lee",
+      title: "Chief Marketing Officer, MetLife",
+      team: "advisory",
+      img: "esther_lee",
     },
   ]
   return (

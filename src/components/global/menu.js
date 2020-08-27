@@ -59,16 +59,16 @@ const Menu = ({ dispatch, mobile, menu }) => {
           md="4"
           className="d-flex justify-content-center justify-content-md-end align-items-start align-items-md-center"
         >
-          <a href="https://www.facebook.com" className="pl-2">
+          <a href="https://www.facebook.com/TheKairosSociety" className="pl-2">
             <img src={facebook} alt="" />
           </a>
-          <a href="https://www.instagram.com" className="pl-2">
+          <a href="https://www.instagram.com/kairoshq" className="pl-2">
             <img src={instagram} alt="" />
           </a>
-          <a href="https://www.twitter.com" className="pl-2">
+          <a href="https://www.twitter.com/kairoshq" className="pl-2">
             <img src={twitter} alt="" />
           </a>
-          <a href="https://www.linkedin.com" className="pl-2">
+          <a href="https://www.linkedin.com/kairoshq" className="pl-2">
             <img src={linkedin} alt="" />
           </a>
         </Col>

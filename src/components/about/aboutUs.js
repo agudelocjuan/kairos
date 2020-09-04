@@ -371,7 +371,7 @@ const AboutUs = ({ mobile }) => {
     },
     {
       name: "David Carey",
-      title: "President, Hearst Magazines",
+      title: "Senior Vice President, Public Affairs and Communications",
       team: "advisory",
       img: "david_carey",
     },

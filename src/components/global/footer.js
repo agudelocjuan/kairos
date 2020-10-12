@@ -15,7 +15,7 @@ import recycle from "../../images/icons/recycle-icon.svg"
 import twitter from "../../images/icons/twitter-icon.svg"
 
 const slogans = [
-  "Know someone who needs a job ASAP?  Just share this.",
+  "Know someone who needs a job ASAP? Just share this.",
   "I got 99 problems and money could solve about 86 of them",
   "Anyone else feel like they know less about COVID now than they did 2 months ago?",
   "Meeting our basic needs should be basic.",
@@ -87,6 +87,7 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               <Link to="/about">About Us</Link>
               <Link to="/our-companies">Our Companies</Link>
               <Link to="/10kjobs">10k Jobs</Link>
+              <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com">Careers</a>
               <Link to="/contact">Contact Us</Link>
               <Link to="/terms">Terms</Link>
               <Link to="/privacy">Privacy Policy</Link>
@@ -113,6 +114,7 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
             </div>
             <div className="footer-link-column">
               <Link to="/10kjobs">10k Jobs</Link>
+              <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com">Careers</a>
               <Link to="/terms">Terms</Link>
               <Link to="/privacy">Privacy Policy</Link>
             </div>

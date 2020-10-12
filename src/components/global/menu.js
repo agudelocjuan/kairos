@@ -27,6 +27,9 @@ const Menu = ({ dispatch, mobile, menu }) => {
           <Link to="/10kjobs" onClick={() => dispatch(setMenu(false))}>
             <h2>10k Jobs</h2>
           </Link>
+          <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com" onClick={() => dispatch(setMenu(false))}>
+            <h2>Careers</h2>
+          </a>
         </Col>
       </Row>
       <Row className="cta-row">

@@ -28,6 +28,7 @@
     "react-flickity-component": "^3.5.0",
     "react-helmet": "^6.0.0",
     "react-redux": "^7.2.0",
+    "react-youtube": "^7.13.0",
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5"
   },

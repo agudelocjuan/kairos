@@ -1,0 +1,12 @@
+#campaignSubHero {
+  margin: 1em 0;
+  .text-row {
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    &.second {
+      margin-bottom: 4em;
+    }
+  }
+}

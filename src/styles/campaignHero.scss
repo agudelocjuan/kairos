@@ -25,6 +25,7 @@
     position: relative;
     display: flex;
     justify-content: center;  
+    text-align: center;
     z-index: 20;
   }
   .hero-cta-row {
@@ -40,7 +41,7 @@
 }
 
 @media (max-width: map-get($grid-breakpoints,md)) {
-  #homeHero {
+  #campaignHero {
     min-height: 85vh;
     .hero-title-row {
       padding-top: 30%;
@@ -58,6 +59,13 @@
         z-index: 100;
         position: relative;
       }
+    }
+    .hero-subtitle-row .col h3 {
+      position: relative;
+      display: flex;
+      justify-content: center;  
+      text-align: center;
+      z-index: 20;
     }
     .hero-cta-row {
       margin-top: auto;

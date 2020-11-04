@@ -19,16 +19,6 @@ const Layout = ({
   applicationPage = false,
   jobs = false,
 }) => {
-  console.groupCollapsed(
-    "%c💀 Site Credits",
-    "display:block;padding:0.125em 1em;font-family:courier;font-size:14px;font-weight:bold;line-height:2;text-transform:uppercase;background:black;color:white;"
-  )
-  console.log(
-    "%cDesign & Development by Alright Studio \n– https://alright.studio",
-    "display:block;font-family:courier;font-size:12px;font-weight:bold;line-height:1;color:red;"
-  )
-  console.groupEnd()
-
   let [colorIndex, setColorIndex] = useState(0)
   let colorCount = 3
   useEffect(() => {

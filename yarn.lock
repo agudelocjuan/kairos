@@ -5511,6 +5511,18 @@ email-validator@^2.0.4:
   resolved "https://registry.yarnpkg.com/email-validator/-/email-validator-2.0.4.tgz#b8dfaa5d0dae28f1b03c95881d904d4e40bfe7ed"
   integrity sha512-gYCwo7kh5S3IDyZPLZf6hSS0MnZT8QmJFqYvbqlDZSbwdZlY6QZWxJ4i/6UhITOJ4XzyI647Bm2MXKCLqnJ4nQ==
 
+embla-carousel-react@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-2.0.3.tgz#6a8c1b8fa0b8ee45a65ec8907cd806f6a00a2bbd"
+  integrity sha512-lxah4lieLB0in33AZSHSwonEFs8kHtS9ECbd+VOFm2eXDUuxUQQktHLdyVCXSkQp7vstrzXEbh4/i4bFzOj4eQ==
+  dependencies:
+    embla-carousel "^3.0.2"
+
+embla-carousel@^3.0.2:
+  version "3.0.28"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-3.0.28.tgz#9396113695d52e6fe58597dd214ff09c93562e21"
+  integrity sha512-39LFEYNkmAhPx0lg0bbporWjBic6KbcPzFV3DHd4lT3TGPTh9aCieDvERjfIIQyS4/82dpiZNpqGLUvLBSM8ZQ==
+
 emoji-regex@^7.0.1, emoji-regex@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"

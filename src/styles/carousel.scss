@@ -1,0 +1,105 @@
+.carousel {
+  &--container {
+    // transform: translate3d(0%, 0px, 0px) !important;
+  }
+  @media (max-width: 768px) {
+    &--container {
+      display: flex;
+      will-change: transform;
+    }
+    &--slide {
+      position: relative;
+      flex: 0 0 100%;
+      &.is-1-up {
+        flex-basis: 90%;
+        max-width: 90%;
+      }
+      &.is-2-up {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      &.is-3-up {
+        flex-basis: 33.333%;
+        max-width: 33.333%;
+      }
+      &.is-4-up {
+        flex-basis: 25%;
+        max-width: 25%;
+      }
+    }
+    &--nav {
+      margin: 2em 0;
+    }
+    &--next {
+      cursor: pointer;
+      padding: 1em 1.25em;
+      margin-left: 0.5em;
+      background-color: transparent;
+      border: 1px solid $blue;
+      &.white {
+        background-color: transparent;
+        border: 1px solid $white;
+      }
+    }
+    &--prev {
+      cursor: pointer;
+      padding: 1em 1.25em;
+      margin-right: 0.5em;
+      border: 1px solid $blue;
+      &.white {
+        background-color: transparent;
+        border: 1px solid $white;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    &--container {
+      display: flex;
+      will-change: transform;
+    }
+    &--slide {
+      position: relative;
+      flex: 0 0 100%;
+      &.is-1-up {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+      &.is-2-up {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      &.is-3-up {
+        flex-basis: 40%;
+        max-width: 40%;
+      }
+      &.is-4-up {
+        flex-basis: 25%;
+        max-width: 25%;
+      }
+    }
+    &--nav {
+    }
+    &--next {
+      cursor: pointer;
+      padding: 0.75em 1.2em 0.85em;
+      margin-left: 0.5em;
+      border: 1px solid $blue;
+      background-color: transparent;
+      &.white {
+        border: 1px solid $white;
+        background-color: transparent;
+      }
+    }
+    &--prev {
+      cursor: pointer;
+      padding: 0.75em 1.2em 0.85em;
+      margin-right: 0.5em;
+      border: 1px solid $blue;
+      background-color: transparent;
+      &.white {
+        border: 1px solid $white;
+        background-color: transparent;
+      }
+    }
+  }
+}

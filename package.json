@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "embla-carousel-react": "^2.0.3",
     "flickity": "^2.2.1",
     "framer-motion": "^2.9.4",
     "gatsby": "^2.22.15",

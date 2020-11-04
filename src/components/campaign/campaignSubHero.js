@@ -55,7 +55,10 @@ const CampaignSubHero = ({ mobile }) => {
         <Col md="6">
           <Img fluid={subhero.childImageSharp.fluid} />
         </Col>
-        <Col md="6" className="d-flex flex-column justify-content-center">
+        <Col
+          md="6"
+          className="d-flex flex-column justify-content-center mt-5 mt-md-0"
+        >
           <h3>HOW IT WORKS</h3>
           <p>
             Our Renter Stimulus plan requires every landlord to give renters the

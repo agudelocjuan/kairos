@@ -9,12 +9,6 @@ const options = {
 }
 const slides = [
   {
-    type: "quote",
-    quote:
-      "There were literally tenants crying tears of gratitude at City Hall but real estate investor associations were also in support,",
-    source: "PG Sittenfeld, Cincinnati City Council, NBC article",
-  },
-  {
     type: "video",
     videoId: "u57uy6gKSlw",
   },
@@ -27,6 +21,12 @@ const slides = [
   {
     type: "video",
     videoId: "DzymrHY-T-c",
+  },
+  {
+    type: "quote",
+    quote:
+      "There were literally tenants crying tears of gratitude at City Hall but real estate investor associations were also in support,",
+    source: "PG Sittenfeld, Cincinnati City Council, NBC article",
   },
 ]
 

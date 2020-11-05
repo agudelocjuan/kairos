@@ -34,7 +34,7 @@
     padding-bottom: 50px;
     z-index: 20;
     .arrow {
-      width: 20px;
+      width: 16px;
       padding-bottom: 50px;
     }
   }
@@ -44,7 +44,7 @@
   #campaignHero {
     min-height: 85vh;
     .hero-title-row {
-      padding-top: 30%;
+      padding-top: 40%;
       text-align: center;
       z-index: 10;
       img {
@@ -52,7 +52,7 @@
         position: absolute;
         transform: translate(-50%, 0%);
         left: 50%;
-        bottom: 0%;
+        bottom: -60%;
         width: 75%;
       }
       h1 {
@@ -66,12 +66,13 @@
       justify-content: center;  
       text-align: center;
       z-index: 20;
+      margin-top: 10%;
     }
     .hero-cta-row {
       margin-top: auto;
       text-align: center;
       .arrow {
-        padding-bottom: 72px;
+        padding-bottom: 24px;
       }
     }
   }

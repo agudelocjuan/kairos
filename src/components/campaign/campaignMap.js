@@ -35,12 +35,18 @@ const CampaignMap = ({}) => {
             where we’re going next!
           </p>
           <p className="cta text-salmon mb-3">HELP US GET THERE</p>
-          <img src={arrow} alt="white arrow down" className="" />
+          <img src={arrow} alt="white arrow down" className="arrow" />
         </Col>
       </Row>
       <Row className="d-flex justify-content-center">
         <Col md="8">
           <Img fluid={map.childImageSharp.fluid} />
+          <p className="mt-5 text-white">
+            ** In April, Governor Andrew Cuomo issued an executive order that
+            temporarily allowed residents to use their security deposits as rent
+            payment. Scroll down to learn more about what you can do to make
+            Renter Stimulus a permanent fixture in New York.
+          </p>
         </Col>
       </Row>
     </Container>

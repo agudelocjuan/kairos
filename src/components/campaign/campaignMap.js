@@ -34,7 +34,7 @@ const CampaignMap = ({}) => {
             Check out our map to see how much we’ve unlocked in your city and
             where we’re going next!
           </p>
-          <p className="cta text-salmon">HELP US GET THERE</p>
+          <p className="cta text-salmon mb-3">HELP US GET THERE</p>
           <img src={arrow} alt="white arrow down" className="" />
         </Col>
       </Row>

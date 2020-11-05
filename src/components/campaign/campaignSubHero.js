@@ -21,16 +21,22 @@ const CampaignSubHero = ({ mobile }) => {
     <Container fluid id="campaignSubHero">
       <Row className="text-row first">
         <Col md={{ size: 7 }}>
-          <h3>Americans Need Housing Relief</h3>
+          <h3>About the Campaign</h3>
           <p>
-            There is $45 billion locked up in security deposits around the
-            country – nearly $1,500 per American renter.
+            There are $45 billion locked up in security deposits around the
+            country – an average of nearly $1,500 per American renter. For the
+            last three years, Kairos has been fighting to get that money back
+            into our hands. When the pandemic hit, that mission became our
+            priority.
           </p>
+          <p>Our money is locked away during a time when we need it most.</p>
           <p>
-            For the last 3 years, Kairos has been fighting to get that money
-            back into our hands. In 2020, we crossed $200 million returned to
-            renters. But when the pandemic hit, we knew there was so much more
-            that could be done.
+            We can't wait any longer. In the face of persistent inaction by the
+            federal government, we're working with city and state legislators
+            across the country to fight for a Renter Stimulus, the single
+            largest housing affordability and rent relief initiative in the
+            country. Since March, we've returned over $200 million to renters
+            and unlocked $1.3 billion more in cities from coast to coast.{" "}
           </p>
         </Col>
       </Row>

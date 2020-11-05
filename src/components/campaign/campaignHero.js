@@ -23,7 +23,7 @@ const CampaignHero = ({ mobile, color }) => {
       </Row>
       <Row className="hero-subtitle-row">
         <Col>
-          <h3>NEARLY $1,500 PER RENTER</h3>
+          <h3>THAT'S NEARLY $1,500 PER RENTER</h3>
         </Col>
       </Row>
       <Row className="hero-cta-row">

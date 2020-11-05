@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
-
+import { motion, AnimatePresence } from "framer-motion"
 import { setMobile } from "../../state/global"
 
 import Header from "./header"
@@ -32,6 +32,26 @@ const Layout = ({
     } else {
       dispatch(setMobile(false))
     }
+  }
+
+  const duration = 0.25
+
+  const variants = {
+    initial: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+      transition: {
+        duration: duration,
+        delay: duration * 2,
+        when: "afterChildren",
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: duration },
+    },
   }
 
   function _onSelect() {

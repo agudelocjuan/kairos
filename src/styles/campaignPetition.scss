@@ -1,0 +1,12 @@
+#campaignPetition {
+  margin-top: -2em;
+  text-align: center;
+  .row {
+    display: flex;
+    justify-content: center;
+    a {
+      margin: 2em 0 4em;
+      padding: 24px 24px;
+    }
+  }
+}

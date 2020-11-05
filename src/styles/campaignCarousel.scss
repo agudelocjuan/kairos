@@ -1,0 +1,63 @@
+#campaignCarousel {
+  background: $blue;
+  padding-top: 8em;
+  // min-height: 100vh;
+  .title-row {
+    margin-bottom: 2em;
+  }
+  .slide {
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    &.is-quote {
+      .title {
+        margin-bottom: .25em;
+      }
+    }
+
+  }
+  .carousel {
+    height: 100%; 
+    .navigation {
+      display: flex;
+      justify-content: center;
+      margin: 1em 0 3em;
+      cursor: pointer;
+      .controls {
+        margin: 0 1em;
+        img {
+          width: 50px;
+        }
+        &.previous-slide {
+          img {
+            transform: rotate(180deg) translateY(-2px);
+          }
+        }
+      }
+    }    
+    &--inner {
+      width: 100%;
+      padding: 2em;
+      margin: 1em;
+      display: flex;
+      flex: '0 0 100%';
+
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #campaignCarousel {
+    padding-top: 4em;
+    .carousel .slide {
+      &.is-video {
+        iframe {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

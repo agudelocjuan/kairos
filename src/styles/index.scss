@@ -82,6 +82,7 @@ $theme-colors: (
 @import "./accordion.scss";
 @import "./menu.scss";
 @import "./pages.scss";
+@import "./carousel.scss";
 
 // Home Page Styles
 @import "./homeHero.scss";
@@ -108,3 +109,10 @@ $theme-colors: (
 
 // Application Styles
 @import "./applicationForm.scss";
+
+// Campaign Page Styles
+@import './campaignHero.scss';
+@import './campaignSubHero.scss';
+@import './campaignMap.scss';
+@import './campaignPetition.scss';
+@import './campaignCarousel.scss';

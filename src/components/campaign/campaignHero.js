@@ -13,17 +13,15 @@ const CampaignHero = ({ mobile, color }) => {
         <Col className="position-relative">
           <img src={graffiti} alt="" />
           <h1>
-            IT'S TIME FOR THE
+            WE'RE FIGHTING FOR $1,400
             <br />
-            $45 BILLION RENTER
-            <br />
-            STIMULUS
+            FOR EVERY AMERICAN RENTER
           </h1>
         </Col>
       </Row>
       <Row className="hero-subtitle-row">
         <Col>
-          <h3>THAT'S NEARLY $1,500 PER RENTER</h3>
+          <h3>(That's a $45 billion stimulus)</h3>
         </Col>
       </Row>
       <Row className="hero-cta-row">

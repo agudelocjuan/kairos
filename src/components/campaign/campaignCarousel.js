@@ -36,7 +36,7 @@ class CampaignCarousel extends React.Component {
       <Container fluid id="campaignCarousel">
         <Row className="d-flex justify-content-center title-row">
           <Col md="8">
-            <h3 className="text-center">HEAR WHAT OUR PARTNERS HAVE TO SAY</h3>
+            <h3 className="text-center">Hear What Our Partners Have to Say</h3>
           </Col>
         </Row>
         <Row className="d-flex justify-content-center">

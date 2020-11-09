@@ -3,11 +3,12 @@ import { useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 import Img from "gatsby-image"
+import spraypaint from "../../images/global/spraypaint.png"
 
 const CampaignSubHero = ({ mobile }) => {
   const data = useStaticQuery(graphql`
     query {
-      subhero: file(relativePath: { eq: "campaigns/subhero.png" }) {
+      subhero: file(relativePath: { eq: "campaigns/house.png" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
             ...GatsbyImageSharpFluid
@@ -29,7 +30,11 @@ const CampaignSubHero = ({ mobile }) => {
             into our hands. When the pandemic hit, that mission became our
             priority.
           </p>
-          <p>Our money is locked away during a time when we need it most.</p>
+          <p>
+            <strong>
+              Our money is locked away during a time when we need it most.
+            </strong>
+          </p>
           <p>
             We can't wait any longer. In the face of persistent inaction by the
             federal government, we're working with city and state legislators
@@ -38,13 +43,6 @@ const CampaignSubHero = ({ mobile }) => {
             country. Since March, we've returned over $200 million to renters
             and unlocked $1.3 billion more in cities from coast to coast.{" "}
           </p>
-        </Col>
-      </Row>
-      <Row className="text-row second">
-        <Col md={{ size: 7 }}>
-          <h3 className="">
-            Our money is locked away during a time when we need it most.
-          </h3>
           <p>
             That’s why we are working with city and state legislators from coast
             to coast to fight for{" "}
@@ -57,15 +55,16 @@ const CampaignSubHero = ({ mobile }) => {
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row className="img-row">
         <Col md="6">
           <Img fluid={subhero.childImageSharp.fluid} />
         </Col>
         <Col
           md="6"
-          className="d-flex flex-column justify-content-center mt-5 mt-md-0"
+          className="d-flex flex-column justify-content-center mt-5 mt-md-0 desc-container"
         >
-          <h3>HOW IT WORKS</h3>
+          <img src={spraypaint} alt="spraypaint" className="spraypaint" />
+          <h3>How It Works</h3>
           <p>
             Our Renter Stimulus plan requires every landlord to give renters the
             option to replace their security deposit with a low-cost monthly

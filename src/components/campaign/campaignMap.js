@@ -34,8 +34,6 @@ const CampaignMap = ({}) => {
             Check out our map to see how much we’ve unlocked in your city and
             where we’re going next!
           </p>
-          <p className="cta text-salmon mb-3">HELP US GET THERE</p>
-          <img src={arrow} alt="white arrow down" className="arrow" />
         </Col>
       </Row>
       <Row className="d-flex justify-content-center">
@@ -47,6 +45,8 @@ const CampaignMap = ({}) => {
             payment. Scroll down to learn more about what you can do to make
             Renter Stimulus a permanent fixture in New York.
           </p>
+          <p className="cta text-salmon mb-3">HELP US GET THERE</p>
+          <img src={arrow} alt="white arrow down" className="arrow" />
         </Col>
       </Row>
     </Container>

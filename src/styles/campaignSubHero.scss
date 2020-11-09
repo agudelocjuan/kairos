@@ -9,4 +9,53 @@
       margin-bottom: 4em;
     }
   }
+  .img-row {
+    .desc-container {
+      position: relative;
+      p,h3 {
+        position: relative;
+        z-index: 10;
+      }
+      .spraypaint {
+        position: absolute;
+        z-index: 0;
+        width: 40%;
+        top: 20%;
+       }
+    }
+  } 
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #campaignSubHero {
+    margin: 1em 0;
+    .text-row {
+      margin-top: 4em;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      &.second {
+        margin-bottom: 4em;
+      }
+    }
+    .img-row {
+      img {
+        position: relative;
+        z-index: 10;
+      }
+      .desc-container {
+        position: relative;
+        p,h3 {
+          position: relative;
+          z-index: 10;
+        }
+        .spraypaint {
+          position: absolute;
+          z-index: 0;
+          width: 80%;
+          top: -20%;
+         }
+      }
+    } 
+  }
 }

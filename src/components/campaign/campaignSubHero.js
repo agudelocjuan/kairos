@@ -36,22 +36,15 @@ const CampaignSubHero = ({ mobile }) => {
             </strong>
           </p>
           <p>
-            We can't wait any longer. In the face of persistent inaction by the
-            federal government, we're working with city and state legislators
-            across the country to fight for a Renter Stimulus, the single
-            largest housing affordability and rent relief initiative in the
-            country. Since March, we've returned over $200 million to renters
-            and unlocked $1.3 billion more in cities from coast to coast.{" "}
-          </p>
-          <p>
-            That’s why we are working with city and state legislators from coast
-            to coast to fight for{" "}
+            We can’t wait any longer. In the face of persistent inaction by the
+            federal government, we’re working with city and state legislators
+            across the country to fight for a{" "}
             <strong>
-              Renter Stimulus: the single largest housing affordability and rent
-              relief initiative in the country.
-            </strong>{" "}
-            So far, we’ve unlocked $1.3 billion in cities across the country but
-            we have so much more to do.
+              Renter Stimulus, the single largest housing affordability and rent
+              relief initiative in the country
+            </strong>
+            . Since March, we’ve returned over $200 million to renters and
+            unlocked $1.3 billion more in cities from coast to coast.
           </p>
         </Col>
       </Row>

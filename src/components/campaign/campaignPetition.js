@@ -10,11 +10,13 @@ const CampaignPetition = ({}) => {
           <p>
             Our renter stimulus plan works. It has put more money into the hands
             of American renters than any other program aside from the CARES Act
-            passed by Congress in March 2020.
+            passed by Congress in March 2020. More than 50 city and state
+            elected officials have signed an open letter calling for the renter
+            stimulus. Read that here.
           </p>
           <p>
-            This plan makes a difference because it makes sense. But we need
-            your help.
+            This plan makes a difference because it <strong>makes sense</strong>
+            . But we need <strong>your help</strong>.
           </p>
           <p>
             We live in a world that often pays attention to controversy over
@@ -23,6 +25,8 @@ const CampaignPetition = ({}) => {
             renter stimulus is a common-sense policy that you want adopted.
           </p>
           <a
+            target="_blank"
+            rel="noreferrer noopener"
             className="cta button-inline bg-salmon w-100"
             href="https://www.change.org/p/local-politicians-use-security-deposits-to-cover-rent"
           >

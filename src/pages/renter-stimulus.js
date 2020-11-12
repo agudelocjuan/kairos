@@ -18,7 +18,7 @@ const CampaignPage = ({ location }) => {
       borderColor={borderColor}
       footerColor={pageColor}
     >
-      <SEO title="Rent Relief" />
+      <SEO title="Renter Stimulus" />
       <CampaignHero color={pageColor} />
       <CampaignSubHero />
       <CampaignMap />

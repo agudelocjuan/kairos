@@ -12,7 +12,7 @@ const CampaignPetition = ({}) => {
             of American renters than any other program aside from the CARES Act
             passed by Congress in March 2020. More than 50 city and state
             elected officials have signed an open letter calling for the renter
-            stimulus. Read that here.
+            stimulus.
           </p>
           <p>
             This plan makes a difference because it <strong>makes sense</strong>

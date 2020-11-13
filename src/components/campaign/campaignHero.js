@@ -13,9 +13,11 @@ const CampaignHero = ({ mobile, color }) => {
         <Col className="position-relative">
           <img src={graffiti} alt="" />
           <h1>
-            WE'RE FIGHTING FOR $1,400
+            WE'RE FIGHTING
             <br />
-            FOR EVERY AMERICAN RENTER
+            FOR $1,400 FOR EVERY
+            <br />
+            AMERICAN RENTER
           </h1>
         </Col>
       </Row>

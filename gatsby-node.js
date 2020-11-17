@@ -23,6 +23,24 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            allContentfulFaq {
+              totalCount
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+            allContentfulInterview {
+              totalCount
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
           }
         `
       ).then(result => {
@@ -31,6 +49,8 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
         const blog = result.data.allContentfulBlogPost.edges
+        const faq = result.data.allContentfulFaq.edges
+        const interview = result.data.allContentfulInterview.edges
         paginate({
           createPage,
           items: blog,
@@ -45,6 +65,26 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug: post.node.slug,
               postType: "blog",
+            },
+          })
+        })
+        faq.forEach(post => {
+          createPage({
+            path: `/blog/${post.node.slug}/`,
+            component: path.resolve("src/components/blog/faqTemplate.js"),
+            context: {
+              slug: post.node.slug,
+              postType: "faq",
+            },
+          })
+        })
+        interview.forEach(post => {
+          createPage({
+            path: `/blog/${post.node.slug}/`,
+            component: path.resolve("src/components/blog/interviewTemplate.js"),
+            context: {
+              slug: post.node.slug,
+              postType: "interview",
             },
           })
         })

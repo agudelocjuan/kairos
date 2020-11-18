@@ -87,14 +87,19 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               <Link to="/about">About Us</Link>
               <Link to="/our-companies">Our Companies</Link>
               <Link to="/10kjobs">10k Jobs</Link>
-              <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com">Careers</a>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://jobs.kairoshq.com"
+              >
+                Careers
+              </a>
               <Link to="/contact">Contact Us</Link>
               <Link to="/terms">Terms</Link>
               <Link to="/privacy">Privacy Policy</Link>
             </div>
             <div className="footer-link-column">
-              <a href="https://www.facebook.com/TheKairosSociety/">Facebook</a>
-              <a href="https://www.Linkedin.com/Kairoshq">Linkedin</a>
+              <a href="https://www.linkedin.com/company/kairoshq/">Linkedin</a>
               <a href="https://www.instagram.com/kairoshq/">Instagram</a>
               <a href="https://www.Twitter.com/Kairoshq">Twitter</a>
               <img src={icon} className="footer-icon" alt="" />
@@ -114,13 +119,18 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
             </div>
             <div className="footer-link-column">
               <Link to="/10kjobs">10k Jobs</Link>
-              <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com">Careers</a>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://jobs.kairoshq.com"
+              >
+                Careers
+              </a>
               <Link to="/terms">Terms</Link>
               <Link to="/privacy">Privacy Policy</Link>
             </div>
             <div className="footer-link-column">
-              <a href="https://www.facebook.com/TheKairosSociety">Facebook</a>
-              <a href="https://www.Linkedin.com/kairoshq">Linkedin</a>
+              <a href="https://www.linkedin.com/company/kairoshq/">Linkedin</a>
               <a href="https://www.Instagram.com/kairoshq">Instagram</a>
               <a href="https://www.Twitter.com/kairoshq">Twitter</a>
             </div>

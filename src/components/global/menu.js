@@ -5,7 +5,6 @@ import { Container, Row, Col } from "reactstrap"
 
 import { setMenu } from "../../state/global"
 
-import facebook from "../../images/icons/facebook-icon-white.svg"
 import twitter from "../../images/icons/twitter-icon-white.svg"
 import linkedin from "../../images/icons/linkedin-icon-white.svg"
 import instagram from "../../images/icons/instagram-icon-white.svg"
@@ -27,7 +26,12 @@ const Menu = ({ dispatch, mobile, menu }) => {
           <Link to="/10kjobs" onClick={() => dispatch(setMenu(false))}>
             <h2>10k Jobs</h2>
           </Link>
-          <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com" onClick={() => dispatch(setMenu(false))}>
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://jobs.kairoshq.com"
+            onClick={() => dispatch(setMenu(false))}
+          >
             <h2>Careers</h2>
           </a>
         </Col>
@@ -62,16 +66,13 @@ const Menu = ({ dispatch, mobile, menu }) => {
           md="4"
           className="d-flex justify-content-center justify-content-md-end align-items-start align-items-md-center"
         >
-          <a href="https://www.facebook.com/TheKairosSociety" className="pl-2">
-            <img src={facebook} alt="" />
-          </a>
           <a href="https://www.instagram.com/kairoshq" className="pl-2">
             <img src={instagram} alt="" />
           </a>
           <a href="https://www.twitter.com/kairoshq" className="pl-2">
             <img src={twitter} alt="" />
           </a>
-          <a href="https://www.linkedin.com/kairoshq" className="pl-2">
+          <a href="https://www.linkedin.com/company/kairoshq/" className="pl-2">
             <img src={linkedin} alt="" />
           </a>
         </Col>

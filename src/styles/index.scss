@@ -20,6 +20,7 @@ $light-black: rgba(14, 23, 38, 0.6);
 $salmon: #f15953;
 $mustard: #ecc86f;
 $blue: #c0e7ed;
+$dark-blue: #0E1726;
 $yellow: #ebe4a3;
 $light-yellow: rgba(235, 228, 163, 0.6);
 $company-purple: #ececfc;
@@ -116,3 +117,6 @@ $theme-colors: (
 @import './campaignMap.scss';
 @import './campaignPetition.scss';
 @import './campaignCarousel.scss';
+
+// Blog Styles
+@import './blogIndex.scss';

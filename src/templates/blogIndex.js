@@ -7,6 +7,12 @@ import { Container, Row, Col } from "reactstrap"
 import SEO from "../components/global/seo"
 import Layout from "../components/global/layout"
 
+import BlogIndex__BrokeNote from "../components/blog/blogIndex__BrokeNote"
+import BlogIndex__Email from "../components/blog/blogIndex__Email"
+import BlogIndex__GroupChat from "../components/blog/blogIndex__GroupChat"
+import BlogIndex__FAQ from "../components/blog/blogIndex__FAQ"
+import BlogIndex__Questions from "../components/blog/blogIndex__Questions"
+
 class BlogIndex extends React.Component {
   constructor(props) {
     super(props)
@@ -44,6 +50,8 @@ class BlogIndex extends React.Component {
     //// Organize content from graphql & filtered data
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
+
+
 
     // this obj contains all the blog posts
     console.log(blogPosts)
@@ -185,6 +193,19 @@ class BlogIndex extends React.Component {
       >
         <SEO title="Blog" />
         <div id="libraryPage">{pageRender}</div>
+
+        {/* content goes here */}
+
+        {/* <div style={{ color: `purple` }}>
+          <h1>Hello Gatsby!</h1>
+          <p>What a world.</p>
+        </div> */}
+        
+        <BlogIndex__BrokeNote />
+        <BlogIndex__Email />
+        <BlogIndex__GroupChat />
+        <BlogIndex__FAQ />    
+        <BlogIndex__Questions />
       </Layout>
     )
   }

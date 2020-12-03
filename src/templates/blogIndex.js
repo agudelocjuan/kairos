@@ -210,7 +210,7 @@ class BlogIndex extends React.Component {
           <p>What a world.</p>
         </div> */}
 
-        <BlogIndex__BrokeNote />
+        <BlogIndex__BrokeNote data={blogPosts} />
         <BlogIndex__Email />
         <BlogIndex__GroupChat />
         <BlogIndex__FAQ />

@@ -13,14 +13,21 @@ const blogIndex__Questions = ({ mobile }) => {
       <Row id="the-problem">
         <Col md="4" className="header">
           <div className="franklin-cta text-white">Any Questions? </div>
-          
         </Col>
         <Col md="8" className="main">
-          <h1 className="cta-graffiti text-white">Great, That's Why We're Here.</h1>
+          <h1 className="cta-graffiti text-white">
+            Great, That's Why We're Here.
+          </h1>
           <p className="text-white">
-            Nam id at diam faucibus nisi, massa nec viverra neque. Malesuada egestas mauris aliquet turpis semper blandit diam. Et eu, non commodo elementum diam magna senectus. Tortor, lectus enim luctus facilisi viverra volutpat aliquam. Auctor fames odio sed volutpat lectus. Iaculis sed vel nec aliquet sit varius.
+            Nam id at diam faucibus nisi, massa nec viverra neque. Malesuada
+            egestas mauris aliquet turpis semper blandit diam. Et eu, non
+            commodo elementum diam magna senectus. Tortor, lectus enim luctus
+            facilisi viverra volutpat aliquam. Auctor fames odio sed volutpat
+            lectus. Iaculis sed vel nec aliquet sit varius.
           </p>
-          <a class="big-button mt-9" href="#">Ask Us Anything</a>
+          <a className="big-button mt-9" href="#">
+            Ask Us Anything
+          </a>
         </Col>
       </Row>
     </Container>

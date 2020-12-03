@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
+import Img from "gatsby-image"
 
 import groupChatLogo from "../../images/blog/groupChatLogo.svg"
 import groupChat1 from "../../images/blog/groupChat1.jpg"
@@ -10,10 +11,38 @@ import groupChat2 from "../../images/blog/groupChat2.jpg"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
-const blogIndex__GroupChat = ({ mobile }) => {
-  return (
+const blogIndex__GroupChat = ({ mobile, data }) => {
+	let interviewList = data.map((interview, index) => {
+    console.log(interview.node)
+    const {body, title, slug} = interview.node
+    return (
+      <Col key={index} md="4" className="post">
+        <figure className="post__image">
+          <Img fluid={interview.node.heroImage.fluid} />
+        </figure>
+
+        <div className="post__meta">
+          <h3>{title}</h3>
+          <p>
+            {body.body}
+          </p>
+
+          <Link to={`/blog/${slug}`} className="cta inline-text-link">
+            Read More <img src={arrow} alt="" />
+          </Link>
+        </div>
+      </Col> 
+      
+    ) 
+  })
+
+	return (
     <Container fluid id="blogIndex__GroupChat" className="blog-grid">
-      <Row className="image-row">
+			<Row>
+			{interviewList}
+			</Row>
+
+      {/* <Row className="image-row">
         <Col md="4" className="logo">
             <img src={groupChatLogo} alt="" />
         </Col>
@@ -63,7 +92,7 @@ const blogIndex__GroupChat = ({ mobile }) => {
                 Watch <img src={arrow} alt="" />
             </Link>
         </Col>
-      </Row>
+      </Row> */}
 
     </Container>
 

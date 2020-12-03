@@ -7,6 +7,7 @@ import { Container, Row, Col } from "reactstrap"
 import SEO from "../components/global/seo"
 import Layout from "../components/global/layout"
 
+// importing page components
 import BlogIndex__BrokeNote from "../components/blog/blogIndex__BrokeNote"
 import BlogIndex__Email from "../components/blog/blogIndex__Email"
 import BlogIndex__GroupChat from "../components/blog/blogIndex__GroupChat"
@@ -50,12 +51,44 @@ class BlogIndex extends React.Component {
     //// Organize content from graphql & filtered data
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
-    const faqPost = get(this, "props.data.allContentfulFaq.edges")
+    const interviewPosts = get(this, "props.data.allContentfulInterview.edges")
+    const faqPosts = get(this, "props.data.allContentfulFaq.edges")
 
     // this obj contains all the blog posts
-    console.log(blogPosts)
-    console.log(faqPost)
+    // console.log(blogPosts)
+    // console.log(faqPosts)
+
     let articleCount = blogPosts.length
+
+    let blogList = blogPosts.map((blog, index) => {
+      return (
+        <div key={index} className="col-3">
+          {blog.node.heroImage}
+          {blog.node.slug}
+          {blog.node.title}
+        </div>
+      )
+    })
+    
+    let interviewList = interviewPosts.map((interview, index) => {
+      return (
+        <div key={index} className="col-3">
+          {interview.node.heroImage}
+          {interview.node.slug}
+          {interview.node.title}
+        </div>
+      )
+    })
+
+    let faqList = faqPosts.map((faq, index) => {
+      return (
+        <div key={index} className="col-3">
+          {faq.node.heroImage}
+          {faq.node.slug}
+          {faq.node.title}
+        </div>
+      )
+    })
 
     //// Logic to match articles to filter tags
     let filteredPosts
@@ -75,14 +108,7 @@ class BlogIndex extends React.Component {
       })
     }
 
-    let blogList = blogPosts.map((blog, index) => {
-      return (
-        <div key={index} className="col-3">
-          {blog.node.img}
-          {blog.node.title}
-        </div>
-      )
-    })
+    
 
     //// Create list of available tags from the CMS
     let availableTags = []
@@ -201,7 +227,8 @@ class BlogIndex extends React.Component {
       >
         <SEO title="Blog" />
         <div id="libraryPage">{pageRender}</div>
-        <div>{blogList}</div>
+        
+        {/* <div>{blogList}</div> */}
 
         {/* content goes here */}
 
@@ -212,8 +239,8 @@ class BlogIndex extends React.Component {
 
         <BlogIndex__BrokeNote data={blogPosts} />
         <BlogIndex__Email />
-        <BlogIndex__GroupChat />
-        <BlogIndex__FAQ />
+        <BlogIndex__GroupChat data={interviewPosts} />
+        <BlogIndex__FAQ data={faqPosts} />
         <BlogIndex__Questions />
       </Layout>
     )
@@ -229,12 +256,47 @@ export const IndexBlogQuery = graphql`
         node {
           title
           slug
+          body {
+            body
+          }
           description {
             description
           }
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
+            file {
+              url
+              fileName
+            }
+            fluid(resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+    allContentfulInterview(sort: { fields: [publishDate], order: DESC }) {
+      edges {
+        node {
+          publishDate(formatString: "MMMM Do, YYYY")
+          slug
+          body {
+            body
+          }
+          description {
+            description
+          }
+          title
+          author {
+            name
+          }
+          tags
+          heroImage {
+            file {
+              url
+              fileName
+            }
             fluid(resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid
             }
@@ -247,11 +309,26 @@ export const IndexBlogQuery = graphql`
         node {
           publishDate(formatString: "MMMM Do, YYYY")
           slug
+          body {
+            body
+          }
+          description {
+            description
+          }
           title
           author {
             name
           }
           tags
+          heroImage {
+            file {
+              url
+              fileName
+            }
+            fluid(resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }

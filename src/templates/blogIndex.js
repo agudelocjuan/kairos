@@ -50,12 +50,11 @@ class BlogIndex extends React.Component {
     //// Organize content from graphql & filtered data
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
-
-
+    const faqPost = get(this, "props.data.allContentfulFaq.edges")
 
     // this obj contains all the blog posts
     console.log(blogPosts)
-
+    console.log(faqPost)
     let articleCount = blogPosts.length
 
     //// Logic to match articles to filter tags
@@ -75,6 +74,15 @@ class BlogIndex extends React.Component {
         }
       })
     }
+
+    let blogList = blogPosts.map((blog, index) => {
+      return (
+        <div key={index} className="col-3">
+          {blog.node.img}
+          {blog.node.title}
+        </div>
+      )
+    })
 
     //// Create list of available tags from the CMS
     let availableTags = []
@@ -193,6 +201,7 @@ class BlogIndex extends React.Component {
       >
         <SEO title="Blog" />
         <div id="libraryPage">{pageRender}</div>
+        <div>{blogList}</div>
 
         {/* content goes here */}
 
@@ -200,11 +209,11 @@ class BlogIndex extends React.Component {
           <h1>Hello Gatsby!</h1>
           <p>What a world.</p>
         </div> */}
-        
+
         <BlogIndex__BrokeNote />
         <BlogIndex__Email />
         <BlogIndex__GroupChat />
-        <BlogIndex__FAQ />    
+        <BlogIndex__FAQ />
         <BlogIndex__Questions />
       </Layout>
     )
@@ -230,6 +239,19 @@ export const IndexBlogQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
+        }
+      }
+    }
+    allContentfulFaq(sort: { fields: [publishDate], order: DESC }) {
+      edges {
+        node {
+          publishDate(formatString: "MMMM Do, YYYY")
+          slug
+          title
+          author {
+            name
+          }
+          tags
         }
       }
     }

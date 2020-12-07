@@ -371,7 +371,7 @@ const AboutUs = ({ mobile }) => {
     },
     {
       name: "David Carey",
-      title: "Senior Vice President, Public Affairs and Communications",
+      title: "Hearst Corporation Senior Vice President of Public Affairs",
       team: "advisory",
       img: "david_carey",
     },

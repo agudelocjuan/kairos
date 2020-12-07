@@ -64,6 +64,7 @@ h2 {
   color: $black;
   line-height: 88px;
   letter-spacing: -2.5px;
+  // text-transform: uppercase; // adding uppercase
   margin-top: 1.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -81,7 +82,7 @@ h3 {
   color: $black;
   font-weight: 400;
   letter-spacing: -1.4px;
-  // text-transform: uppercase;
+  text-transform: uppercase; // adding uppercase
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

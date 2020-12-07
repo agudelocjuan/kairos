@@ -14,12 +14,14 @@ import BlogIndex__GroupChat from "../components/blog/blogIndex__GroupChat"
 import BlogIndex__FAQ from "../components/blog/blogIndex__FAQ"
 import BlogIndex__Questions from "../components/blog/blogIndex__Questions"
 
+import exit from "../images/icons/exit-menu.svg"
+
 class BlogIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       filterTags: [],
-      showFilterTags: false,
+      showFilterTags: true,
     }
     this._editFilterTags = this._editFilterTags.bind(this)
   }
@@ -92,27 +94,26 @@ class BlogIndex extends React.Component {
 
     //// Logic to match articles to filter tags
     let filteredPosts
-    if (filterTags.length) {
-      filteredPosts = blogPosts.filter(i => {
-        let { tags } = i.node
-        if (tags) {
-          for (let i = 0; i < tags.length; i++) {
-            for (let j = 0; j < filterTags.length; j++) {
-              if (tags[i] === filterTags[j]) {
-                return true
+      if (filterTags.length) {
+        filteredPosts = faqPosts.filter(i => {
+          let { tags } = i.node
+          if (tags) {
+            for (let i = 0; i < tags.length; i++) {
+              for (let j = 0; j < filterTags.length; j++) {
+                if (tags[i] === filterTags[j]) {
+                  return true
+                }
               }
             }
+            return false
           }
-          return false
-        }
-      })
-    }
-
-    
+        })
+      }
 
     //// Create list of available tags from the CMS
     let availableTags = []
-    blogPosts.forEach(i => {
+    faqPosts.forEach(i => {
+    // blogPosts.forEach(i => {
       if (i.node.tags) {
         i.node.tags.forEach(t => {
           availableTags.push(t)
@@ -121,35 +122,42 @@ class BlogIndex extends React.Component {
     })
     availableTags = [...new Set(availableTags)]
 
-    //// Create render for list of tags
-    // let tagOptions = availableTags.map((i, idx) => {
-    //   let active = filterTags.includes(i)
-    //   return (
-    //     <div
-    //       key={idx}
-    //       className={
-    //         "position-relative tag body-small " + (active ? "active" : "")
-    //       }
-    //       onClick={() => this._editFilterTags(i)}
-    //     >
-    //       {i}
-    //       {active ? (
-    //         <img
-    //           src={exit}
-    //           alt=""
-    //           style={{
-    //             position: "absolute",
-    //             width: "15px",
-    //             top: "-5px",
-    //             right: "0px",
-    //           }}
-    //         />
-    //       ) : (
-    //         ""
-    //       )}
-    //     </div>
-    //   )
-    // })
+    // Create render for list of tags
+    let tagOptions = availableTags.map((i, idx) => {
+      let active = filterTags.includes(i)
+      return (
+        <div
+          key={idx}
+          id={i}
+          className={
+            "position-relative tag body-small " + (active ? "active" : "")
+          }
+          onClick={() => 
+            this._editFilterTags(i)
+            // activeTag = this.id
+            // .post:not() - hide
+          }
+        >
+          {i}
+          {active ? (
+            <img
+              src={exit}
+              alt=""
+              style={{
+                position: "absolute",
+                width: "15px",
+                top: "-5px",
+                right: "0px",
+              }}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+      )
+    })
+
+    console.log(filteredPosts)
 
     //// Create Pagination Logic
     // let slice_start = pageNumber * limit
@@ -228,7 +236,6 @@ class BlogIndex extends React.Component {
         <SEO title="Blog" />
         <div id="libraryPage">{pageRender}</div>
         
-        {/* <div>{blogList}</div> */}
 
         {/* content goes here */}
 
@@ -240,7 +247,10 @@ class BlogIndex extends React.Component {
         <BlogIndex__BrokeNote data={blogPosts} />
         <BlogIndex__Email />
         <BlogIndex__GroupChat data={interviewPosts} />
-        <BlogIndex__FAQ data={faqPosts} />
+
+        {/* <BlogIndex__FAQ data={faqPosts} /> */}
+        <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions}  />
+
         <BlogIndex__Questions />
       </Layout>
     )
@@ -309,6 +319,7 @@ export const IndexBlogQuery = graphql`
         node {
           publishDate(formatString: "MMMM Do, YYYY")
           slug
+          tags
           body {
             body
           }

@@ -49,6 +49,14 @@ body {
 
 }
 
+
+    .faq__tags {
+        .active {
+            opacity: 0.5;
+        }
+    }
+
+
 #blogIndex__Questions {
     background: $dark-blue;
 

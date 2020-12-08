@@ -94,21 +94,21 @@ class BlogIndex extends React.Component {
 
     //// Logic to match articles to filter tags
     let filteredPosts
-      if (filterTags.length) {
-        filteredPosts = faqPosts.filter(i => {
-          let { tags } = i.node
-          if (tags) {
-            for (let i = 0; i < tags.length; i++) {
-              for (let j = 0; j < filterTags.length; j++) {
-                if (tags[i] === filterTags[j]) {
-                  return true
-                }
+    if (filterTags.length) {
+      filteredPosts = faqPosts.filter(i => {
+        let { tags } = i.node
+        if (tags) {
+          for (let i = 0; i < tags.length; i++) {
+            for (let j = 0; j < filterTags.length; j++) {
+              if (tags[i] === filterTags[j]) {
+                return true
               }
             }
-            return false
           }
-        })
-      }
+          return false
+        }
+      })
+    }
 
     //// Create list of available tags from the CMS
     let availableTags = []
@@ -157,7 +157,7 @@ class BlogIndex extends React.Component {
       )
     })
 
-    console.log(filteredPosts)
+    // console.log(filteredPosts)
 
     //// Create Pagination Logic
     // let slice_start = pageNumber * limit
@@ -249,7 +249,7 @@ class BlogIndex extends React.Component {
         <BlogIndex__GroupChat data={interviewPosts} />
 
         {/* <BlogIndex__FAQ data={faqPosts} /> */}
-        <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions}  />
+        <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions} filtered={filteredPosts} />
 
         <BlogIndex__Questions />
       </Layout>

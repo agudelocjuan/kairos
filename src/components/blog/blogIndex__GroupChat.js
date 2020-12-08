@@ -13,7 +13,7 @@ import arrow from "../../images/icons/arrow-diag-red.svg"
 
 const blogIndex__GroupChat = ({ mobile, data }) => {
 	let interviewList = data.map((interview, index) => {
-    console.log(interview.node)
+    // console.log(interview.node)
     const {body, title, slug} = interview.node
     return (
       <Col key={index} md="4" className="post">

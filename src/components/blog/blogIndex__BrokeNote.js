@@ -13,7 +13,7 @@ import arrow from "../../images/icons/arrow-diag-red.svg"
 
 const blogIndex__BrokeNote = ({ mobile, data }) => {
   let blogList = data.map((blog, index) => {
-    console.log(blog.node)
+    // console.log(blog.node)
     const {body, title, slug} = blog.node
     return (
       <Col key={index} md="4" className="post">

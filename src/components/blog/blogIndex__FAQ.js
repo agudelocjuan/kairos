@@ -9,18 +9,19 @@ import img_1 from "../../images/about/about_1.png"
 import img_2 from "../../images/about/about_2.png"
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
-const blogIndex__FAQ = ({ mobile, posts, tags, options }) => {
+const blogIndex__FAQ = ({ mobile, posts, tags, options, filtered }) => {
+  console.log(filtered)
   let faqList = posts.map((faq, index) => {
-    console.log(faq.node)
+    
     
     const {body, title, slug, tags} = faq.node
 
-    console.log(tags)
+    // console.log(tags)
 
-    var result=""
-    let tagList = tags.forEach(i => {
-            result=tags[i]+result;
-        })
+    // var result=""
+    // let tagList = tags.forEach(i => {
+    //         result=tags[i]+result;
+    //     })
 
     
 
@@ -61,6 +62,7 @@ const blogIndex__FAQ = ({ mobile, posts, tags, options }) => {
       </Row>
       <Row id="">
         {faqList}
+        
       </Row>
       
     </Container>

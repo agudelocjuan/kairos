@@ -14,6 +14,8 @@ import BlogIndex__GroupChat from "../components/blog/blogIndex__GroupChat"
 import BlogIndex__FAQ from "../components/blog/blogIndex__FAQ"
 import BlogIndex__Questions from "../components/blog/blogIndex__Questions"
 
+import LibraryTwoPost from "../components/blog/libraryTwoPost"
+
 import exit from "../images/icons/exit-menu.svg"
 
 class BlogIndex extends React.Component {
@@ -160,9 +162,9 @@ class BlogIndex extends React.Component {
     // console.log(filteredPosts)
 
     //// Create Pagination Logic
-    // let slice_start = pageNumber * limit
-    // let slice_end = humanPageNumber * limit
-    // let pageArticles = library.slice(slice_start, slice_end)
+    let slice_start = pageNumber * limit
+    let slice_end = humanPageNumber * limit
+    let pageArticles = faqPosts.slice(slice_start, slice_end)
 
     // let pagination =
     //   numberOfPages > 1 ? (
@@ -203,27 +205,24 @@ class BlogIndex extends React.Component {
     //     ""
     //   )
 
-    // console.log(pageArticles)
+    console.log(pageArticles)
 
     //// Create unfiltered page view
-    // let unfiltered = (
-    //   <>
-    //     <LibraryTwoPost posts={pageArticles.slice(0, 3)} />
-    //     <LibraryTwoPost posts={pageArticles.slice(3, 6)} />
-    //     <LibraryTwoPost posts={pageArticles.slice(6, 9)} />
-    //     <LibraryTwoPost posts={pageArticles.slice(9, 12)} />
-    //     <LibraryTwoPost posts={pageArticles.slice(12, 15)} />
-    //     {pagination}
-    //     <LibraryFeatured posts={featured} />
-    //     <EmailCapture color={"#fdfc71"} text={"#000"} />
-    //   </>
-    // )
+    let unfiltered = (
+      <>
+        <LibraryTwoPost posts={pageArticles.slice(0, 3)} />
+        <LibraryTwoPost posts={pageArticles.slice(3, 6)} />
+        <LibraryTwoPost posts={pageArticles.slice(6, 9)} />
+        <LibraryTwoPost posts={pageArticles.slice(9, 12)} />
+        <LibraryTwoPost posts={pageArticles.slice(12, 15)} />
+      </>
+    )
 
-    // let filtered = <LibraryTwoPost posts={filteredPosts} />
+    let filtered = <LibraryTwoPost posts={filteredPosts} />
 
-    // let pageRender = filterTags.length ? filtered : unfiltered
+    let pageRender = filterTags.length ? filtered : unfiltered
 
-    let pageRender = <div></div>
+    // let pageRender = <div></div>
 
     return (
       <Layout
@@ -234,7 +233,7 @@ class BlogIndex extends React.Component {
         footerColor={pageColor}
       >
         <SEO title="Blog" />
-        <div id="libraryPage">{pageRender}</div>
+        {/* <div id="libraryPage">{pageRender}</div> */}
         
 
         {/* content goes here */}
@@ -248,8 +247,18 @@ class BlogIndex extends React.Component {
         <BlogIndex__Email />
         <BlogIndex__GroupChat data={interviewPosts} />
 
+
+
+        <h2>
+          FAQ section
+        </h2>
+
+        { tagOptions }
+
+        { pageRender }
+
         {/* <BlogIndex__FAQ data={faqPosts} /> */}
-        <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions} filtered={filteredPosts} />
+        {/* <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions} filtered={filteredPosts} /> */}
 
         <BlogIndex__Questions />
       </Layout>

@@ -250,7 +250,7 @@ class BlogIndex extends React.Component {
 
 
         <h2>
-          FAQ section
+          FAQ section - with tags
         </h2>
 
         { tagOptions }

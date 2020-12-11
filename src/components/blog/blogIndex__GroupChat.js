@@ -64,6 +64,10 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
           {interviewList}
         </Flickity>  
 
+        <div className="carousel__controls">
+          <p class="carousel-status">{count}</p>
+        </div>
+
 			</Row>
 
       {/* <Row className="image-row">

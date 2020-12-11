@@ -108,3 +108,81 @@ body {
 
     }
 }
+
+#blogIndex__Email {
+    background: $dark-blue;
+    padding: 48px 20px;
+
+    .text {
+        position: relative;
+        bottom: -10px;
+
+        h3.title {
+            margin-bottom: 12px;
+    
+            & + p {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    
+    
+    * {
+        color: $white;
+    }
+
+    .blog__email__main {
+        background: white;
+        border-radius: 100px;
+        form {
+            margin-bottom: 0;
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            font-family: "franklin gothic std";
+            font: {
+                size: 48px;
+            }
+            text-transform: uppercase;
+            letter-spacing: -1.04px;
+
+
+            input[type="text"] {
+        padding: 25px 40px 20px;
+                flex-grow: 2;
+                background: transparent;
+                border-bottom: none;
+                border: 0;
+                text-transform: uppercase;
+                color: $dark-blue;
+                border-radius: 100px;
+                border: 3px solid $white;
+                outline: none;
+
+                &::placeholder {
+                    color: rgba($dark-blue, .3);
+                }
+
+                &:focus {
+                    outline: none;
+                    border: 3px solid $dark-blue;
+                }
+            }
+    
+            button[type="submit"] {
+        padding: 25px 40px 20px;
+                border-radius: 100px;
+                border: 3px solid $white;
+                background-color: $dark-blue;
+                text-transform: uppercase;
+
+            }
+        }
+
+        
+    }
+ 
+}

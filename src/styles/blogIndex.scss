@@ -3,6 +3,8 @@ body {
 }
 
 .blog-grid {
+    position: relative;
+    padding: 0 20px;
 
     // general grid styles
     
@@ -12,29 +14,42 @@ body {
             // padding-left: 0 !important;
 
             padding: 0;
-            border-right: 2px solid $black;
+            // border-right: 2px solid $black;
         }
     }
 
-    .image-row {
-        border-bottom: 2px solid $black;
 
-        .logo {
-            padding: 60px;
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 10px;
+        z-index: 2;
+        background: $white;
+        border-right: 0;
+    }
+
+    .flickity-enabled {
+        width: 100%;
+    }
+
+    .post {
+        width: 33%;
+        .post__image {
+        
+        }
+    
+        .post__meta {
+    
         }
     }
 
-    .text-row {
-        > * {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-        }
+    // button.previous::after {
+    //     content: counter(carousel-cell);
+    //     font-size: 100px;
+    // }
 
-        .inline-text-link {
-            width: max-content;
-        }
-    }
+    
 
     // specific grid styles 
 

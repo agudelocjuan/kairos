@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
+import Flickity from "react-flickity-component"
 
 import Img from "gatsby-image"
 
@@ -11,7 +12,23 @@ import groupChat2 from "../../images/blog/groupChat2.jpg"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
-const blogIndex__GroupChat = ({ mobile, data }) => {
+const blogIndex__GroupChat = ({ mobile, data, count }) => {
+  let options = {
+    contain: true,
+    draggable: true,
+    initialIndex: 0,
+    cellAlign: 'left',
+    wrapAround: false,
+    pageDots: false,
+    // freeScroll: false,
+    adaptiveHeight: true,
+    // selectedAttraction: 0.2,
+    // friction: 0.8,
+    fade: true,
+    groupCells: true,
+    prevNextButtons: true,
+  }
+
 	let interviewList = data.map((interview, index) => {
     // console.log(interview.node)
     const {body, title, slug} = interview.node
@@ -24,7 +41,7 @@ const blogIndex__GroupChat = ({ mobile, data }) => {
         <div className="post__meta">
           <h3>{title}</h3>
           <p>
-            {body.body}
+            {interview.node.description.description}
           </p>
 
           <Link to={`/blog/${slug}`} className="cta inline-text-link">
@@ -39,7 +56,14 @@ const blogIndex__GroupChat = ({ mobile, data }) => {
 	return (
     <Container fluid id="blogIndex__GroupChat" className="blog-grid">
 			<Row>
-			{interviewList}
+        <Col md="4" className="logo">
+            <img src={groupChatLogo} alt="" />
+        </Col>
+
+        <Flickity options={options} className="blog-carousel interviews">
+          {interviewList}
+        </Flickity>  
+
 			</Row>
 
       {/* <Row className="image-row">

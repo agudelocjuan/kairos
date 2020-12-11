@@ -62,7 +62,9 @@ class BlogIndex extends React.Component {
     // console.log(blogPosts)
     // console.log(faqPosts)
 
-    let articleCount = blogPosts.length
+    let blogCount = blogPosts.length
+    let interviewCount = interviewPosts.length
+    let faqCount = faqPosts.length
 
     let blogList = blogPosts.map((blog, index) => {
       return (
@@ -243,10 +245,9 @@ class BlogIndex extends React.Component {
           <p>What a world.</p>
         </div> */}
 
-        <BlogIndex__BrokeNote data={blogPosts} />
+        <BlogIndex__BrokeNote data={blogPosts} count={blogCount} />
         <BlogIndex__Email />
-        <BlogIndex__GroupChat data={interviewPosts} />
-
+        <BlogIndex__GroupChat data={interviewPosts} count={interviewCount} />
 
 
         <h2>

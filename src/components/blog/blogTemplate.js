@@ -30,7 +30,6 @@ class BlogTemplate extends React.Component {
     // this._handleScroll = this._handleScroll.bind(this)
   }
 
-
   render() {
     const pageColor = "salmon"
     const borderColor = "site-border-black"
@@ -42,22 +41,25 @@ class BlogTemplate extends React.Component {
     console.log(post)
 
     // twitter share button script
-    window.twttr = (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-      if (d.getElementById(id)) return t;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    
-      t._e = [];
-      t.ready = function(f) {
-        t._e.push(f);
-      };
-    
-      return t;
-    }(document, "script", "twitter-wjs"));
+    if (typeof window !== "undefined") {
+      window.twttr = (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {}
+        if (d.getElementById(id)) return t
+        js = d.createElement(s)
+        js.id = id
+        js.src = "https://platform.twitter.com/widgets.js"
+        fjs.parentNode.insertBefore(js, fjs)
+
+        t._e = []
+        t.ready = function (f) {
+          t._e.push(f)
+        }
+
+        return t
+      })(document, "script", "twitter-wjs")
+    }
 
     // rich text rendering
 
@@ -92,7 +94,7 @@ class BlogTemplate extends React.Component {
     //     [BLOCKS.EMBEDDED_ASSET]: node => {
     //       if (node.data.target.fields) {
     //         console.log(node.data.target.fields)
-      
+
     //         return ''
     //       }
     //     },
@@ -110,33 +112,35 @@ class BlogTemplate extends React.Component {
         path={location.pathname}
         borderColor={borderColor}
         footerColor={pageColor}
-      > 
+      >
         <SEO title={post?.title} />
         <section id="blogTemplate">
           <Container fluid>
             <Row>
               <Col className="flush">
                 <header className="post__header">
-                  <figure className="post__header__image" 
-                    style={{backgroundImage: `url(${post.heroImage.fluid.src})`}}
-                  >
-
-                  </figure>
+                  <figure
+                    className="post__header__image"
+                    style={{
+                      backgroundImage: `url(${post.heroImage.fluid.src})`,
+                    }}
+                  ></figure>
 
                   <aside className="post__header__title">
                     <span className="tag cta">{post.tags}</span>
-                    {post ? <h1>{post.title}</h1> : <h1> Default Blog Title</h1>}
+                    {post ? (
+                      <h1>{post.title}</h1>
+                    ) : (
+                      <h1> Default Blog Title</h1>
+                    )}
                   </aside>
 
-                  
-                  
                   <aside className="post__header__meta">
                     <dl>
                       <span className="meta__item">
                         <dt>Author: </dt>
-                        <dd> {post.author.name}</dd>  
-                      </span> 
-                      
+                        <dd> {post.author.name}</dd>
+                      </span>
 
                       <span className="meta__item">
                         <dt>Date: </dt>
@@ -149,7 +153,8 @@ class BlogTemplate extends React.Component {
                           <a href="#">Link</a>
                         </dd>
                         <dd>
-                          <a class="twitter-share-button"
+                          <a
+                            class="twitter-share-button"
                             href="https://twitter.com/intent/tweet"
                             text={post.title}
                             via="kairoshq"
@@ -157,32 +162,32 @@ class BlogTemplate extends React.Component {
                             target="_blank"
                             data-size="large"
                           >
-                            
-                          Tweet</a>
-                          </dd>
+                            Tweet
+                          </a>
+                        </dd>
                       </span>
-                      
-
-                      
-                      
-
-
                     </dl>
                   </aside>
-  
                 </header>
-                
-
               </Col>
             </Row>
 
             <Row>
               <Col className="flush">
-              <main className="post__body">
+                <main className="post__body">
                   {/* {post.body.body} */}
 
                   <p>
-                    The <strong>50-3-0-20</strong> 50-30-20 rule is a <em>pretty well known</em> <u>underline text</u> budgeting framework developed by Elizabeth Warren (yeah, aka presidential candidate Lizzy Warren!) in her 2006 bestseller, All Your Worth. This rule of thumb has stuck around for more than a decade because it’s simple. The 50-30-20 rule is a pretty well known budgeting framework developed by Elizabeth Warren (yeah, aka presidential candidate Lizzy Warren!) in her 2006 bestseller, All Your Worth. This rule of thumb has...
+                    The <strong>50-3-0-20</strong> 50-30-20 rule is a{" "}
+                    <em>pretty well known</em> <u>underline text</u> budgeting
+                    framework developed by Elizabeth Warren (yeah, aka
+                    presidential candidate Lizzy Warren!) in her 2006
+                    bestseller, All Your Worth. This rule of thumb has stuck
+                    around for more than a decade because it’s simple. The
+                    50-30-20 rule is a pretty well known budgeting framework
+                    developed by Elizabeth Warren (yeah, aka presidential
+                    candidate Lizzy Warren!) in her 2006 bestseller, All Your
+                    Worth. This rule of thumb has...
                   </p>
 
                   <img src={brokeNote1} />
@@ -194,16 +199,31 @@ class BlogTemplate extends React.Component {
                   </p>
 
                   <p>
-                    The <strong>50-3-0-20</strong> 50-30-20 rule is a pretty well known budgeting framework developed by Elizabeth Warren (yeah, aka presidential candidate Lizzy Warren!) in her 2006 bestseller, All Your Worth. This rule of thumb has stuck around for more than a decade because it’s simple. The 50-30-20 rule is a pretty well known budgeting framework developed by Elizabeth Warren (yeah, aka presidential candidate Lizzy Warren!) in her 2006 bestseller, All Your Worth. This rule of thumb has...
+                    The <strong>50-3-0-20</strong> 50-30-20 rule is a pretty
+                    well known budgeting framework developed by Elizabeth Warren
+                    (yeah, aka presidential candidate Lizzy Warren!) in her 2006
+                    bestseller, All Your Worth. This rule of thumb has stuck
+                    around for more than a decade because it’s simple. The
+                    50-30-20 rule is a pretty well known budgeting framework
+                    developed by Elizabeth Warren (yeah, aka presidential
+                    candidate Lizzy Warren!) in her 2006 bestseller, All Your
+                    Worth. This rule of thumb has...
                   </p>
 
-                  
                   <blockquote>
                     “let’s make this a really good quote.”
                   </blockquote>
 
                   <p>
-                    The <strong>50-3-0-20</strong> 50-30-20 rule is a pretty well known budgeting framework developed by Elizabeth Warren (yeah, aka presidential candidate Lizzy Warren!) in her 2006 bestseller, All Your Worth. This rule of thumb has stuck around for more than a decade because it’s simple. The 50-30-20 rule is a pretty well known budgeting framework developed by Elizabeth Warren (yeah, aka presidential candidate Lizzy Warren!) in her 2006 bestseller, All Your Worth. This rule of thumb has...
+                    The <strong>50-3-0-20</strong> 50-30-20 rule is a pretty
+                    well known budgeting framework developed by Elizabeth Warren
+                    (yeah, aka presidential candidate Lizzy Warren!) in her 2006
+                    bestseller, All Your Worth. This rule of thumb has stuck
+                    around for more than a decade because it’s simple. The
+                    50-30-20 rule is a pretty well known budgeting framework
+                    developed by Elizabeth Warren (yeah, aka presidential
+                    candidate Lizzy Warren!) in her 2006 bestseller, All Your
+                    Worth. This rule of thumb has...
                   </p>
 
                   <ul>
@@ -216,7 +236,7 @@ class BlogTemplate extends React.Component {
                   </ul>
 
                   <img src={brokeNote2} />
-                  
+
                   <ol>
                     <li>ordered list item</li>
                     <li>ordered list item</li>
@@ -225,9 +245,7 @@ class BlogTemplate extends React.Component {
                     <li>ordered list item</li>
                     <li>ordered list item</li>
                   </ol>
-                  
                 </main>
-
               </Col>
             </Row>
 
@@ -236,16 +254,17 @@ class BlogTemplate extends React.Component {
                 <BlogIndex__Email />
               </Col>
             </Row>
-            
+
             <Row>
               <Col className="flush">
-              <div className="mb-4 related-container">
-                <h1 className="mb-4 related-article-title">Related Articles</h1>
-                {/* <LibraryThumbnails related={post} /> */}
-              </div>
+                <div className="mb-4 related-container">
+                  <h1 className="mb-4 related-article-title">
+                    Related Articles
+                  </h1>
+                  {/* <LibraryThumbnails related={post} /> */}
+                </div>
               </Col>
             </Row>
-
           </Container>
         </section>
       </Layout>

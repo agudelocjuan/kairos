@@ -7,7 +7,6 @@ import { Container, Row, Col } from "reactstrap"
 import SEO from "../components/global/seo"
 import Layout from "../components/global/layout"
 
-// importing page components
 import BlogIndex__BrokeNote from "../components/blog/blogIndex__BrokeNote"
 import BlogIndex__Email from "../components/blog/blogIndex__Email"
 import BlogIndex__GroupChat from "../components/blog/blogIndex__GroupChat"
@@ -75,7 +74,7 @@ class BlogIndex extends React.Component {
         </div>
       )
     })
-    
+
     let interviewList = interviewPosts.map((interview, index) => {
       return (
         <div key={index} className="col-3">
@@ -117,7 +116,7 @@ class BlogIndex extends React.Component {
     //// Create list of available tags from the CMS
     let availableTags = []
     faqPosts.forEach(i => {
-    // blogPosts.forEach(i => {
+      // blogPosts.forEach(i => {
       if (i.node.tags) {
         i.node.tags.forEach(t => {
           availableTags.push(t)
@@ -136,8 +135,8 @@ class BlogIndex extends React.Component {
           className={
             "position-relative tag body-small " + (active ? "active" : "")
           }
-          onClick={() => 
-            this._editFilterTags(i)
+          onClick={
+            () => this._editFilterTags(i)
             // activeTag = this.id
             // .post:not() - hide
           }
@@ -236,7 +235,6 @@ class BlogIndex extends React.Component {
       >
         <SEO title="Blog" />
         {/* <div id="libraryPage">{pageRender}</div> */}
-        
 
         {/* content goes here */}
 
@@ -249,14 +247,11 @@ class BlogIndex extends React.Component {
         <BlogIndex__Email />
         <BlogIndex__GroupChat data={interviewPosts} count={interviewCount} />
 
+        <h2>FAQ section - with tags</h2>
 
-        <h2>
-          FAQ section - with tags
-        </h2>
+        {tagOptions}
 
-        { tagOptions }
-
-        { pageRender }
+        {pageRender}
 
         {/* <BlogIndex__FAQ data={faqPosts} /> */}
         {/* <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions} filtered={filteredPosts} /> */}

@@ -12,7 +12,7 @@
 
 #site-container {
     main {
-        background: $blue;
+        // background: $blue;
 
         @media (max-width: map-get($grid-breakpoints,md)) {
             background: $company-blue;

@@ -19,7 +19,7 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     cellAlign: 'left',
     wrapAround: false,
     pageDots: false,
-    // freeScroll: false,
+    freeScroll: false,
     adaptiveHeight: true,
     // selectedAttraction: 0.2,
     // friction: 0.8,
@@ -31,14 +31,14 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
   let blogList = data.map((blog, index) => {
     // console.log(blog.node)
     const {body, title, slug} = blog.node
-    console.log(blog.node.heroImage.fluid)
+    console.log(blog.node.heroImage.fluid.src)
     return (
       // <Col key={index} md="4" className="post">
       <article key={index} className="post">
         <figure className="post__image"
-          // style="background-image: url('{blog.node.heroImage.fluid}')"  
+          style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
           >
-          <Img fluid={blog.node.heroImage.fluid} />
+          {/* <Img fluid={blog.node.heroImage.fluid} /> */}
         </figure>
 
         <div className="post__meta">

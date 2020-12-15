@@ -27,6 +27,12 @@ body {
         z-index: 2;
         background: $white;
         border-right: 0;
+        height: 403px;
+
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .flickity-enabled {
@@ -35,12 +41,16 @@ body {
 
     .post {
         width: 33%;
+        border-right: 2px solid $black;
+
         .post__image {
-        
+            height: 403px;
+            @include full-bg;
+
         }
     
         .post__meta {
-    
+            padding: 40px;
         }
     }
 
@@ -132,6 +142,10 @@ body {
                 margin-bottom: 0;
             }
         }
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            text-align: center;
+        }
     }
 
     
@@ -143,6 +157,11 @@ body {
     .blog__email__main {
         background: white;
         border-radius: 100px;
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            margin-top: 32px;
+        }
+
         form {
             margin-bottom: 0;
 
@@ -156,6 +175,11 @@ body {
             }
             text-transform: uppercase;
             letter-spacing: -1.04px;
+
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                font-size: 28px;
+                // flex-direction: column;
+            }
 
 
             input[type="text"] {
@@ -194,3 +218,4 @@ body {
     }
  
 }
+

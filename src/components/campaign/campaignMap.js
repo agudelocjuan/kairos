@@ -32,7 +32,10 @@ const CampaignMap = ({}) => {
           </p>
           <p className="text-white">
             Check out our map to see how much we’ve unlocked in your city and
-            where we’re going next!
+            where we’re going next! 
+            <strong>
+              Elected officials across the country have signed the Renter Stimulus Open Letter calling for this kind of support. <a className="inline-text-link" href="https://pdfhost.io/v/9ejGGKcrR_Renter_Stimulus_Open_Letterpdf.pdf" target="_blank">Read that here</a>.
+            </strong>
           </p>
         </Col>
       </Row>

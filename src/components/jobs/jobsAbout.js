@@ -56,9 +56,7 @@ const JobsHero = ({ mobile }) => {
             bringing this effort Stateside.
           </p>
           <p>
-            We’re helping 10,000 people begin a new career in home care. Apply
-            now to begin your training and earn your qualification as a Home
-            Health Aide (HHA) - your first step in a new, fulfilling career.
+            We’re helping 10,000 people begin a new career in home care. Apply now to begin your training.
           </p>
         </Col>
         {!mobile && (
@@ -100,11 +98,11 @@ const JobsHero = ({ mobile }) => {
             high demand, and a critical need to immediately train and deploy
             more frontline health workers.
           </p>
-          <p>
+          {/* <p>
             Through this program you will have an opportunity to earn a Home
             Health Aide qualification (HHA), which will open up immediate
             employment opportunities supporting families across the country.
-          </p>
+          </p> */}
           <p>
             Kairos has also partnered with Care.com to provide all applicants
             free access to additional job opportunities.

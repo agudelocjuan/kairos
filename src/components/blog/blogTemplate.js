@@ -148,19 +148,23 @@ class BlogTemplate extends React.Component {
                       </span>
 
                       <span className="meta__item">
-                        <dt>Share: </dt>
-                        <dd className="link">
-                          <a href="#">Link</a>
+                        <dt className="up">Share: </dt>
+                        <dd className="link up">
+                          <a href="#">Link &nbsp;</a>
                         </dd>
-                        <dd>
+                        <dd className="twitter-wrapper">
                           <a
-                            class="twitter-share-button"
+                            class="inline-text-link twitter-share-button"
+                            // class="twitter-share-button"
                             href="https://twitter.com/intent/tweet"
-                            text={post.title}
+                            // text={post.title}
                             via="kairoshq"
                             url=""
                             target="_blank"
                             data-size="large"
+                            data-url="{post.slug}"
+                            data-via="kairoshq"
+                            data-text="{post.title}"
                           >
                             Tweet
                           </a>
@@ -174,10 +178,19 @@ class BlogTemplate extends React.Component {
 
             <Row>
               <Col className="flush">
-                <main className="post__body">
+                <main className="post__body" dangerouslySetInnerHTML={{
+                    __html: post.body.childMarkdownRemark.html,
+                  }}>
+                  
+                {/* <div
+                  dangerouslySetInnerHTML={{
+                    __html: post.body.childMarkdownRemark.html,
+                  }}
+                ></div> */}
+                  
                   {/* {post.body.body} */}
 
-                  <p>
+                  {/* <p>
                     The <strong>50-3-0-20</strong> 50-30-20 rule is a{" "}
                     <em>pretty well known</em> <u>underline text</u> budgeting
                     framework developed by Elizabeth Warren (yeah, aka
@@ -244,7 +257,7 @@ class BlogTemplate extends React.Component {
                     <li>ordered list item</li>
                     <li>ordered list item</li>
                     <li>ordered list item</li>
-                  </ol>
+                  </ol> */}
                 </main>
               </Col>
             </Row>
@@ -280,6 +293,14 @@ export const pageQuery = graphql`
       title
       body {
         body
+        childMarkdownRemark {
+          html
+          excerpt
+          timeToRead
+          wordCount {
+            words
+          }
+        }
       }
       tags
       author {

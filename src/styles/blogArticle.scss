@@ -124,6 +124,14 @@
                 iframe { margin: 0; }
 
                 &.link { margin-right: 0; }
+
+                &.twitter-wrapper {
+                    i { display: none; }
+
+                    span {
+
+                    }
+                }
             }
 
             dt + dd {
@@ -132,6 +140,11 @@
                 @media (min-width: map-get($grid-breakpoints,md)) {
                     margin-right: 48px;
                 }   
+            }
+
+            .up {
+                position: relative;
+                bottom: 9px;
             }
         }
 
@@ -177,32 +190,40 @@
 
             text-align: center;
 
-            font-family: "summer loving reg";
-            text-transform: lowercase;
-            font-size: 120px;
-            line-height: 96px;
-            font-weight: 400;
-            color: $black;
-            letter-spacing: -2.5px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-            @media (max-width: map-get($grid-breakpoints,md)) {
-                font-size: 80px;
-                line-height: 40px;
-                letter-spacing: -1.5px;
+            
+
+            > p {
+                font-family: "summer loving reg";
+                text-transform: lowercase;
+                font-size: 120px;
+                line-height: 96px;
+                font-weight: 400;
+                color: $black;
+                letter-spacing: -2.5px;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                text-rendering: optimizeLegibility;
+                @media (max-width: map-get($grid-breakpoints,md)) {
+                    font-size: 80px;
+                    line-height: 40px;
+                    letter-spacing: -1.5px;
+                }
             }
 
-            & + p {
+            & + * {
                 padding-top: 64px;
             }
         }
 
-        img {
-            width: 70%;
-            @media (max-width: map-get($grid-breakpoints,md)) {
-                width: 100%;
-            }
+        p img {
+            width: 100%;
+            // @media (max-width: map-get($grid-breakpoints,md)) {
+            //     width: 100%;
+            // }
+        }
+
+        ul, ol {
+            list-style-position: inside;
         }
     }
 

@@ -8,6 +8,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import brokeNote1 from "../../images/blog/brokeNote1.jpg"
 import brokeNote2 from "../../images/blog/brokeNote2.jpg"
 
+import twitterIcon from "../../images/blog/twitter-icon.svg"
+import linkIcon from "../../images/blog/link-icon.svg"
+
 import BlogIndex__Email from "./blogIndex__Email"
 import LibraryThumbnails from "./libraryThumbnails"
 
@@ -38,29 +41,32 @@ class FaqTemplate extends React.Component {
     const { postType } = pageContext
     const post = get(this.props, "data.contentfulFaq")
 
+    // for twitter share button
+    const shareItem = typeof window !== "undefined" ? window.location : ""
+
     // this is where all the post content is contained
     console.log(post)
 
     // twitter share button script
-    if (typeof window !== "undefined") {
-      window.twttr = (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0],
-          t = window.twttr || {}
-        if (d.getElementById(id)) return t
-        js = d.createElement(s)
-        js.id = id
-        js.src = "https://platform.twitter.com/widgets.js"
-        fjs.parentNode.insertBefore(js, fjs)
+    // if (typeof window !== "undefined") {
+    //   window.twttr = (function (d, s, id) {
+    //     var js,
+    //       fjs = d.getElementsByTagName(s)[0],
+    //       t = window.twttr || {}
+    //     if (d.getElementById(id)) return t
+    //     js = d.createElement(s)
+    //     js.id = id
+    //     js.src = "https://platform.twitter.com/widgets.js"
+    //     fjs.parentNode.insertBefore(js, fjs)
 
-        t._e = []
-        t.ready = function (f) {
-          t._e.push(f)
-        }
+    //     t._e = []
+    //     t.ready = function (f) {
+    //       t._e.push(f)
+    //     }
 
-        return t
-      })(document, "script", "twitter-wjs")
-    }
+    //     return t
+    //   })(document, "script", "twitter-wjs")
+    // }
 
     return (
       <Layout
@@ -106,12 +112,36 @@ class FaqTemplate extends React.Component {
                       </span>
 
                       <span className="meta__item">
-                        <dt className="up">Share: </dt>
-                        <dd className="link up">
-                          <a href="#">Link &nbsp;</a>
+                        <dt className="">Share: </dt>
+                        <dd className="link">
+                        <a
+                            href={shareItem}
+                            target="_blank"
+                            rel="norefferer noopener"
+                          > 
+                            <img
+                              src={linkIcon}
+                              alt="link"
+                              className="link-icon"
+                              
+                            />
+                          </a>
                         </dd>
                         <dd className="twitter-wrapper">
-                          <a
+                        <a
+                            href={
+                              "https://twitter.com/intent/tweet?text=" + shareItem
+                            }
+                            target="_blank"
+                            rel="norefferer noopener"
+                          > 
+                            <img
+                              src={twitterIcon}
+                              alt="twitter"
+                              className="twitter-icon"
+                            />
+                          </a>
+                          {/* <a
                             class="inline-text-link twitter-share-button"
                             // class="twitter-share-button"
                             href="https://twitter.com/intent/tweet"
@@ -125,7 +155,7 @@ class FaqTemplate extends React.Component {
                             data-text="{post.title}"
                           >
                             Tweet
-                          </a>
+                          </a> */}
                         </dd>
                       </span>
                     </dl>

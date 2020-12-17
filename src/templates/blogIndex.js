@@ -336,15 +336,6 @@ export const IndexBlogQuery = graphql`
             name
           }
           tags
-          heroImage {
-            file {
-              url
-              fileName
-            }
-            fluid(resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid
-            }
-          }
         }
       }
     }

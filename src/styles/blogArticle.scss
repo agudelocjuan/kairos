@@ -134,7 +134,16 @@
 
             @media (max-width: map-get($grid-breakpoints,md)) {
                 flex-direction: column;
-            }   
+            }  
+            
+            .twitter-icon, .link-icon {
+                width: 26px;
+                vertical-align: top;
+            }
+
+            .link-icon {
+                margin-right: 1rem;
+            }
 
             dt, dd {
                 margin: 0;

@@ -140,16 +140,16 @@ class IntervewTemplate extends React.Component {
               </Col>
             </Row>
 
-            <Row>
+            {/* <Row>
               <Col className="flush">
                 <div className="mb-4 related-container">
                   <h1 className="mb-4 related-article-title">
                     Related Articles
                   </h1>
-                  {/* <LibraryThumbnails related={post} /> */}
+                  
                 </div>
               </Col>
-            </Row>
+            </Row> */}
 
 
           </Container>

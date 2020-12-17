@@ -97,7 +97,7 @@ class FaqTemplate extends React.Component {
                     <dl>
                       <span className="meta__item">
                         <dt>Author: </dt>
-                        <dd> {post.author.name}</dd>
+                        {/* <dd> {post.author.name} </dd> */}
                       </span>
 
                       <span className="meta__item">
@@ -149,16 +149,16 @@ class FaqTemplate extends React.Component {
               </Col>
             </Row>
 
-            <Row>
+            {/* <Row>
               <Col className="flush">
                 <div className="mb-4 related-container">
                   <h1 className="mb-4 related-article-title">
                     Related Articles
                   </h1>
-                  {/* <LibraryThumbnails related={post} /> */}
+            
                 </div>
               </Col>
-            </Row>
+            </Row> */}
 
           </Container>
         </section>
@@ -192,11 +192,6 @@ export const pageQuery = graphql`
         description
       }
       publishDate(formatString: "MMMM Do, YYYY")
-      heroImage {
-        fluid(maxWidth: 1440, background: "rgb:000000") {
-          ...GatsbyContentfulFluid
-        }
-      }
     }
   }
 `

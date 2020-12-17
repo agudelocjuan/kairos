@@ -88,7 +88,6 @@ class BlogIndex extends React.Component {
     let faqList = faqPosts.map((faq, index) => {
       return (
         <div key={index} className="col-3">
-          {faq.node.heroImage}
           {faq.node.slug}
           {faq.node.title}
         </div>

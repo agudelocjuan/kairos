@@ -12,18 +12,12 @@ import arrow from "../../images/icons/arrow-diag-red.svg"
 const blogIndex__FAQ = ({ mobile, posts, tags, options, filtered }) => {
   console.log(filtered)
   let faqList = posts.map((faq, index) => {
-    
-    
-    const {body, title, slug, tags} = faq.node
-
-    // console.log(tags)
+    const { body, title, slug, tags } = faq.node
 
     // var result=""
     // let tagList = tags.forEach(i => {
     //         result=tags[i]+result;
     //     })
-
-    
 
     return (
       <Col key={index} md="4" className="post" className={`${tags}`}>
@@ -35,36 +29,25 @@ const blogIndex__FAQ = ({ mobile, posts, tags, options, filtered }) => {
           <h3>{title}</h3>
           <h4>{tags}</h4>
 
-          <p>
-            {body.body}
-          </p>
+          <p>{body.body}</p>
 
           <Link to={`/blog/${slug}`} className="cta inline-text-link">
             Read More <img src={arrow} alt="" />
           </Link>
         </div>
-      </Col> 
-      
-    ) 
+      </Col>
+    )
   })
   return (
     <Container fluid id="blogIndex__FAQ" className={`bg-white`}>
       <Row>
-        <h1>
-          FAQ Section
-        </h1>
+        <h1>FAQ Section</h1>
         <h2>
           Tags:
-          <div className="faq__tags">
-            { options }
-          </div>
+          <div className="faq__tags">{options}</div>
         </h2>
       </Row>
-      <Row id="">
-        {faqList}
-        
-      </Row>
-      
+      <Row id="">{faqList}</Row>
     </Container>
   )
 }

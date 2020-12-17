@@ -31,7 +31,9 @@ class BlogTemplate extends React.Component {
   }
 
   render() {
-    const pageColor = "salmon"
+    const pageColor = "blue"
+    const footerColor = "salmon"
+    // const pageColor = "salmon"
     const borderColor = "site-border-black"
     const { pageContext, data, location } = this.props
     const { postType } = pageContext
@@ -111,7 +113,8 @@ class BlogTemplate extends React.Component {
         location={location}
         path={location.pathname}
         borderColor={borderColor}
-        footerColor={pageColor}
+        footerColor={footerColor}
+        pageColor={pageColor}
       >
         <SEO title={post?.title} />
         <section id="blogTemplate">
@@ -181,83 +184,6 @@ class BlogTemplate extends React.Component {
                 <main className="post__body" dangerouslySetInnerHTML={{
                     __html: post.body.childMarkdownRemark.html,
                   }}>
-                  
-                {/* <div
-                  dangerouslySetInnerHTML={{
-                    __html: post.body.childMarkdownRemark.html,
-                  }}
-                ></div> */}
-                  
-                  {/* {post.body.body} */}
-
-                  {/* <p>
-                    The <strong>50-3-0-20</strong> 50-30-20 rule is a{" "}
-                    <em>pretty well known</em> <u>underline text</u> budgeting
-                    framework developed by Elizabeth Warren (yeah, aka
-                    presidential candidate Lizzy Warren!) in her 2006
-                    bestseller, All Your Worth. This rule of thumb has stuck
-                    around for more than a decade because it’s simple. The
-                    50-30-20 rule is a pretty well known budgeting framework
-                    developed by Elizabeth Warren (yeah, aka presidential
-                    candidate Lizzy Warren!) in her 2006 bestseller, All Your
-                    Worth. This rule of thumb has...
-                  </p>
-
-                  <img src={brokeNote1} />
-
-                  <h3>Subheading</h3>
-
-                  <p>
-                    <strong>bold subheading text</strong>
-                  </p>
-
-                  <p>
-                    The <strong>50-3-0-20</strong> 50-30-20 rule is a pretty
-                    well known budgeting framework developed by Elizabeth Warren
-                    (yeah, aka presidential candidate Lizzy Warren!) in her 2006
-                    bestseller, All Your Worth. This rule of thumb has stuck
-                    around for more than a decade because it’s simple. The
-                    50-30-20 rule is a pretty well known budgeting framework
-                    developed by Elizabeth Warren (yeah, aka presidential
-                    candidate Lizzy Warren!) in her 2006 bestseller, All Your
-                    Worth. This rule of thumb has...
-                  </p>
-
-                  <blockquote>
-                    “let’s make this a really good quote.”
-                  </blockquote>
-
-                  <p>
-                    The <strong>50-3-0-20</strong> 50-30-20 rule is a pretty
-                    well known budgeting framework developed by Elizabeth Warren
-                    (yeah, aka presidential candidate Lizzy Warren!) in her 2006
-                    bestseller, All Your Worth. This rule of thumb has stuck
-                    around for more than a decade because it’s simple. The
-                    50-30-20 rule is a pretty well known budgeting framework
-                    developed by Elizabeth Warren (yeah, aka presidential
-                    candidate Lizzy Warren!) in her 2006 bestseller, All Your
-                    Worth. This rule of thumb has...
-                  </p>
-
-                  <ul>
-                    <li>unordered list item</li>
-                    <li>unordered list item</li>
-                    <li>unordered list item</li>
-                    <li>unordered list item</li>
-                    <li>unordered list item</li>
-                    <li>unordered list item</li>
-                  </ul>
-
-                  <img src={brokeNote2} />
-
-                  <ol>
-                    <li>ordered list item</li>
-                    <li>ordered list item</li>
-                    <li>ordered list item</li>
-                    <li>ordered list item</li>
-                    <li>ordered list item</li>
-                    <li>ordered list item</li>
-                  </ol> */}
                 </main>
               </Col>
             </Row>

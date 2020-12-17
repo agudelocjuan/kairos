@@ -16,6 +16,7 @@ const Layout = ({
   menu,
   path,
   borderColor,
+  pageColor,
   applicationPage = false,
   jobs = false,
 }) => {
@@ -71,7 +72,7 @@ const Layout = ({
         data-hightlight={colorIndex}
         onMouseDown={_onSelect.bind(this)}
       >
-        <main>{children}</main>
+        <main className={pageColor}>{children}</main>
         <Footer jobs={jobs} color={footerColor} borderColor={borderColor} />
       </div>
     </div>

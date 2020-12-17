@@ -143,8 +143,16 @@ body {
             }
         }
 
+        @media (max-width: map-get($grid-breakpoints,lg)) {
+            text-align: center;
+
+            margin-bottom: 64px;
+        }
+        
         @media (max-width: map-get($grid-breakpoints,md)) {
             text-align: center;
+
+            margin-bottom: 32px;
         }
     }
 

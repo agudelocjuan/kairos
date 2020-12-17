@@ -13,13 +13,13 @@ const blogIndex__Email = ({ mobile }) => {
   return (
     <Container fluid id="blogIndex__Email" className="">
       <Row id="">
-        <Col md="4" className="left-container text">
+        <Col lg="4" className="left-container text">
             <h3 className="title">Want more Kairos?</h3>
             <p>Sign up for our newsletter today!</p>
             
         </Col>
         
-        <Col md="8" className="left-container">
+        <Col lg="8" className="left-container">
             <Email />
             
         </Col>

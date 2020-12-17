@@ -12,15 +12,36 @@
 
 #site-container {
     main {
-        // background: $blue;
+        &.blue { 
+            background: $blue; 
 
-        @media (max-width: map-get($grid-breakpoints,md)) {
-            background: $company-blue;
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                background: $company-blue;
+            }
         }
+        
+        &.cream { 
+            background: $cream; 
+
+            // @media (max-width: map-get($grid-breakpoints,md)) {
+            //     background: $cream;
+            // }
+        }
+
+        
     }
 }
 
 #blogTemplate {
+
+    &.faqTemplate {
+        padding-top: 168px;
+
+        @media (min-width: map-get($grid-breakpoints,md)) {
+            padding-top: 168px;
+        }   
+    }
+
     aside {
         padding-left: 30px;
         padding-right: 30px;
@@ -53,6 +74,12 @@
         padding-top: 30px;
         padding-bottom: 30px;
         position: relative;
+
+        p {
+            & + p {
+                padding-top: 26px;
+            }
+        }
 
         h1 {
             margin: 0;
@@ -160,7 +187,8 @@
 
         > * {
             padding: 0 33px;
-            padding-bottom: 56px;    
+            // padding-bottom: 56px;    
+            padding-bottom: 24px;    
 
             @media (min-width: map-get($grid-breakpoints,md)) {
                 padding: 0 100px;
@@ -181,7 +209,7 @@
         }
 
         blockquote {
-            padding: 64px 150px;
+            padding: 48px 56px;
             margin-left: 0;
             margin-right: 0;
             border-left: 0;
@@ -190,7 +218,9 @@
 
             text-align: center;
 
-            
+            @media (min-width: map-get($grid-breakpoints,md)) {
+                padding: 64px 150px;
+            }
 
             > p {
                 font-family: "summer loving reg";
@@ -204,9 +234,9 @@
                 -moz-osx-font-smoothing: grayscale;
                 text-rendering: optimizeLegibility;
                 @media (max-width: map-get($grid-breakpoints,md)) {
-                    font-size: 80px;
-                    line-height: 40px;
-                    letter-spacing: -1.5px;
+                    font-size: 96px;
+                    line-height: 56px;
+                    letter-spacing: -2.08px;
                 }
             }
 
@@ -223,7 +253,27 @@
         }
 
         ul, ol {
-            list-style-position: inside;
+            @media (min-width: map-get($grid-breakpoints,md)) {
+                list-style-position: inside;
+            }
+        }
+
+        ul {
+            list-style: none;
+            // padding-left: calc(100px + 1em);
+
+            @media (min-width: map-get($grid-breakpoints,md)) {
+                padding-left: calc(100px + 1em);
+            }
+
+            li:before {
+                content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+                color: $salmon; /* Change the color */
+                font-weight: bold; /* If you want it to be bold */
+                display: inline-block; /* Needed to add space between the bullet and the text */
+                width: 1em; /* Also needed for space (tweak if needed) */
+                margin-left: -1em; /* Also needed for space (tweak if needed) */
+            }
         }
     }
 

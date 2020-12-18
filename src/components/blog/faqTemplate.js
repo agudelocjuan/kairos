@@ -33,13 +33,27 @@ class FaqTemplate extends React.Component {
   }
 
   render() {
-    const pageColor = "cream"
+    // const pageColor = "cream"
     const footerColor = "salmon"
     // const pageColor = "salmon"
     const borderColor = "site-border-black"
     const { pageContext, data, location } = this.props
     const { postType } = pageContext
     const post = get(this.props, "data.contentfulFaq")
+
+    let pageColor = "blue"
+
+    if ( post.tags[0] === "money" ) {
+      pageColor = "blue"
+    } else if ( post.tags[0] === "health" ) {
+      pageColor = "purple"
+    } else if ( post.tags[0] === "home" ) {
+      pageColor = "cream"
+    } else if ( post.tags[0] === "work life" ) {
+      pageColor = "pale-yellow"
+    } else if ( post.tags[0] === "news" ) {
+      pageColor = "pale-red"
+    }
 
     // for twitter share button
     const shareItem = typeof window !== "undefined" ? window.location : ""

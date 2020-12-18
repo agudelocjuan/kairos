@@ -154,10 +154,13 @@
             .twitter-icon, .link-icon {
                 width: 26px;
                 vertical-align: top;
+                transform: scale(1.5);
+                // margin-right: 1rem;
             }
 
             .link-icon {
-                margin-right: 1rem;
+                margin-right: 2rem;
+                margin-left: 0.5rem;
             }
 
             dt, dd {

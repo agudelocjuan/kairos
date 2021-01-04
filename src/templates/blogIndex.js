@@ -277,7 +277,7 @@ export const IndexBlogQuery = graphql`
             description
           }
           publishDate(formatString: "MMMM Do, YYYY")
-          
+          tags
           heroImage {
             file {
               url
@@ -305,7 +305,7 @@ export const IndexBlogQuery = graphql`
           author {
             name
           }
-          
+          tags
           heroImage {
             file {
               url

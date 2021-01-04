@@ -45,19 +45,19 @@ class BlogTemplate extends React.Component {
 
     let pageColor = "blue"
 
-    if ( post.tags[0] === "money" ) {
-      pageColor = "blue"
-    } else if ( post.tags[0] === "health" ) {
-      pageColor = "purple"
-    } else if ( post.tags[0] === "home" ) {
-      pageColor = "cream"
-    } else if ( post.tags[0] === "work life" ) {
-      pageColor = "pale-yellow"
-    } else if ( post.tags[0] === "news" ) {
-      pageColor = "pale-red"
-    }
+    // if ( post.tags[0] === "money" ) {
+    //   pageColor = "blue"
+    // } else if ( post.tags[0] === "health" ) {
+    //   pageColor = "purple"
+    // } else if ( post.tags[0] === "home" ) {
+    //   pageColor = "cream"
+    // } else if ( post.tags[0] === "work life" ) {
+    //   pageColor = "pale-yellow"
+    // } else if ( post.tags[0] === "news" ) {
+    //   pageColor = "pale-red"
+    // }
 
-    console.log(post.tags)
+    // console.log(post.tags)
 
     // for twitter share button
     const shareItem = typeof window !== "undefined" ? window.location : ""
@@ -153,7 +153,7 @@ class BlogTemplate extends React.Component {
                   ></figure>
 
                   <aside className="post__header__title">
-                    <span className="tag cta">{post.tags}</span>
+                    {/* <span className="tag cta">{post.tags}</span> */}
                     {post ? (
                       <h1>{post.title}</h1>
                     ) : (
@@ -275,8 +275,7 @@ export const pageQuery = graphql`
             words
           }
         }
-      }
-      tags
+      }      
       author {
         name
       }

@@ -12,7 +12,7 @@ const blogIndex__Questions = ({ mobile }) => {
     <Container fluid id="blogIndex__Questions" className="">
       <Row id="the-problem">
         <Col md="4" className="header">
-          <div className="franklin-cta text-white">Any Questions? </div>
+          <div className="franklin-cta text-white">Any <br className="display-desktop" /> Questions? </div>
         </Col>
         <Col md="8" className="main">
           <h1 className="cta-graffiti text-white">

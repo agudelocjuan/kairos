@@ -160,6 +160,8 @@ body {
         line-height: 59px;
         text-align: center;
         padding: 24px 0 22px;
+        letter-spacing: -2.25333px;
+        text-transform: uppercase;
     }
 
     .faq__main {
@@ -240,14 +242,18 @@ body {
     background: $dark-blue;
 
     .header {
-        padding: 77px;
+        // padding: 77px;
+        padding-left: 38px;
+        padding-top: 77px;
         border-right: 2px solid $white;
         
         overflow: hidden;
         position: relative;
 
-        .franklin-cta {
-            text-transform: uppercase;
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            padding: 28px 0 16px;
+            border-bottom: 2px solid $white;
+            border-right: 0;
         }
 
         &::before {
@@ -260,12 +266,46 @@ body {
                 family: "summer loving reg";
             }
             color: rgba($white, 0.25);
-
+            
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                display: none;
+            }
         }
+
+        .franklin-cta {
+            text-transform: uppercase;
+
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                font-size: 48px;
+                line-height: 40px;
+                text-align: center;
+            }
+            
+            @media (max-width: map-get($grid-breakpoints,xl)) {
+                font-size: 60px;
+                line-height: 53px;
+            }
+        }
+
+        
     }
 
     .main {
-        padding: 77px;
+        padding: 85px 66px 66px;
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            padding: 33px 33px 40px;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 24px;
+
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                font-size: 96px;
+                line-height: 56px;
+            }
+        }
 
         .big-button {
             display: block;
@@ -282,6 +322,13 @@ body {
             text-transform: uppercase;
             color: $dark-blue;
             border-radius: 50px;
+
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                margin-top: 48px;
+                padding: 9px 0px 3px;
+                font-size: 40px;
+                line-height: 48px;
+            }
             
         }
 

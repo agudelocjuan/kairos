@@ -2,6 +2,22 @@ body {
     // border: 100px solid chocolate;
 }
 
+// helper classes
+
+.display-mobile {
+    display: none;
+
+    @media (max-width: map-get($grid-breakpoints,md)) {
+        display: block;    
+    }
+}
+
+.display-desktop {
+    @media (max-width: map-get($grid-breakpoints,md)) {
+        display: none;
+    }
+}
+
 .blog-grid {
     position: relative;
     padding: 0 20px;
@@ -69,10 +85,155 @@ body {
 
 
     .faq__tags {
-        .active {
-            opacity: 0.5;
+        
+    }
+
+.blogIndex__FAQ {
+    background: rgba($blue, 0.4);
+}
+
+.faq__tags {
+    display: flex;
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
+    padding: 20px 40px;
+
+    @media (max-width: map-get($grid-breakpoints,md)) {
+        padding: 12px 16px;
+        overflow-x: scroll;
+    }
+    
+
+
+    .tag {
+        flex: auto;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+
+        // width: 18.5%;
+        justify-content: space-between;
+        // background: hotpink;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 25px 0 15px;
+        border: 2px solid $black;
+        border-radius: 100px;
+        cursor: pointer;
+
+        font-family: "franklin gothic std";
+        font-size: 64px;
+        line-height: 59px;
+        color: $black;
+        font-weight: 400;
+        letter-spacing: -1.4px;
+        // text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        white-space: nowrap;
+
+        @media (min-width: map-get($grid-breakpoints,md)) {
+            width: 260px;
+
+        }
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            font-size: 26px;
+            line-height: 31px;
+            letter-spacing: 0px;
+            padding: 12px 20px 8px;
+            width: auto;
+        }
+
+        &.active {
+            background: $blue;
         }
     }
+}
+
+.blogIndex__FAQ {
+
+    .cta-graffiti.display-mobile {
+        font-size: 104px;
+        line-height: 59px;
+        text-align: center;
+        padding: 24px 0 22px;
+    }
+
+    .faq__main {
+
+        .faq__header {
+            padding: 52px 40px;
+
+            .cta-graffiti.display-desktop {
+                font-size: 240px;
+            }
+
+        }
+
+        .faq__content {
+            border-left: 2px solid $black;
+            padding: 0 !important;
+
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                border-left: none;
+            }
+
+            .post-wrapper {
+                padding-top: 40px;
+                padding-bottom: 40px;
+                
+                padding-left: 52px;
+                border-bottom: 2px solid $black;
+
+                transition: 0.25s;
+
+                @media (max-width: map-get($grid-breakpoints,md)) {
+                    padding-left: 32px;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                }
+
+                &:hover, &:focus {
+                    background: $blue;
+                }
+
+                .post-title {
+                    font-family: "franklin gothic std";
+                    font-size: 64px;
+                    line-height: 59px;
+                    color: $black;
+                    font-weight: 400;
+                    letter-spacing: -2px;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    text-rendering: optimizeLegibility;
+                    @media (max-width: map-get($grid-breakpoints,md)) {
+                        font-size: 36px;
+                        line-height: 32px;
+                        letter-spacing: -1.3px;
+                    }
+                }
+
+                .post__excerpt {
+                    margin: 16px 0 24px;
+
+                    @media (max-width: map-get($grid-breakpoints,md)) {
+                        margin: 12px 0 24px;
+                    }
+                }
+
+                .cta.inline-text-link {
+                    color: $black !important;
+                    border-color: $black !important;
+                }
+            }
+        }
+    }
+
+}
 
 
 #blogIndex__Questions {

@@ -117,7 +117,7 @@ class FaqTemplate extends React.Component {
                     <dl>
                       <span className="meta__item">
                         <dt>Author: </dt>
-                        {/* <dd> {post.author.name} </dd> */}
+                        <dd> {post.author.name} </dd>
                       </span>
 
                       <span className="meta__item">

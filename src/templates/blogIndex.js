@@ -141,7 +141,7 @@ class BlogIndex extends React.Component {
           }
         >
           {i}
-          {active ? (
+          {/* {active ? (
             <img
               src={exit}
               alt=""
@@ -154,7 +154,7 @@ class BlogIndex extends React.Component {
             />
           ) : (
             ""
-          )}
+          )} */}
         </div>
       )
     })
@@ -215,6 +215,11 @@ class BlogIndex extends React.Component {
         <LibraryTwoPost posts={pageArticles.slice(6, 9)} />
         <LibraryTwoPost posts={pageArticles.slice(9, 12)} />
         <LibraryTwoPost posts={pageArticles.slice(12, 15)} />
+        
+        <LibraryTwoPost posts={pageArticles.slice(15, 18)} />
+        <LibraryTwoPost posts={pageArticles.slice(18, 21)} />
+        <LibraryTwoPost posts={pageArticles.slice(21, 24)} />
+        <LibraryTwoPost posts={pageArticles.slice(24, 27)} />
       </>
     )
 
@@ -246,11 +251,25 @@ class BlogIndex extends React.Component {
         <BlogIndex__Email />
         <BlogIndex__GroupChat data={interviewPosts} count={interviewCount} />
 
-        <h2>FAQ section - with tags</h2>
+        <section className="blogIndex__FAQ">
+        <div className="display-mobile cta-graffiti">FAQs </div>
+          <div className="faq__tags">
+            {tagOptions}
+          </div>
 
-        {tagOptions}
+          <Container fluid id="" className="faq__main">
+            <Row id="">
+              <Col md="4" className="faq__header display-desktop">
+                <div className="cta-graffiti">FAQs </div>
+              </Col>
+              <Col md="8" className="faq__content">
+                {pageRender}
+              </Col>
+            </Row>
+          </Container>
 
-        {pageRender}
+        </section>
+        
 
         {/* <BlogIndex__FAQ data={faqPosts} /> */}
         {/* <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions} filtered={filteredPosts} /> */}
@@ -326,6 +345,9 @@ export const IndexBlogQuery = graphql`
           tags
           body {
             body
+            childMarkdownRemark {
+              excerpt
+            }
           }
           description {
             description

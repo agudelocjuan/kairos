@@ -4,6 +4,12 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
+import arrow from "../../images/icons/arrow-diag-black.svg"
+
+
 const LibraryTwoPost = ({ posts, mobile }) => {
   if (posts.length === 0) {
     return ""
@@ -11,10 +17,10 @@ const LibraryTwoPost = ({ posts, mobile }) => {
 
   let display = posts.map((i, idx) => {
     return (
-      <Col key={idx} xs="12" md="4">
+      <Col key={idx} xs="12" md="12" className="post-wrapper">
         <div className="post-container">
-          <Link to={"/blog/" + i.node.slug}>
-            <div className="wrapper">
+          {/* <Link to={"/blog/" + i.node.slug}> */}
+            {/* <div className="wrapper">
               <div
                 className="container-image"
                 style={
@@ -27,10 +33,10 @@ const LibraryTwoPost = ({ posts, mobile }) => {
                       }
                 }
               />
-            </div>
+            </div> */}
 
             <div className="post-text-container">
-              <div className="tag-container">
+              {/* <div className="tag-container">
                 {i.node.tags
                   ? i.node.tags.slice(0, 1).map((i, idx) => {
                       return (
@@ -44,15 +50,24 @@ const LibraryTwoPost = ({ posts, mobile }) => {
                 <div className="publishDate body-small">
                   {i.node.publishDate}
                 </div>
-              </div>
+              </div> */}
               {mobile ? (
-                <div className="post-title">{i.node.title}</div>
+                <div className="cta-franklin post-title">{i.node.title}</div>
               ) : (
-                <span className="cta post-title">{i.node.title}</span>
+                <span className="cta-franklin post-title">{i.node.title}</span>
               )}
-              <div className="underline">Read More</div>
+              
+              <p className="post__excerpt" dangerouslySetInnerHTML={{
+                __html: i.node.body.childMarkdownRemark.excerpt,
+              }}>
+              </p>
+              
+              <Link to={"/blog/" + i.node.slug} className="cta inline-text-link">
+                Read More <img src={arrow} alt="" />
+              </Link>
+              {/* <span className="underline cta">Read More</span> */}
             </div>
-          </Link>
+          {/* </Link> */}
         </div>
       </Col>
     )

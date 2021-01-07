@@ -18,9 +18,15 @@ body {
     }
 }
 
+.display-large {
+    @media (max-width: map-get($grid-breakpoints,lg)) {
+        display: none;
+    }
+}
+
 .blog-grid {
     position: relative;
-    padding: 0 20px;
+    // padding: 0 20px;
 
     // general grid styles
     
@@ -36,39 +42,165 @@ body {
 
 
     .logo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding-left: 10px;
-        z-index: 2;
+        
+        
         background: $white;
-        border-right: 0;
-        height: 403px;
+        // border-right: 1px solid $black;
+        border-bottom: 2px solid $black;
 
-        padding: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 32px 0;
+
+        #brokeNote__logo {
+            padding: 102px 0 48px;
+        }
+
+        @media (min-width: map-get($grid-breakpoints,lg)) {
+            position: absolute;
+            top: 0;
+            left: 0;    
+            height: 403px;
+            padding-left: 10px;
+            z-index: 2;
+            padding: 40px;
+        }
+
+        .logo--mobile {
+            @media (min-width: map-get($grid-breakpoints,lg)) {
+                display: none;
+            }
+        }
+
+        .logo--desktop {
+            display: none;
+
+            @media (min-width: map-get($grid-breakpoints,lg)) {
+                display: block;
+            }
+        }
     }
 
     .flickity-enabled {
         width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .flickity-viewport {
+        position: relative;
+        // max-height: 1150px;
+        // box-shadow: 0 0 0 100px $blue;
+
+        @media (min-width: map-get($grid-breakpoints,lg)) {
+            overflow-y: hidden;
+            max-height: calc(100vw + 200px);
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background: $black;
+            }
+        }
+
+        
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     .post {
-        width: 33%;
-        border-right: 2px solid $black;
+        width: 33.333333%;
+        // border-right: 2px solid $black;
+        position: relative;
+        max-height: 1200px;
+        // height: 1200px;
+
+        @media (max-width: map-get($grid-breakpoints,lg)) {
+            width: 100%;
+        }
+        
+        @media (min-width: map-get($grid-breakpoints,lg)) {
+            &:after {
+                content: '';
+                position: absolute;
+                right: -2px;
+                top: 0;
+                // height: 1100px;
+                height: 100%;
+                height: 58vw;
+                height: 1200px;
+                background: $black;
+                width: 2px;
+            }    
+        }
+
+        
 
         .post__image {
             height: 403px;
             @include full-bg;
-
+            margin: 0;
+            border-bottom: 2px solid $black;
         }
     
         .post__meta {
             padding: 40px;
         }
     }
+
+    .flickity-prev-next-button {
+        content: '→';
+        font-size: 40px;
+        padding: 36px 0;
+        border: 0;
+        background-color: transparent;
+        width: 50px;
+        height: 40px;
+        background-repeat: no-repeat;
+
+        svg {
+            display: none;
+        }
+
+        &.previous {
+            background-image: url('../images/icons/arrow-left.svg');
+            background-position: right center;
+            margin-left: 41vw;
+
+            @media (max-width: map-get($grid-breakpoints,lg)) {
+                margin-left: 32px;
+                // margin-right: calc(100vw - 64px)
+
+                // transform: translateX(calc(80px));
+            }
+        }
+
+        &.next {
+            background-image: url('../images/icons/arrow-right.svg');
+            background-position: left center;
+            margin-left: 150px;
+
+            @media (max-width: map-get($grid-breakpoints,lg)) {
+                // margin-left: calc(100vw - 32px);
+                margin-left: 0;
+                position: relative;
+                margin-right: auto;
+
+                transform: translateX(calc(80vw - 72px));
+            }
+        }
+        
+    }
+
 
     // specific grid styles 
 
@@ -83,10 +215,16 @@ body {
 
 }
 
+.carousel__controls {
+    .carousel-status {
+        color: transparent;
 
-    .faq__tags {
-        
+        &::first-letter {
+            color: $black;
+        }
     }
+}
+
 
 .blogIndex__FAQ {
     background: rgba($blue, 0.4);
@@ -97,6 +235,10 @@ body {
     border-top: 2px solid $black;
     border-bottom: 2px solid $black;
     padding: 20px 40px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     @media (max-width: map-get($grid-breakpoints,md)) {
         padding: 12px 16px;
@@ -382,7 +524,7 @@ body {
             margin-bottom: 0;
 
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row nowrap;
             justify-content: space-between;
 
             font-family: "franklin gothic std";
@@ -393,13 +535,12 @@ body {
             letter-spacing: -1.04px;
 
             @media (max-width: map-get($grid-breakpoints,md)) {
-                font-size: 28px;
-                // flex-direction: column;
+                font-size: 26px;
             }
 
 
             input[type="text"] {
-        padding: 25px 40px 20px;
+                padding: 25px 40px 20px;
                 flex-grow: 2;
                 background: transparent;
                 border-bottom: none;
@@ -409,6 +550,11 @@ body {
                 border-radius: 100px;
                 border: 3px solid $white;
                 outline: none;
+
+                @media (max-width: map-get($grid-breakpoints,md)) {
+                    // font-size: 26px;
+                    padding: 13px 24px 9px;
+                }
 
                 &::placeholder {
                     color: rgba($dark-blue, .3);
@@ -421,11 +567,16 @@ body {
             }
     
             button[type="submit"] {
-        padding: 25px 40px 20px;
+                padding: 25px 40px 20px;
                 border-radius: 100px;
                 border: 3px solid $white;
                 background-color: $dark-blue;
                 text-transform: uppercase;
+                white-space: nowrap;
+
+                @media (max-width: map-get($grid-breakpoints,md)) {
+                    padding: 13px 15px 9px;
+                }
 
             }
         }

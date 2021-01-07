@@ -16,6 +16,8 @@ import BlogIndex__Questions from "../components/blog/blogIndex__Questions"
 import LibraryTwoPost from "../components/blog/libraryTwoPost"
 
 import exit from "../images/icons/exit-menu.svg"
+import arrowRight from "../images/icons/arrow-right.svg"
+import arrowLeft from "../images/icons/arrow-left.svg"
 
 class BlogIndex extends React.Component {
   constructor(props) {
@@ -26,6 +28,14 @@ class BlogIndex extends React.Component {
     }
     this._editFilterTags = this._editFilterTags.bind(this)
   }
+
+  // match height plugin
+
+  // external js: flickity.pkgd.js
+
+// add this code
+
+  
 
   _editFilterTags(tag) {
     if (this.state.filterTags.includes(tag)) {
@@ -252,7 +262,7 @@ class BlogIndex extends React.Component {
         <BlogIndex__GroupChat data={interviewPosts} count={interviewCount} />
 
         <section className="blogIndex__FAQ">
-        <div className="display-mobile cta-graffiti">FAQs </div>
+          <div className="display-mobile cta-graffiti">FAQs </div>
           <div className="faq__tags">
             {tagOptions}
           </div>

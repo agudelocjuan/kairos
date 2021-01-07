@@ -7,6 +7,7 @@ import Flickity from "react-flickity-component"
 import Img from "gatsby-image"
 
 import groupChatLogo from "../../images/blog/groupChatLogo.svg"
+import groupChatLogoMobile from "../../images/blog/groupChatLogo--mobile.svg"
 import groupChat1 from "../../images/blog/groupChat1.jpg"
 import groupChat2 from "../../images/blog/groupChat2.jpg"
 
@@ -33,9 +34,28 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
     // console.log(interview.node)
     const {body, title, slug} = interview.node
     return (
-      <Col key={index} md="4" className="post">
-        <figure className="post__image">
-          <Img fluid={interview.node.heroImage.fluid} />
+      // <Col key={index} md="4" className="post">
+      //   <figure className="post__image">
+      //     <Img fluid={interview.node.heroImage.fluid} />
+      //   </figure>
+
+      //   <div className="post__meta">
+      //     <h3>{title}</h3>
+      //     <p>
+      //       {interview.node.description.description}
+      //     </p>
+
+      //     <Link to={`/blog/${slug}`} className="cta inline-text-link">
+      //       Read More <img src={arrow} alt="" />
+      //     </Link>
+      //   </div>
+      // </Col> 
+
+      <article key={index} className="post">
+        <figure className="post__image"
+          style={{backgroundImage: `url(${interview.node.heroImage.fluid.src})`}}
+          >
+          {/* <Img fluid={interview.node.heroImage.fluid} /> */}
         </figure>
 
         <div className="post__meta">
@@ -48,7 +68,7 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
             Read More <img src={arrow} alt="" />
           </Link>
         </div>
-      </Col> 
+      </article> 
       
     ) 
   })
@@ -56,17 +76,18 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
 	return (
     <Container fluid id="blogIndex__GroupChat" className="blog-grid">
 			<Row>
-        <Col md="4" className="logo">
-            <img src={groupChatLogo} alt="" />
+        <Col lg="4" className="logo">
+            <img src={groupChatLogo} alt="" className="logo--desktop" />
+            <img src={groupChatLogoMobile} alt="" className="logo--mobile" />
         </Col>
 
         <Flickity options={options} className="blog-carousel interviews">
           {interviewList}
         </Flickity>  
 
-        <div className="carousel__controls">
+        {/* <div className="carousel__controls">
           <p class="carousel-status">{count}</p>
-        </div>
+        </div> */}
 
 			</Row>
 

@@ -6,6 +6,7 @@ import Flickity from "react-flickity-component"
 import Img from "gatsby-image"
 
 import brokeNoteLogo from "../../images/blog/brokeNoteLogo.svg"
+import brokeNoteLogoMobile from "../../images/blog/brokeNoteLogo--mobile.svg"
 import brokeNote1 from "../../images/blog/brokeNote1.jpg"
 import brokeNote2 from "../../images/blog/brokeNote2.jpg"
 
@@ -27,6 +28,34 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     groupCells: true,
     prevNextButtons: true,
   }
+
+  // matchHeight(){
+  //   //Grab divs with the class name 'match-height'
+  //   var getDivs = document.getElementsByClassName('match-height');
+  
+  //   //Find out how my divs there are with the class 'match-height' 
+  //   var arrayLength = getDivs.length;
+  //   var heights = [];
+  
+  //   //Create a loop that iterates through the getDivs variable and pushes the heights of the divs into an empty array
+  //   for (var i = 0; i < arrayLength; i++) {
+  //       heights.push(getDivs[i].offsetHeight);
+  //   }
+  
+  //    //Find the largest of the divs
+  //   function getHighest() {
+  //     return Math.max(...heights);
+  //   }
+  
+  //   //Set a variable equal to the tallest div
+  //   var tallest = getHighest();
+  
+  //   //Iterate through getDivs and set all their height style equal to the tallest variable
+  //   for (var i = 0; i < getDivs.length; i++) {
+  //       getDivs[i].style.height = tallest + "px";
+  //   }
+  // }
+  
 
   let blogList = data.map((blog, index) => {
     // console.log(blog.node)
@@ -59,8 +88,9 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
   return (
     <Container fluid id="blogIndex__BrokeNote" className="blog-grid">
       <Row>
-        <Col md="4" className="logo">
-          <img src={brokeNoteLogo} alt="" />
+        <Col lg="4" className="logo">
+          <img src={brokeNoteLogo} alt="" className="logo--desktop" />
+          <img src={brokeNoteLogoMobile} alt="" className="logo--mobile" id="brokeNote__logo" />
         </Col>
 
         <Flickity options={options} className="blog-carousel blog">
@@ -68,9 +98,11 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
         {blogList}
         </Flickity>
 
-        <div className="carousel__controls">
-          <p class="carousel-status">{count}</p>
-        </div>
+        {/* <div className="carousel__controls">
+          <p className="carousel-status">
+            {count/3 + 1}
+          </p>
+        </div> */}
         
       </Row>
       {/* <Row className="image-row">

@@ -20,8 +20,8 @@ import arrow from "../../images/icons/arrow-diag-red.svg"
 
 const Header = ({ mobile, menu, dispatch }) => {
 
-  const [isActive, setActive] = useState("false");
-  const [isSearchActive, setSearchActive] = useState("false");
+  const [isActive, setActive] = useState(false);
+  const [isSearchActive, setSearchActive] = useState(false);
 
   const handleToggle = () => {
     setActive(!isActive);

@@ -211,6 +211,8 @@ class FaqTemplate extends React.Component {
               <a href="mailto:team@kairoshq.com">Ask Us Here</a>
             </div>
 
+            {/* sample edit */}
+
             <Row>
               <Col className="flush">
                 <BlogIndex__Email />

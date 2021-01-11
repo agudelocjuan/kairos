@@ -17,7 +17,7 @@ import BlogIndex__Email from "./blogIndex__Email"
 import LibraryThumbnails from "./libraryThumbnails"
 
 import SEO from "../global/seo"
-import Layout from "../global/layout"
+import Layout from "../global/layoutArticle"
 import { graphql, Link, useStaticQuery } from "gatsby"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"

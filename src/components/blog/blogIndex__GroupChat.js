@@ -52,6 +52,8 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
       // </Col> 
 
       <article key={index} className="post">
+        <Link to={`/blog/${slug}`} className="">
+
         <figure className="post__image"
           style={{backgroundImage: `url(${interview.node.heroImage.fluid.src})`}}
           >
@@ -64,10 +66,11 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
             {interview.node.description.description}
           </p>
 
-          <Link to={`/blog/${slug}`} className="cta inline-text-link">
+          <span className="cta inline-text-link">
             Read More <img src={arrow} alt="" />
-          </Link>
+          </span>
         </div>
+        </Link>
       </article> 
       
     ) 

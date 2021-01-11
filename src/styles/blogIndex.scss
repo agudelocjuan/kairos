@@ -53,6 +53,18 @@ body {
         align-items: center;
         padding: 32px 0;
 
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: $black;
+        }
+
         #brokeNote__logo {
             padding: 102px 0 48px;
         }
@@ -452,7 +464,7 @@ body {
         .big-button {
             display: block;
             width: 100%;
-            padding: 35px 0;
+            padding: 37px 0 27px;
             margin-top: 196px;
 
             background: $white;
@@ -560,10 +572,10 @@ body {
                     color: rgba($dark-blue, .3);
                 }
 
-                &:focus {
-                    outline: none;
-                    border: 3px solid $dark-blue;
-                }
+                // &:focus {
+                //     outline: none;
+                //     border: 3px solid $dark-blue;
+                // }
             }
     
             button[type="submit"] {

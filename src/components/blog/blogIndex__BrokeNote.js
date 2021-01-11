@@ -63,7 +63,10 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     console.log(blog.node.heroImage.fluid.src)
     return (
       // <Col key={index} md="4" className="post">
+
       <article key={index} className="post">
+      <Link to={`/blog/${slug}`} className="">
+
         <figure className="post__image"
           style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
           >
@@ -76,11 +79,14 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
             {blog.node.description.description}
           </p>
 
-          <Link to={`/blog/${slug}`} className="cta inline-text-link">
+          <span className="cta inline-text-link">
             Read More <img src={arrow} alt="" />
-          </Link>
+          </span>
         </div>
+      </Link>
+
       </article> 
+
       //</Col>  
       
     ) 

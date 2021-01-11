@@ -36,6 +36,8 @@ const LibraryTwoPost = ({ posts, mobile }) => {
             </div> */}
 
             <div className="post-text-container">
+              <Link to={"/blog/" + i.node.slug}>
+
               {/* <div className="tag-container">
                 {i.node.tags
                   ? i.node.tags.slice(0, 1).map((i, idx) => {
@@ -61,9 +63,10 @@ const LibraryTwoPost = ({ posts, mobile }) => {
                 __html: i.node.body.childMarkdownRemark.excerpt,
               }}>
               </p>
-              
-              <Link to={"/blog/" + i.node.slug} className="cta inline-text-link">
+              <span className="cta inline-text-link">
                 Read More <img src={arrow} alt="" />
+              </span>
+              
               </Link>
               {/* <span className="underline cta">Read More</span> */}
             </div>

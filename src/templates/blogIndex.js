@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
 import SEO from "../components/global/seo"
-import Layout from "../components/global/layout"
+import Layout from "../components/global/layoutBlog"
 
 import BlogIndex__BrokeNote from "../components/blog/blogIndex__BrokeNote"
 import BlogIndex__Email from "../components/blog/blogIndex__Email"

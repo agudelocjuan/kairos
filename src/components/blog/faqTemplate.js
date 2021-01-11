@@ -19,7 +19,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
 import SEO from "../global/seo"
-import Layout from "../global/layout"
+import Layout from "../global/layoutArticle"
 
 class FaqTemplate extends React.Component {
   constructor(props) {
@@ -183,6 +183,7 @@ class FaqTemplate extends React.Component {
                 <main className="post__body" dangerouslySetInnerHTML={{
                     __html: post.body.childMarkdownRemark.html,
                   }}>
+
                 </main>
               </Col>
             </Row>

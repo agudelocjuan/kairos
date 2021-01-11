@@ -161,6 +161,21 @@
             .link-icon {
                 margin-right: 2rem;
                 margin-left: 0.5rem;
+
+                @media (max-width: map-get($grid-breakpoints,md)) {
+                    width: 25px;
+                }  
+            }
+
+            .meta__item {
+                @media (max-width: map-get($grid-breakpoints,md)) {
+                    margin-bottom: 6px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                        margin-top: 12px;
+                    }
+                }  
             }
 
             dt, dd {
@@ -172,6 +187,12 @@
                 font-weight: normal;
                 margin-right: 5px;
                 color: rgba($black, 0.7);
+
+                &.share-text {
+                    @media (max-width: map-get($grid-breakpoints,md)) {
+                        display: none;
+                    }  
+                }
             }
 
             dd {
@@ -223,7 +244,8 @@
                 border-left: 2px solid $black;
                 margin-top: 0;
                 margin-bottom: 0;
-                padding-bottom: 64px;    
+                // padding-bottom: 64px;    
+                padding-bottom: 48px;    
             }
 
             &:first-child {
@@ -300,6 +322,32 @@
                 display: inline-block; /* Needed to add space between the bullet and the text */
                 width: 1em; /* Also needed for space (tweak if needed) */
                 margin-left: -1em; /* Also needed for space (tweak if needed) */
+            }
+        }
+
+        table {
+            position: relative;
+            @media (min-width: map-get($grid-breakpoints,md)) {
+                padding-left: calc(100px + 1em);
+                width: 50%;
+                transform: translateX(100px);
+                margin-bottom: 24px;
+            }
+            border-left: 0;
+            
+            *:before {
+                content: '';
+                position: absolute;
+                left: -100px;
+                display: block;
+                width: 2px;
+                height: 100%;
+                background: $black;
+            }
+            
+
+            td {
+
             }
         }
     }

@@ -17,7 +17,7 @@ import BlogIndex__Email from "./blogIndex__Email"
 import LibraryThumbnails from "./libraryThumbnails"
 
 import SEO from "../global/seo"
-import Layout from "../global/layout"
+import Layout from "../global/layoutArticle"
 import { graphql, Link, useStaticQuery } from "gatsby"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
@@ -174,7 +174,7 @@ class BlogTemplate extends React.Component {
                       </span>
 
                       <span className="meta__item">
-                        <dt className="">Share: </dt>
+                        <dt className="share-text">Share: </dt>
                         <dd className="link">
                         <a
                             href={shareItem}

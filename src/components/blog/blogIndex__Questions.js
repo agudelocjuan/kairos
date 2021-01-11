@@ -25,7 +25,7 @@ const blogIndex__Questions = ({ mobile }) => {
             facilisi viverra volutpat aliquam. Auctor fames odio sed volutpat
             lectus. Iaculis sed vel nec aliquet sit varius.
           </p>
-          <a className="big-button mt-9" href="#">
+          <a className="big-button mt-9" href="mailto:team@kairoshq.com">
             Ask Us Anything
           </a>
         </Col>

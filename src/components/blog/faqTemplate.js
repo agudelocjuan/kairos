@@ -253,6 +253,7 @@ export const pageQuery = graphql`
         }
       }
       sidebar {
+        sidebar
         childMarkdownRemark {
           html
           excerpt

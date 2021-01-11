@@ -10,11 +10,19 @@ body {
     @media (max-width: map-get($grid-breakpoints,md)) {
         display: block;    
     }
+
+    &.faq__footer {
+        display: none;
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            display: flex;    
+        }
+    }
 }
 
 .display-desktop {
     @media (max-width: map-get($grid-breakpoints,md)) {
-        display: none;
+        display: none !important;
     }
 }
 

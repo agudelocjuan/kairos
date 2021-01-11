@@ -8,6 +8,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import brokeNote1 from "../../images/blog/brokeNote1.jpg"
 import brokeNote2 from "../../images/blog/brokeNote2.jpg"
 
+import arrowBelow from "../../images/icons/arrow-below.svg"
 import twitterIcon from "../../images/blog/twitter-icon.svg"
 import linkIcon from "../../images/blog/link-icon.svg"
 
@@ -179,14 +180,36 @@ class FaqTemplate extends React.Component {
             </Row>
 
             <Row>
-              <Col className="flush">
-                <main className="post__body" dangerouslySetInnerHTML={{
-                    __html: post.body.childMarkdownRemark.html,
-                  }}>
+              
+              <Col className="post__sidebar flush" md="4">
+                <header className="post__sidebar__header">
+                    Learn More 
+                    <img src={arrowBelow} alt="see below" />
+                </header>
+                <div className="post__sidebar__inner" dangerouslySetInnerHTML={{
+                  __html: post.sidebar.childMarkdownRemark.html,
+                }}>
 
-                </main>
+                </div>
               </Col>
+              <Col className="post__body flush" md="8">
+                  <div className="post__body__inner" dangerouslySetInnerHTML={{
+                  __html: post.body.childMarkdownRemark.html,
+                }}>
+
+                  </div>
+                  <div className="faq__footer display-desktop">
+                    <p className="text">Still have questions?</p>
+                    <a href="mailto:team@kairoshq.com">Ask Us Here</a>
+                  </div>
+              </Col>
+                
             </Row>
+
+            <div className="faq__footer display-mobile">
+              <p className="text">Still have questions?</p>
+              <a href="mailto:team@kairoshq.com">Ask Us Here</a>
+            </div>
 
             <Row>
               <Col className="flush">
@@ -220,6 +243,16 @@ export const pageQuery = graphql`
       title
       body {
         body
+        childMarkdownRemark {
+          html
+          excerpt
+          timeToRead
+          wordCount {
+            words
+          }
+        }
+      }
+      sidebar {
         childMarkdownRemark {
           html
           excerpt

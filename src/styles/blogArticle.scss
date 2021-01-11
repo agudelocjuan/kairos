@@ -325,6 +325,12 @@
             }
         }
 
+        iframe {
+            @media (min-width: map-get($grid-breakpoints,md)) {
+                width: 70%;
+            }
+        }
+
         table {
             position: relative;
             @media (min-width: map-get($grid-breakpoints,md)) {
@@ -361,6 +367,122 @@
 
         h3.title, p {
             color: $black;
+        }
+    }
+}
+
+.faqTemplate {
+    .post__body {
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            order: -1;
+
+            .post__body__inner {
+                margin-top: 48px;
+            }
+        }
+        
+        > .post__body__inner, .faq__footer {
+
+            padding-left: 32px;
+            padding-right: 32px;
+
+            @media (min-width: map-get($grid-breakpoints,md)) {
+                padding-left: 100px;
+                padding-right: 100px;
+                border-left: 2px solid $black;
+                padding-top: 64px;                
+            }
+        }
+
+    }
+
+    .post__sidebar {
+        .post__sidebar__header {
+            text-align: center;
+            padding: 24px 0;
+            border-bottom: 2px solid $black;
+
+            img {
+                margin-left: 10px;
+            }
+        }
+
+        .post__sidebar__inner {
+            text-align: center;
+
+            img {
+                // margin-top: 40px;
+                // margin-bottom: 16px;
+                margin: 40px auto 16px;
+                width: 80%;
+                display: block;
+            }
+
+            a {
+                display: block;
+                padding-bottom: 40px;
+                border-bottom: 2px solid $black;
+                text-decoration: underline;
+
+                &:after {
+                    content: url('../images/icons/arrow-diag-black.svg');
+                    display: inline;
+                    margin-left: 5px;
+                    
+                }
+            }
+        }
+
+    }
+
+    .faq__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+        margin-left: 0;
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            flex-direction: column;
+            padding-bottom: 32px;
+            padding-top: 8px;
+        }
+        
+        .text {
+            font-family: "franklin gothic std";
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 59px;
+            letter-spacing: -1.4px;
+            margin-bottom: 0;
+
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                margin-bottom: 24px;
+                font-size: 44px;
+                line-height: 91%;
+            }
+        }
+
+        a {
+            font-family: "franklin gothic std";
+            background: $black;
+            color: $white;
+            border-radius: 100px;
+            font-size: 48px;
+            line-height: 36px;
+            letter-spacing: -1.25px;
+            padding: 26px 84px 18px;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                // margin-bottom: 24px;
+                font-size: 26px;
+                line-height: 22px;
+                width: 100%;
+                text-align: center;
+            }
         }
     }
 }

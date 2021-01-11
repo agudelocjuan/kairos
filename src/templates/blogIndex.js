@@ -359,6 +359,17 @@ export const IndexBlogQuery = graphql`
               excerpt
             }
           }
+          sidebar {
+            sidebar
+            childMarkdownRemark {
+              html
+              excerpt
+              timeToRead
+              wordCount {
+                words
+              }
+            }
+          }
           description {
             description
           }

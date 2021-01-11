@@ -35,7 +35,9 @@ const Header = ({ mobile, menu, dispatch }) => {
     <nav className="header--blog">
 
       <div id="headerBlog">
-        <img id="header-logo" src={logo} alt="" />
+        <a href="/">
+          <img id="header-logo" src={logo} alt="" />
+        </a>
         <img className={isActive ? "active" : null} onClick={handleToggle} id="bell" src={bellIcon} alt="bell icon" />
 
         <img onClick={() => dispatch(setMenu(!menu))} id="menu-button" src={menu ? menu_close : menu_open} alt="" />

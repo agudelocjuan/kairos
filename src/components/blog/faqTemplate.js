@@ -181,6 +181,7 @@ class FaqTemplate extends React.Component {
 
             <Row>
               
+            { post.sidebar &&
               <Col className="post__sidebar flush" md="4">
                 <header className="post__sidebar__header">
                     Learn More 
@@ -192,6 +193,10 @@ class FaqTemplate extends React.Component {
 
                 </div>
               </Col>
+            }
+
+              
+
               <Col className="post__body flush" md="8">
                   <div className="post__body__inner" dangerouslySetInnerHTML={{
                   __html: post.body.childMarkdownRemark.html,

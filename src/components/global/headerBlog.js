@@ -15,11 +15,8 @@ import menu_open from "../../images/icons/menu-open.svg"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
-const Header = ({ mobile, menu, dispatch }) => {
-
-  // const [isActive, setActive] = useState("false");
+const Header = ({ mobile, menu, dispatch, data }) => {
   const [isActive, setActive] = useState(false);
-  // const [isSearchActive, setSearchActive] = useState("false");
   const [isSearchActive, setSearchActive] = useState(false);
 
   const handleToggle = () => {
@@ -30,7 +27,25 @@ const Header = ({ mobile, menu, dispatch }) => {
     setSearchActive(!isSearchActive);
   };
 
+  // let blogList = allContentfulBlogPost.edges.map((blog, index) => {
+  //   // console.log(blog.node)
+  //   const {body, title, slug} = blog.node
+    
+  //   return (
+      
+  //     <Link to={`/blog/${slug}`} className="">
+  //       <div className="module">
+  //         <p className="title">{title}</p>
+  //         <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
+  //       </div>
+  //     </Link>
+
+  //   ) 
+  // })
+
   return (
+
+
 
     <nav className="header--blog">
 
@@ -49,6 +64,7 @@ const Header = ({ mobile, menu, dispatch }) => {
       </div>
 
       <div id="notifications" className={isActive ? "active" : null}>
+
         <div className="module">
           <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
           <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
@@ -103,3 +119,33 @@ export default connect(
   state => ({ mobile: state.global.mobile, menu: state.global.menu }),
   null
 )(Header)
+
+export const IndexBlogQuery = graphql`
+  query blogListNotifications {
+    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+      edges {
+        node {
+          title
+          slug
+          body {
+            body
+          }
+          description {
+            description
+          }
+          publishDate(formatString: "MMMM Do, YYYY")
+          tags
+          heroImage {
+            file {
+              url
+              fileName
+            }
+            fluid(resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`

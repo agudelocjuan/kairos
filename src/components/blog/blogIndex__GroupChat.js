@@ -8,8 +8,6 @@ import Img from "gatsby-image"
 
 import groupChatLogo from "../../images/blog/groupChatLogo.png"
 import groupChatLogoMobile from "../../images/blog/groupChatLogo--mobile.png"
-import groupChat1 from "../../images/blog/groupChat1.jpg"
-import groupChat2 from "../../images/blog/groupChat2.jpg"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
 

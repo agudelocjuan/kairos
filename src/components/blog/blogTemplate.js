@@ -30,7 +30,6 @@ class BlogTemplate extends React.Component {
     this.state = {
       metaPosition: "top",
     }
-    // this._handleScroll = this._handleScroll.bind(this)
   }
 
   render() {
@@ -57,13 +56,49 @@ class BlogTemplate extends React.Component {
       pageColor = "pale-red"
     }
 
-    console.log(post.tags)
-
     // for twitter share button
     const shareItem = typeof window !== "undefined" ? window.location : ""
 
     // this is where all the post content is contained
-    console.log(post)
+    // console.log(post)
+
+
+    const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
+
+
+
+
+
+
+    // related articles logic
+
+    let relatedPosts = blogPosts.map((blog, index) => {
+      // console.log(blog.node)
+      const {body, title, slug} = blog.node
+      return (
+        <article key={index} className="post">
+        <Link to={`/blog/${slug}`} className="">
+  
+          <figure className="post__image"
+            style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
+            >
+          </figure>
+  
+          <div className="post__meta">
+            <h3>{title}</h3>
+            <p>
+              {blog.node.description.description}
+            </p>
+  
+            <span className="cta inline-text-link">
+              Read More <img src={arrow} alt="" />
+            </span>
+          </div>
+        </Link>
+  
+        </article> 
+      ) 
+    })
 
     // twitter share button script
     // if (typeof window !== "undefined") {
@@ -237,6 +272,16 @@ class BlogTemplate extends React.Component {
             </Row>
 
             <Row>
+              <Col>
+                  <h1>RELATED ARTICLES</h1>
+                  <div className="mb-4 related-container">
+                  <h1 className="mb-4 related-article-title">Related Articles.</h1>
+                    {/* <LibraryThumbnails related={post} /> */}
+                </div>
+              </Col>
+            </Row>
+
+            <Row>
               <Col className="flush">
                 <BlogIndex__Email />
               </Col>
@@ -287,6 +332,32 @@ export const pageQuery = graphql`
       heroImage {
         fluid(maxWidth: 1440, background: "rgb:000000") {
           ...GatsbyContentfulFluid
+        }
+      }
+    }
+
+    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+      edges {
+        node {
+          title
+          slug
+          body {
+            body
+          }
+          description {
+            description
+          }
+          publishDate(formatString: "MMMM Do, YYYY")
+          tags
+          heroImage {
+            file {
+              url
+              fileName
+            }
+            fluid(resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }

@@ -102,6 +102,20 @@ body {
         }
     }
 
+    .blog-carousel--mobile {
+        display: block;
+
+        @media (min-width: map-get($grid-breakpoints,lg)) {
+            display: none;
+        }
+    }
+
+    .blog-carousel {
+        @media (max-width: map-get($grid-breakpoints,lg)) {
+            display: none;
+        }
+    }
+
     .flickity-enabled {
         width: 100%;
 

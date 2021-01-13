@@ -1,11 +1,15 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 import get from "lodash/get"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
+import { connect } from "react-redux"
+
 import SEO from "../components/global/seo"
 import Layout from "../components/global/layoutBlog"
+
+import { setMenu } from "../state/global"
 
 import BlogIndex__BrokeNote from "../components/blog/blogIndex__BrokeNote"
 import BlogIndex__Email from "../components/blog/blogIndex__Email"
@@ -19,6 +23,15 @@ import exit from "../images/icons/exit-menu.svg"
 import arrowRight from "../images/icons/arrow-right.svg"
 import arrowLeft from "../images/icons/arrow-left.svg"
 
+import logo from "../images/logos/kairos-logo.svg"
+import cross from "../images/icons/cross.svg"
+import searchIcon from "../images/icons/search.svg"
+import bellIcon from "../images/icons/bell.svg"
+import menu_close from "../images/icons/menu-close.svg"
+import menu_open from "../images/icons/menu-open.svg"
+
+import arrow from "../images/icons/arrow-diag-red.svg"
+
 class BlogIndex extends React.Component {
   constructor(props) {
     super(props)
@@ -28,6 +41,7 @@ class BlogIndex extends React.Component {
     }
     this._editFilterTags = this._editFilterTags.bind(this)
   }
+  
 
   // match height plugin
 
@@ -43,8 +57,17 @@ class BlogIndex extends React.Component {
         filterTags: this.state.filterTags.filter(e => e !== tag),
       })
     } else {
+      // this.setState({ filterTags: [] })
+      // this.setState({ filterTags: this.state.filterTags.push(tag) })
       this.setState({ filterTags: this.state.filterTags.concat(tag) })
     }
+    // if (this.state.filterTags.includes(tag)) {
+    //   this.setState({
+    //     filterTags: this.state.filterTags.filter(e => e !== tag),
+    //   })
+    // } else {
+    //   this.setState({ filterTags: this.state.filterTags.concat(tag) })
+    // }
   }
   render() {
     const pageColor = "yellow"
@@ -66,6 +89,14 @@ class BlogIndex extends React.Component {
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
     const interviewPosts = get(this, "props.data.allContentfulInterview.edges")
     const faqPosts = get(this, "props.data.allContentfulFaq.edges")
+
+    // tag state
+
+    // const [tag, setTag] = useState(null);
+
+    // const handleTag = (tag) => {
+    //   setTag(tag);
+    // };
 
     // this obj contains all the blog posts
     // console.log(blogPosts)
@@ -111,6 +142,8 @@ class BlogIndex extends React.Component {
         let { tags } = i.node
         if (tags) {
           for (let i = 0; i < tags.length; i++) {
+          // for (let i = 0; i < 2; i++) {
+            // for (let j = 0; j < 2; j++) {
             for (let j = 0; j < filterTags.length; j++) {
               if (tags[i] === filterTags[j]) {
                 return true
@@ -146,6 +179,7 @@ class BlogIndex extends React.Component {
           }
           onClick={
             () => this._editFilterTags(i)
+            
             // activeTag = this.id
             // .post:not() - hide
           }
@@ -247,6 +281,11 @@ class BlogIndex extends React.Component {
         borderColor={borderColor}
         footerColor={pageColor}
       >
+
+      
+
+
+
         <SEO title="Blog" />
         {/* <div id="libraryPage">{pageRender}</div> */}
 

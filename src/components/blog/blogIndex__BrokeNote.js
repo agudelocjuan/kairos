@@ -60,17 +60,13 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
   let blogList = data.map((blog, index) => {
     // console.log(blog.node)
     const {body, title, slug} = blog.node
-    console.log(blog.node.heroImage.fluid.src)
     return (
-      // <Col key={index} md="4" className="post">
-
       <article key={index} className="post">
       <Link to={`/blog/${slug}`} className="">
 
         <figure className="post__image"
           style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
           >
-          {/* <Img fluid={blog.node.heroImage.fluid} /> */}
         </figure>
 
         <div className="post__meta">
@@ -86,11 +82,98 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
       </Link>
 
       </article> 
-
-      //</Col>  
-      
     ) 
   })
+  
+  let blogListMobileOnce = data.map((blog, index) => {
+    // console.log(blog.node)
+    const {body, title, slug} = blog.node
+    // console.log(blog.node.heroImage.fluid.src)
+    return (
+      <article key={index} className="post">
+      <Link to={`/blog/${slug}`} className="">
+
+        <figure className="post__image"
+          style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
+          >
+        </figure>
+
+        <div className="post__meta">
+          <h3>{title}</h3>
+          <p>
+            {blog.node.description.description}
+          </p>
+
+          <span className="cta inline-text-link">
+            Read More <img src={arrow} alt="" />
+          </span>
+        </div>
+      </Link>
+
+      </article> 
+    ) 
+  })
+
+  let blogListMobile = data.map((blogList) => {
+    // let result;
+    let result = blogList;
+    let i;
+    for (i = 0; i < blogList.length; i += 3) result.push(blogList.slice(i, i + 3));
+    return result;
+  });
+  
+  let blogListArray = blogListMobile.map((blog, index) => {
+    // let result;
+    const {body, title, slug} = blog.node
+    return (<div>
+      {blogListMobile.map((blog, index) => (
+          <article key={index} className="post">
+            <Link to={`/blog/${slug}`} className="">
+      
+              <figure className="post__image"
+                style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
+                >
+              </figure>
+      
+              <div className="post__meta">
+                <h3>{blog.node.title}</h3>
+                <p>
+                  {blog.node.description.description}
+                </p>
+      
+                <span className="cta inline-text-link">
+                  Read More <img src={arrow} alt="" />
+                </span>
+              </div>
+            </Link>
+          </article> 
+      ))}
+      </div>);
+  });
+
+
+
+
+  let counter;
+
+  console.log(blogList)
+  console.log(blogListArray)
+
+  // external js: flickity.pkgd.js
+
+  // var flkty = new Flickity('.blog-carousel');
+  // var carouselStatus = document.querySelector('.carousel-status');
+
+  // function updateStatus() {
+  //   var slideNumber = flkty.selectedIndex + 1;
+  //   carouselStatus.textContent = slideNumber + '/';
+  //   // carouselStatus.textContent = slideNumber + '/' + flkty.slides.length;
+  // }
+  // updateStatus();
+
+  // flkty.on( 'select', updateStatus );
+
+
   return (
     <Container fluid id="blogIndex__BrokeNote" className="blog-grid">
       <Row>
@@ -100,8 +183,11 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
         </Col>
 
         <Flickity options={options} className="blog-carousel blog">
-
-        {blogList}
+          {blogList}
+        </Flickity>
+        
+        <Flickity options={options} className="blog-carousel--mobile blog">
+          {blogListArray}
         </Flickity>
 
         {/* <div className="carousel__controls">

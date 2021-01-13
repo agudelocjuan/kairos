@@ -35,12 +35,16 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
         }
     }
   `)
+
+//   console.log(edges)
+
+  console.log(related)
   
-  let { nodes } = data.allContentfulBlogPost
-  let posts = nodes
+  let { edges } = data.allContentfulBlogPost
+//   let edges = nodes
 
   if (related && related.tags) {
-    posts = posts.filter(i => {
+    edges = edges.filter(i => {
       let { tags } = i
       if (tags) {
         for (let i = 0; i < tags.length; i++) {
@@ -55,15 +59,23 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
     })
   }
 
-  let display = posts.slice(0, 6).map((i, idx) => {
+  console.log(edges)
+
+  edges.map((i, idx) => {
+      console.log(i)
+  })
+
+  let display = edges.slice(0, 6).map((i, idx) => {
     let border_bottom = idx < 3 ? true : false
     let border_right = true
     if (idx === 5 || idx === 2) {
       border_right = false
     }
 
-    mobile ? (border_right = false) : (border_right = border_right)
-    mobile ? (border_bottom = true) : (border_right = border_right)
+    // mobile ? (border_right = false) : (border_right = border_right)
+    // mobile ? (border_bottom = true) : (border_right = border_right)
+
+    console.log(i)
 
     return (
       <Col
@@ -108,6 +120,9 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
       </Col>
     )
   })
+  
+  console.log(display)
+  
   return (
     <Container fluid id="libraryThumbnails">
       <Row>{display}</Row>

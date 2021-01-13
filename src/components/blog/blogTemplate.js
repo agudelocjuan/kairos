@@ -273,11 +273,12 @@ class BlogTemplate extends React.Component {
 
             <Row>
               <Col>
-                  <h1>RELATED ARTICLES</h1>
                   <div className="mb-4 related-container">
-                  <h1 className="mb-4 related-article-title">Related Articles.</h1>
-                    {/* <LibraryThumbnails related={post} /> */}
-                </div>
+                    <h1 className="mb-4 related-article-title">Related Articles.</h1>
+                    
+                    <LibraryThumbnails related={post} />
+
+                  </div>
               </Col>
             </Row>
 

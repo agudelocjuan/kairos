@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 
 import { Container, Row, Col } from "reactstrap"
@@ -23,6 +23,57 @@ const Header = ({ mobile, menu, dispatch }) => {
   const [isActive, setActive] = useState(false);
   const [isSearchActive, setSearchActive] = useState(false);
 
+  const data = useStaticQuery(graphql`
+    query {
+        allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+            edges {
+              node {
+                title
+                slug
+                body {
+                  body
+                }
+                description {
+                  description
+                }
+                publishDate(formatString: "MMMM Do, YYYY")
+                tags
+                heroImage {
+                  file {
+                    url
+                    fileName
+                  }
+                  fluid(resizingBehavior: SCALE) {
+                    ...GatsbyContentfulFluid
+                  }
+                }
+              }
+            }
+        }
+    }
+  `)
+  
+  let { edges } = data.allContentfulBlogPost
+  const posts = edges.slice(0,3)
+
+  let blogList = posts.map((blog, index) => {
+    // console.log(blog.node)
+    const {body, title, slug} = blog.node
+
+    console.log(title)
+    
+    return (
+      
+      <Link key={index} to={`/blog/${slug}`} className="">
+        <div className="module">
+          <p className="title">{title}</p>
+          <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
+        </div>
+      </Link>
+
+    ) 
+  })
+
   const handleToggle = () => {
     setActive(!isActive);
   };
@@ -30,6 +81,8 @@ const Header = ({ mobile, menu, dispatch }) => {
   const handleSearchToggle = () => {
     setSearchActive(!isSearchActive);
   };
+
+
 
   return (
 
@@ -54,22 +107,7 @@ const Header = ({ mobile, menu, dispatch }) => {
       </div>
 
       <div id="notifications" className={isActive ? "active" : null}>
-        <div className="module">
-          <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-          <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-        </div>
-        <div className="module">
-          <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-          <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-        </div>
-        <div className="module">
-          <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-          <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-        </div>
-        <div className="module">
-          <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-          <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-        </div>
+        {blogList}
       </div>
 
       <div id="search-wrapper" className={isSearchActive ? "active" : null}>

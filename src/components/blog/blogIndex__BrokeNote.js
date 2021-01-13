@@ -128,7 +128,7 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     return (<div>
       {blogListMobile.map((blog, index) => (
           <article key={index} className="post">
-            <Link to={`/blog/${slug}`} className="">
+            <Link to={`/blog/${blog.node.slug}`} className="">
       
               <figure className="post__image"
                 style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}

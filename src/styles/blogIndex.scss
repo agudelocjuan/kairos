@@ -184,13 +184,17 @@ body {
             @include full-bg;
             margin: 0;
             border-bottom: 2px solid $black;
+            background-position: center center;
         }
     
         .post__meta {
             padding: 40px;
 
             > h3 {
-                line-height: 68px;
+                @media (min-width: map-get($grid-breakpoints,lg)) {
+                    line-height: 68px;
+                }
+                
             }
         }
     }

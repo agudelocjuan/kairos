@@ -75,6 +75,7 @@
         @include full-bg;
         height: 50vh;
         margin: 0;
+        background-position: center center;
 
         @media (min-width: map-get($grid-breakpoints,md)) {
             height: 80vh;

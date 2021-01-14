@@ -85,34 +85,48 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     ) 
   })
   
-  let blogListMobileOnce = data.map((blog, index) => {
-    // console.log(blog.node)
-    const {body, title, slug} = blog.node
-    // console.log(blog.node.heroImage.fluid.src)
-    return (
-      <article key={index} className="post">
-      <Link to={`/blog/${slug}`} className="">
+  // let blogListMobileOnce = data.map((blog, index) => {
+  //   // console.log(blog.node)
+  //   const {body, title, slug} = blog.node
+  //   // console.log(blog.node.heroImage.fluid.src)
+  //   return (
+  //     <article key={index} className="post">
+  //     <Link to={`/blog/${slug}`} className="">
 
-        <figure className="post__image"
-          style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
-          >
-        </figure>
+  //       <figure className="post__image"
+  //         style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
+  //         >
+  //       </figure>
 
-        <div className="post__meta">
-          <h3>{title}</h3>
-          <p>
-            {blog.node.description.description}
-          </p>
+  //       <div className="post__meta">
+  //         <h3>{title}</h3>
+  //         <p>
+  //           {blog.node.description.description}
+  //         </p>
 
-          <span className="cta inline-text-link">
-            Read More <img src={arrow} alt="" />
-          </span>
-        </div>
-      </Link>
+  //         <span className="cta inline-text-link">
+  //           Read More <img src={arrow} alt="" />
+  //         </span>
+  //       </div>
+  //     </Link>
 
-      </article> 
-    ) 
-  })
+  //     </article> 
+  //   ) 
+  // })
+
+  console.log(data)
+
+  let i
+  let blogChunk = []
+
+  for (i = 0; i < data.length; i += 3) {
+    blogChunk.push(data.slice(i, i + 3));
+  } 
+
+  console.log(blogChunk)
+
+  // const blogListMobileayy = blog
+
 
   let blogListMobile = data.map((blogList) => {
     // let result;
@@ -150,6 +164,33 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
       ))}
       </div>);
   });
+  // let blogListArray = blogChunk.map((blog, index) => {
+  //   const {body, title, slug} = blog.node
+  //   return (<div>
+  //     {blogChunk.map((blog, index) => (
+  //         <article key={index} className="post">
+  //           <Link to={`/blog/${blog.node.slug}`} className="">
+      
+  //             <figure className="post__image"
+  //               style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
+  //               >
+  //             </figure>
+      
+  //             <div className="post__meta">
+  //               <h3>{blog.node.title}</h3>
+  //               <p>
+  //                 {blog.node.description.description}
+  //               </p>
+      
+  //               <span className="cta inline-text-link">
+  //                 Read More <img src={arrow} alt="" />
+  //               </span>
+  //             </div>
+  //           </Link>
+  //         </article> 
+  //     ))}
+  //     </div>);
+  // });
 
 
 
@@ -167,12 +208,10 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
   // function updateStatus() {
   //   var slideNumber = flkty.selectedIndex + 1;
   //   carouselStatus.textContent = slideNumber + '/';
-  //   // carouselStatus.textContent = slideNumber + '/' + flkty.slides.length;
   // }
   // updateStatus();
 
   // flkty.on( 'select', updateStatus );
-
 
   return (
     <Container fluid id="blogIndex__BrokeNote" className="blog-grid">

@@ -38,7 +38,9 @@ class BlogIndex extends React.Component {
     this.state = {
       filterTags: [],
       showFilterTags: true,
+      // activeTag: null
     }
+    // generic thing to with every function in a class component
     this._editFilterTags = this._editFilterTags.bind(this)
   }
   
@@ -47,7 +49,7 @@ class BlogIndex extends React.Component {
 
   // external js: flickity.pkgd.js
 
-// add this code
+  // add this code
 
   
 
@@ -57,18 +59,11 @@ class BlogIndex extends React.Component {
         filterTags: this.state.filterTags.filter(e => e !== tag),
       })
     } else {
-      // this.setState({ filterTags: [] })
-      // this.setState({ filterTags: this.state.filterTags.push(tag) })
       this.setState({ filterTags: this.state.filterTags.concat(tag) })
     }
-    // if (this.state.filterTags.includes(tag)) {
-    //   this.setState({
-    //     filterTags: this.state.filterTags.filter(e => e !== tag),
-    //   })
-    // } else {
-    //   this.setState({ filterTags: this.state.filterTags.concat(tag) })
-    // }
   }
+
+
   render() {
     const pageColor = "yellow"
     const borderColor = "site-border-yellow"

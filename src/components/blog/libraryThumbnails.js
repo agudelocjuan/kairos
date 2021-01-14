@@ -45,6 +45,9 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
 
 console.log(edges)
 
+// the code block below is making edges an empty array
+// we basically need just an array with articles of the same tags
+// how to write a filter statement with tags matching as a condition
 
   if (related && related.tags) {
     edges = edges.filter(i => {
@@ -61,6 +64,8 @@ console.log(edges)
       }
     })
   }
+
+  console.log(edges)
 
   edges.map((i, idx) => {
       console.log(i)

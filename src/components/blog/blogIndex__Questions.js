@@ -19,11 +19,7 @@ const blogIndex__Questions = ({ mobile }) => {
             Great, That's Why We're Here.
           </h1>
           <p className="text-white">
-            Nam id at diam faucibus nisi, massa nec viverra neque. Malesuada
-            egestas mauris aliquet turpis semper blandit diam. Et eu, non
-            commodo elementum diam magna senectus. Tortor, lectus enim luctus
-            facilisi viverra volutpat aliquam. Auctor fames odio sed volutpat
-            lectus. Iaculis sed vel nec aliquet sit varius.
+            We’re a team of entrepreneurs, activists, and creators dedicated to building a better future for our generation. Ask us anything. If we don’t know the answer, we’ll find someone who will.
           </p>
           <a className="big-button mt-9" href="mailto:team@kairoshq.com">
             Ask Us Anything

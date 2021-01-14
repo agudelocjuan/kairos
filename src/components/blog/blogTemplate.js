@@ -69,36 +69,47 @@ class BlogTemplate extends React.Component {
 
 
 
-
     // related articles logic
 
     let relatedPosts = blogPosts.map((blog, index) => {
-      // console.log(blog.node)
-      const {body, title, slug} = blog.node
-      return (
-        <article key={index} className="post">
-        <Link to={`/blog/${slug}`} className="">
-  
-          <figure className="post__image"
-            style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
+      console.log(blog.node.tags[0])
+      // console.log(post.tags[0])
+
+      if ( blog.node.tags[0] === post.tags[0] ) {
+        const {body, title, slug} = blog.node
+        return (
+          <article key={index} className="post">
+          <Link to={`/blog/${slug}`} className="">
+    
+            <figure className="post__image"
+              style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
             >
-          </figure>
-  
-          <div className="post__meta">
-            <h3>{title}</h3>
-            <p>
-              {blog.node.description.description}
-            </p>
-  
-            <span className="cta inline-text-link">
-              Read More <img src={arrow} alt="" />
-            </span>
-          </div>
-        </Link>
-  
-        </article> 
-      ) 
+            </figure>
+    
+            <div className="post__meta">
+              <h3>{title}</h3>
+              <p>
+                {blog.node.description.description}
+              </p>
+    
+              <span className="cta inline-text-link">
+                Read More <img src={arrow} alt="" />
+              </span>
+            </div>
+          </Link>
+    
+          </article> 
+        )
+      }
+        else return ""
+      
     })
+
+    // const relatedClean = relatedPosts.filter( relatedPost === "" )
+
+    // console.log(relatedClean)
+
+    console.log(relatedPosts)
 
     // twitter share button script
     // if (typeof window !== "undefined") {
@@ -120,51 +131,6 @@ class BlogTemplate extends React.Component {
     //     return t
     //   })(document, "script", "twitter-wjs")
     // }
-
-    // rich text rendering
-
-    // this.post = postType === "library" ? libraryPost : glossaryPost
-    // this.post = postType === "library" ? libraryPost : glossaryPost
-
-    // this.json = this.post.childContentfulBlogPostRichTextNode.json
-
-    // if (
-    //   postType === "library" &&
-    //   this.post.childContentfulLibraryArticleRichTextNode
-    // ) {
-    // } else if (
-    //   postType === "glossary" &&
-    //   this.post.childContentfulGlossaryArticleRichTextNode
-    // ) {
-    //   this.json = this.post.childContentfulGlossaryArticleRichTextNode.json
-    // }
-
-    // if (this.json.content) {
-    //   this.json.content.forEach(i => {
-    //     if (i.nodeType === "embedded-asset-block") {
-    //       this.setState({
-    //         [i.data.target.sys.id]: false,
-    //       })
-    //     }
-    //   })
-    // }
-
-    // const options = {
-    //   renderNode: {
-    //     [BLOCKS.EMBEDDED_ASSET]: node => {
-    //       if (node.data.target.fields) {
-    //         console.log(node.data.target.fields)
-
-    //         return ''
-    //       }
-    //     },
-    //     [INLINES.ENTRY_HYPERLINK]: node => {
-
-    //     },
-    //   },
-    // }
-
-    // let article = documentToReactComponents(json, options)
 
     return (
       <Layout

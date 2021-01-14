@@ -15,7 +15,7 @@ const blogIndex__Email = ({ mobile }) => {
       <Row id="">
         <Col lg="4" className="left-container text">
             <h3 className="title">Want more Kairos?</h3>
-            <p>Sign up for our newsletter today!</p>
+            <p>Want to hear more from us? Get on the list.</p>
             
         </Col>
         

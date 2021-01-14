@@ -64,11 +64,9 @@ const Header = ({ mobile, menu, dispatch }) => {
     
     return (
       
-      <Link key={index} to={`/blog/${slug}`} className="">
-        <div className="module">
+      <Link key={index} to={`/blog/${slug}`} className="module">
           <p className="title">{title}</p>
-          <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-        </div>
+          <span className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </span>
       </Link>
 
     ) 

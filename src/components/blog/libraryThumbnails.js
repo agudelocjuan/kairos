@@ -43,6 +43,9 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
   let { edges } = data.allContentfulBlogPost
 //   let edges = nodes
 
+console.log(edges)
+
+
   if (related && related.tags) {
     edges = edges.filter(i => {
       let { tags } = i
@@ -58,8 +61,6 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
       }
     })
   }
-
-  console.log(edges)
 
   edges.map((i, idx) => {
       console.log(i)

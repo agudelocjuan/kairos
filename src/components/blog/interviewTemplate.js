@@ -45,7 +45,7 @@ class IntervewTemplate extends React.Component {
       pageColor = "purple"
     } else if ( post.tags[0] === "home" ) {
       pageColor = "cream"
-    } else if ( post.tags[0] === "work life" ) {
+    } else if ( post.tags[0] === "work" ) {
       pageColor = "pale-yellow"
     } else if ( post.tags[0] === "news" ) {
       pageColor = "pale-red"

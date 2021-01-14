@@ -359,6 +359,11 @@ body {
             border-left: 2px solid $black;
             padding: 0 !important;
 
+            @media (min-width: map-get($grid-breakpoints,md)) {
+                max-height: 100vh;
+                overflow-y: scroll;
+            }
+
             @media (max-width: map-get($grid-breakpoints,md)) {
                 border-left: none;
             }

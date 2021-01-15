@@ -245,8 +245,9 @@
 
             @media (min-width: map-get($grid-breakpoints,md)) {
                 padding: 0 100px;
-                margin-left: 30%;
-                border-left: 2px solid $black;
+                padding: 0 40px;
+                // margin-left: 30%;
+                // border-left: 2px solid $black;
                 margin-top: 0;
                 margin-bottom: 0;
                 // padding-bottom: 64px;    
@@ -319,7 +320,7 @@
             // padding-left: calc(100px + 1em);
 
             @media (min-width: map-get($grid-breakpoints,md)) {
-                padding-left: calc(100px + 1em);
+                // padding-left: calc(100px + 1em);
             }
 
             li:before {

@@ -81,18 +81,18 @@ class IntervewTemplate extends React.Component {
         pageColor={pageColor}
       >
         <SEO title={post?.title} />
-        <section id="blogTemplate">
+        <section id="blogTemplate" className="interviewTemplate">
           <Container fluid>
             <Row>
 
             <Col className="flush">
                 <header className="post__header">
-                  <figure
+                  {/* <figure
                     className="post__header__image"
                     style={{
                       backgroundImage: `url(${post.heroImage.fluid.src})`,
                     }}
-                  ></figure>
+                  ></figure> */}
 
                   <aside className="post__header__title">
                     <span className="tag cta">{post.tags}</span>

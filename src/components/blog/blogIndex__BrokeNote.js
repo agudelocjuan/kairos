@@ -7,8 +7,6 @@ import Img from "gatsby-image"
 
 import brokeNoteLogo from "../../images/blog/brokeNoteLogo.svg"
 import brokeNoteLogoMobile from "../../images/blog/brokeNoteLogo--mobile.svg"
-import brokeNote1 from "../../images/blog/brokeNote1.jpg"
-import brokeNote2 from "../../images/blog/brokeNote2.jpg"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
@@ -27,35 +25,7 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     groupCells: false,
     prevNextButtons: true,
   }
-
-  // matchHeight(){
-  //   //Grab divs with the class name 'match-height'
-  //   var getDivs = document.getElementsByClassName('match-height');
-  
-  //   //Find out how my divs there are with the class 'match-height' 
-  //   var arrayLength = getDivs.length;
-  //   var heights = [];
-  
-  //   //Create a loop that iterates through the getDivs variable and pushes the heights of the divs into an empty array
-  //   for (var i = 0; i < arrayLength; i++) {
-  //       heights.push(getDivs[i].offsetHeight);
-  //   }
-  
-  //    //Find the largest of the divs
-  //   function getHighest() {
-  //     return Math.max(...heights);
-  //   }
-  
-  //   //Set a variable equal to the tallest div
-  //   var tallest = getHighest();
-  
-  //   //Iterate through getDivs and set all their height style equal to the tallest variable
-  //   for (var i = 0; i < getDivs.length; i++) {
-  //       getDivs[i].style.height = tallest + "px";
-  //   }
-  // }
-  
-
+ 
   let blogList = data.map((blog, index) => {
     // console.log(blog.node)
     const {body, title, slug} = blog.node
@@ -84,35 +54,6 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     ) 
   })
   
-  // let blogListMobileOnce = data.map((blog, index) => {
-  //   // console.log(blog.node)
-  //   const {body, title, slug} = blog.node
-  //   // console.log(blog.node.heroImage.fluid.src)
-  //   return (
-  //     <article key={index} className="post">
-  //     <Link to={`/blog/${slug}`} className="">
-
-  //       <figure className="post__image"
-  //         style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
-  //         >
-  //       </figure>
-
-  //       <div className="post__meta">
-  //         <h3>{title}</h3>
-  //         <p>
-  //           {blog.node.description.description}
-  //         </p>
-
-  //         <span className="cta inline-text-link">
-  //           Read More <img src={arrow} alt="" />
-  //         </span>
-  //       </div>
-  //     </Link>
-
-  //     </article> 
-  //   ) 
-  // })
-
   console.log(data)
 
   let i
@@ -122,67 +63,19 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     blogChunk.push(data.slice(i, i + 3));
   } 
 
-  console.log(blogChunk)
-
-  // const blogListMobileayy = blog
-
-
   let blogListMobile = data.map((blogList) => {
-    // let result;
     let result = blogList;
     let i;
     for (i = 0; i < blogList.length; i += 3) result.push(blogList.slice(i, i + 3));
     return result;
   });
-  
-  // let blogListArray = blogListMobile.map((blog, index) => {
-  //   // let result;
-  //   const {body, title, slug} = blog.node
-  //   return (<div>
-  //     {blogListMobile.map((blog, index) => (
-  //         <article key={index} className="post">
-  //           <Link to={`/blog/${blog.node.slug}`} className="">
-      
-  //             <figure className="post__image"
-  //               style={{backgroundImage: `url(${blog.node.heroImage.fluid.src})`}}
-  //               >
-  //             </figure>
-      
-  //             <div className="post__meta">
-  //               <h3>{blog.node.title}</h3>
-  //               <p>
-  //                 {blog.node.description.description}
-  //               </p>
-      
-  //               <span className="cta inline-text-link">
-  //                 Read More <img src={arrow} alt="" />
-  //               </span>
-  //             </div>
-  //           </Link>
-  //         </article> 
-  //     ))}
-  //     </div>);
-  // });
-
 
   let blogListArray = blogChunk.map((blog, index) => {
-    // const {body, title, slug} = blog[0].node
-    console.log(blog[0])
-    console.log(blog[1])
-    console.log(blog[2])
-
-    const blogOne = blog[0]
 
     return (<div className="group">
       {blog.map((article, index) => (
-      // {blog[0].map((blog, index) => (
           <article key={index} className="post">
             <Link to={`/blog/${article.node.slug}`} className="">
-      
-              {/* <figure className="post__image">
-                <img src={article.node.heroImage.fluid.src} />
-              </figure> */}
-
               <figure className="post__image"
                 style={{backgroundImage: `url(${article.node.heroImage.fluid.src})`}}
                 >
@@ -202,30 +95,6 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
           </article> 
       ))}
       </div>);
-    // return (<div>
-    //   {blogChunk[0].map((blog, index) => (
-    //       <article key={index} className="post">
-    //         <Link to={`/blog/${blog[0].node.slug}`} className="">
-      
-    //           <figure className="post__image"
-    //             style={{backgroundImage: `url(${blog[0].node.heroImage.fluid.src})`}}
-    //             >
-    //           </figure>
-      
-    //           <div className="post__meta">
-    //             <h3>{blog[0].node.title}</h3>
-    //             <p>
-    //               {blog[0].node.description.description}
-    //             </p>
-      
-    //             <span className="cta inline-text-link">
-    //               Read More <img src={arrow} alt="" />
-    //             </span>
-    //           </div>
-    //         </Link>
-    //       </article> 
-    //   ))}
-    //   </div>);
   });
 
 

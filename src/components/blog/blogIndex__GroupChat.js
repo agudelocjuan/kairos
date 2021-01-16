@@ -74,6 +74,57 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
     ) 
   })
 
+  let i
+  let interviewChunk = []
+
+  for (i = 0; i < data.length; i += 3) {
+    interviewChunk.push(data.slice(i, i + 3));
+  } 
+  console.log(interviewChunk)
+
+  let interviewListMobile = data.map((interviewList) => {
+    // let result;
+    let result = interviewList;
+    let i;
+    for (i = 0; i < interviewList.length; i += 3) result.push(interviewList.slice(i, i + 3));
+    return result;
+  });
+
+  let interviewListArray = interviewChunk.map((interview, index) => {
+    // const {body, title, slug} = interview[0].node
+    console.log(interview[0])
+    console.log(interview[1])
+    console.log(interview[2])
+
+    const interviewOne = interview[0]
+
+    return (<div className="group">
+      {interview.map((article, index) => (
+      // {interview[0].map((interview, index) => (
+          <article key={index} className="post">
+            <Link to={`/blog/${article.node.slug}`} className="">
+              <figure className="post__image"
+                style={{backgroundImage: `url(${article.node.heroImage.fluid.src})`}}
+                >
+              </figure>
+      
+              <div className="post__meta">
+                <h3 className="post__title">{article.node.title}</h3>
+                <p className="post__description">
+                  {article.node.description.description}
+                </p>
+      
+                <span className="cta inline-text-link">
+                  Read More <img src={arrow} alt="" />
+                </span>
+              </div>
+            </Link>
+          </article> 
+      ))}
+      </div>);
+  });
+
+
 	return (
     <Container fluid id="blogIndex__GroupChat" className="blog-grid">
 			<Row>
@@ -84,6 +135,10 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
 
         <Flickity options={options} className="blog-carousel interviews">
           {interviewList}
+        </Flickity>  
+        
+        <Flickity options={options} className="blog-carousel--mobile interviews">
+          {interviewListArray}
         </Flickity>  
 
         {/* <div className="carousel__controls">

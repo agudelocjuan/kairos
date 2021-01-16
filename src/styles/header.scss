@@ -123,13 +123,13 @@
 .header--blog {
   .back {
     position: fixed;
-    top: 28px;
+    top: 32px;
     left: 41px;
     z-index: 99999;
-    padding: 14px 18px;
-    border-radius: 50%;
-    border: 1px solid $black;
-    background: $white;
+    // padding: 14px 18px;
+    // border-radius: 50%;
+    // border: 1px solid $black;
+    // background: $white;
     cursor: pointer;
 
     #back-icon {
@@ -139,13 +139,13 @@
 
   #search {
     position: fixed;
-    top: 28px;
+    top: 32px;
     right: 41px;
     z-index: 99999;
-    padding: 14px 18px;
-    border-radius: 50%;
-    border: 1px solid $black;
-    background: $white;
+    // padding: 14px 18px;
+    // border-radius: 50%;
+    // border: 1px solid $black;
+    // background: $white;
     cursor: pointer;
 
     #search-icon {
@@ -226,12 +226,12 @@
     }
 
     #search-toggle {
-      padding: 14px 18px;
-      border-radius: 50%;
-      border: 1px solid $black;  
+      // padding: 14px 18px;
+      // border-radius: 50%;
+      // border: 1px solid $black;  
       cursor: pointer;
       position: absolute;
-      top: 28px;
+      top: 32px;
       right: 41px;
     }
 

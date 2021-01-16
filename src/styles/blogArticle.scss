@@ -411,6 +411,10 @@
             padding: 24px 0;
             border-bottom: 2px solid $black;
 
+            @media (max-width: map-get($grid-breakpoints,md)) {
+                border-top: 2px solid $black;
+            }
+
             img {
                 margin-left: 10px;
             }

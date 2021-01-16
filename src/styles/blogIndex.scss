@@ -213,6 +213,7 @@ body {
             @media (max-width: map-get($grid-breakpoints,lg)) {
                 height: auto;
                 width: 40%;
+                border-bottom: 0;
             }
         }
     
@@ -292,11 +293,20 @@ body {
     // specific grid styles 
 
     &#blogIndex__BrokeNote {
-
+        @media (max-width: map-get($grid-breakpoints,lg)) {
+            .logo {
+                padding: 0;
+            }
+        }
+        
     }
     
     &#blogIndex__GroupChat {
-
+        @media (max-width: map-get($grid-breakpoints,lg)) {
+            .logo {
+                padding: 24px 0 18px;
+            }
+        }
     }
 
 

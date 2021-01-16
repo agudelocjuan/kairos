@@ -165,6 +165,8 @@ body {
 
         @media (max-width: map-get($grid-breakpoints,lg)) {
             width: 100%;
+            width: 100vw;
+            border-bottom: 2px solid $black;
         }
         
         @media (min-width: map-get($grid-breakpoints,lg)) {
@@ -187,6 +189,13 @@ body {
             opacity: 0.65;
         }
 
+        > a {
+            @media (max-width: map-get($grid-breakpoints,lg)) {
+                width: 100%;
+                display: flex;
+            }
+        }
+
         
 
         .post__image {
@@ -196,6 +205,11 @@ body {
             border-bottom: 2px solid $black;
             background-position: center center;
             transition: 0.25s;
+
+            @media (max-width: map-get($grid-breakpoints,lg)) {
+                height: auto;
+                width: 40%;
+            }
         }
     
         .post__meta {
@@ -206,6 +220,22 @@ body {
                     line-height: 68px;
                 }
                 
+            }
+
+            @media (max-width: map-get($grid-breakpoints,lg)) {
+                width: 60%;
+                padding: 20px 16px 18px;
+
+                .post__description {
+                    display: none;
+                }
+
+                .post__title {
+                    font-size: 36px;   
+                    line-height: 91%;
+                    letter-spacing: -1.3px;
+                    margin-bottom: 12px;
+                }
             }
         }
     }
@@ -529,12 +559,18 @@ body {
             text-transform: uppercase;
             color: $dark-blue;
             border-radius: 50px;
+            transition: 0.25s;
 
             @media (max-width: map-get($grid-breakpoints,md)) {
                 margin-top: 48px;
                 padding: 9px 0px 3px;
                 font-size: 40px;
                 line-height: 48px;
+            }
+
+            &:hover, &:focus {
+                opacity: 0.65;
+                transform: translateY(-3px);
             }
             
         }

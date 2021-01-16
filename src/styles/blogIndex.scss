@@ -2,6 +2,10 @@ body {
     // border: 100px solid chocolate;
 }
 
+* {
+    // transition: opacity 250ms linear;
+}
+
 // helper classes
 
 .display-mobile {
@@ -157,6 +161,7 @@ body {
         position: relative;
         max-height: 1200px;
         // height: 1200px;
+        transition: 0.25s;
 
         @media (max-width: map-get($grid-breakpoints,lg)) {
             width: 100%;
@@ -178,6 +183,10 @@ body {
             }    
         }
 
+        &:hover .post__image, &:focus .post__image {
+            opacity: 0.65;
+        }
+
         
 
         .post__image {
@@ -186,6 +195,7 @@ body {
             margin: 0;
             border-bottom: 2px solid $black;
             background-position: center center;
+            transition: 0.25s;
         }
     
         .post__meta {
@@ -319,6 +329,8 @@ body {
         text-rendering: optimizeLegibility;
         white-space: nowrap;
 
+        transition: 0.25s;
+
         @media (min-width: map-get($grid-breakpoints,md)) {
             width: 260px;
 
@@ -334,6 +346,11 @@ body {
 
         &.active {
             background: $blue;
+        }
+
+        &:hover, &:focus {
+            opacity: 0.65;
+            transform: translateY(-3px);
         }
     }
 }
@@ -622,8 +639,17 @@ body {
                 text-transform: uppercase;
                 white-space: nowrap;
 
+                transition: all 250ms linear;
+
                 @media (max-width: map-get($grid-breakpoints,md)) {
                     padding: 13px 15px 9px;
+                }
+
+                &:hover, &:focus {
+                    // transition: all 250ms linear;
+                    transform: translateY(-3px);
+                    opacity: 0.65;
+                    // background-color: rgba(235, 228, 163, 0.6);
                 }
 
             }

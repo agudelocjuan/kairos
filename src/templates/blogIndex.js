@@ -57,6 +57,16 @@ class BlogIndex extends React.Component {
 
   
 
+  // _editFilterTags(tag) {
+  //   if (this.state.filterTags.includes(tag)) {
+  //     this.setState({
+  //       filterTags: this.state.filterTags.filter(e => e !== tag),
+  //     })
+  //   } else {
+  //     this.setState({ filterTags: this.state.filterTags.concat(tag) })
+  //   }
+  // }
+  
   _editFilterTags(tag) {
     if (this.state.filterTags.includes(tag)) {
       this.setState({

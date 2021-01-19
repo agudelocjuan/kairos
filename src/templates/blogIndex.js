@@ -247,6 +247,7 @@ class BlogIndex extends React.Component {
     console.log(pageArticles)
 
     //// Create unfiltered page view
+    // add unfilteredMobile with a map as same as the main map in libraryTwoPost
     let unfiltered = (
       <>
         <LibraryTwoPost posts={pageArticles.slice(0, 3)} />

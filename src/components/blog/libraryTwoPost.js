@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
+import Flickity from "react-flickity-component"
 
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -11,6 +12,22 @@ import arrow from "../../images/icons/arrow-diag-black.svg"
 
 
 const LibraryTwoPost = ({ posts, mobile }) => {
+
+  let options = {
+    contain: true,
+    draggable: true,
+    initialIndex: 0,
+    cellAlign: 'left',
+    wrapAround: false,
+    pageDots: false,
+    freeScroll: false,
+    adaptiveHeight: true,
+    fade: true,
+    // groupCells: true,
+    groupCells: false,
+    prevNextButtons: true,
+  }
+
   if (posts.length === 0) {
     return ""
   }
@@ -76,9 +93,59 @@ const LibraryTwoPost = ({ posts, mobile }) => {
     )
   })
 
+  console.log(posts)
+
+
+  let i
+  let blogChunk = []
+
+  for (i = 0; i < posts.length; i += 2) {
+    blogChunk.push(posts.slice(i, i + 2));
+  } 
+
+  // let blogListMobile = posts.map((display) => {
+  //   let result = display;
+  //   let i;
+  //   for (i = 0; i < display.length; i += 3) result.push(display.slice(i, i + 3));
+  //   return result;
+  // });
+
+
+  let blogListArray = blogChunk.map((blog, index) => {
+
+    return (<div className="group">
+      {blog.map((article, index) => (
+          <article key={index} className="post">
+            <Link to={`/blog/${article.node.slug}`} className="">
+              <div className="post__meta">
+                <h3 className="post__title">{article.node.title}</h3>
+                <p className="post__description">
+                  {article.node.description.description}
+                </p>
+      
+                <span className="cta inline-text-link">
+                  Read More <img src={arrow} alt="" />
+                </span>
+              </div>
+            </Link>
+          </article> 
+      ))}
+      </div>);
+  });
+
+  console.log(blogListArray)
+
+
   return (
     <Container fluid id="libraryTwoPost">
-      <Row>{display}</Row>
+      <Row className="display-desktop">{display}</Row>
+      <div className="display-mobile">
+        <Flickity options={options} className="display-mobile">
+          {blogListArray}
+        </Flickity>
+      </div>
+      
+      {/* <Row className="display-mobile">{blogListArray}</Row> */}
     </Container>
   )
 }

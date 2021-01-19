@@ -132,6 +132,8 @@ class BlogTemplate extends React.Component {
     //   })(document, "script", "twitter-wjs")
     // }
 
+    let postKind = "blog"
+
     return (
       <Layout
         location={location}
@@ -238,11 +240,10 @@ class BlogTemplate extends React.Component {
             </Row>
 
             <Row>
-              <Col>
-                  <div className="mb-4 related-container">
-                    <h1 className="mb-4 related-article-title">Related Articles.</h1>
+              <Col className="flush">
+                  <div className="related">
                     
-                    <LibraryThumbnails related={post} />
+                    <LibraryThumbnails related={post} type={postKind} />
 
                   </div>
               </Col>

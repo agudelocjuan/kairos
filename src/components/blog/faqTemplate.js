@@ -234,6 +234,16 @@ class FaqTemplate extends React.Component {
             </Row> */}
 
           </Container>
+
+          <Container fluid>
+            <Row>
+              <Col className="flush">
+                  <div className="related">    
+                    <LibraryThumbnails related={post} type="faq" />
+                  </div>
+              </Col>
+            </Row>
+          </Container>
         </section>
       </Layout>
     )

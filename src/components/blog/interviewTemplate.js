@@ -30,6 +30,7 @@ class IntervewTemplate extends React.Component {
     const { pageContext, data, location } = this.props
     const { postType } = pageContext
     const post = get(this.props, "data.contentfulInterview")
+    let postKind = "interview"
 
     // for twitter share button
     const shareItem = typeof window !== "undefined" ? window.location : ""
@@ -174,6 +175,16 @@ class IntervewTemplate extends React.Component {
                     __html: post.body.childMarkdownRemark.html,
                   }}>
                 </main>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col className="flush">
+                  <div className="related">
+                    
+                    <LibraryThumbnails related={post} type={postKind} />
+
+                  </div>
               </Col>
             </Row>
 

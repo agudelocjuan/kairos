@@ -27,7 +27,6 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
   }
  
   let blogList = data.map((blog, index) => {
-    // console.log(blog.node)
     const {body, title, slug} = blog.node
     return (
       <article key={index} className="post">
@@ -63,12 +62,12 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
     blogChunk.push(data.slice(i, i + 3));
   } 
 
-  let blogListMobile = data.map((blogList) => {
-    let result = blogList;
-    let i;
-    for (i = 0; i < blogList.length; i += 3) result.push(blogList.slice(i, i + 3));
-    return result;
-  });
+  // let blogListMobile = data.map((blogList) => {
+  //   let result = blogList;
+  //   let i;
+  //   for (i = 0; i < blogList.length; i += 3) result.push(blogList.slice(i, i + 3));
+  //   return result;
+  // });
 
   let blogListArray = blogChunk.map((blog, index) => {
 
@@ -125,6 +124,8 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
           <img src={brokeNoteLogo} alt="" className="logo--desktop" />
           <img src={brokeNoteLogoMobile} alt="" className="logo--mobile" id="brokeNote__logo" />
         </Col>
+
+        {/* if need equal height cells https://codepen.io/desandro/pen/ZYvemV */}
 
         <Flickity options={options} className="blog-carousel blog">
           {blogList}

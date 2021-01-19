@@ -278,6 +278,11 @@
         border-bottom: 2px solid $black;
         padding-bottom: 20px;
 
+        @media (max-width: map-get($grid-breakpoints,md)) {
+          flex-flow: column wrap;
+          border-bottom: 0;
+        }
+
         * {
           border: 0;
           appearance: none;
@@ -289,6 +294,13 @@
           letter-spacing: -1.4px;
           
           margin: 0;
+
+          @media (max-width: map-get($grid-breakpoints,md)) {
+            width: 100%;
+            font-size: 44px;
+            line-height: 91%;
+            letter-spacing: -1.3px;
+          }
         }
 
         input[type="text"] {
@@ -296,6 +308,12 @@
           flex-grow: 2;
           padding-left: 0;
           // transform: translateY(10px);
+
+          @media (max-width: map-get($grid-breakpoints,md)) {
+            text-align: center;
+            border-bottom: 2px solid $black;
+            margin-bottom: 32px;
+          }
         }
 
         button {
@@ -306,6 +324,12 @@
           line-height: 36px;
           letter-spacing: -1.25px;
           padding: 26px 40px 18px;
+
+          @media (max-width: map-get($grid-breakpoints,md)) {
+            padding: 11px 0px 6px;
+            font-size: 36px;
+            letter-spacing: 0;
+          }
         }
       }
     }

@@ -83,6 +83,9 @@ class FaqTemplate extends React.Component {
     //   })(document, "script", "twitter-wjs")
     // }
 
+    // let children = document.querySelectorAll('.post__sidebar__inner a');
+    // children.setAttribute("_target", "blank")
+
     return (
       <Layout
         location={location}
@@ -187,10 +190,13 @@ class FaqTemplate extends React.Component {
                     Learn More 
                     <img src={arrowBelow} alt="see below" />
                 </header>
-                <div className="post__sidebar__inner" dangerouslySetInnerHTML={{
-                  __html: post.sidebar.childMarkdownRemark.html,
-                }}>
+                {/* <div className="post__sidebar__inner" dangerouslySetInnerHTML={{
+                  __html: post.sidebar.childMarkdownRemark.html, 
+                }}> */}
 
+                <div className="post__sidebar__inner" dangerouslySetInnerHTML={{
+                  __html: post.sidebar.childMarkdownRemark.html.replace(/href/g, "target='_blank' href"), 
+                }}>
                 </div>
               </Col>
             }

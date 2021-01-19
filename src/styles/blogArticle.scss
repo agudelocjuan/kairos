@@ -339,6 +339,10 @@
             }
         }
 
+        video {
+            width: 100%;
+        }
+
         table {
             position: relative;
             @media (min-width: map-get($grid-breakpoints,md)) {

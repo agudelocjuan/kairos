@@ -223,8 +223,10 @@ body {
             padding: 40px;
 
             > h3 {
+
                 @media (min-width: map-get($grid-breakpoints,lg)) {
-                    line-height: 68px;
+                    font-size: 64px;
+                    line-height: 54px;
                 }
                 
             }

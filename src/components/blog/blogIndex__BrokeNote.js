@@ -135,11 +135,12 @@ const blogIndex__BrokeNote = ({ mobile, data, count }) => {
           {blogListArray}
         </Flickity>
 
-        {/* <div className="carousel__controls">
+        <div className="carousel__controls">
           <p className="carousel-status">
+            {count}
             {count/3 + 1}
           </p>
-        </div> */}
+        </div>
         
       </Row>
       {/* <Row className="image-row">

@@ -60,7 +60,7 @@ class BlogTemplate extends React.Component {
     const shareItem = typeof window !== "undefined" ? window.location : ""
 
     // this is where all the post content is contained
-    // console.log(post)
+    console.log(shareItem.href)
 
 
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
@@ -160,7 +160,7 @@ class BlogTemplate extends React.Component {
                     {post ? (
                       <h1>{post.title}</h1>
                     ) : (
-                      <h1> Default Blog Title</h1>
+                      <h1>Default Blog Title</h1>
                     )}
                   </aside>
 
@@ -211,7 +211,7 @@ class BlogTemplate extends React.Component {
 
                           <a
                             href={
-                              "https://twitter.com/intent/tweet?text=" + shareItem
+                              "https://twitter.com/intent/tweet?text=" + shareItem.href
                             }
                             target="_blank"
                             rel="norefferer noopener"

@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import get from "lodash/get"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
+import Flickity from "react-flickity-component"
 
 import { connect } from "react-redux"
 
@@ -22,6 +23,7 @@ import LibraryTwoPost from "../components/blog/libraryTwoPost"
 import exit from "../images/icons/exit-menu.svg"
 import arrowRight from "../images/icons/arrow-right.svg"
 import arrowLeft from "../images/icons/arrow-left.svg"
+import arrowBlack from "../images/icons/arrow-diag-black.svg"
 
 import logo from "../images/logos/kairos-logo.svg"
 import cross from "../images/icons/cross.svg"
@@ -43,6 +45,8 @@ class BlogIndex extends React.Component {
     // generic thing to with every function in a class component
     this._editFilterTags = this._editFilterTags.bind(this)
   }
+
+  
   
 
   // match height plugin
@@ -248,19 +252,76 @@ class BlogIndex extends React.Component {
 
     //// Create unfiltered page view
     // add unfilteredMobile with a map as same as the main map in libraryTwoPost
-    let unfiltered = (
-      <>
-        <LibraryTwoPost posts={pageArticles.slice(0, 3)} />
-        <LibraryTwoPost posts={pageArticles.slice(3, 6)} />
-        <LibraryTwoPost posts={pageArticles.slice(6, 9)} />
-        <LibraryTwoPost posts={pageArticles.slice(9, 12)} />
-        <LibraryTwoPost posts={pageArticles.slice(12, 15)} />
+
+    let i
+    let blogChunk = []
+
+    for (i = 0; i < pageArticles.length; i += 2) {
+      blogChunk.push(pageArticles.slice(i, i + 2));
+    } 
+
+    let unfilteredMobile = blogChunk.map((blog, index) => {
+
+      return (<div className="group">
+        {blog.map((article, index) => (
+            <article key={index} className="post">
+              <Link to={`/blog/${article.node.slug}`} className="">
         
-        <LibraryTwoPost posts={pageArticles.slice(15, 18)} />
-        <LibraryTwoPost posts={pageArticles.slice(18, 21)} />
-        <LibraryTwoPost posts={pageArticles.slice(21, 24)} />
-        <LibraryTwoPost posts={pageArticles.slice(24, 27)} />
-      </>
+                <div className="post__meta">
+                  <h3 className="post__title">{article.node.title}</h3>
+                  <p className="post__excerpt" dangerouslySetInnerHTML={{
+                    __html: article.node.body.childMarkdownRemark.excerpt,
+                  }}>
+                  </p>
+        
+                  <span className="cta inline-text-link">
+                    Read More <img src={arrowBlack} alt="" />
+                  </span>
+                </div>
+              </Link>
+            </article> 
+        ))}
+        </div>);
+    });
+
+    console.log(unfilteredMobile)
+
+    let options = {
+      contain: true,
+      draggable: true,
+      initialIndex: 0,
+      cellAlign: 'left',
+      wrapAround: false,
+      pageDots: false,
+      freeScroll: false,
+      adaptiveHeight: true,
+      fade: true,
+      // groupCells: true,
+      groupCells: false,
+      prevNextButtons: true,
+    }
+    // let unfilteredMobile = 
+
+    let unfiltered = (
+      <div className="faqIndex">
+        <div className="display-desktop">
+          <LibraryTwoPost posts={pageArticles.slice(0, 3)} />
+          <LibraryTwoPost posts={pageArticles.slice(3, 6)} />
+          <LibraryTwoPost posts={pageArticles.slice(6, 9)} />
+          <LibraryTwoPost posts={pageArticles.slice(9, 12)} />
+          <LibraryTwoPost posts={pageArticles.slice(12, 15)} />
+          
+          <LibraryTwoPost posts={pageArticles.slice(15, 18)} />
+          <LibraryTwoPost posts={pageArticles.slice(18, 21)} />
+          <LibraryTwoPost posts={pageArticles.slice(21, 24)} />
+          <LibraryTwoPost posts={pageArticles.slice(24, 27)} />
+        </div>
+
+        <Flickity options={options} className="display-mobile">
+          {unfilteredMobile}
+        </Flickity>
+        
+      </div>
     )
 
     let filtered = <LibraryTwoPost posts={filteredPosts} />

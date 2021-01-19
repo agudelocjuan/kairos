@@ -419,6 +419,80 @@ body {
 
     .faq__main {
 
+        // mobile carousel
+
+        .group {
+            width: 100%;
+
+            .post {
+                width: 100%;
+                padding: 33px 30px;
+                border-bottom: 2px solid $black;
+            }
+
+            .post__title {
+                font-size: 36px;
+                line-height: 91%;
+                letter-spacing: -1.3px;
+                margin-bottom: 12px;
+            }
+
+            .cta.inline-text-link {
+                color: $black !important;
+                border-color: $black !important;
+            }
+
+
+        }
+
+        .flickity-enabled:focus {
+            outline: none;
+        }
+
+        .flickity-prev-next-button {
+            content: '→';
+            font-size: 40px;
+            padding: 36px 0;
+            border: 0;
+            background-color: transparent;
+            width: 50px;
+            height: 40px;
+            background-repeat: no-repeat;
+    
+            svg {
+                display: none;
+            }
+    
+            &.previous {
+                background-image: url('../images/icons/arrow-left-black.svg');
+                background-position: right center;
+                margin-left: 41vw;
+    
+                @media (max-width: map-get($grid-breakpoints,lg)) {
+                    margin-left: 32px;
+                    // margin-right: calc(100vw - 64px)
+    
+                    // transform: translateX(calc(80px));
+                }
+            }
+    
+            &.next {
+                background-image: url('../images/icons/arrow-right-black.svg');
+                background-position: left center;
+                margin-left: 150px;
+    
+                @media (max-width: map-get($grid-breakpoints,lg)) {
+                    // margin-left: calc(100vw - 32px);
+                    margin-left: 0;
+                    position: relative;
+                    margin-right: auto;
+    
+                    transform: translateX(calc(80vw - 72px));
+                }
+            }
+            
+        }
+
         .faq__header {
             padding: 52px 40px;
 

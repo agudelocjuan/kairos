@@ -450,6 +450,7 @@
 }
 
 .faqTemplate {
+
     .post__body {
 
         @media (max-width: map-get($grid-breakpoints,md)) {
@@ -581,4 +582,8 @@
             }
         }
     }
+
+    #libraryThumbnails {
+        border-bottom: 2px solid $black;
+    }    
 }

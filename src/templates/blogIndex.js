@@ -180,23 +180,41 @@ class BlogIndex extends React.Component {
 
     //// Logic to match articles to filter tags
     let filteredPosts
-    if (filterTags.length) {
-      filteredPosts = faqPosts.filter(i => {
-        let { tags } = i.node
-        if (tags) {
-          for (let i = 0; i < tags.length; i++) {
-          // for (let i = 0; i < 2; i++) {
-            // for (let j = 0; j < 2; j++) {
-            for (let j = 0; j < filterTags.length; j++) {
-              if (tags[i] === filterTags[j]) {
-                return true
-              }
-            }
-          }
-          return false
-        }
-      })
+
+    // let filteredPosts = i === this.state.tag
+
+    if ( this.state.tag ) {
+      filteredPosts = faqPosts.filter((i) =>
+      // i.node.tags[0].includes(this.state.tag) === this.state.tag).map(iteration => {
+      //   <div>
+      //   {iteration}
+      //   </div>
+      // })
+      i.node.tags[0] === this.state.tag)
     }
+
+
+    console.log(faqPosts)
+    console.log(filteredPosts)
+
+
+    //// Logic to match articles to filter tags
+    // let filteredPosts
+    // if (filterTags.length) {
+    //   filteredPosts = library.filter(i => {
+    //     let { tags } = i.node
+    //     if (tags) {
+    //       for (let i = 0; i < tags.length; i++) {
+    //         for (let j = 0; j < filterTags.length; j++) {
+    //           if (tags[i] === filterTags[j]) {
+    //             return true
+    //           }
+    //         }
+    //       }
+    //       return false
+    //     }
+    //   })
+    // }
 
     // let elem = document.getElementById("health")
 
@@ -348,7 +366,8 @@ class BlogIndex extends React.Component {
 
     let filtered = <LibraryTwoPost posts={filteredPosts} />
 
-    let pageRender = filterTags.length ? filtered : unfiltered
+    let pageRender = this.state.tag ? filtered : unfiltered
+    // let pageRender = filterTags.length ? filtered : unfiltered
 
     // let pageRender = <div></div>
 

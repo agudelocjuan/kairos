@@ -119,8 +119,12 @@ const LibraryTwoPost = ({ posts, mobile }) => {
             <Link to={`/blog/${article.node.slug}`} className="">
               <div className="post__meta">
                 <h3 className="post__title">{article.node.title}</h3>
-                <p className="post__description">
+                {/* <p className="post__description">
                   {article.node.description.description}
+                </p> */}
+                <p className="post__excerpt" dangerouslySetInnerHTML={{
+                __html: article.node.body.childMarkdownRemark.excerpt,
+                }}>
                 </p>
       
                 <span className="cta inline-text-link">

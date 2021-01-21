@@ -39,6 +39,7 @@ class BlogIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      tag: null,
       filterTags: [],
       showFilterTags: true,
       // activeTag: null
@@ -71,15 +72,21 @@ class BlogIndex extends React.Component {
   // }
   
   _editFilterTags(tag) {
-    if (this.state.filterTags.includes(tag)) {
-      this.setState({
-        filterTags: this.state.filterTags.filter(e => e !== tag),
-      })
+    
+    if (this.state.tag === tag) {
+      this.setState({tag: null})
     } else {
-      // this.setState({ filterTags: this.state.filterTags.concat(tag) })
-      this.setState({ filterTags: this.state.filterTags.filter( (selection)=> selection === tag ) })
-      // numbers.filter( (number)=> number >= 3);
+      this.setState({tag: tag})
     }
+    // if (this.state.filterTags.includes(tag)) {
+    //   this.setState({
+    //     filterTags: this.state.filterTags.filter(e => e !== tag),
+    //   })
+    // } else {
+    //   this.setState({ filterTags: this.state.filterTags.concat(tag) })
+    //   // this.setState({ filterTags: this.state.filterTags.filter( (selection)=> selection === tag ) })
+    //   // numbers.filter( (number)=> number >= 3);
+    // }
   }
 
   componentDidMount() {
@@ -98,6 +105,7 @@ class BlogIndex extends React.Component {
 
 
   render() {
+    console.log(this.state.tag)
     const pageColor = "yellow"
     const borderColor = "site-border-yellow"
     //// Import state
@@ -117,6 +125,13 @@ class BlogIndex extends React.Component {
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
     const interviewPosts = get(this, "props.data.allContentfulInterview.edges")
     const faqPosts = get(this, "props.data.allContentfulFaq.edges")
+
+    const colorLookup = {
+      'news': 'is-blue',
+      'money': 'is-red'
+    }
+
+    const style = colorLookup[this.state.tag]
 
     // tag state
 
@@ -218,7 +233,7 @@ class BlogIndex extends React.Component {
 
     // Create render for list of tags
     let tagOptions = availableTags.map((i, idx) => {
-      let active = filterTags.includes(i)
+      let active = i === this.state.tag
       return (
         <div
           key={idx}
@@ -364,7 +379,7 @@ class BlogIndex extends React.Component {
         <BlogIndex__Email />
         <BlogIndex__GroupChat data={interviewPosts} count={interviewCount} />
 
-        <section className="blogIndex__FAQ">
+        <section className={`blogIndex__FAQ ${style}`}>
           <div className="display-mobile cta-graffiti">FAQs </div>
           <div className="faq__tags">
             {tagOptions}

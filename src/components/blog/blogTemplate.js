@@ -64,7 +64,7 @@ class BlogTemplate extends React.Component {
     }
 
     // for twitter share button
-    const shareItem = typeof window !== "undefined" ? window.location.href : ""
+    const shareItem = typeof window !== `undefined` ? window.location.href : ""
     // const shareItem = window.location.href
 
     // this is where all the post content is contained

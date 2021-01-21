@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import ReactDOM from "react-dom"
 import { Link, graphql } from "gatsby"
 import get from "lodash/get"
 import Img from "gatsby-image"
@@ -47,6 +48,8 @@ class BlogIndex extends React.Component {
   }
 
   
+
+  
   
 
   // match height plugin
@@ -73,9 +76,25 @@ class BlogIndex extends React.Component {
         filterTags: this.state.filterTags.filter(e => e !== tag),
       })
     } else {
-      this.setState({ filterTags: this.state.filterTags.concat(tag) })
+      // this.setState({ filterTags: this.state.filterTags.concat(tag) })
+      this.setState({ filterTags: this.state.filterTags.filter( (selection)=> selection === tag ) })
+      // numbers.filter( (number)=> number >= 3);
     }
   }
+
+  componentDidMount() {
+    const node = ReactDOM.findDOMNode(this);
+
+    // Get child nodes
+    if (node instanceof HTMLElement) {
+        const child = node.querySelector('.post');
+        // const parent = node.getElementById('health');
+        // console.log(parent)
+        console.log(child)
+    }
+  }
+
+  
 
 
   render() {
@@ -164,6 +183,27 @@ class BlogIndex extends React.Component {
       })
     }
 
+    let elem = document.getElementById("health")
+
+    console.log(elem)
+
+    // var healthTag = React.findDOMNode(this.refs.health).value;
+
+    
+
+    
+
+    // if (elem.classList.contains("active")) {
+    //   console.log("health is active")
+    // }
+
+    // componentDidMount: (){
+    //   var name = React.findDOMNode(this.refs.health).value;
+    //   console.log(name)
+    // }
+
+    
+
     //// Create list of available tags from the CMS
     let availableTags = []
     faqPosts.forEach(i => {
@@ -183,12 +223,12 @@ class BlogIndex extends React.Component {
         <div
           key={idx}
           id={i}
+          ref={i}
           className={
             "position-relative tag body-small " + (active ? "active" : "")
           }
           onClick={
             () => this._editFilterTags(i)
-            
             // activeTag = this.id
             // .post:not() - hide
           }
@@ -212,53 +252,10 @@ class BlogIndex extends React.Component {
       )
     })
 
-    // console.log(filteredPosts)
-
     //// Create Pagination Logic
     let slice_start = pageNumber * limit
     let slice_end = humanPageNumber * limit
     let pageArticles = faqPosts.slice(slice_start, slice_end)
-
-    // let pagination =
-    //   numberOfPages > 1 ? (
-    //     <div className="pagination">
-    //       <div className="eyebrow">PAGE</div>
-    //       <div className="pages">
-    //         <div className="page-back">
-    //           {previousPagePath !== "" ? (
-    //             <Link to={previousPagePath}>Previous</Link>
-    //           ) : (
-    //             <div className="disabled">Previous</div>
-    //           )}
-    //         </div>
-    //         {[...Array(numberOfPages).keys()].map((i, idx) => {
-    //           let current = i + 1
-    //           let path = i === 0 ? "" : current
-    //           return (
-    //             <div
-    //               key={idx}
-    //               className={
-    //                 "page-number " + (i === pageNumber ? "active" : "")
-    //               }
-    //             >
-    //               <Link to={"/resources/library/" + path}>{current}</Link>
-    //             </div>
-    //           )
-    //         })}
-    //         <div className="page-next">
-    //           {nextPagePath !== "" ? (
-    //             <Link to={nextPagePath}>Next</Link>
-    //           ) : (
-    //             <div className="disabled">Next</div>
-    //           )}
-    //         </div>
-    //       </div>
-    //     </div>
-    //   ) : (
-    //     ""
-    //   )
-
-    console.log(pageArticles)
 
     //// Create unfiltered page view
     // add unfilteredMobile with a map as same as the main map in libraryTwoPost

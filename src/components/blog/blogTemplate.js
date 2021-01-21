@@ -1,4 +1,6 @@
 import React from "react"
+import ReactDOM from "react-dom"
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 import get from "lodash/get"
 import { Container, Row, Col } from "reactstrap"
 
@@ -32,6 +34,11 @@ class BlogTemplate extends React.Component {
     }
   }
 
+  state = {
+    value: '',
+    copied: false,
+  }
+
   render() {
 
     // const pageColor = "blue"
@@ -60,7 +67,24 @@ class BlogTemplate extends React.Component {
     const shareItem = typeof window !== "undefined" ? window.location : ""
 
     // this is where all the post content is contained
-    console.log(shareItem.href)
+    // console.log(shareItem.href)
+
+    // const copyUrl = () => {
+    //   let element = document.getElementById('urltext');
+    //   element.value = 'yourText';
+    //   element.select();
+    //   element.setSelectionRange(0, element.value.length);
+    //   document.execCommand('copy');  
+    //   console.log("image clicked")
+    // };
+
+    const copyCodeToClipboard = () => {
+      const el = this.textArea
+      el.select()
+      document.execCommand("copy")
+    }
+
+    
 
 
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
@@ -72,9 +96,6 @@ class BlogTemplate extends React.Component {
     // related articles logic
 
     let relatedPosts = blogPosts.map((blog, index) => {
-      console.log(blog.node.tags[0])
-      // console.log(post.tags[0])
-
       if ( blog.node.tags[0] === post.tags[0] ) {
         const {body, title, slug} = blog.node
         return (
@@ -108,8 +129,6 @@ class BlogTemplate extends React.Component {
     // const relatedClean = relatedPosts.filter( relatedPost === "" )
 
     // console.log(relatedClean)
-
-    console.log(relatedPosts)
 
     // twitter share button script
     // if (typeof window !== "undefined") {
@@ -179,18 +198,37 @@ class BlogTemplate extends React.Component {
                       <span className="meta__item">
                         <dt className="share-text">Share: </dt>
                         <dd className="link">
-                        <a
-                            href={shareItem}
-                            target="_blank"
+                        {/* <a
+                            href=""
                             rel="norefferer noopener"
-                          > 
-                            <img
-                              src={linkIcon}
-                              alt="link"
-                              className="link-icon"
-                              
-                            />
-                          </a>
+                            
+                          >  */}
+                          <textarea
+                            ref={(textarea) => this.textArea = textarea}
+                            className="urltext"
+                            value={shareItem.href}
+                          />
+                          
+                            <input value={shareItem.href} className="urltext" />
+                            {/* <input value={this.state.value}
+                              onChange={({target: {value}}) => this.setState({value, copied: false})} /> */}
+
+                            <CopyToClipboard text={shareItem.href}
+                              onCopy={() => this.setState({copied: true})}>
+                              <img
+                                src={linkIcon}
+                                alt="link"
+                                className="link-icon"
+                                onClick={copyCodeToClipboard}
+                                // onClick={() => this.copyCodeToClipboard()}
+                              />
+                            </CopyToClipboard>
+
+                          
+                            
+                          {/* </a> */}
+
+                          
                         </dd>
                         <dd className="twitter-wrapper">
                           {/* <a
@@ -222,6 +260,12 @@ class BlogTemplate extends React.Component {
                               className="twitter-icon"
                             />
                           </a>
+                          
+                          {/* <input type="text" id="urltext" className="urltext" value={shareItem.href} /> */}
+                        </dd>
+
+                        <dd>
+                          {this.state.copied ? <span className="copy-message">URL Copied!</span> : null}
                         </dd>
                       </span>
                     </dl>

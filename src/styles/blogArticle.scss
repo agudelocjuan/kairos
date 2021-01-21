@@ -161,15 +161,29 @@
                 vertical-align: top;
                 transform: scale(1.5);
                 // margin-right: 1rem;
+                margin-right: 2rem;
+
             }
 
             .link-icon {
                 margin-right: 2rem;
                 margin-left: 0.5rem;
+                cursor: pointer;
 
                 @media (max-width: map-get($grid-breakpoints,md)) {
                     width: 25px;
                 }  
+            }
+
+            @keyframes fadeOut {
+                0% { opacity: 0; }
+                50% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+
+            .copy-message {
+                // animation: fadeOut 0.5s 1.5s;
+                opacity: 0.65;
             }
 
             .meta__item {
@@ -225,6 +239,10 @@
             .up {
                 position: relative;
                 bottom: 9px;
+            }
+
+            .urltext {
+                display: none;
             }
         }
 

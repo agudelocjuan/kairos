@@ -24,6 +24,8 @@ import LibraryTwoPost from "../components/blog/libraryTwoPost"
 import exit from "../images/icons/exit-menu.svg"
 import arrowRight from "../images/icons/arrow-right.svg"
 import arrowLeft from "../images/icons/arrow-left.svg"
+import arrowRightBlack from "../images/icons/arrow-right-black.svg"
+import arrowLeftBlack from "../images/icons/arrow-left-black.svg"
 import arrowBlack from "../images/icons/arrow-diag-black.svg"
 
 import logo from "../images/logos/kairos-logo.svg"
@@ -394,7 +396,7 @@ class BlogIndex extends React.Component {
 
         <div className="carousel__controls">
             <div onClick={this.myCustomPrev} className="prev">
-              <img src={arrowLeft} />
+              <img src={arrowLeftBlack} />
             </div>
             <div className="carousel-status">
               <span className="current-slide">
@@ -410,7 +412,7 @@ class BlogIndex extends React.Component {
               </div>
             </div>
             <div onClick={this.myCustomNext} className="next">
-              <img src={arrowRight} />
+              <img src={arrowRightBlack} />
             </div>
         </div>
         

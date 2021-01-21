@@ -328,8 +328,17 @@ body {
     align-items: center;
     padding: 14px 0 !important;
 
+    @media (max-width: map-get($grid-breakpoints,lg)) {
+        padding: 0 !important;
+    }
+
+
     .next, .prev {
         cursor: pointer;
+        @media (max-width: map-get($grid-breakpoints,lg)) {
+            width: 24px;
+        }
+
     } 
       
     .prev {
@@ -350,6 +359,11 @@ body {
         line-height: 59px;
         letter-spacing: -1.38667px;
         margin-bottom: 0;
+
+        @media (max-width: map-get($grid-breakpoints,lg)) {
+            font-size: 26px;
+            line-height: 59px;
+        }
 
         .total-slides {
             // color: $black;

@@ -9,9 +9,41 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import arrow from "../../images/icons/arrow-diag-black.svg"
+import arrowLeft from "../../images/icons/arrow-left.svg"
+import arrowRight from "../../images/icons/arrow-right.svg"
 
+class LibraryTwoPost extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      carouselIndex: 0
+    }
+    // generic thing to with every function in a class component
+    this.myCustomNext = this.myCustomNext.bind(this)
+    this.myCustomPrev = this.myCustomPrev.bind(this)
+  }
+  // componentDidMount = () => {
+  //   // You can register events in componentDidMount hook
+  //   this.flkty.on('settle', () => {
+  //     console.log(`current index is ${this.flkty.selectedIndex}`)
+  //     this.setState({carouselIndex: this.flkty.selectedIndex})
+  //   })
+  // }
 
-const LibraryTwoPost = ({ posts, mobile }) => {
+  myCustomNext = () => {
+    // You can use Flickity API
+    this.flkty.next()
+    // this.flktyMobile.next()
+  }
+  myCustomPrev = () => {
+    // You can use Flickity API
+    this.flkty.previous()
+    // this.flktyMobile.previous()
+  }
+
+// const LibraryTwoPost = ({ posts, mobile }) => {
+render() {
+  let {mobile, posts, count} = this.props
 
   let options = {
     contain: true,
@@ -25,7 +57,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
     fade: true,
     // groupCells: true,
     groupCells: false,
-    prevNextButtons: true,
+    prevNextButtons: false,
   }
 
   if (posts.length === 0) {
@@ -144,7 +176,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
     <Container fluid id="libraryTwoPost">
       <Row className="display-desktop">{display}</Row>
       <div className="display-mobile">
-        <Flickity options={options} className="display-mobile">
+        <Flickity flickityRef={c => this.flkty = c} options={options} className="display-mobile">
           {blogListArray}
         </Flickity>
       </div>
@@ -152,6 +184,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
       {/* <Row className="display-mobile">{blogListArray}</Row> */}
     </Container>
   )
+}
 }
 
 export default connect(

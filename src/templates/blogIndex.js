@@ -43,12 +43,32 @@ class BlogIndex extends React.Component {
       filterTags: [],
       showFilterTags: true,
       // activeTag: null
+      carouselIndex: 0
     }
     // generic thing to with every function in a class component
     this._editFilterTags = this._editFilterTags.bind(this)
+    this.myCustomNext = this.myCustomNext.bind(this)
+    this.myCustomPrev = this.myCustomPrev.bind(this)
   }
 
-  
+  componentDidMount = () => {
+    // You can register events in componentDidMount hook
+    this.flktyMobile.on('settle', () => {
+      console.log(`current index is ${this.flktyMobile.selectedIndex}`)
+      this.setState({carouselIndex: this.flktyMobile.selectedIndex})
+    })
+  }
+
+  myCustomNext = () => {
+    // You can use Flickity API
+    // this.flkty.next()
+    this.flktyMobile.next()
+  }
+  myCustomPrev = () => {
+    // You can use Flickity API
+    // this.flkty.previous()
+    this.flktyMobile.previous()
+  }
 
   
   
@@ -111,6 +131,7 @@ class BlogIndex extends React.Component {
     //// Import state
     const { filterTags, showFilterTags } = this.state
     const { pageContext, location } = this.props
+    const { count } = this.props
     const {
       humanPageNumber,
       pageNumber,
@@ -329,6 +350,13 @@ class BlogIndex extends React.Component {
 
     console.log(unfilteredMobile)
 
+    let carouselLength = unfilteredMobile.length
+
+    // let countMobile = carouselLength/3 + 1
+    // let countMobileWhole = Math.floor(countMobile)
+
+    // console.log(countMobileWhole)
+
     let options = {
       contain: true,
       draggable: true,
@@ -341,7 +369,7 @@ class BlogIndex extends React.Component {
       fade: true,
       // groupCells: true,
       groupCells: false,
-      prevNextButtons: true,
+      prevNextButtons: false,
     }
     // let unfilteredMobile = 
 
@@ -360,9 +388,31 @@ class BlogIndex extends React.Component {
           <LibraryTwoPost posts={pageArticles.slice(24, 27)} />
         </div>
 
-        <Flickity options={options} className="display-mobile">
+        <Flickity flickityRef={c => this.flktyMobile = c} options={options} className="display-mobile">
           {unfilteredMobile}
         </Flickity>
+
+        <div className="carousel__controls">
+            <div onClick={this.myCustomPrev} className="prev">
+              <img src={arrowLeft} />
+            </div>
+            <div className="carousel-status">
+              <span className="current-slide">
+                {this.state.carouselIndex + 1}&nbsp;/
+              </span>
+              <div className="total-slides">
+                {/* <span className="display-desktop">
+                  &nbsp;{count}
+                </span> */}
+                <span className="display-mobile">
+                  &nbsp;{carouselLength}
+                </span>
+              </div>
+            </div>
+            <div onClick={this.myCustomNext} className="next">
+              <img src={arrowRight} />
+            </div>
+        </div>
         
       </div>
     )

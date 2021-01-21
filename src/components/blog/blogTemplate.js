@@ -64,10 +64,11 @@ class BlogTemplate extends React.Component {
     }
 
     // for twitter share button
-    const shareItem = typeof window !== "undefined" ? window.location : ""
+    // const shareItem = typeof window !== "undefined" ? window.location : ""
+    const shareItem = window.location.href
 
     // this is where all the post content is contained
-    console.log(shareItem.href)
+    console.log(shareItem)
 
     // const copyUrl = () => {
     //   let element = document.getElementById('urltext');
@@ -206,14 +207,17 @@ class BlogTemplate extends React.Component {
                           <textarea
                             ref={(textarea) => this.textArea = textarea}
                             className="urltext"
-                            value={shareItem.href}
+                            value={shareItem}
+                            // value={shareItem.href}
                           />
                           
-                            <input value={shareItem.href} className="urltext" />
+                            <input value={shareItem} className="urltext" />
+                            {/* <input value={shareItem.href} className="urltext" /> */}
                             {/* <input value={this.state.value}
                               onChange={({target: {value}}) => this.setState({value, copied: false})} /> */}
 
-                            <CopyToClipboard text={shareItem.href}
+                            <CopyToClipboard text={shareItem}
+                            // <CopyToClipboard text={shareItem.href}
                               onCopy={() => this.setState({copied: true})}>
                               <img
                                 src={linkIcon}
@@ -249,7 +253,8 @@ class BlogTemplate extends React.Component {
 
                           <a
                             href={
-                              "https://twitter.com/intent/tweet?text=" + shareItem.href
+                              "https://twitter.com/intent/tweet?text=" + shareItem
+                              // "https://twitter.com/intent/tweet?text=" + shareItem.href
                             }
                             target="_blank"
                             rel="norefferer noopener"

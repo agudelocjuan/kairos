@@ -322,11 +322,44 @@ body {
 }
 
 .carousel__controls {
-    .carousel-status {
-        color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 14px 0 !important;
 
-        &::first-letter {
-            color: $black;
+    .next, .prev {
+        cursor: pointer;
+    } 
+      
+    .prev {
+        
+    }
+
+    .next {
+        
+    }
+
+    .carousel-status {
+        display: flex;
+        transform: translateY(3px);
+        font-family: "franklin gothic std";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 59px;
+        letter-spacing: -1.38667px;
+        margin-bottom: 0;
+
+        .total-slides {
+            // color: $black;
+            // max-width: 15px;
+            // max-height: 40px;
+            // overflow: hidden;
+
+            &::first-letter {
+                // color: $salmon;
+            }
         }
     }
 }

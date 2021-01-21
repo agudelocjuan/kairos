@@ -9,25 +9,36 @@ import brokeNoteLogo from "../../images/blog/brokeNoteLogo.svg"
 import brokeNoteLogoMobile from "../../images/blog/brokeNoteLogo--mobile.svg"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
+import arrowLeft from "../../images/icons/arrow-left.svg"
+import arrowRight from "../../images/icons/arrow-right.svg"
 
 class blogIndex__BrokeNote extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      carouselIndex: 0
     }
     // generic thing to with every function in a class component
     this.myCustomNext = this.myCustomNext.bind(this)
+    this.myCustomPrev = this.myCustomPrev.bind(this)
   }
   componentDidMount = () => {
     // You can register events in componentDidMount hook
     this.flkty.on('settle', () => {
       console.log(`current index is ${this.flkty.selectedIndex}`)
+      this.setState({carouselIndex: this.flkty.selectedIndex})
     })
   }
 
   myCustomNext = () => {
     // You can use Flickity API
     this.flkty.next()
+    this.flktyMobile.next()
+  }
+  myCustomPrev = () => {
+    // You can use Flickity API
+    this.flkty.previous()
+    this.flktyMobile.previous()
   }
   render() {
     let {mobile, data, count} = this.props
@@ -43,7 +54,7 @@ class blogIndex__BrokeNote extends React.Component {
       fade: true,
       // groupCells: true,
       groupCells: false,
-      prevNextButtons: true,
+      prevNextButtons: false,
     }
    
     let blogList = data.map((blog, index) => {
@@ -115,17 +126,13 @@ class blogIndex__BrokeNote extends React.Component {
         ))}
         </div>);
     });
-  
-  
-    // elem.setAttribute("class", "selected")
-  
-  
-  
-  
-    let counter;
-  
-    console.log(blogList)
-    console.log(blogListArray)
+
+
+    let countMobile = count/3 + 1
+    let countMobileWhole = Math.floor(countMobile)
+
+    console.log(countMobileWhole)
+
   
     // external js: flickity.pkgd.js
   
@@ -154,16 +161,31 @@ class blogIndex__BrokeNote extends React.Component {
             {blogList}
           </Flickity>
           
-          <Flickity options={options} className="blog-carousel--mobile blog">
+          <Flickity flickityRef={c => this.flktyMobile = c} options={options} className="blog-carousel--mobile blog">
             {blogListArray}
           </Flickity>
 
-          <div onClick={this.myCustomNext}>nextbutton</div>
   
           <div className="carousel__controls">
-            <p className="carousel-status">
-              {count/3 + 1}
-            </p>
+            <div onClick={this.myCustomPrev} className="prev">
+              <img src={arrowLeft} />
+            </div>
+            <div className="carousel-status">
+              <span className="current-slide">
+                {this.state.carouselIndex + 1}&nbsp;/
+              </span>
+              <div className="total-slides">
+                <span className="display-desktop">
+                  &nbsp;{count}
+                </span>
+                <span className="display-mobile">
+                  &nbsp;{countMobileWhole}
+                </span>
+              </div>
+            </div>
+            <div onClick={this.myCustomNext} className="next">
+              <img src={arrowRight} />
+            </div>
           </div>
           
         </Row>

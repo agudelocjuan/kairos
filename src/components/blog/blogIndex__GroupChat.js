@@ -10,8 +10,41 @@ import groupChatLogo from "../../images/blog/groupChatLogo.png"
 import groupChatLogoMobile from "../../images/blog/groupChatLogo--mobile.png"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
+import arrowLeft from "../../images/icons/arrow-left.svg"
+import arrowRight from "../../images/icons/arrow-right.svg"
 
-const blogIndex__GroupChat = ({ mobile, data, count }) => {
+class blogIndex__GroupChat extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      carouselIndex: 0
+    }
+    // generic thing to with every function in a class component
+    this.myCustomNext = this.myCustomNext.bind(this)
+    this.myCustomPrev = this.myCustomPrev.bind(this)
+  }
+  componentDidMount = () => {
+    // You can register events in componentDidMount hook
+    this.flkty.on('settle', () => {
+      console.log(`current index is ${this.flkty.selectedIndex}`)
+      this.setState({carouselIndex: this.flkty.selectedIndex})
+    })
+  }
+
+  myCustomNext = () => {
+    // You can use Flickity API
+    this.flkty.next()
+    this.flktyMobile.next()
+  }
+  myCustomPrev = () => {
+    // You can use Flickity API
+    this.flkty.previous()
+    this.flktyMobile.previous()
+  }
+
+render() {
+  let {mobile, data, count} = this.props
+
   let options = {
     contain: true,
     draggable: true,
@@ -25,7 +58,7 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
     // friction: 0.8,
     fade: true,
     groupCells: true,
-    prevNextButtons: true,
+    prevNextButtons: false,
   }
 
 	let interviewList = data.map((interview, index) => {
@@ -124,6 +157,11 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
       </div>);
   });
 
+  let countMobile = count/3 + 1
+  let countMobileWhole = Math.floor(countMobile)
+
+  console.log(countMobileWhole)
+
 
 	return (
     <Container fluid id="blogIndex__GroupChat" className="blog-grid">
@@ -133,13 +171,35 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
             <img src={groupChatLogoMobile} alt="" className="logo--mobile" />
         </Col>
 
-        <Flickity options={options} className="blog-carousel interviews">
+        <Flickity flickityRef={c => this.flkty = c} options={options} className="blog-carousel interviews">
           {interviewList}
         </Flickity>  
         
-        <Flickity options={options} className="blog-carousel--mobile interviews">
+        <Flickity flickityRef={c => this.flktyMobile = c} options={options} className="blog-carousel--mobile interviews">
           {interviewListArray}
         </Flickity>  
+
+        <div className="carousel__controls">
+            <div onClick={this.myCustomPrev} className="prev">
+              <img src={arrowLeft} />
+            </div>
+            <div className="carousel-status">
+              <span className="current-slide">
+                {this.state.carouselIndex + 1}&nbsp;/
+              </span>
+              <div className="total-slides">
+                <span className="display-desktop">
+                  &nbsp;{count}
+                </span>
+                <span className="display-mobile">
+                  &nbsp;{countMobileWhole}
+                </span>
+              </div>
+            </div>
+            <div onClick={this.myCustomNext} className="next">
+              <img src={arrowRight} />
+            </div>
+        </div>
 
         {/* <div className="carousel__controls">
           <p class="carousel-status">{count}</p>
@@ -202,6 +262,7 @@ const blogIndex__GroupChat = ({ mobile, data, count }) => {
     </Container>
 
   )
+}
 }
 export default connect(
   state => ({ mobile: state.global.mobile }),

@@ -67,7 +67,7 @@ class BlogTemplate extends React.Component {
     const shareItem = typeof window !== "undefined" ? window.location : ""
 
     // this is where all the post content is contained
-    // console.log(shareItem.href)
+    console.log(shareItem.href)
 
     // const copyUrl = () => {
     //   let element = document.getElementById('urltext');

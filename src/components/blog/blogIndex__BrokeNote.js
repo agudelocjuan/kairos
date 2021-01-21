@@ -44,6 +44,21 @@ class blogIndex__BrokeNote extends React.Component {
     let {mobile, data, count} = this.props
     let options = {
       contain: true,
+      draggable: false,
+      initialIndex: 0,
+      cellAlign: 'left',
+      wrapAround: false,
+      pageDots: false,
+      freeScroll: false,
+      adaptiveHeight: true,
+      fade: true,
+      // groupCells: true,
+      groupCells: false,
+      prevNextButtons: false,
+    }
+    
+    let optionsMobile = {
+      contain: true,
       draggable: true,
       initialIndex: 0,
       cellAlign: 'left',
@@ -161,7 +176,7 @@ class blogIndex__BrokeNote extends React.Component {
             {blogList}
           </Flickity>
           
-          <Flickity flickityRef={c => this.flktyMobile = c} options={options} className="blog-carousel--mobile blog">
+          <Flickity flickityRef={c => this.flktyMobile = c} options={optionsMobile} className="blog-carousel--mobile blog">
             {blogListArray}
           </Flickity>
 

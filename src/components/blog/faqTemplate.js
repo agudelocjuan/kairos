@@ -1,6 +1,7 @@
 import React from "react"
 import get from "lodash/get"
 import { Container, Row, Col } from "reactstrap"
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -31,6 +32,13 @@ class FaqTemplate extends React.Component {
       metaPosition: "top",
     }
     // this._handleScroll = this._handleScroll.bind(this)
+    
+
+  }
+
+  state = {
+    value: '',
+    copied: false,
   }
 
   render() {
@@ -57,7 +65,13 @@ class FaqTemplate extends React.Component {
     }
 
     // for twitter share button
-    const shareItem = typeof window !== "undefined" ? window.location : ""
+    const shareItem = typeof window !== "undefined" ? window.location.href : ""
+
+    const copyCodeToClipboard = () => {
+      const el = this.textArea
+      el.select()
+      document.execCommand("copy")
+    }
 
     // this is where all the post content is contained
     console.log(post)
@@ -132,18 +146,24 @@ class FaqTemplate extends React.Component {
                       <span className="meta__item">
                         <dt className="">Share: </dt>
                         <dd className="link">
-                        <a
-                            href={shareItem}
-                            target="_blank"
-                            rel="norefferer noopener"
-                          > 
+                         <textarea
+                            ref={(textarea) => this.textArea = textarea}
+                            className="urltext"
+                            value={shareItem}
+                            // value={shareItem.href}
+                          />
+                          
+                          <input value={shareItem} className="urltext" />
+                          
+                          <CopyToClipboard text={shareItem}
+                            onCopy={() => this.setState({copied: true})}>
                             <img
                               src={linkIcon}
                               alt="link"
                               className="link-icon"
-                              
+                              onClick={copyCodeToClipboard}
                             />
-                          </a>
+                          </CopyToClipboard>
                         </dd>
                         <dd className="twitter-wrapper">
                         <a
@@ -174,6 +194,9 @@ class FaqTemplate extends React.Component {
                           >
                             Tweet
                           </a> */}
+                        </dd>
+                        <dd>
+                          {this.state.copied ? <span className="copy-message">URL Copied!</span> : null}
                         </dd>
                       </span>
                     </dl>

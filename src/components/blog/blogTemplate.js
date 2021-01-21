@@ -65,28 +65,14 @@ class BlogTemplate extends React.Component {
 
     // for twitter share button
     const shareItem = typeof window !== `undefined` ? window.location.href : ""
-    // const shareItem = window.location.href
 
-    // this is where all the post content is contained
     console.log(shareItem)
-
-    // const copyUrl = () => {
-    //   let element = document.getElementById('urltext');
-    //   element.value = 'yourText';
-    //   element.select();
-    //   element.setSelectionRange(0, element.value.length);
-    //   document.execCommand('copy');  
-    //   console.log("image clicked")
-    // };
 
     const copyCodeToClipboard = () => {
       const el = this.textArea
       el.select()
       document.execCommand("copy")
     }
-
-    
-
 
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
 
@@ -199,11 +185,7 @@ class BlogTemplate extends React.Component {
                       <span className="meta__item">
                         <dt className="share-text">Share: </dt>
                         <dd className="link">
-                        {/* <a
-                            href=""
-                            rel="norefferer noopener"
-                            
-                          >  */}
+                        
                           <textarea
                             ref={(textarea) => this.textArea = textarea}
                             className="urltext"
@@ -211,28 +193,17 @@ class BlogTemplate extends React.Component {
                             // value={shareItem.href}
                           />
                           
-                            <input value={shareItem} className="urltext" />
-                            {/* <input value={shareItem.href} className="urltext" /> */}
-                            {/* <input value={this.state.value}
-                              onChange={({target: {value}}) => this.setState({value, copied: false})} /> */}
-
-                            <CopyToClipboard text={shareItem}
-                            // <CopyToClipboard text={shareItem.href}
-                              onCopy={() => this.setState({copied: true})}>
-                              <img
-                                src={linkIcon}
-                                alt="link"
-                                className="link-icon"
-                                onClick={copyCodeToClipboard}
-                                // onClick={() => this.copyCodeToClipboard()}
-                              />
-                            </CopyToClipboard>
-
+                          <input value={shareItem} className="urltext" />
                           
-                            
-                          {/* </a> */}
-
-                          
+                          <CopyToClipboard text={shareItem}
+                            onCopy={() => this.setState({copied: true})}>
+                            <img
+                              src={linkIcon}
+                              alt="link"
+                              className="link-icon"
+                              onClick={copyCodeToClipboard}
+                            />
+                          </CopyToClipboard>
                         </dd>
                         <dd className="twitter-wrapper">
                           {/* <a

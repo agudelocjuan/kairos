@@ -9,8 +9,8 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import arrow from "../../images/icons/arrow-diag-black.svg"
-import arrowLeft from "../../images/icons/arrow-left.svg"
-import arrowRight from "../../images/icons/arrow-right.svg"
+import arrowRightBlack from "../../images/icons/arrow-right-black.svg"
+import arrowLeftBlack from "../../images/icons/arrow-left-black.svg"
 
 class LibraryTwoPost extends React.Component {
   constructor(props) {
@@ -22,27 +22,45 @@ class LibraryTwoPost extends React.Component {
     this.myCustomNext = this.myCustomNext.bind(this)
     this.myCustomPrev = this.myCustomPrev.bind(this)
   }
-  // componentDidMount = () => {
-  //   // You can register events in componentDidMount hook
-  //   this.flkty.on('settle', () => {
-  //     console.log(`current index is ${this.flkty.selectedIndex}`)
-  //     this.setState({carouselIndex: this.flkty.selectedIndex})
-  //   })
-  // }
+
+  function () {
+      this.flkty.on('change', () => {
+        console.log(`current index is ${this.flkty.selectedIndex}`)
+        this.setState({carouselIndex: this.flkty.selectedIndex})
+      })
+  }
+
+  
 
   myCustomNext = () => {
     // You can use Flickity API
     this.flkty.next()
-    // this.flktyMobile.next()
+    console.log(this.flkty.selectedIndex)
+    this.setState({carouselIndex: this.flkty.selectedIndex})
   }
   myCustomPrev = () => {
     // You can use Flickity API
     this.flkty.previous()
     // this.flktyMobile.previous()
+    this.setState({carouselIndex: this.flkty.selectedIndex})
+
   }
+
+  // this.setState({carouselIndex: this.flkty.selectedIndex})
+
+  // componentDidMount = () => {
+  //   // You can register events in componentDidMount hook
+  //   this.flkty.on('settle', () => {
+  //     console.log(`current index is ${this.flkty.selectedIndex}`)
+      // this.setState({carouselIndex: this.flkty.selectedIndex})
+  //   })
+  // }
 
 // const LibraryTwoPost = ({ posts, mobile }) => {
 render() {
+
+  console.log(this.state.carouselIndex)
+
   let {mobile, posts, count} = this.props
 
   let options = {
@@ -179,6 +197,28 @@ render() {
         <Flickity flickityRef={c => this.flkty = c} options={options} className="display-mobile">
           {blogListArray}
         </Flickity>
+
+        <div className="carousel__controls">
+            <div onClick={this.myCustomPrev} className="prev">
+              <img src={arrowLeftBlack} />
+            </div>
+            <div className="carousel-status">
+              <span className="current-slide">
+                {this.state.carouselIndex + 1}&nbsp;/
+              </span>
+              <div className="total-slides">
+                {/* <span className="display-desktop">
+                  &nbsp;{count}
+                </span> */}
+                <span className="display-mobile">
+                  &nbsp;{blogListArray.length}
+                </span>
+              </div>
+            </div>
+            <div onClick={this.myCustomNext} className="next">
+              <img src={arrowRightBlack} />
+            </div>
+        </div>
       </div>
       
       {/* <Row className="display-mobile">{blogListArray}</Row> */}

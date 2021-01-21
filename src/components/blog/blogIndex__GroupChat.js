@@ -47,6 +47,22 @@ render() {
 
   let options = {
     contain: true,
+    draggable: false,
+    initialIndex: 0,
+    cellAlign: 'left',
+    wrapAround: false,
+    pageDots: false,
+    // freeScroll: false,
+    adaptiveHeight: true,
+    // selectedAttraction: 0.2,
+    // friction: 0.8,
+    fade: true,
+    groupCells: true,
+    prevNextButtons: false,
+  }
+  
+  let optionsMobile = {
+    contain: true,
     draggable: true,
     initialIndex: 0,
     cellAlign: 'left',
@@ -175,7 +191,7 @@ render() {
           {interviewList}
         </Flickity>  
         
-        <Flickity flickityRef={c => this.flktyMobile = c} options={options} className="blog-carousel--mobile interviews">
+        <Flickity flickityRef={c => this.flktyMobile = c} options={optionsMobile} className="blog-carousel--mobile interviews">
           {interviewListArray}
         </Flickity>  
 

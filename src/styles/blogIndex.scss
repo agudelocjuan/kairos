@@ -191,7 +191,7 @@ body {
             }    
         }
 
-        &:hover .post__image, &:focus .post__image {
+        &:hover .post__meta, &:hover .post__image, &:focus .post__meta, &:focus .post__image {
             opacity: 0.65;
         }
 

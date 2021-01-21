@@ -183,9 +183,9 @@ class BlogIndex extends React.Component {
       })
     }
 
-    let elem = document.getElementById("health")
+    // let elem = document.getElementById("health")
 
-    console.log(elem)
+    // console.log(elem)
 
     // var healthTag = React.findDOMNode(this.refs.health).value;
 

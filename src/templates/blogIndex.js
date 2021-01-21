@@ -127,8 +127,11 @@ class BlogIndex extends React.Component {
     const faqPosts = get(this, "props.data.allContentfulFaq.edges")
 
     const colorLookup = {
-      'news': 'is-blue',
-      'money': 'is-red'
+      'money': 'is-blue',
+      'health': 'is-purple',
+      'home': 'is-cream',
+      'work': 'is-pale-yellow',
+      'news': 'is-pale-red'
     }
 
     const style = colorLookup[this.state.tag]

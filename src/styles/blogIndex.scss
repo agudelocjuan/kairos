@@ -339,81 +339,56 @@ body {
         padding: 0;
         margin: 0;
     }
-}
 
-.faq__tags {
-    display: flex;
-    border-top: 2px solid $black;
-    border-bottom: 2px solid $black;
-    padding: 20px 40px;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-    @media (max-width: map-get($grid-breakpoints,md)) {
-        padding: 12px 16px;
-        overflow-x: scroll;
-    }
-    
-
-
-    .tag {
-        flex: auto;
-
-        &:not(:last-child) {
-            margin-right: 15px;
+    &.is-blue {
+        background: rgba($blue, 0.4);
+        .active {
+            background: $blue !important;
         }
-
-        // width: 18.5%;
-        justify-content: space-between;
-        // background: hotpink;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 25px 0 15px;
-        border: 2px solid $black;
-        border-radius: 100px;
-        cursor: pointer;
-
-        font-family: "franklin gothic std";
-        font-size: 64px;
-        line-height: 59px;
-        color: $black;
-        font-weight: 400;
-        letter-spacing: -1.4px;
-        // text-transform: uppercase;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-        white-space: nowrap;
-
-        transition: 0.25s;
-
-        @media (min-width: map-get($grid-breakpoints,md)) {
-            width: 260px;
-
-        }
-
-        @media (max-width: map-get($grid-breakpoints,md)) {
-            font-size: 26px;
-            line-height: 31px;
-            letter-spacing: 0px;
-            padding: 12px 20px 8px;
-            width: auto;
-        }
-
-        &.active {
-            background: $blue;
-        }
-
-        &:hover, &:focus {
-            opacity: 0.65;
-            transform: translateY(-3px);
+        .post-wrapper:hover, .post-wrapper:focus {
+            background: $blue !important;
         }
     }
-}
 
-.blogIndex__FAQ {
+    &.is-purple {
+        background: $purple;
+        .active {
+            background: $dark-purple !important;
+        }
+        .post-wrapper:hover, .post-wrapper:focus {
+            background: $dark-purple !important;
+        }
+    }
+
+    &.is-cream {
+        background: $cream;
+        .active {
+            background: $mustard !important;
+        }
+        .post-wrapper:hover, .post-wrapper:focus {
+            background: $mustard !important;
+        }
+    }
+
+    &.is-pale-yellow {
+        background: $pale-yellow;
+        .active {
+            background: $yellow !important;
+        }
+        .post-wrapper:hover, .post-wrapper:focus {
+            background: $yellow !important;
+        }
+    }
+
+    &.is-pale-red {
+        background: $pale-red;
+        .active {
+            background: $salmon !important;
+        }
+        .post-wrapper:hover, .post-wrapper:focus {
+            background: $salmon !important;
+        }
+    }
 
     .cta-graffiti.display-mobile {
         font-size: 104px;
@@ -573,7 +548,78 @@ body {
             }
         }
     }
+}
 
+.faq__tags {
+    display: flex;
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
+    padding: 20px 40px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (max-width: map-get($grid-breakpoints,md)) {
+        padding: 12px 16px;
+        overflow-x: scroll;
+    }
+    
+
+
+    .tag {
+        flex: auto;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+
+        // width: 18.5%;
+        justify-content: space-between;
+        // background: hotpink;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 25px 0 15px;
+        border: 2px solid $black;
+        border-radius: 100px;
+        cursor: pointer;
+
+        font-family: "franklin gothic std";
+        font-size: 64px;
+        line-height: 59px;
+        color: $black;
+        font-weight: 400;
+        letter-spacing: -1.4px;
+        // text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        white-space: nowrap;
+
+        transition: 0.25s;
+
+        @media (min-width: map-get($grid-breakpoints,md)) {
+            width: 260px;
+
+        }
+
+        @media (max-width: map-get($grid-breakpoints,md)) {
+            font-size: 26px;
+            line-height: 31px;
+            letter-spacing: 0px;
+            padding: 12px 20px 8px;
+            width: auto;
+        }
+
+        &.active {
+            background: $blue;
+        }
+
+        &:hover, &:focus {
+            opacity: 0.65;
+            transform: translateY(-3px);
+        }
+    }
 }
 
 

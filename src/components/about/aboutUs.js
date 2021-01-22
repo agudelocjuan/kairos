@@ -200,6 +200,20 @@ const AboutUs = ({ mobile }) => {
           }
         }
       }
+      eddy_kleinhaus: file(relativePath: { eq: "team/eddy_kleinhaus.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      sarah_baker: file(relativePath: { eq: "team/sarah_baker.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       vicente_fox: file(relativePath: { eq: "team/vicente_fox.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
@@ -327,22 +341,22 @@ const AboutUs = ({ mobile }) => {
       name: "Eddy Kleinhaus",
       title: "General Counsel",
       team: "operating",
-      img: "cyrus_ferguson",
+      img: "eddy_kleinhaus",
       bio: "Eddy joins Kairos as General Counsel, bringing 20+ years of legal and operating experience to the team. He most recently served as the Chief Business Officer and Interim CEO for Myoscience, Inc. and was an integral driver of the company’s $220 million acquisition by Pacira Biosciences, Inc. Eddy brings extensive experience representing private and public companies as in-house counsel and significant operational experience to support the Kairos model. Eddy earned his J.D. from NYU School of Law and holds two undergraduate degrees from UC Berkeley in Rhetoric and Economics.",
     },
     {
       name: "Sarah Baker",
       title: "Head of Strategic Initiatives",
       team: "operating",
-      img: "andrew_wang",
-      bio: "Andrew Wang is the independent Chair of Kairos’ Investment Committee. He is also the Co-Founder & CEO of Valon, the leading FinTech mortgage servicer. Prior to Valon, Andrew was a Principal at Soros Fund Management, focusing on the intersection of private credit and venture capital. Andrew began his career at Goldman Sachs in the aviation finance group. He graduated from Harvard University with a BA and MA in Computer Science.",
+      img: "sarah_baker",
+      bio: "Sarah was previously Chief of Staff at Andela - a Series D stage Africa-focused software engineering platform based in New York. Prior to joining Andela, Sarah was Head of North American Strategic Engagement at the London Stock Exchange Group (LSEG) since March 2016, based in New York. In this role, she works with pre IPO companies to prepare them for public listings. She also drove LSEG’s strategic growth in the region. Sarah regularly spoke publicly on capital markets issues. In June 2019, she was also appointed Chair of the UK Department of International Trade’s Working Group on US/UK Capital Markets. Sarah previously served as the LSEG’s Head of International Government Relations. She worked on initiatives including the launch of the UK-China Stock Connect programme - the first ever program enabling western companies to be traded in China and vice versa. She also partnered with the UK Government to grow domestic capital markets in key African countries, and lead government relations on LSEG’s M&A transactions. Between 2008 and 2010, Sarah worked for the UK Conservative Party as Head of Briefing for the Rt Hon David Cameron MP as Leader of the Opposition, then as Prime Minister. Between 2007 and 2008, Sarah was a Senior Researcher to the Rt Hon Theresa May MP. She has also worked as a Parliamentary Select Committee reporter, and for Independent Diplomat – a foreign policy focused NGO. Sarah holds a first class degree in Politics and International Relations from the University of Manchester, and a Masters degree from King’s College London. In 2016, she was named as one of Management Today’s 35 Under 35 businesswomen, and was also shortlisted for the UK’s Women of the Future Awards. She is an Associate Fellow of the Royal Commonwealth Society.",
     },
     {
       name: "Andrew Wang",
       title: "Chair of Investment Committee",
       team: "operating",
       img: "andrew_wang",
-      bio: "Sarah was previously Chief of Staff at Andela - a Series D stage Africa-focused software engineering platform based in New York. Prior to joining Andela, Sarah was Head of North American Strategic Engagement at the London Stock Exchange Group (LSEG) since March 2016, based in New York. In this role, she works with pre IPO companies to prepare them for public listings. She also drove LSEG’s strategic growth in the region. Sarah regularly spoke publicly on capital markets issues. In June 2019, she was also appointed Chair of the UK Department of International Trade’s Working Group on US/UK Capital Markets. Sarah previously served as the LSEG’s Head of International Government Relations. She worked on initiatives including the launch of the UK-China Stock Connect programme - the first ever program enabling western companies to be traded in China and vice versa. She also partnered with the UK Government to grow domestic capital markets in key African countries, and lead government relations on LSEG’s M&A transactions. Between 2008 and 2010, Sarah worked for the UK Conservative Party as Head of Briefing for the Rt Hon David Cameron MP as Leader of the Opposition, then as Prime Minister. Between 2007 and 2008, Sarah was a Senior Researcher to the Rt Hon Theresa May MP. She has also worked as a Parliamentary Select Committee reporter, and for Independent Diplomat – a foreign policy focused NGO.  Sarah holds a first class degree in Politics and International Relations from the University of Manchester, and a Masters degree from King’s College London. In 2016, she was named as one of Management Today’s 35 Under 35 businesswomen, and was also shortlisted for the UK’s Women of the Future Awards. She is an Associate Fellow of the Royal Commonwealth Society.",
+      bio: "Andrew Wang is the independent Chair of Kairos’ Investment Committee. He is also the Co-Founder & CEO of Valon, the leading FinTech mortgage servicer. Prior to Valon, Andrew was a Principal at Soros Fund Management, focusing on the intersection of private credit and venture capital. Andrew began his career at Goldman Sachs in the aviation finance group. He graduated from Harvard University with a BA and MA in Computer Science.",
     },
     {
       name: "Angela Vranich",

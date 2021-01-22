@@ -26,10 +26,13 @@
     font-weight: 400;
     opacity: 1;
     transition: opacity 150ms linear;
-    font-size: 135px;
+    // font-size: 135px;
+    font-size: 115px;
     color: $black;
-    line-height: 124px;
+    // line-height: 124px;
+    line-height: 100px;
     letter-spacing: -4.5px;
+    letter-spacing: -2.5px;
     margin-top: 1.5rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -105,6 +108,7 @@
     min-height: 500px;
     .link-row {
       height: 50%;
+      height: 60%;
       overflow-y: scroll;
       .link-col {
         padding-top: 5%;

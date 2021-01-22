@@ -27,6 +27,9 @@ const Menu = ({ dispatch, mobile, menu }) => {
           <Link to="/10kjobs" onClick={() => dispatch(setMenu(false))}>
             <h2>10k Jobs</h2>
           </Link>
+          <Link to="/blog" onClick={() => dispatch(setMenu(false))}>
+            <h2>Blog</h2>
+          </Link>
           <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com" onClick={() => dispatch(setMenu(false))}>
             <h2>Careers</h2>
           </a>
@@ -62,16 +65,16 @@ const Menu = ({ dispatch, mobile, menu }) => {
           md="4"
           className="d-flex justify-content-center justify-content-md-end align-items-start align-items-md-center"
         >
-          <a href="https://www.facebook.com/TheKairosSociety" className="pl-2">
+          {/* <a href="https://www.facebook.com/TheKairosSociety" className="pl-2">
             <img src={facebook} alt="" />
-          </a>
+          </a> */}
           <a href="https://www.instagram.com/kairoshq" className="pl-2">
             <img src={instagram} alt="" />
           </a>
           <a href="https://www.twitter.com/kairoshq" className="pl-2">
             <img src={twitter} alt="" />
           </a>
-          <a href="https://www.linkedin.com/kairoshq" className="pl-2">
+          <a href="https://www.linkedin.com/company/kairoshq" className="pl-2">
             <img src={linkedin} alt="" />
           </a>
         </Col>

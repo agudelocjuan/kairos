@@ -10,7 +10,7 @@ import Header from "./header"
 import Footer from "./footer"
 import Menu from "./menu"
 
-import cross from "../../images/icons/cross.svg"
+import crossWhite from "../../images/icons/cross-white.svg"
 
 import "../../styles/index.scss"
 
@@ -117,14 +117,17 @@ const Layout = ({
         <main className={pageColor}>
           {children}
           
-          {/* <div id="email-popup" className={isEmailActive ? "active" : null}>
-            <img className="email-toggle" src={cross} onClick={handleEmailToggle} />
+          <div id="email-popup" className={isEmailActive ? "active" : null}>
+            <img className="email-toggle" src={crossWhite} onClick={handleEmailToggle} />
             {subscribed ? (
               <div>Thank you for signing up! Check your inbox for updates.</div>
             ) : (
               <div id="email-signup-container">
                 <div id="email-cta">
-                  Want more Kairos?{mobile ? <br /> : " "}Plug in your email.
+                  Help Us Help You
+                </div>
+                <div id="email-subtitle">
+                  Let’s navigate these tough times together. Always helpful, never harmful.
                 </div>
                 <form action="" onSubmit={e => _submit(e)}>
                   <input
@@ -138,7 +141,7 @@ const Layout = ({
                 </form>
               </div>
             )}
-          </div> */}
+          </div>
           
         </main>
         <Footer jobs={jobs} color={footerColor} borderColor={borderColor} />

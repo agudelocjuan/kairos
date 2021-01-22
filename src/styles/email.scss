@@ -200,15 +200,127 @@
 // global email popup
 
 #email-popup {
+  transition: 0.25s;
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 50%;
-  background: gray;
-  position: relative;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  background: $salmon;
+  text-align: center;
+  // position: relative;
+  padding: 42px 32px 32px 32px;
+  box-shadow: 0px 0px 10px #F15953;
+  z-index: 1000;
+
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    padding: 42px 32px 32px 32px;  
+  }
 
   &.active {
-    display: block;
+    display: inline-block;
   }
+
+  .email-toggle {
+    cursor: pointer;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    font-size: 120px;
+    line-height: 96px;
+
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      // top: 50%;  /* position the top  edge of the element at the middle of the parent */
+      left: 50%; /* position the left edge of the element at the middle of the parent */
+      transform: translateX(-50%);
+    }
+  }
+
+  #email-cta {
+    font-size: 120px;
+    line-height: 96px;
+    font-family: "summer loving reg";
+    margin-bottom: 27px;
+
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      font-size: 74.386px;
+      line-height: 60px;
+      margin-bottom: 25px;  
+    }
+  }
+  
+  #email-subtitle {
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.25px; 
+    margin-bottom: 24px;
+
+    // @media (max-width: map-get($grid-breakpoints,md)) {
+    //   font-size: 20px;
+    //   line-height: 26px;
+    //   letter-spacing: -0.25px; 
+    // }
+  }
+
+  form {
+    background: $white;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      padding-left: 25px;
+    }
+
+    input[type="text"], input[type="submit"] {
+      border: 0;
+      outline: none;
+      appearance: none;
+      font-size: 48px;
+      line-height: 59px;
+      font-family: "franklin gothic std";
+      text-transform: uppercase;
+
+      @media (max-width: map-get($grid-breakpoints,md)) {
+        font-size: 29.75px;
+        line-height: 36.57px;
+      }
+    }
+
+    input[type="text"] {
+      padding: 20px 0 14px;
+
+      @media (max-width: map-get($grid-breakpoints,md)) {
+        padding: 12px 0 8px;
+      }
+    }
+
+    input[type="submit"] {
+      border-radius: 100px;
+      background: $black;
+      color: $white;
+      // padding: 31px 19.5px 20px 24px;
+      width: 87px;
+      height: 87px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(3px) translateX(-4px);
+      padding-top: 10px;
+
+      @media (max-width: map-get($grid-breakpoints,md)) {
+        width: 54px;
+        height: 54px;
+        transform: translateY(1px) translateX(-2px);
+        padding-top: 6px;
+      }
+   
+    }
+  }
+
+
+
+
 }

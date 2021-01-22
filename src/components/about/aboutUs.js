@@ -1,11 +1,16 @@
-import React from "react"
+import React, {useState} from "react"
 import { useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
-import { Container, Row, Col } from "reactstrap"
+import { Container, Row, Col, Modal } from "reactstrap"
 import Flickity from "react-flickity-component"
 import Img from "gatsby-image"
 
+import crossSmall from "../../images/icons/cross-small.svg"
+
 const AboutUs = ({ mobile }) => {
+
+  let [modal, setModal] = useState(null)
+
   let options = {
     draggable: true,
     initialIndex: 0,
@@ -254,6 +259,7 @@ const AboutUs = ({ mobile }) => {
       title: "Co-Founder & Co-CEO",
       team: "operating",
       img: "ankur_jain",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id scelerisque neque auctor ut in rhoncus montes. Mi tortor faucibus gravida eget pellentesque phasellus malesuada pretium. Natoque et erat aliquam, purus. Fringilla tellus nibh sed est platea tortor purus phasellus. Arcu nisl orci tellus ipsum bibendum rutrum. Praesent pharetra morbi vitae integer fringilla at eu arcu nec. Amet tellus ullamcorper at quis tincidunt tortor magna egestas urna. Ac dignissim quis libero integer tristique. Nam pellentesque malesuada non luctus facilisi sit nec tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id scelerisque neque auctor ut in rhoncus montes. Mi tortor faucibus gravida eget pellentesque phasellus malesuada."
     },
     {
       name: "Alex Fiance",
@@ -452,10 +458,34 @@ const AboutUs = ({ mobile }) => {
             .filter(i => i.team === "operating")
             .map((i, idx) => {
               return (
-                <Col key={idx} className="w-75">
+                <Col key={idx} className="w-75" onClick={() => setModal(i.img)}>
                   <Img fluid={data[i.img].childImageSharp.fluid} />
                   <p className="mt-2 mb-1">{i.name}</p>
                   <p className="text-light-black">{i.title}</p>
+
+                  <Modal
+                    toggle={() => setModal(null)}
+                    isOpen={modal === i.img}
+                    className="team-member-modal"
+                    style={{zIndex: "99999999999999999999999"}}
+                    data-backdrop="false"
+                  >
+                    <div className="bio-box">
+                      <header>
+                        <div className="close" onClick={() => setModal(null)}>
+                          <img src={crossSmall} alt="exit modal" /> Exit
+                        </div>
+                      </header>
+                      <main>
+                        <Img fluid={data[i.img].childImageSharp.fluid} />
+                        <article>
+                          <p className="name faq-header">{i.name}</p>
+                          <p className="title">{i.title}</p>
+                          <p className="bio">{i.bio}</p>
+                        </article>
+                      </main>
+                    </div>
+                  </Modal>
                 </Col>
               )
             })}
@@ -466,10 +496,34 @@ const AboutUs = ({ mobile }) => {
             .filter(i => i.team === "operating")
             .map((i, idx) => {
               return (
-                <Col key={idx} md="4">
+                <Col key={idx} md="4" onClick={() => setModal(i.img)}>
                   <Img fluid={data[i.img].childImageSharp.fluid} />
                   <p className="mt-2 mb-1">{i.name}</p>
                   <p className="text-light-black">{i.title}</p>
+
+                  <Modal
+                    toggle={() => setModal(null)}
+                    isOpen={modal === i.img}
+                    className="team-member-modal"
+                    style={{zIndex: "99999999999999999999999"}}
+                    data-backdrop="false"
+                  >
+                    <div className="bio-box">
+                      <header>
+                        <div className="close" onClick={() => setModal(null)}>
+                          <img src={crossSmall} alt="exit modal" /> Exit
+                        </div>
+                      </header>
+                      <main>
+                        <Img fluid={data[i.img].childImageSharp.fluid} />
+                        <article>
+                          <p className="name faq-header">{i.name}</p>
+                          <p className="title">{i.title}</p>
+                          <p className="bio">{i.bio}</p>
+                        </article>
+                      </main>
+                    </div>
+                  </Modal>
                 </Col>
               )
             })}
@@ -515,6 +569,27 @@ const AboutUs = ({ mobile }) => {
             })}
         </Row>
       )}
+
+
+      {/* {team
+      .filter(i => i.team === "operating")
+      .map((i, idx) => {
+        return (
+          <div key={idx} className="bio-box">
+            <header></header>
+            <main>
+            <Img fluid={data[i.img].childImageSharp.fluid} />
+              <article>
+              <p className="mt-2 mb-1">{i.name}</p>
+              <p className="text-light-black">{i.title}</p>
+              <p className="text-light-black">{i.bio}</p>
+              </article>
+            </main>
+          </div>
+        )
+      })} */}
+
+
     </Container>
   )
 }

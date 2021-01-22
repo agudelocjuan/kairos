@@ -196,3 +196,19 @@
     }
   }
 }
+
+// global email popup
+
+#email-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  background: gray;
+  position: relative;
+
+  &.active {
+    display: block;
+  }
+}

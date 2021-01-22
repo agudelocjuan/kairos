@@ -117,7 +117,7 @@ const Layout = ({
         <main className={pageColor}>
           {children}
           
-          <div id="email-popup" className={isEmailActive ? "active" : null}>
+          {/* <div id="email-popup" className={isEmailActive ? "active" : null}>
             <img className="email-toggle" src={cross} onClick={handleEmailToggle} />
             {subscribed ? (
               <div>Thank you for signing up! Check your inbox for updates.</div>
@@ -138,7 +138,7 @@ const Layout = ({
                 </form>
               </div>
             )}
-          </div>
+          </div> */}
           
         </main>
         <Footer jobs={jobs} color={footerColor} borderColor={borderColor} />

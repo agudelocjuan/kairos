@@ -180,7 +180,6 @@ class blogIndex__BrokeNote extends React.Component {
             {blogListArray}
           </Flickity>
 
-  
           <div className="carousel__controls">
             <div onClick={this.myCustomPrev} className="prev">
               <img src={arrowLeft} />

@@ -202,8 +202,6 @@ body {
             }
         }
 
-        
-
         .post__image {
             height: 403px;
             @include full-bg;
@@ -385,6 +383,12 @@ body {
     #libraryTwoPost {
         padding: 0;
         margin: 0;
+    }
+
+    .faqIndex .carousel__controls {
+        @media (min-width: map-get($grid-breakpoints,md)) {
+            display: none;
+        }
     }
 
     &.is-blue {

@@ -9,7 +9,7 @@ import Flickity from "react-flickity-component"
 import { connect } from "react-redux"
 
 import SEO from "../components/global/seo"
-import Layout from "../components/global/layoutBlog"
+import Layout from "../components/global/layout"
 
 import { setMenu } from "../state/global"
 

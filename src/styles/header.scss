@@ -163,11 +163,11 @@
   }
 
   @media (max-width: map-get($grid-breakpoints,md)) {
-    #search, .back {
+    #search, .back, #search-toggle {
       top: 25px;
     }
 
-    #search-icon, #back-icon {
+    #search-icon, #back-icon, #search-toggle img {
       width: 40px;
     }
   }

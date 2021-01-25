@@ -33,14 +33,14 @@
     figure.image {
       cursor: pointer;
       position: relative;
+      background: $black;
 
       &:hover figcaption, &:focus figcaption {
         display: block;
       }
 
-      &:hover img, &:focus img {
-        filter: brightness(0.2);
-        transition: 0.25s;
+      &:hover .gatsby-image-wrapper, &:focus .gatsby-image-wrapper {
+        opacity: 0.2;
       }
 
       figcaption {

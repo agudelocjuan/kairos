@@ -589,7 +589,10 @@ const AboutUs = ({ mobile }) => {
             .map((i, idx) => {
               return (
                 <Col key={idx} md="4" onClick={() => setModal(i.img)}>
-                  <Img fluid={data[i.img].childImageSharp.fluid} />
+                  <figure className="image">
+                    <Img fluid={data[i.img].childImageSharp.fluid} />
+                    <figcaption>learn more</figcaption>
+                  </figure>
                   <p className="mt-2 mb-1">{i.name}</p>
                   <p className="text-light-black">{i.title}</p>
 
@@ -669,7 +672,11 @@ const AboutUs = ({ mobile }) => {
                         </div>
                       </header>
                       <main>
-                        <Img fluid={data[i.img].childImageSharp.fluid} />
+                        <figure className="image">
+                          <Img fluid={data[i.img].childImageSharp.fluid} />
+                          <figcaption>learn more</figcaption>
+                        </figure>
+                        {/* <Img fluid={data[i.img].childImageSharp.fluid} /> */}
                         <article>
                           <p className="name faq-header">{i.name}</p>
                           <p className="title">{i.title}</p>
@@ -701,7 +708,10 @@ const AboutUs = ({ mobile }) => {
             .map((i, idx) => {
               return (
                 <Col key={idx} md="4" onClick={() => setModal(i.img)}>
-                  <Img fluid={data[i.img].childImageSharp.fluid} />
+                  <figure className="image">
+                    <Img fluid={data[i.img].childImageSharp.fluid} />
+                    <figcaption>learn more</figcaption>
+                  </figure>
                   <p className="mt-2 mb-1">{i.name}</p>
                   <p className="text-light-black">{i.title}</p>
 

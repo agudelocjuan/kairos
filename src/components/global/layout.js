@@ -116,35 +116,34 @@ const Layout = ({
       >
         <main className={pageColor}>
           {children}
-          
-          <div id="email-popup" className={isEmailActive ? "active" : null}>
-            <img className="email-toggle" src={crossWhite} onClick={handleEmailToggle} />
-            {subscribed ? (
-              <div>Thank you for signing up! Check your inbox for updates.</div>
-            ) : (
-              <div id="email-signup-container">
-                <div id="email-cta">
-                  Help Us Help You
-                </div>
-                <div id="email-subtitle">
-                  Let’s navigate these tough times together. Always helpful, never harmful.
-                </div>
-                <form action="" onSubmit={e => _submit(e)}>
-                  <input
-                    id="email-input"
-                    type="text"
-                    htmlFor="email"
-                    name="email"
-                    placeholder="ENTER YOUR EMAIL"
-                  />
-                  <input id="submit-button" type="submit" value="GO" />
-                </form>
-              </div>
-            )}
-          </div>
-          
         </main>
         <Footer jobs={jobs} color={footerColor} borderColor={borderColor} />
+      </div>
+
+      <div id="email-popup" className={isEmailActive ? "active" : null}>
+        <img className="email-toggle" src={crossWhite} onClick={handleEmailToggle} />
+        {subscribed ? (
+          <div>Thank you for signing up! Check your inbox for updates.</div>
+        ) : (
+          <div id="email-signup-container">
+            <div id="email-cta">
+              Help Us Help You
+            </div>
+            <div id="email-subtitle">
+              Let’s navigate these tough times together. Always helpful, never harmful.
+            </div>
+            <form action="" onSubmit={e => _submit(e)}>
+              <input
+                id="email-input"
+                type="text"
+                htmlFor="email"
+                name="email"
+                placeholder="ENTER YOUR EMAIL"
+              />
+              <input id="submit-button" type="submit" value="GO" />
+            </form>
+          </div>
+        )}
       </div>
     </div>
   )

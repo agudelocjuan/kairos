@@ -301,6 +301,7 @@ const AboutUs = ({ mobile }) => {
       title: "Partner",
       team: "operating",
       img: "ryan_bloomer",
+      bio: "Ryan Bloomer is a partner at Kairos where he supports and invests in talented founders from around the world that are rethinking traditional industries. Ryan started investing in early stage companies at Blumberg Capital in San Francisco before raising his own fund, Momentum Venture Partners, at the age of 28. Over his career, he has invested in over 20 companies and worked with hundreds of entrepreneurs across the globe as a mentor and advisor. While in college, Ryan founded his own real estate company and was an operator at Garment Valetand 1-Page (which IPO’d as 1PG) where he was responsible for early growth, product operations, and hiring. Ryan splits his life between New York and the West Coast and graduated from Questrom School of Management at Boston University in 2007.",
     },
     {
       name: "Ciara O'Sullivan",

@@ -218,6 +218,10 @@
     padding: 42px 32px 32px 32px;  
     width: 95%;
   }
+  
+  @media (min-width: map-get($grid-breakpoints,md)) {
+    max-width: 600px;
+  }
 
   &.active {
     display: inline-block;

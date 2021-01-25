@@ -128,7 +128,7 @@ const Layout = ({
         ) : (
           <div id="email-signup-container">
             <div id="email-cta">
-              Help Us Help You
+              help us help you.
             </div>
             <div id="email-subtitle">
               Let’s navigate these tough times together. Always helpful, never harmful.

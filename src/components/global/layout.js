@@ -113,6 +113,7 @@ const Layout = ({
         id="site-container"
         data-hightlight={colorIndex}
         onMouseDown={_onSelect.bind(this)}
+        className={isEmailActive ? "email-active" : null}
       >
         <main className={pageColor}>
           {children}

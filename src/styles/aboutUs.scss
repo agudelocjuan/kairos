@@ -151,9 +151,11 @@
         margin-bottom: 20px;
 
         @media (max-width: map-get($grid-breakpoints,lg)) {
-          
-
         }
+      }
+
+      .bio {
+        margin-bottom: 16px;
       }
     }
   }

@@ -280,14 +280,16 @@ const AboutUs = ({ mobile }) => {
       title: "Co-Founder & Co-CEO",
       team: "operating",
       img: "ankur_jain",
-      bio: "Ankur is the Co-Founder & Co-CEO of Kairos, which he launched in 2008 as a talent incubator. Before rejoining Kairos in May 2017, Jain was the VP of Product at Tinder, the world’s largest social network for meeting people. He joined Tinder after it acquired his previous company, Humin, where he served as Founder & CEO. Over the years, Jain has been recognized for a variety of achievements including the Young Global Leader by the World Economic Forum (2017). Previously, he was named a Leader del Futuro by the Ambrosetti Forum and as a Young Leader by both the World Foresight Forum and the St. Petersburg International Economic Forum. In 2011, Inc. magazine named Ankur Jain the “Best Connected 21-Year-Old in the World” and awarded Jain “30 Under 30.” In 2012, Jain was named “30 under 30: Solution Broker” by the Christian Science Monitor. In 2013, Jain was elected to the Innovation Board for the X-Prize Foundation and in 2015, Forbes named Jain to their “30 under 30” list. Ankur graduated from the Wharton School of Business at the University of Pennsylvania in 2011 and grew up in Seattle.",
+      bio: "Ankur is the Co-Founder & Co-CEO of Kairos, <br /> <br /> which he launched in 2008 as a talent incubator. Before rejoining Kairos in May 2017, Jain was the VP of Product at Tinder, the world’s largest social network for meeting people. He joined Tinder after it acquired his previous company, Humin, where he served as Founder & CEO. Over the years, Jain has been recognized for a variety of achievements including the Young Global Leader by the World Economic Forum (2017). Previously, he was named a Leader del Futuro by the Ambrosetti Forum and as a Young Leader by both the World Foresight Forum and the St. Petersburg International Economic Forum. In 2011, Inc. magazine named Ankur Jain the “Best Connected 21-Year-Old in the World” and awarded Jain “30 Under 30.” In 2012, Jain was named “30 under 30: Solution Broker” by the Christian Science Monitor. In 2013, Jain was elected to the Innovation Board for the X-Prize Foundation and in 2015, Forbes named Jain to their “30 under 30” list. Ankur graduated from the Wharton School of Business at the University of Pennsylvania in 2011 and grew up in Seattle.",
     },
     {
       name: "Alex Fiance",
       title: "Co-Founder & Co-CEO",
       team: "operating",
       img: "alex_fiance",
-      bio: "Alex is the Co-Founder & Co-CEO of Kairos. He has been leading Kairos since 2013, building out the K50 program and leading the company from its roots as a student-run organization into its current focus on building a family of brands designed to make life more affordable. Prior to Kairos Alex worked at Activision helping launch record-breaking IP including Call of Duty and Skylanders. Alex graduated from University of Southern California in 2010 and grew up in Los Angeles.",
+      bio: "Alex is the Co-Founder & Co-CEO of Kairos. He has been leading Kairos since 2013, building out the K50 program and leading the company from its roots as a student-run organization into its current focus on building a family of brands designed to make life more affordable.",
+      bio2: "Prior to Kairos Alex worked at Activision helping launch record-breaking IP including Call of Duty and Skylanders.",
+      bio3: "Alex graduated from University of Southern California in 2010 and grew up in Los Angeles.",
     },
     {
       name: "Zoe Oz",
@@ -541,7 +543,9 @@ const AboutUs = ({ mobile }) => {
                         <article>
                           <p className="name faq-header">{i.name}</p>
                           <p className="title">{i.title}</p>
-                          <p className="bio">{i.bio}</p>
+                          <p className="bio">
+                            {i.bio}
+                          </p>
                         </article>
                       </main>
                     </div>
@@ -580,6 +584,12 @@ const AboutUs = ({ mobile }) => {
                           <p className="name faq-header">{i.name}</p>
                           <p className="title">{i.title}</p>
                           <p className="bio">{i.bio}</p>
+                          { i.bio2 && (
+                            <p className="bio">{i.bio2}</p>
+                          )}
+                          { i.bio3 && (
+                            <p className="bio">{i.bio3}</p>
+                          )}
                         </article>
                       </main>
                     </div>

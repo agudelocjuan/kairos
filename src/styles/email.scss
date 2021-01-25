@@ -216,6 +216,7 @@
 
   @media (max-width: map-get($grid-breakpoints,md)) {
     padding: 42px 32px 32px 32px;  
+    width: 95%;
   }
 
   &.active {
@@ -320,7 +321,10 @@
     }
   }
 
+}
 
-
-
+#site-container {
+  &.email-active {
+    filter: contrast(0.5);
+  }
 }

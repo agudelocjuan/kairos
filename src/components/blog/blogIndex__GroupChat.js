@@ -31,6 +31,25 @@ class blogIndex__GroupChat extends React.Component {
     })
   }
 
+  _onTouchMobile() {
+    this.flkty.on("settle", () => {
+      // this.props.dispatch(setShowInfoPopup(false))
+      this.setState({
+        // carouselIndex: this.flkty.selectedIndex + 1,
+        carouselIndex: this.flkty.selectedIndex,
+      })
+      if (this.flkty.selectedIndex === 0) {
+        this.setState({ initialInformation: true })
+      } else {
+        this.setState({
+          // carouselIndex: this.flkty.selectedIndex - 1,
+          carouselIndex: this.flkty.selectedIndex,
+          // initialInformation: false,
+        })
+      }
+    })
+  }
+
   myCustomNext = () => {
     // You can use Flickity API
     this.flkty.next()
@@ -140,17 +159,12 @@ render() {
   });
 
   let interviewListArray = interviewChunk.map((interview, index) => {
-    // const {body, title, slug} = interview[0].node
-    console.log(interview[0])
-    console.log(interview[1])
-    console.log(interview[2])
-
     const interviewOne = interview[0]
 
     return (<div className="group">
       {interview.map((article, index) => (
       // {interview[0].map((interview, index) => (
-          <article key={index} className="post">
+          <article key={index} className="post" onTouchStart={() => this._onTouchMobile()}>
             <Link to={`/blog/${article.node.slug}`} className="">
               <figure className="post__image"
                 style={{backgroundImage: `url(${article.node.heroImage.fluid.src})`}}

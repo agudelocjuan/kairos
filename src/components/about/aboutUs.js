@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
-import { Container, Row, Col, Modal } from "reactstrap"
+import { Container, Row, Col, Modal, Fade } from "reactstrap"
 import Flickity from "react-flickity-component"
 import Img from "gatsby-image"
 
@@ -10,6 +10,10 @@ import crossSmall from "../../images/icons/cross-small.svg"
 const AboutUs = ({ mobile }) => {
 
   let [modal, setModal] = useState(null)
+
+  const [fadeIn, setFadeIn] = useState(true);
+
+  const toggleFade = () => setFadeIn(!fadeIn);
 
   let options = {
     draggable: true,
@@ -595,13 +599,13 @@ const AboutUs = ({ mobile }) => {
                   </figure>
                   <p className="mt-2 mb-1">{i.name}</p>
                   <p className="text-light-black">{i.title}</p>
-
                   <Modal
                     toggle={() => setModal(null)}
                     isOpen={modal === i.img}
                     className="team-member-modal"
                     style={{zIndex: "99999999999999999999999"}}
-                    data-backdrop="false"
+                    // data-backdrop="false"
+                    fade={true}
                   >
                     <div className="bio-box">
                       <header>

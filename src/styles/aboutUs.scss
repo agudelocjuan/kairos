@@ -118,6 +118,34 @@
   }
 }
 
+.modal.fade .modal-dialog {
+  // transition: all .3s ease-out;
+  // transform: translateY(-50px);
+}
+
+.team-member-modal {
+  // border: 20px solid red;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+body.modal-open .team-member-modal {
+  opacity: 1;
+}
+
+// .modal.fade {
+//   .bio-box {
+//     opacity: 0;
+//     transition: 0.25s;
+//   }
+
+//   &.show {
+//     .bio-box {
+//       opacity: 1;
+//     }
+//   }
+// }
+
 .bio-box {
   max-height: 100vh;
   min-height: 100vh;
@@ -125,6 +153,9 @@
   background: $white;
   overflow-y:scroll;
   // position: sticky;
+
+  // transition: opacity 500ms cubic-bezier(0.33, 1, 0.33, 1);
+  transition: all 500ms cubic-bezier(0.33, 1, 0.33, 1);
 
   @media (max-width: map-get($grid-breakpoints,lg)) {
     padding: 33px;

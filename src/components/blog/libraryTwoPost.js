@@ -30,6 +30,25 @@ class LibraryTwoPost extends React.Component {
       })
   }
 
+  _onTouchMobile() {
+    this.flkty.on("settle", () => {
+      // this.props.dispatch(setShowInfoPopup(false))
+      this.setState({
+        // carouselIndex: this.flkty.selectedIndex + 1,
+        carouselIndex: this.flkty.selectedIndex,
+      })
+      if (this.flkty.selectedIndex === 0) {
+        this.setState({ initialInformation: true })
+      } else {
+        this.setState({
+          // carouselIndex: this.flkty.selectedIndex - 1,
+          carouselIndex: this.flkty.selectedIndex,
+          // initialInformation: false,
+        })
+      }
+    })
+  }
+
   
 
   myCustomNext = () => {
@@ -165,7 +184,7 @@ render() {
 
     return (<div className="group">
       {blog.map((article, index) => (
-          <article key={index} className="post">
+          <article key={index} className="post" onTouchStart={() => this._onTouchMobile()}>
             <Link to={`/blog/${article.node.slug}`} className="">
               <div className="post__meta">
                 <h3 className="post__title">{article.node.title}</h3>

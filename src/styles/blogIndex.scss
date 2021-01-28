@@ -138,7 +138,8 @@ body {
         @media (min-width: map-get($grid-breakpoints,lg)) {
             overflow-y: hidden;
             // max-height: calc(100vw + 200px);
-            height: 930px !important;
+            // height: 930px !important;
+            height: 850px !important;
             // min-height: 900px;
 
             &:after {

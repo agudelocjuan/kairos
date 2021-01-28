@@ -84,25 +84,34 @@ const Layout = ({
     return false
   }
 
-  const [isEmailActive, setEmailActive] = useState(null);
-  let firstEmail = false
+  const [isEmailActive, setEmailActive] = useState(false);
+  const [isEmailShown, setEmailShown] = useState(false);
+
+  // let firstEmail = false
 
   const handleEmailToggle = () => {
     setEmailActive(!isEmailActive);
   };
+  
+  const handleEmailShown = () => {
+    setEmailShown(!isEmailShown);
+  };
+
+  console.log(isEmailShown)
+
 
   useEffect(
     () => {
-      setTimeout(()=> handleEmailToggle(),5000)
-
-
-      // this will clear Timeout when component unmount like in willComponentUnmount
+      if ( isEmailShown === false ) {
+        setTimeout(()=> handleEmailToggle(),5000)
+        handleEmailShown()
+        // console.log(isEmailActive)
+      }
       return () => {
-        // clearTimeout(timer1)
+
       }
     },
     [] //useEffect will run only one time
-       //if you pass a value to array, like this [data] than clearTimeout will run every time this value changes (useEffect re-run)
   )
 
   // if ( firstEmail === false ) {

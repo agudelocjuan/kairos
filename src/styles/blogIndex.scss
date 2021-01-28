@@ -54,18 +54,25 @@ body {
 
 
     .logo {
-        
-        
         background: $white;
         // border-right: 1px solid $black;
         border-bottom: 2px solid $black;
-
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 32px 0;
-
         position: relative;
+
+        @media (min-width: map-get($grid-breakpoints,lg)) {
+            position: absolute;
+            top: 0;
+            left: 0;    
+            // height: 403px;
+            height: 22vw;
+            padding-left: 10px;
+            z-index: 2;
+            padding: 40px;
+        }
 
         &:after {
             @media (min-width: map-get($grid-breakpoints,lg)) {
@@ -81,16 +88,6 @@ body {
 
         #brokeNote__logo {
             padding: 102px 0 48px;
-        }
-
-        @media (min-width: map-get($grid-breakpoints,lg)) {
-            position: absolute;
-            top: 0;
-            left: 0;    
-            height: 403px;
-            padding-left: 10px;
-            z-index: 2;
-            padding: 40px;
         }
 
         .logo--mobile {
@@ -137,10 +134,9 @@ body {
 
         @media (min-width: map-get($grid-breakpoints,lg)) {
             overflow-y: hidden;
-            // max-height: calc(100vw + 200px);
-            // height: 930px !important;
-            height: 850px !important;
-            // min-height: 900px;
+            
+            // height: 850px !important;
+            height: 780px !important;
 
             &:after {
                 content: '';
@@ -206,7 +202,8 @@ body {
         }
 
         .post__image {
-            height: 403px;
+            // height: 403px;
+            height: 22vw;
             @include full-bg;
             margin: 0;
             border-bottom: 2px solid $black;
@@ -298,6 +295,10 @@ body {
     // specific grid styles 
 
     &#blogIndex__BrokeNote {
+        .logo .logo--desktop {
+            width: 80%;
+        }
+
         @media (max-width: map-get($grid-breakpoints,lg)) {
             .logo {
                 padding: 0;

@@ -597,6 +597,11 @@
                 width: 100%;
                 text-align: center;
             }
+
+            &:hover, &:focus {
+                opacity: 0.65;
+                transform: translateY(-3px);
+            }
         }
 
         &.display-desktop {

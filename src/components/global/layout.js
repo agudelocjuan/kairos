@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import { motion, AnimatePresence } from "framer-motion"
-import { setMobile } from "../../state/global"
+import { setMobile, setLoaded } from "../../state/global"
 
 import EmailPopup from "./email--popup"
 
@@ -16,6 +16,7 @@ import "../../styles/index.scss"
 
 const Layout = ({
   children,
+  loaded,
   dispatch,
   footerColor,
   menu,
@@ -102,13 +103,11 @@ const Layout = ({
 
   useEffect(
     () => {
-      if ( isEmailShown === false ) {
+      if (!loaded) {
         setTimeout(()=> handleEmailToggle(),5000)
-        handleEmailShown()
-        // console.log(isEmailActive)
+        dispatch(setLoaded(true))
       }
       return () => {
-
       }
     },
     [] //useEffect will run only one time
@@ -178,6 +177,6 @@ const Layout = ({
 }
 
 export default connect(
-  state => ({ mobile: state.global.mobile, menu: state.global.menu }),
+  state => ({ mobile: state.global.mobile, menu: state.global.menu, loaded: state.global.loaded }),
   null
 )(Layout)

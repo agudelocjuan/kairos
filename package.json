@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.4.2",
     "bootstrap": "^4.5.0",
     "embla-carousel-react": "^2.0.3",
     "flickity": "^2.2.1",

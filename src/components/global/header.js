@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import { Index } from "elasticlunr"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 
@@ -16,6 +17,11 @@ import arrow from "../../images/icons/arrow-diag-red.svg"
 const Header = ({ mobile, menu, dispatch }) => {
   const [isActive, setActive] = useState(false);
   const [isSearchActive, setSearchActive] = useState(false);
+
+  // search states
+
+  const [query] = useState(``);
+  const [results] = useState([]);
 
   const data = useStaticQuery(graphql`
     query {
@@ -95,10 +101,9 @@ return (
       <img onClick={() => dispatch(setMenu(!menu))} id="menu-button" src={menu ? menu_close : menu_open} alt="" />
     </div>
 
-    <div id="search" className={isSearchActive ? "active" : null} onClick={handleSearchToggle}>
-      {/* <img id="search-icon" src={searchIcon} alt="search icon" /> */}
+    {/* <div id="search" className={isSearchActive ? "active" : null} onClick={handleSearchToggle}>
       <img id="search-icon" src={searchIcon} alt="search icon" />
-    </div>
+    </div> */}
 
     <div id="notifications" className={isActive ? "active" : null}>
 
@@ -132,9 +137,19 @@ return (
           <Col md="10" id="main">
 
             <form>
+              {/* <input value={query} onChange={search} type="text" placeholder="Search anything..." /> */}
               <input type="text" placeholder="Search anything..." />
               <button>SEARCH</button>
             </form>
+
+            {/* <ul className="search__results">
+              {state.results.map(page => (
+                <li key={page.id}>
+                  <Link to={"/" + page.path}>{page.title}</Link>
+                  {": " + page.tags.join(`,`)}
+                </li>
+              ))}
+            </ul> */}
           </Col>
         </Row>
       </Container>

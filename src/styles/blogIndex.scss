@@ -341,15 +341,11 @@ body {
             width: 24px;
         }
 
-    } 
-      
-    .prev {
-        
-    }
+        &:hover, &:focus {
+            opacity: 0.65;
+        }
 
-    .next {
-        
-    }
+    } 
 
     .carousel-status {
         display: flex;

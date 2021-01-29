@@ -342,3 +342,14 @@
     
   }
 }
+
+.search:hover, .search:focus, .back:hover, .back:focus, #bell:hover, #bell:focus, #menu-button:hover, #menu-button:focus,
+#header-logo:hover, #header-logo:focus,
+#search-icon:hover, #search-icon:focus {
+  opacity: 0.65;
+  transition: 0.25s;
+}
+
+* {
+  transition: 0.25s;
+}

@@ -20,8 +20,8 @@ const Header = ({ mobile, menu, dispatch }) => {
 
   // search states
 
-  const [query] = useState(``);
-  const [results] = useState([]);
+  // const [query] = useState(``);
+  // const [results] = useState([]);
 
   const data = useStaticQuery(graphql`
     query {

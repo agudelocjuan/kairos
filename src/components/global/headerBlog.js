@@ -6,6 +6,8 @@ import { Container, Row, Col } from "reactstrap"
 
 import { setMenu } from "../../state/global"
 
+import Search from "./search.js"
+
 import logo from "../../images/logos/kairos-logo.svg"
 import cross from "../../images/icons/cross.svg"
 import backIcon from "../../images/icons/back.svg"
@@ -48,6 +50,9 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
               }
             }
         }
+        siteSearchIndex {
+          index
+        }
     }
   `)
   
@@ -77,8 +82,6 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
   const handleSearchToggle = () => {
     setSearchActive(!isSearchActive);
   };
-
-
 
   return (
 
@@ -119,6 +122,9 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
                 <input type="text" placeholder="Search anything..." />
                 <button>SEARCH</button>
               </form>
+
+              <Search searchIndex={data.siteSearchIndex.index} />
+
             </Col>
           </Row>
         </Container>

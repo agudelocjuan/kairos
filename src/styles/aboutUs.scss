@@ -36,7 +36,8 @@
       background: $black;
 
       &:hover figcaption, &:focus figcaption {
-        display: block;
+        // display: block;
+        opacity: 1;
       }
 
       &:hover .gatsby-image-wrapper, &:focus .gatsby-image-wrapper {
@@ -44,7 +45,7 @@
       }
 
       figcaption {
-        display: none;
+        // display: none;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -57,6 +58,7 @@
         text-align: center;
         width: 100%;
         transition: 0.25s;
+        opacity: 0;
       }
     }
 
@@ -119,18 +121,27 @@
 }
 
 .modal.fade .modal-dialog {
-  // transition: all .3s ease-out;
-  // transform: translateY(-50px);
+  max-width: none;
+  margin: 0;
 }
 
 .team-member-modal {
   // border: 20px solid red;
-  opacity: 0;
-  transition: 0.25s;
+  // opacity: 0;
+  // transition: 0.25s;
 }
 
 body.modal-open .team-member-modal {
-  opacity: 1;
+  // opacity: 1;
+}
+
+.fade {
+  transition: opacity .15s linear;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+  }
 }
 
 // .modal.fade {
@@ -151,6 +162,7 @@ body.modal-open .team-member-modal {
   min-height: 100vh;
   padding: 40px;
   background: $white;
+  opacity: 0;
   overflow-y:scroll;
   // position: sticky;
 
@@ -236,4 +248,9 @@ body.modal-open {
         outline: none
       }
     }
+
+    .bio-box {
+      opacity: 1;
+    }
 }
+

@@ -218,6 +218,10 @@
         padding: 20px 0;
       }
 
+      &:hover, &:focus {
+        opacity: 0.65;
+      }
+
       &:not(:last-child) {
         border-bottom: 1px solid $black;
       }

@@ -9,7 +9,8 @@ import Flickity from "react-flickity-component"
 import { connect } from "react-redux"
 
 import SEO from "../components/global/seo"
-import Layout from "../components/global/layoutBlog"
+// import Layout from "../components/global/layoutBlog"
+import Layout from "../components/global/layout"
 
 import { setMenu } from "../state/global"
 
@@ -146,9 +147,10 @@ class BlogIndex extends React.Component {
 
 
   render() {
-    console.log(this.state.tag)
+    // const pageType = "blog"
+    // const { pageType = "blog" } = this.props
     const pageColor = "yellow"
-    const borderColor = "site-border-yellow"
+    const borderColor = "site-border-yellow" 
     //// Import state
     const { filterTags, showFilterTags } = this.state
     const { pageContext, location } = this.props
@@ -452,11 +454,8 @@ class BlogIndex extends React.Component {
         path={location.pathname}
         borderColor={borderColor}
         footerColor={pageColor}
+        pageType="blog"
       >
-
-      
-
-
 
         <SEO title="Blog" />
         {/* <div id="libraryPage">{pageRender}</div> */}

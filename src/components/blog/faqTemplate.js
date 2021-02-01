@@ -21,7 +21,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
 import SEO from "../global/seo"
-import Layout from "../global/layoutArticle"
+import Layout from "../global/layout"
 
 class FaqTemplate extends React.Component {
   constructor(props) {
@@ -107,6 +107,7 @@ class FaqTemplate extends React.Component {
         borderColor={borderColor}
         footerColor={footerColor}
         pageColor={pageColor}
+        pageType="article"
       >
         <SEO title={post?.title} />
         <section id="blogTemplate" className="faqTemplate">

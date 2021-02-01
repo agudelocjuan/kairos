@@ -19,7 +19,7 @@ import BlogIndex__Email from "./blogIndex__Email"
 import LibraryThumbnails from "./libraryThumbnails"
 
 import SEO from "../global/seo"
-import Layout from "../global/layoutArticle"
+import Layout from "../global/layout"
 import { graphql, Link, useStaticQuery } from "gatsby"
 
 import arrow from "../../images/icons/arrow-diag-red.svg"
@@ -147,6 +147,7 @@ class BlogTemplate extends React.Component {
         borderColor={borderColor}
         footerColor={footerColor}
         pageColor={pageColor}
+        pageType="article"
       >
         <SEO title={post?.title} />
         <section id="blogTemplate">

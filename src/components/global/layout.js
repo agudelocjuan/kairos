@@ -7,6 +7,8 @@ import { setMobile, setLoaded } from "../../state/global"
 import EmailPopup from "./email--popup"
 
 import Header from "./header"
+import HeaderBlog from "./headerBlog"
+import HeaderArticle from "./headerArticle"
 import Footer from "./footer"
 import Menu from "./menu"
 
@@ -26,6 +28,7 @@ const Layout = ({
   pageColor,
   applicationPage = false,
   jobs = false,
+  pageType,
 }) => {
   let [colorIndex, setColorIndex] = useState(0)
   let colorCount = 3
@@ -131,9 +134,17 @@ const Layout = ({
     }, 100)
   }
 
+  console.log(pageType)
+
   return (
     <div id="site-background" className={`${menu && "stop-scroll"}`}>
-      {!applicationPage && <Header />}
+      {/* {!applicationPage && <Header />} */}
+
+
+      { pageType === "blog" ? <HeaderBlog /> : "" }
+      { pageType === "article" ? <HeaderArticle /> : "" }
+      { pageType !== "article" && pageType !== "blog" ? <Header /> : "" }
+
       <Menu />
       <div
         id="site-container"

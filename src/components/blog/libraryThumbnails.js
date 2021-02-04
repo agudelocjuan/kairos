@@ -7,16 +7,6 @@ import { Container, Row, Col } from "reactstrap"
 
 import arrow from "../../images/icons/arrow-diag-black.svg"
 
-// const useRefState = initialValue => {
-//   const [state, setState] = useState(initialValue)
-//   const stateRef = useRef(state)
-//   useEffect(
-//     () => { stateRef.current = state },
-//     [state]
-//   )
-//   return [state, stateRef, setState]
-// }
-
 const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) => {
   console.log(type)
   let data = useStaticQuery(graphql`
@@ -127,7 +117,6 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) =>
   let blogListInterview = data.allContentfulInterview.edges.map((blog, index) => {
     const {body, title, slug} = blog.node
     if ( blog.node.tags[0] === related.tags[0] && blog.node.title !== related.title ) {
-      console.log("match")
 
       return (
         <article key={index} className="post">
@@ -151,7 +140,6 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) =>
   let blogListFaq = data.allContentfulFaq.edges.map((blog, index) => {
     const {body, title, slug} = blog.node
     if ( blog.node.tags[0] === related.tags[0] && blog.node.title !== related.title ) {
-      console.log("match")
 
       return (
         <article key={index} className="post">
@@ -159,9 +147,6 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) =>
               <div className="post__meta">
                 <span className="tag cta">{blog.node.tags[0]}</span>
                 <h3 className="post__title">{blog.node.title}</h3>
-                {/* <p className="post__description">
-                  {blog.node.description.description}
-                </p> */}
                 <p className="post__description" dangerouslySetInnerHTML={{
                 __html: blog.node.body.childMarkdownRemark.excerpt,
                 }}>
@@ -177,12 +162,10 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) =>
     }
   })
 
-  console.log(blogListInterview)
 
   let blogList = edges.map((blog, index) => {
     const {body, title, slug} = blog.node
     if ( blog.node.tags[0] === related.tags[0] && blog.node.title !== related.title ) {
-      console.log("match")
 
       return (
         <article key={index} className="post">
@@ -204,10 +187,7 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) =>
     }
   })
 
-  // var filtered = blogList.filter(function (el) {
-  //   return el != null;
-  // });
-
+  // determining article type to render correct related articles
   if ( type === "blog" ) {
     var filtered = blogList.filter(function (el) {
       return el != null;
@@ -228,36 +208,6 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) =>
     isRelatedEmpty = true
   } else {
     isRelatedEmpty = false
-  }
-  
-  // blogList = blogList.slice(0,2);
-
-  // let display = edges.slice(0, 6).map((i, idx) => {
-  //   let border_bottom = idx < 3 ? true : false
-  //   let border_right = true
-  //   if (idx === 5 || idx === 2) {
-  //     border_right = false
-  //   }
-
-  //   // mobile ? (border_right = false) : (border_right = border_right)
-  //   // mobile ? (border_bottom = true) : (border_right = border_right)
-
-  //   console.log(i)
-
-  //   return (
-  //     <div>
-  //       {/* {blogList} */}
-  //       a
-  //     </div>
-  //   )
-  // })
-
-  console.log(blogList)
-
-  if ( filtered.length === 0 ) {
-      console.log("filred is 0")
-  } else {
-    console.log("filred is FULL")
   }
 
   return (
@@ -290,8 +240,6 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) =>
           ""
         )}
 
-
-        {/* <Row>{blogList}</Row> */}
       </Container>
     )}
 

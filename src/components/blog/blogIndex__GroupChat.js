@@ -17,46 +17,39 @@ class blogIndex__GroupChat extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      carouselIndex: 0
+      carouselIndex: 0 // carousel counters
     }
-    // generic thing to with every function in a class component
     this.myCustomNext = this.myCustomNext.bind(this)
     this.myCustomPrev = this.myCustomPrev.bind(this)
   }
   componentDidMount = () => {
-    // You can register events in componentDidMount hook
     this.flkty.on('settle', () => {
-      console.log(`current index is ${this.flkty.selectedIndex}`)
       this.setState({carouselIndex: this.flkty.selectedIndex})
     })
   }
 
+  // flickity - change carousel counter of drag (for mobile)
   _onTouchMobile() {
     this.flkty.on("settle", () => {
-      // this.props.dispatch(setShowInfoPopup(false))
       this.setState({
-        // carouselIndex: this.flkty.selectedIndex + 1,
         carouselIndex: this.flkty.selectedIndex,
       })
       if (this.flkty.selectedIndex === 0) {
         this.setState({ initialInformation: true })
       } else {
         this.setState({
-          // carouselIndex: this.flkty.selectedIndex - 1,
           carouselIndex: this.flkty.selectedIndex,
-          // initialInformation: false,
         })
       }
     })
   }
 
+  // flickity - next/prev functions
   myCustomNext = () => {
-    // You can use Flickity API
     this.flkty.next()
     this.flktyMobile.next()
   }
   myCustomPrev = () => {
-    // You can use Flickity API
     this.flkty.previous()
     this.flktyMobile.previous()
   }
@@ -64,6 +57,7 @@ class blogIndex__GroupChat extends React.Component {
 render() {
   let {mobile, data, count} = this.props
 
+  // flickity - desktop options
   let options = {
     contain: true,
     draggable: false,
@@ -71,15 +65,13 @@ render() {
     cellAlign: 'left',
     wrapAround: false,
     pageDots: false,
-    // freeScroll: false,
     adaptiveHeight: true,
-    // selectedAttraction: 0.2,
-    // friction: 0.8,
     fade: true,
     groupCells: true,
     prevNextButtons: false,
   }
   
+  // flickity - mobile options
   let optionsMobile = {
     contain: true,
     draggable: true,
@@ -87,43 +79,21 @@ render() {
     cellAlign: 'left',
     wrapAround: false,
     pageDots: false,
-    // freeScroll: false,
     adaptiveHeight: true,
-    // selectedAttraction: 0.2,
-    // friction: 0.8,
     fade: true,
     groupCells: true,
     prevNextButtons: false,
   }
 
 	let interviewList = data.map((interview, index) => {
-    // console.log(interview.node)
     const {body, title, slug} = interview.node
     return (
-      // <Col key={index} md="4" className="post">
-      //   <figure className="post__image">
-      //     <Img fluid={interview.node.heroImage.fluid} />
-      //   </figure>
-
-      //   <div className="post__meta">
-      //     <h3>{title}</h3>
-      //     <p>
-      //       {interview.node.description.description}
-      //     </p>
-
-      //     <Link to={`/blog/${slug}`} className="cta inline-text-link">
-      //       Read More <img src={arrow} alt="" />
-      //     </Link>
-      //   </div>
-      // </Col> 
-
       <article key={index} className="post">
         <Link to={`/blog/${slug}`} className="">
 
         <figure className="post__image"
           style={{backgroundImage: `url(${interview.node.heroImage.fluid.src})`}}
           >
-          {/* <Img fluid={interview.node.heroImage.fluid} /> */}
         </figure>
 
         <div className="post__meta">
@@ -142,16 +112,16 @@ render() {
     ) 
   })
 
+  // chunking posts in groups of 3 for mobile carousel
+
   let i
   let interviewChunk = []
 
   for (i = 0; i < data.length; i += 3) {
     interviewChunk.push(data.slice(i, i + 3));
   } 
-  console.log(interviewChunk)
 
   let interviewListMobile = data.map((interviewList) => {
-    // let result;
     let result = interviewList;
     let i;
     for (i = 0; i < interviewList.length; i += 3) result.push(interviewList.slice(i, i + 3));
@@ -163,7 +133,6 @@ render() {
 
     return (<div className="group">
       {interview.map((article, index) => (
-      // {interview[0].map((interview, index) => (
           <article key={index} className="post" onTouchStart={() => this._onTouchMobile()}>
             <Link to={`/blog/${article.node.slug}`} className="">
               <figure className="post__image"
@@ -187,11 +156,9 @@ render() {
       </div>);
   });
 
+  // calculating counter data
   let countMobile = count/3 + 1
   let countMobileWhole = Math.floor(countMobile)
-
-  console.log(countMobileWhole)
-
 
 	return (
     <Container fluid id="blogIndex__GroupChat" className="blog-grid">
@@ -230,64 +197,7 @@ render() {
               <img src={arrowRight} />
             </div>
         </div>
-
-        {/* <div className="carousel__controls">
-          <p class="carousel-status">{count}</p>
-        </div> */}
-
 			</Row>
-
-      {/* <Row className="image-row">
-        <Col md="4" className="logo">
-            <img src={groupChatLogo} alt="" />
-        </Col>
-        <Col md="4" className="">
-            <img src={groupChat1} alt="" />
-        </Col>
-        <Col md="4" className="">
-            <img src={groupChat2} alt="" />
-        </Col>
-      </Row>
-      
-      <Row className="text-row">
-        <Col md="4" className="">
-            <h3>
-                Your Credit Limit Could Have Just Dropped Without You Knowing…
-            </h3>
-
-            <Link to="#" className="cta inline-text-link">
-                Watch <img src={arrow} alt="" />
-            </Link>
-        </Col>
-        <Col md="4" className="">
-            <h3>
-                The bitter way to better finances.
-            </h3>
-
-            <p>
-                Urna id volutpat libero viverra elementum. Nec nam cursus phasellus quam. Elit scelerisque egestas dignissim porta mauris nulla pharetra commodo. 
-            </p>   
-
-
-            <Link to="#" className="cta inline-text-link">
-                Watch <img src={arrow} alt="" />
-            </Link>
-        </Col>
-        <Col md="4" className="">
-            <h3>
-                The bitter way to better finances.
-            </h3> 
-
-            <p>
-                Urna id volutpat libero viverra elementum. Nec nam cursus phasellus quam. Elit scelerisque egestas dignissim porta mauris nulla pharetra commodo. 
-            </p>   
-
-
-            <Link to="#" className="cta inline-text-link">
-                Watch <img src={arrow} alt="" />
-            </Link>
-        </Col>
-      </Row> */}
 
     </Container>
 

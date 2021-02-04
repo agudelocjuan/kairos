@@ -4,8 +4,6 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import { motion, AnimatePresence } from "framer-motion"
 import { setMobile, setLoaded } from "../../state/global"
 
-import EmailPopup from "./email--popup"
-
 import Header from "./header"
 import HeaderBlog from "./headerBlog"
 import HeaderArticle from "./headerArticle"
@@ -66,7 +64,6 @@ const Layout = ({
   }
 
   // email code
-
   let [subscribed, setSubscribed] = useState(false)
   let [showSubmit, setShowSubmit] = useState(false)
   function _submit(e) {
@@ -89,21 +86,12 @@ const Layout = ({
   }
 
   const [isEmailActive, setEmailActive] = useState(false);
-  const [isEmailShown, setEmailShown] = useState(false);
-
-  // let firstEmail = false
 
   const handleEmailToggle = () => {
     setEmailActive(!isEmailActive);
   };
-  
-  const handleEmailShown = () => {
-    setEmailShown(!isEmailShown);
-  };
 
-  console.log(isEmailShown)
-
-
+  // automatic email popup
   useEffect(
     () => {
       if (!loaded) {
@@ -115,16 +103,6 @@ const Layout = ({
     },
     [] //useEffect will run only one time
   )
-
-  // if ( firstEmail === false ) {
-  //   setTimeout(()=> handleEmailToggle(),5000)
-  //   firstEmail = true
-  //   console.log("timeout hit")
-  //   console.log(firstEmail)
-  // }
-
-  // code for showing timed popup
-  // setTimeout(()=> handleEmailToggle(),5000)
   
   function _onSelect() {
     setTimeout(() => {
@@ -134,13 +112,9 @@ const Layout = ({
     }, 100)
   }
 
-  console.log(pageType)
-
   return (
     <div id="site-background" className={`${menu && "stop-scroll"}`}>
-      {/* {!applicationPage && <Header />} */}
-
-
+      
       { pageType === "blog" ? <HeaderBlog /> : "" }
       { pageType === "article" ? <HeaderArticle /> : "" }
       { pageType !== "article" && pageType !== "blog" ? <Header /> : "" }

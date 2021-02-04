@@ -16,13 +16,14 @@ class LibraryTwoPost extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      carouselIndex: 0
+      carouselIndex: 0 // carousel counter
     }
-    // generic thing to with every function in a class component
+    // binding functions
     this.myCustomNext = this.myCustomNext.bind(this)
     this.myCustomPrev = this.myCustomPrev.bind(this)
   }
 
+  // function to change carousel counters 
   function () {
       this.flkty.on('change', () => {
         console.log(`current index is ${this.flkty.selectedIndex}`)
@@ -30,58 +31,38 @@ class LibraryTwoPost extends React.Component {
       })
   }
 
+  // flickity - carousel counter logic on mobile dragging
   _onTouchMobile() {
     this.flkty.on("settle", () => {
-      // this.props.dispatch(setShowInfoPopup(false))
       this.setState({
-        // carouselIndex: this.flkty.selectedIndex + 1,
         carouselIndex: this.flkty.selectedIndex,
       })
       if (this.flkty.selectedIndex === 0) {
         this.setState({ initialInformation: true })
       } else {
         this.setState({
-          // carouselIndex: this.flkty.selectedIndex - 1,
           carouselIndex: this.flkty.selectedIndex,
-          // initialInformation: false,
         })
       }
     })
   }
 
-  
-
+  // flickity - next/previous functions
   myCustomNext = () => {
-    // You can use Flickity API
     this.flkty.next()
-    console.log(this.flkty.selectedIndex)
     this.setState({carouselIndex: this.flkty.selectedIndex})
   }
   myCustomPrev = () => {
-    // You can use Flickity API
     this.flkty.previous()
-    // this.flktyMobile.previous()
     this.setState({carouselIndex: this.flkty.selectedIndex})
 
   }
 
-  // this.setState({carouselIndex: this.flkty.selectedIndex})
-
-  // componentDidMount = () => {
-  //   // You can register events in componentDidMount hook
-  //   this.flkty.on('settle', () => {
-  //     console.log(`current index is ${this.flkty.selectedIndex}`)
-      // this.setState({carouselIndex: this.flkty.selectedIndex})
-  //   })
-  // }
-
-// const LibraryTwoPost = ({ posts, mobile }) => {
 render() {
-
-  console.log(this.state.carouselIndex)
 
   let {mobile, posts, count} = this.props
 
+  // flickity options
   let options = {
     contain: true,
     draggable: true,
@@ -105,40 +86,9 @@ render() {
     return (
       <Col key={idx} xs="12" md="12" className="post-wrapper">
         <div className="post-container">
-          {/* <Link to={"/blog/" + i.node.slug}> */}
-            {/* <div className="wrapper">
-              <div
-                className="container-image"
-                style={
-                  i.node.heroImage
-                    ? {
-                        backgroundImage: `url(${i.node.heroImage.fluid.src})`,
-                      }
-                    : {
-                        backgroundColor: " #fdfc71",
-                      }
-                }
-              />
-            </div> */}
-
             <div className="post-text-container">
               <Link to={"/blog/" + i.node.slug}>
 
-              {/* <div className="tag-container">
-                {i.node.tags
-                  ? i.node.tags.slice(0, 1).map((i, idx) => {
-                      return (
-                        <div key={idx} className="tag body-small">
-                          {i}
-                        </div>
-                      )
-                    })
-                  : ""}
-
-                <div className="publishDate body-small">
-                  {i.node.publishDate}
-                </div>
-              </div> */}
               {mobile ? (
                 <div className="cta-franklin post-title">{i.node.title}</div>
               ) : (
@@ -154,31 +104,19 @@ render() {
               </span>
               
               </Link>
-              {/* <span className="underline cta">Read More</span> */}
             </div>
-          {/* </Link> */}
         </div>
       </Col>
     )
   })
 
-  console.log(posts)
-
-
+  // chunking posts into grousp of 3 for mobile
   let i
   let blogChunk = []
 
   for (i = 0; i < posts.length; i += 2) {
     blogChunk.push(posts.slice(i, i + 2));
   } 
-
-  // let blogListMobile = posts.map((display) => {
-  //   let result = display;
-  //   let i;
-  //   for (i = 0; i < display.length; i += 3) result.push(display.slice(i, i + 3));
-  //   return result;
-  // });
-
 
   let blogListArray = blogChunk.map((blog, index) => {
 
@@ -188,9 +126,6 @@ render() {
             <Link to={`/blog/${article.node.slug}`} className="">
               <div className="post__meta">
                 <h3 className="post__title">{article.node.title}</h3>
-                {/* <p className="post__description">
-                  {article.node.description.description}
-                </p> */}
                 <p className="post__excerpt" dangerouslySetInnerHTML={{
                 __html: article.node.body.childMarkdownRemark.excerpt,
                 }}>
@@ -205,9 +140,6 @@ render() {
       ))}
       </div>);
   });
-
-  console.log(blogListArray)
-
 
   return (
     <Container fluid id="libraryTwoPost">
@@ -226,9 +158,6 @@ render() {
                 {this.state.carouselIndex + 1}&nbsp;/
               </span>
               <div className="total-slides">
-                {/* <span className="display-desktop">
-                  &nbsp;{count}
-                </span> */}
                 <span className="display-mobile">
                   &nbsp;{blogListArray.length}
                 </span>
@@ -239,8 +168,6 @@ render() {
             </div>
         </div>
       </div>
-      
-      {/* <Row className="display-mobile">{blogListArray}</Row> */}
     </Container>
   )
 }

@@ -9,7 +9,6 @@ import Flickity from "react-flickity-component"
 import { connect } from "react-redux"
 
 import SEO from "../components/global/seo"
-// import Layout from "../components/global/layoutBlog"
 import Layout from "../components/global/layout"
 
 import { setMenu } from "../state/global"
@@ -45,110 +44,57 @@ class BlogIndex extends React.Component {
       tag: null,
       filterTags: [],
       showFilterTags: true,
-      // activeTag: null
-      carouselIndex: 0
+      carouselIndex: 0 // carousel counter
     }
-    // generic thing to with every function in a class component
+    // binding functions
     this._editFilterTags = this._editFilterTags.bind(this)
     this.myCustomNext = this.myCustomNext.bind(this)
     this.myCustomPrev = this.myCustomPrev.bind(this)
   }
 
+  // function to change carousel counters 
   componentDidMount = () => {
-    // You can register events in componentDidMount hook
     this.flktyMobile.on('settle', () => {
       console.log(`current index is ${this.flktyMobile.selectedIndex}`)
       this.setState({carouselIndex: this.flktyMobile.selectedIndex})
     })
   }
 
+  // flickity - next/previous functions
   myCustomNext = () => {
-    // You can use Flickity API
-    // this.flkty.next()
     this.flktyMobile.next()
   }
   myCustomPrev = () => {
-    // You can use Flickity API
-    // this.flkty.previous()
     this.flktyMobile.previous()
   }
 
+  // flickity - carousel counter logic on mobile dragging
+
   _onTouchMobile() {
     this.flkty.on("settle", () => {
-      // this.props.dispatch(setShowInfoPopup(false))
       this.setState({
-        // carouselIndex: this.flkty.selectedIndex + 1,
         carouselIndex: this.flkty.selectedIndex,
       })
       if (this.flkty.selectedIndex === 0) {
         this.setState({ initialInformation: true })
       } else {
         this.setState({
-          // carouselIndex: this.flkty.selectedIndex - 1,
           carouselIndex: this.flkty.selectedIndex,
-          // initialInformation: false,
         })
       }
     })
   }
 
-  
-  
-
-  // match height plugin
-
-  // external js: flickity.pkgd.js
-
-  // add this code
-
-  
-
-  // _editFilterTags(tag) {
-  //   if (this.state.filterTags.includes(tag)) {
-  //     this.setState({
-  //       filterTags: this.state.filterTags.filter(e => e !== tag),
-  //     })
-  //   } else {
-  //     this.setState({ filterTags: this.state.filterTags.concat(tag) })
-  //   }
-  // }
-  
+  // tag selection logic for FAQ index
   _editFilterTags(tag) {
-    
     if (this.state.tag === tag) {
       this.setState({tag: null})
     } else {
       this.setState({tag: tag})
     }
-    // if (this.state.filterTags.includes(tag)) {
-    //   this.setState({
-    //     filterTags: this.state.filterTags.filter(e => e !== tag),
-    //   })
-    // } else {
-    //   this.setState({ filterTags: this.state.filterTags.concat(tag) })
-    //   // this.setState({ filterTags: this.state.filterTags.filter( (selection)=> selection === tag ) })
-    //   // numbers.filter( (number)=> number >= 3);
-    // }
   }
-
-  componentDidMount() {
-    const node = ReactDOM.findDOMNode(this);
-
-    // Get child nodes
-    if (node instanceof HTMLElement) {
-        const child = node.querySelector('.post');
-        // const parent = node.getElementById('health');
-        // console.log(parent)
-        console.log(child)
-    }
-  }
-
-  
-
 
   render() {
-    // const pageType = "blog"
-    // const { pageType = "blog" } = this.props
     const pageColor = "yellow"
     const borderColor = "site-border-yellow" 
     //// Import state
@@ -170,6 +116,7 @@ class BlogIndex extends React.Component {
     const interviewPosts = get(this, "props.data.allContentfulInterview.edges")
     const faqPosts = get(this, "props.data.allContentfulFaq.edges")
 
+    // tag based color scheme
     const colorLookup = {
       'money': 'is-blue',
       'health': 'is-purple',
@@ -180,109 +127,17 @@ class BlogIndex extends React.Component {
 
     const style = colorLookup[this.state.tag]
 
-    // tag state
-
-    // const [tag, setTag] = useState(null);
-
-    // const handleTag = (tag) => {
-    //   setTag(tag);
-    // };
-
-    // this obj contains all the blog posts
-    // console.log(blogPosts)
-    // console.log(faqPosts)
-
     let blogCount = blogPosts.length
     let interviewCount = interviewPosts.length
     let faqCount = faqPosts.length
 
-    let blogList = blogPosts.map((blog, index) => {
-      return (
-        <div key={index} className="col-3">
-          {blog.node.heroImage}
-          {blog.node.slug}
-          {blog.node.title}
-        </div>
-      )
-    })
-
-    let interviewList = interviewPosts.map((interview, index) => {
-      return (
-        <div key={index} className="col-3">
-          {interview.node.heroImage}
-          {interview.node.slug}
-          {interview.node.title}
-        </div>
-      )
-    })
-
-    let faqList = faqPosts.map((faq, index) => {
-      return (
-        <div key={index} className="col-3">
-          {faq.node.slug}
-          {faq.node.title}
-        </div>
-      )
-    })
-
     //// Logic to match articles to filter tags
     let filteredPosts
 
-    // let filteredPosts = i === this.state.tag
-
     if ( this.state.tag ) {
       filteredPosts = faqPosts.filter((i) =>
-      // i.node.tags[0].includes(this.state.tag) === this.state.tag).map(iteration => {
-      //   <div>
-      //   {iteration}
-      //   </div>
-      // })
       i.node.tags[0] === this.state.tag)
     }
-
-
-    console.log(faqPosts)
-    console.log(filteredPosts)
-
-
-    //// Logic to match articles to filter tags
-    // let filteredPosts
-    // if (filterTags.length) {
-    //   filteredPosts = library.filter(i => {
-    //     let { tags } = i.node
-    //     if (tags) {
-    //       for (let i = 0; i < tags.length; i++) {
-    //         for (let j = 0; j < filterTags.length; j++) {
-    //           if (tags[i] === filterTags[j]) {
-    //             return true
-    //           }
-    //         }
-    //       }
-    //       return false
-    //     }
-    //   })
-    // }
-
-    // let elem = document.getElementById("health")
-
-    // console.log(elem)
-
-    // var healthTag = React.findDOMNode(this.refs.health).value;
-
-    
-
-    
-
-    // if (elem.classList.contains("active")) {
-    //   console.log("health is active")
-    // }
-
-    // componentDidMount: (){
-    //   var name = React.findDOMNode(this.refs.health).value;
-    //   console.log(name)
-    // }
-
-    
 
     //// Create list of available tags from the CMS
     let availableTags = []
@@ -309,30 +164,14 @@ class BlogIndex extends React.Component {
           }
           onClick={
             () => this._editFilterTags(i)
-            // activeTag = this.id
-            // .post:not() - hide
           }
         >
           {i}
-          {/* {active ? (
-            <img
-              src={exit}
-              alt=""
-              style={{
-                position: "absolute",
-                width: "15px",
-                top: "-5px",
-                right: "0px",
-              }}
-            />
-          ) : (
-            ""
-          )} */}
         </div>
       )
     })
 
-    //// Create Pagination Logic
+    //// slicing FAQ posts
     let slice_start = pageNumber * limit
     let slice_end = humanPageNumber * limit
     let pageArticles = faqPosts.slice(slice_start, slice_end)
@@ -343,6 +182,7 @@ class BlogIndex extends React.Component {
     let i
     let blogChunk = []
 
+    // grouping blog array into chunks of 3 for mobile
     for (i = 0; i < pageArticles.length; i += 2) {
       blogChunk.push(pageArticles.slice(i, i + 2));
     } 
@@ -371,15 +211,9 @@ class BlogIndex extends React.Component {
         </div>);
     });
 
-    console.log(unfilteredMobile)
-
     let carouselLength = unfilteredMobile.length
 
-    // let countMobile = carouselLength/3 + 1
-    // let countMobileWhole = Math.floor(countMobile)
-
-    // console.log(countMobileWhole)
-
+    // flickity options
     let options = {
       contain: true,
       draggable: true,
@@ -394,7 +228,8 @@ class BlogIndex extends React.Component {
       groupCells: false,
       prevNextButtons: false,
     }
-    // let unfilteredMobile = 
+    
+    // unfiltered FAQ posts
 
     let unfiltered = (
       <div className="faqIndex">
@@ -424,9 +259,6 @@ class BlogIndex extends React.Component {
                 {this.state.carouselIndex + 1}&nbsp;/
               </span>
               <div className="total-slides">
-                {/* <span className="display-desktop">
-                  &nbsp;{count}
-                </span> */}
                 <span className="display-mobile">
                   &nbsp;{carouselLength}
                 </span>
@@ -440,13 +272,13 @@ class BlogIndex extends React.Component {
       </div>
     )
 
+    // filtered FAQ posts
+    // libraryTwoPost — component to display each filtered post
     let filtered = <LibraryTwoPost posts={filteredPosts} />
 
+    // choosing filtered vs unfiltered based on tag selection
     let pageRender = this.state.tag ? filtered : unfiltered
-    // let pageRender = filterTags.length ? filtered : unfiltered
-
-    // let pageRender = <div></div>
-
+    
     return (
       <Layout
         location={location}
@@ -458,21 +290,13 @@ class BlogIndex extends React.Component {
       >
 
         <SEO title="Blog" />
-        {/* <div id="libraryPage">{pageRender}</div> */}
-
-        {/* content goes here */}
-
-        {/* <div style={{ color: `purple` }}>
-          <h1>Hello Gatsby!</h1>
-          <p>What a world.</p>
-        </div> */}
 
         <BlogIndex__BrokeNote data={blogPosts} count={blogCount} />
         <BlogIndex__Email />
         <BlogIndex__GroupChat data={interviewPosts} count={interviewCount} />
 
         <section className={`blogIndex__FAQ ${style}`}>
-          <div className="display-mobile cta-graffiti">FAQs </div>
+          <div className="display-mobile cta-graffiti">FAQS</div>
           <div className="faq__tags">
             {tagOptions}
           </div>
@@ -487,13 +311,8 @@ class BlogIndex extends React.Component {
               </Col>
             </Row>
           </Container>
-
         </section>
-        
-
-        {/* <BlogIndex__FAQ data={faqPosts} /> */}
-        {/* <BlogIndex__FAQ posts={faqPosts} tags={availableTags} options={tagOptions} filtered={filteredPosts} /> */}
-
+      
         <BlogIndex__Questions />
       </Layout>
     )

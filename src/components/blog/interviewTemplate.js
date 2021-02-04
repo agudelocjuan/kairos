@@ -25,22 +25,22 @@ import arrow from "../../images/icons/arrow-diag-red.svg"
 
 class IntervewTemplate extends React.Component {
 
+  // for copy to clipboard button
   state = {
     value: '',
     copied: false,
   }
 
-
   render() {
     const footerColor = "salmon"
-    // const pageColor = "salmon"
     const borderColor = "site-border-black"
     const { pageContext, data, location } = this.props
     const { postType } = pageContext
     const post = get(this.props, "data.contentfulInterview")
-    let postKind = "interview"
+    
+    let postKind = "interview" // article type which informs related articles
 
-    // for twitter share button
+    // for social share buttons
     const shareItem = typeof window !== "undefined" ? window.location.href : ""
 
     const copyCodeToClipboard = () => {
@@ -49,11 +49,10 @@ class IntervewTemplate extends React.Component {
       document.execCommand("copy")
     }
 
-    // this is where all the post content is contained
-    console.log(post)
-
+    // default color scheme
     let pageColor = "blue"
 
+    // tag based color scheme
     if ( post.tags[0] === "money" ) {
       pageColor = "blue"
     } else if ( post.tags[0] === "health" ) {
@@ -65,27 +64,6 @@ class IntervewTemplate extends React.Component {
     } else if ( post.tags[0] === "news" ) {
       pageColor = "pale-red"
     }
-
-    // twitter share button script
-    // if (typeof window !== "undefined") {
-    //   window.twttr = (function (d, s, id) {
-    //     var js,
-    //       fjs = d.getElementsByTagName(s)[0],
-    //       t = window.twttr || {}
-    //     if (d.getElementById(id)) return t
-    //     js = d.createElement(s)
-    //     js.id = id
-    //     js.src = "https://platform.twitter.com/widgets.js"
-    //     fjs.parentNode.insertBefore(js, fjs)
-
-    //     t._e = []
-    //     t.ready = function (f) {
-    //       t._e.push(f)
-    //     }
-
-    //     return t
-    //   })(document, "script", "twitter-wjs")
-    // }
 
     return (
       <Layout
@@ -103,13 +81,6 @@ class IntervewTemplate extends React.Component {
 
             <Col className="flush">
                 <header className="post__header">
-                  {/* <figure
-                    className="post__header__image"
-                    style={{
-                      backgroundImage: `url(${post.heroImage.fluid.src})`,
-                    }}
-                  ></figure> */}
-
                   <aside className="post__header__title">
                     <span className="tag cta">{post.tags}</span>
                     {post ? (
@@ -138,7 +109,6 @@ class IntervewTemplate extends React.Component {
                             ref={(textarea) => this.textArea = textarea}
                             className="urltext"
                             value={shareItem}
-                            // value={shareItem.href}
                           />
                           
                             <input value={shareItem} className="urltext" />
@@ -168,21 +138,6 @@ class IntervewTemplate extends React.Component {
                               className="twitter-icon"
                             />
                           </a>
-                          {/* <a
-                            class="inline-text-link twitter-share-button"
-                            // class="twitter-share-button"
-                            href="https://twitter.com/intent/tweet"
-                            // text={post.title}
-                            via="kairoshq"
-                            url=""
-                            target="_blank"
-                            data-size="large"
-                            data-url="{post.slug}"
-                            data-via="kairoshq"
-                            data-text="{post.title}"
-                          >
-                            Tweet
-                          </a> */}
                         </dd>
                         <dd>
                           {this.state.copied ? <span className="copy-message">URL Copied!</span> : null}
@@ -218,17 +173,6 @@ class IntervewTemplate extends React.Component {
                 <BlogIndex__Email />
               </Col>
             </Row>
-
-            {/* <Row>
-              <Col className="flush">
-                <div className="mb-4 related-container">
-                  <h1 className="mb-4 related-article-title">
-                    Related Articles
-                  </h1>
-                  
-                </div>
-              </Col>
-            </Row> */}
 
 
           </Container>

@@ -9,9 +9,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Img from "gatsby-image"
 
-import brokeNote1 from "../../images/blog/brokeNote1.jpg"
-import brokeNote2 from "../../images/blog/brokeNote2.jpg"
-
 import twitterIcon from "../../images/blog/twitter-icon.svg"
 import linkIcon from "../../images/blog/link-icon.svg"
 
@@ -34,23 +31,23 @@ class BlogTemplate extends React.Component {
     }
   }
 
+  // for copy to clipboard button
   state = {
     value: '',
     copied: false,
   }
 
   render() {
-
-    // const pageColor = "blue"
     const footerColor = "salmon"
-    // const pageColor = "salmon"
     const borderColor = "site-border-black"
     const { pageContext, data, location } = this.props
     const { postType } = pageContext
     const post = get(this.props, "data.contentfulBlogPost")
 
+    // default color scheme
     let pageColor = "blue"
 
+    // tag based color scheme
     if ( post.tags[0] === "money" ) {
       pageColor = "blue"
     } else if ( post.tags[0] === "health" ) {
@@ -63,10 +60,8 @@ class BlogTemplate extends React.Component {
       pageColor = "pale-red"
     }
 
-    // for twitter share button
+    // for social share buttons
     const shareItem = typeof window !== `undefined` ? window.location.href : ""
-
-    console.log(shareItem)
 
     const copyCodeToClipboard = () => {
       const el = this.textArea
@@ -76,12 +71,7 @@ class BlogTemplate extends React.Component {
 
     const blogPosts = get(this, "props.data.allContentfulBlogPost.edges")
 
-
-
-
-
     // related articles logic
-
     let relatedPosts = blogPosts.map((blog, index) => {
       if ( blog.node.tags[0] === post.tags[0] ) {
         const {body, title, slug} = blog.node
@@ -113,32 +103,7 @@ class BlogTemplate extends React.Component {
       
     })
 
-    // const relatedClean = relatedPosts.filter( relatedPost === "" )
-
-    // console.log(relatedClean)
-
-    // twitter share button script
-    // if (typeof window !== "undefined") {
-    //   window.twttr = (function (d, s, id) {
-    //     var js,
-    //       fjs = d.getElementsByTagName(s)[0],
-    //       t = window.twttr || {}
-    //     if (d.getElementById(id)) return t
-    //     js = d.createElement(s)
-    //     js.id = id
-    //     js.src = "https://platform.twitter.com/widgets.js"
-    //     fjs.parentNode.insertBefore(js, fjs)
-
-    //     t._e = []
-    //     t.ready = function (f) {
-    //       t._e.push(f)
-    //     }
-
-    //     return t
-    //   })(document, "script", "twitter-wjs")
-    // }
-
-    let postKind = "blog"
+    let postKind = "blog" // article type which informs related articles
 
     return (
       <Layout
@@ -191,7 +156,6 @@ class BlogTemplate extends React.Component {
                             ref={(textarea) => this.textArea = textarea}
                             className="urltext"
                             value={shareItem}
-                            // value={shareItem.href}
                           />
                           
                           <input value={shareItem} className="urltext" />
@@ -207,26 +171,9 @@ class BlogTemplate extends React.Component {
                           </CopyToClipboard>
                         </dd>
                         <dd className="twitter-wrapper">
-                          {/* <a
-                            class="inline-text-link twitter-share-button"
-                            // class="twitter-share-button"
-                            href="https://twitter.com/intent/tweet"
-                            // text={post.title}
-                            via="kairoshq"
-                            url=""
-                            target="_blank"
-                            data-size="large"
-                            data-url="{post.slug}"
-                            data-via="kairoshq"
-                            data-text="{post.title}"
-                          >
-                            Tweet
-                          </a> */}
-
                           <a
                             href={
                               "https://twitter.com/intent/tweet?text=" + shareItem
-                              // "https://twitter.com/intent/tweet?text=" + shareItem.href
                             }
                             target="_blank"
                             rel="norefferer noopener"
@@ -237,8 +184,6 @@ class BlogTemplate extends React.Component {
                               className="twitter-icon"
                             />
                           </a>
-                          
-                          {/* <input type="text" id="urltext" className="urltext" value={shareItem.href} /> */}
                         </dd>
 
                         <dd>
@@ -263,9 +208,8 @@ class BlogTemplate extends React.Component {
             <Row>
               <Col className="flush">
                   <div className="related">
-                    
+                    {/* related posts */}
                     <LibraryThumbnails related={post} type={postKind} />
-
                   </div>
               </Col>
             </Row>
@@ -275,17 +219,6 @@ class BlogTemplate extends React.Component {
                 <BlogIndex__Email />
               </Col>
             </Row>
-
-            {/* <Row>
-              <Col className="flush">
-                <div className="mb-4 related-container">
-                  <h1 className="mb-4 related-article-title">
-                    Related Articles
-                  </h1>
-                  
-                </div>
-              </Col>
-            </Row> */}
           </Container>
         </section>
       </Layout>

@@ -6,8 +6,6 @@ import { Container, Row, Col } from "reactstrap"
 
 import { setMenu } from "../../state/global"
 
-import Search from "./search.js"
-
 import logo from "../../images/logos/kairos-logo.svg"
 import cross from "../../images/icons/cross.svg"
 import backIcon from "../../images/icons/back.svg"
@@ -50,8 +48,9 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
               }
             }
         }
-        siteSearchIndex {
+        localSearchPages {
           index
+          store
         }
     }
   `)
@@ -60,10 +59,7 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
   const posts = edges.slice(0,3)
 
   let blogList = posts.map((blog, index) => {
-    // console.log(blog.node)
     const {body, title, slug} = blog.node
-
-    console.log(title)
     
     return (
       
@@ -75,21 +71,20 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
     ) 
   })
 
+  // notification toggle
   const handleToggle = () => {
     setActive(!isActive);
   };
   
+  // search toggle
   const handleSearchToggle = () => {
     setSearchActive(!isSearchActive);
   };
 
+
   return (
 
     <nav className="header--blog article">
-
-      {/* <a className="back" href="/blog">
-        <img id="back-icon" src={backIcon} alt="search icon" />
-      </a> */}
 
       <div id="headerBlog">
         <a href="/">
@@ -101,7 +96,6 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
       </div>
 
       <div id="search" className={isSearchActive ? "active" : null} onClick={handleSearchToggle}>
-        {/* <img id="search-icon" src={searchIcon} alt="search icon" /> */}
         <img id="search-icon" src={searchIcon} alt="search icon" />
       </div>
 
@@ -123,21 +117,11 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
                 <button>SEARCH</button>
               </form>
 
-              <Search searchIndex={data.siteSearchIndex.index} />
-
             </Col>
           </Row>
         </Container>
-
-
       </div>
-
     </nav>
-    
-
-    
-
-    
     
   )
 }

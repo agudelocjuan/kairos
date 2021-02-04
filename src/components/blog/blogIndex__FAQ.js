@@ -14,15 +14,9 @@ const blogIndex__FAQ = ({ mobile, posts, tags, options, filtered }) => {
   let faqList = posts.map((faq, index) => {
     const { body, title, slug, tags } = faq.node
 
-    // var result=""
-    // let tagList = tags.forEach(i => {
-    //         result=tags[i]+result;
-    //     })
-
     return (
       <Col key={index} md="4" className="post" className={`${tags}`}>
         <figure className="post__image">
-          {/* <Img fluid={faq.node.heroImage.fluid} /> */}
         </figure>
 
         <div className="post__meta">

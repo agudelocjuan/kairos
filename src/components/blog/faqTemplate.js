@@ -31,27 +31,25 @@ class FaqTemplate extends React.Component {
     this.state = {
       metaPosition: "top",
     }
-    // this._handleScroll = this._handleScroll.bind(this)
-    
-
   }
 
+  // for copy to clipboard button
   state = {
     value: '',
     copied: false,
   }
 
   render() {
-    // const pageColor = "cream"
     const footerColor = "salmon"
-    // const pageColor = "salmon"
     const borderColor = "site-border-black"
     const { pageContext, data, location } = this.props
     const { postType } = pageContext
     const post = get(this.props, "data.contentfulFaq")
 
+    // default color scheme
     let pageColor = "blue"
 
+    // tag based color scheme
     if ( post.tags[0] === "money" ) {
       pageColor = "blue"
     } else if ( post.tags[0] === "health" ) {
@@ -64,7 +62,7 @@ class FaqTemplate extends React.Component {
       pageColor = "pale-red"
     }
 
-    // for twitter share button
+    // for social share buttons
     const shareItem = typeof window !== "undefined" ? window.location.href : ""
 
     const copyCodeToClipboard = () => {
@@ -72,33 +70,6 @@ class FaqTemplate extends React.Component {
       el.select()
       document.execCommand("copy")
     }
-
-    // this is where all the post content is contained
-    console.log(post)
-
-    // twitter share button script
-    // if (typeof window !== "undefined") {
-    //   window.twttr = (function (d, s, id) {
-    //     var js,
-    //       fjs = d.getElementsByTagName(s)[0],
-    //       t = window.twttr || {}
-    //     if (d.getElementById(id)) return t
-    //     js = d.createElement(s)
-    //     js.id = id
-    //     js.src = "https://platform.twitter.com/widgets.js"
-    //     fjs.parentNode.insertBefore(js, fjs)
-
-    //     t._e = []
-    //     t.ready = function (f) {
-    //       t._e.push(f)
-    //     }
-
-    //     return t
-    //   })(document, "script", "twitter-wjs")
-    // }
-
-    // let children = document.querySelectorAll('.post__sidebar__inner a');
-    // children.setAttribute("_target", "blank")
 
     return (
       <Layout
@@ -116,13 +87,6 @@ class FaqTemplate extends React.Component {
           <Row>
               <Col className="flush">
                 <header className="post__header">
-                  {/* <figure
-                    className="post__header__image"
-                    style={{
-                      backgroundImage: `url(${post.heroImage.fluid.src})`,
-                    }}
-                  ></figure> */}
-
                   <aside className="post__header__title">
                     <span className="tag cta">{post.tags}</span>
                     {post ? (
@@ -151,7 +115,6 @@ class FaqTemplate extends React.Component {
                             ref={(textarea) => this.textArea = textarea}
                             className="urltext"
                             value={shareItem}
-                            // value={shareItem.href}
                           />
                           
                           <input value={shareItem} className="urltext" />
@@ -180,21 +143,6 @@ class FaqTemplate extends React.Component {
                               className="twitter-icon"
                             />
                           </a>
-                          {/* <a
-                            class="inline-text-link twitter-share-button"
-                            // class="twitter-share-button"
-                            href="https://twitter.com/intent/tweet"
-                            // text={post.title}
-                            via="kairoshq"
-                            url=""
-                            target="_blank"
-                            data-size="large"
-                            data-url="{post.slug}"
-                            data-via="kairoshq"
-                            data-text="{post.title}"
-                          >
-                            Tweet
-                          </a> */}
                         </dd>
                         <dd>
                           {this.state.copied ? <span className="copy-message">URL Copied!</span> : null}
@@ -214,9 +162,6 @@ class FaqTemplate extends React.Component {
                     Learn More 
                     <img src={arrowBelow} alt="see below" />
                 </header>
-                {/* <div className="post__sidebar__inner" dangerouslySetInnerHTML={{
-                  __html: post.sidebar.childMarkdownRemark.html, 
-                }}> */}
 
                 <div className="post__sidebar__inner" dangerouslySetInnerHTML={{
                   __html: post.sidebar.childMarkdownRemark.html.replace(/href/g, "target='_blank' href"), 
@@ -224,8 +169,6 @@ class FaqTemplate extends React.Component {
                 </div>
               </Col>
             }
-
-              
 
               <Col className="post__body flush" md="8">
                   <div className="post__body__inner" dangerouslySetInnerHTML={{
@@ -245,23 +188,6 @@ class FaqTemplate extends React.Component {
               <p className="text">Still have questions?</p>
               <a href="mailto:team@kairoshq.com">Ask Us Here</a>
             </div>
-
-            {/* <Row>
-              <Col className="flush">
-                <BlogIndex__Email />
-              </Col>
-            </Row> */}
-
-            {/* <Row>
-              <Col className="flush">
-                <div className="mb-4 related-container">
-                  <h1 className="mb-4 related-article-title">
-                    Related Articles
-                  </h1>
-            
-                </div>
-              </Col>
-            </Row> */}
 
           </Container>
 

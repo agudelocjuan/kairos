@@ -126,26 +126,6 @@ const CompaniesCompanies = ({ mobile }) => {
           </Row>
         )
       })}
-
-      {/*
-        <Row className="cta-row">
-          <Col md="6" className="px-0">
-            <img src={openings} alt="" />
-          </Col>
-          <Col md="6" className={`bg-yellow information`}>
-            <div className="cta-graffiti">Join The Family</div>
-            <p>
-              It might feel scary, but we’re here to help. We’ve got the resources
-              to help you adjust to this new normal. Reach out and ask us a
-              question!
-            </p>
-            <Link to="/">
-              <div className="franklin-cta">Our Openings</div>
-            </Link>
-          </Col>
-        </Row>
-
-      */}
     </Container>
   )
 }

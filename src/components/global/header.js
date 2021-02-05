@@ -18,11 +18,6 @@ const Header = ({ mobile, menu, dispatch }) => {
   const [isActive, setActive] = useState(false);
   const [isSearchActive, setSearchActive] = useState(false);
 
-  // search states
-
-  // const [query] = useState(``);
-  // const [results] = useState([]);
-
   const data = useStaticQuery(graphql`
     query {
         allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
@@ -55,9 +50,6 @@ const Header = ({ mobile, menu, dispatch }) => {
   
   let { edges } = data.allContentfulBlogPost
   const posts = edges.slice(0,3)
-  // let posts = nodes
-
-  console.log(posts)
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -67,13 +59,8 @@ const Header = ({ mobile, menu, dispatch }) => {
     setSearchActive(!isSearchActive);
   };
 
-  console.log(data)
-
   let blogList = posts.map((blog, index) => {
-    // console.log(blog.node)
   const {body, title, slug} = blog.node
-
-  console.log(title)
 
   return (
       
@@ -84,10 +71,6 @@ const Header = ({ mobile, menu, dispatch }) => {
 
   ) 
 })
-
-console.log(edges)
-
-
 
 return (
   <nav className="header--blog">
@@ -101,30 +84,8 @@ return (
       <img onClick={() => dispatch(setMenu(!menu))} id="menu-button" src={menu ? menu_close : menu_open} alt="" />
     </div>
 
-    {/* <div id="search" className={isSearchActive ? "active" : null} onClick={handleSearchToggle}>
-      <img id="search-icon" src={searchIcon} alt="search icon" />
-    </div> */}
-
     <div id="notifications" className={isActive ? "active" : null}>
-
       {blogList}
-
-      {/* <div className="module">
-        <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-        <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-      </div>
-      <div className="module">
-        <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-        <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-      </div>
-      <div className="module">
-        <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-        <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-      </div>
-      <div className="module">
-        <p className="title">Your Credit Could Have Dropped Without You Knowing...</p>
-        <a className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </a>
-      </div> */}
     </div>
 
     <div id="search-wrapper" className={isSearchActive ? "active" : null}>
@@ -137,24 +98,12 @@ return (
           <Col md="10" id="main">
 
             <form>
-              {/* <input value={query} onChange={search} type="text" placeholder="Search anything..." /> */}
               <input type="text" placeholder="Search anything..." />
               <button>SEARCH</button>
             </form>
-
-            {/* <ul className="search__results">
-              {state.results.map(page => (
-                <li key={page.id}>
-                  <Link to={"/" + page.path}>{page.title}</Link>
-                  {": " + page.tags.join(`,`)}
-                </li>
-              ))}
-            </ul> */}
           </Col>
         </Row>
       </Container>
-
-
     </div>
 
   </nav>

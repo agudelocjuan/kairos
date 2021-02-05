@@ -26,7 +26,6 @@ class LibraryTwoPost extends React.Component {
   // function to change carousel counters 
   function () {
       this.flkty.on('change', () => {
-        console.log(`current index is ${this.flkty.selectedIndex}`)
         this.setState({carouselIndex: this.flkty.selectedIndex})
       })
   }

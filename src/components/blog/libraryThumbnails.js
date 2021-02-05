@@ -8,7 +8,6 @@ import { Container, Row, Col } from "reactstrap"
 import arrow from "../../images/icons/arrow-diag-black.svg"
 
 const LibraryThumbnails = ({ mobile, related = false, recent = false, type }) => {
-  console.log(type)
   let data = useStaticQuery(graphql`
     query {
         allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {

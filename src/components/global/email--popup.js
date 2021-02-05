@@ -64,8 +64,7 @@ const Email = ({ mobile, footer = false }) => {
           id="submit-button-main"
           type="submit"
         >
-          {/* <img src={arrow} alt="" /> */}
-          Sign Up
+        Sign Up
         </button>
       </form>
     </div>

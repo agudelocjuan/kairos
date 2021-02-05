@@ -10,7 +10,6 @@ import img_2 from "../../images/about/about_2.png"
 import arrow from "../../images/icons/arrow-diag-red.svg"
 
 const blogIndex__FAQ = ({ mobile, posts, tags, options, filtered }) => {
-  console.log(filtered)
   let faqList = posts.map((faq, index) => {
     const { body, title, slug, tags } = faq.node
 

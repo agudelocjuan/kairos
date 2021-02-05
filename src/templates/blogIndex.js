@@ -55,7 +55,6 @@ class BlogIndex extends React.Component {
   // function to change carousel counters 
   componentDidMount = () => {
     this.flktyMobile.on('settle', () => {
-      console.log(`current index is ${this.flktyMobile.selectedIndex}`)
       this.setState({carouselIndex: this.flktyMobile.selectedIndex})
     })
   }

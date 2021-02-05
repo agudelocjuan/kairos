@@ -11,10 +11,6 @@ const AboutUs = ({ mobile }) => {
 
   let [modal, setModal] = useState(null)
 
-  const [fadeIn, setFadeIn] = useState(true);
-
-  const toggleFade = () => setFadeIn(!fadeIn);
-
   let options = {
     draggable: true,
     initialIndex: 0,
@@ -604,7 +600,6 @@ const AboutUs = ({ mobile }) => {
                     isOpen={modal === i.img}
                     className="team-member-modal"
                     style={{zIndex: "99999999999999999999999"}}
-                    // data-backdrop="false"
                     fade={true}
                   >
                     <div className="bio-box">
@@ -680,7 +675,6 @@ const AboutUs = ({ mobile }) => {
                           <Img fluid={data[i.img].childImageSharp.fluid} />
                           <figcaption>learn more</figcaption>
                         </figure>
-                        {/* <Img fluid={data[i.img].childImageSharp.fluid} /> */}
                         <article>
                           <p className="name faq-header">{i.name}</p>
                           <p className="title">{i.title}</p>
@@ -759,27 +753,6 @@ const AboutUs = ({ mobile }) => {
             })}
         </Row>
       )}
-
-
-      {/* {team
-      .filter(i => i.team === "operating")
-      .map((i, idx) => {
-        return (
-          <div key={idx} className="bio-box">
-            <header></header>
-            <main>
-            <Img fluid={data[i.img].childImageSharp.fluid} />
-              <article>
-              <p className="mt-2 mb-1">{i.name}</p>
-              <p className="text-light-black">{i.title}</p>
-              <p className="text-light-black">{i.bio}</p>
-              </article>
-            </main>
-          </div>
-        )
-      })} */}
-
-
     </Container>
   )
 }

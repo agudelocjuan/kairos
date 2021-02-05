@@ -57,18 +57,12 @@ const Header = ({ mobile, menu, dispatch }) => {
   const posts = edges.slice(0,3)
 
   let blogList = posts.map((blog, index) => {
-    // console.log(blog.node)
     const {body, title, slug} = blog.node
-
-    console.log(title)
-    
     return (
-      
       <Link key={index} to={`/blog/${slug}`} className="module">
           <p className="title">{title}</p>
           <span className="cta inline-text-link" href="#">Read More <img src={arrow} alt="arrow" /> </span>
       </Link>
-
     ) 
   })
 
@@ -79,8 +73,6 @@ const Header = ({ mobile, menu, dispatch }) => {
   const handleSearchToggle = () => {
     setSearchActive(!isSearchActive);
   };
-
-
 
   return (
 
@@ -100,7 +92,6 @@ const Header = ({ mobile, menu, dispatch }) => {
       </div>
 
       <div id="search" className={isSearchActive ? "active" : null} onClick={handleSearchToggle}>
-        {/* <img id="search-icon" src={searchIcon} alt="search icon" /> */}
         <img id="search-icon" src={searchIcon} alt="search icon" />
       </div>
 
@@ -124,17 +115,8 @@ const Header = ({ mobile, menu, dispatch }) => {
             </Col>
           </Row>
         </Container>
-
-
       </div>
-
     </nav>
-    
-
-    
-
-    
-    
   )
 }
 

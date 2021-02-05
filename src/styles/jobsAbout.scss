@@ -39,9 +39,7 @@
         float: right;
       }
       .floating-col {
-        // position: absolute;
         height: 100%;
-
         padding: 56px;
         display: flex;
         flex-direction: column;
@@ -51,11 +49,8 @@
     &.bottom {
       margin-bottom: 0px;
       min-height: 80vh;
-      .desktop-img {
-        // width: 50%;
-      }
+      
       .floating-col {
-        // position: absolute;
         margin-bottom: 120px;
         height: 100%;
         padding: 0px 56px;
@@ -71,8 +66,7 @@
         font-size: 40px;
         margin-right: 8px;
       }
-      h3 {
-      }
+      
       ol {
         li {
           font-family: "summer loving reg";
@@ -159,7 +153,6 @@
       }
       &.bottom {
         .floating-col {
-          // position: absolute;
           margin-bottom: 0px;
           height: 100%;
           padding: 20px;

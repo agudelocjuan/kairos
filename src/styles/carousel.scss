@@ -1,7 +1,4 @@
 .carousel {
-  &--container {
-    // transform: translate3d(0%, 0px, 0px) !important;
-  }
   @media (max-width: 768px) {
     &--container {
       display: flex;

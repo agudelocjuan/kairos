@@ -1,6 +1,5 @@
 #menu {
   position: absolute;
-  // z-index: 9999;
   z-index: 2;
   padding: 0px 20px;
   opacity: 0;
@@ -27,10 +26,8 @@
     font-weight: 400;
     opacity: 1;
     transition: opacity 150ms linear;
-    // font-size: 135px;
     font-size: 115px;
     color: $black;
-    // line-height: 124px;
     line-height: 100px;
     letter-spacing: -4.5px;
     letter-spacing: -2.5px;
@@ -43,16 +40,11 @@
       line-height: 54px;
       letter-spacing: -1.3px;
     }
-    // &:hover {
-    //   opacity: 0.65;
-    //   transition: opacity 150ms linear;
-    // }
   }
   .link-row {
     height: 85%;
     overflow-y: scroll;
     .link-col {
-      // padding-top: 5%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;

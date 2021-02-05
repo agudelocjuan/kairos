@@ -163,10 +163,6 @@
       }
     }
 
-    img {
-
-    }
-
     article {
       padding-left: 32px;
 
@@ -182,16 +178,12 @@
 
         @media (max-width: map-get($grid-breakpoints,lg)) {
           margin-top: 34px;
-
         }
       }
 
       .title {
         margin-bottom: 20px;
         font-weight: 700;
-
-        @media (max-width: map-get($grid-breakpoints,lg)) {
-        }
       }
 
       .bio {

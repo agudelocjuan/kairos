@@ -1,7 +1,6 @@
 #aboutUs {
   padding-top: 24px;
   padding-bottom: 48px;
-  // background: linear-gradient(to bottom, $white, $blue);
   background-color: $white;
   .header-row {
     padding: 96px 0px;
@@ -36,7 +35,6 @@
       background: $black;
 
       &:hover figcaption, &:focus figcaption {
-        // display: block;
         opacity: 1;
       }
 
@@ -63,18 +61,9 @@
     }
 
     .gatsby-image-wrapper {
-      // position: relative;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-
-      // cursor: pointer;
-
       img {
         transition: 0.25s;
       }
-      
-      
     }
   }
 
@@ -123,18 +112,7 @@
 .modal.fade .modal-dialog {
   max-width: none;
   margin: 0;
-  // transition: all 500ms cubic-bezier(0.33, 1, 0.33, 1);
   transition: all 650ms cubic-bezier(0.5, 1, 0.5, 1);
-}
-
-.team-member-modal {
-  // border: 20px solid red;
-  // opacity: 0;
-  // transition: 0.25s;
-}
-
-body.modal-open .team-member-modal {
-  // opacity: 1;
 }
 
 .fade {
@@ -146,19 +124,6 @@ body.modal-open .team-member-modal {
   }
 }
 
-// .modal.fade {
-//   .bio-box {
-//     opacity: 0;
-//     transition: 0.25s;
-//   }
-
-//   &.show {
-//     .bio-box {
-//       opacity: 1;
-//     }
-//   }
-// }
-
 .bio-box {
   max-height: 100vh;
   min-height: 100vh;
@@ -166,10 +131,6 @@ body.modal-open .team-member-modal {
   background: $white;
   opacity: 0;
   overflow-y:scroll;
-  // position: sticky;
-
-  // transition: opacity 500ms cubic-bezier(0.33, 1, 0.33, 1);
-  // transition: all 500ms cubic-bezier(0.33, 1, 0.33, 1);
 
   @media (max-width: map-get($grid-breakpoints,lg)) {
     padding: 33px;
@@ -207,7 +168,6 @@ body.modal-open .team-member-modal {
     }
 
     article {
-      // padding-left: 10px;
       padding-left: 32px;
 
       @media (max-width: map-get($grid-breakpoints,lg)) {

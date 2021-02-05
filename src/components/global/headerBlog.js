@@ -48,10 +48,6 @@ const HeaderBlog = ({ mobile, menu, dispatch }) => {
               }
             }
         }
-        localSearchPages {
-          index
-          store
-        }
     }
   `)
   

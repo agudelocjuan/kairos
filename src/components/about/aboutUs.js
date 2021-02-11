@@ -174,6 +174,27 @@ const AboutUs = ({ mobile }) => {
           }
         }
       }
+      sarah_baker: file(relativePath: { eq: "team/sarah_baker.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      eddy_kleinhaus: file(relativePath: { eq: "team/eddy_kleinhaus.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      sylvan_gu: file(relativePath: { eq: "team/sylvan_gu.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       roger_goodell: file(relativePath: { eq: "team/roger_goodell.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
@@ -224,13 +245,6 @@ const AboutUs = ({ mobile }) => {
         }
       }
       bryan_woods: file(relativePath: { eq: "team/bryan_woods.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1440) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      esther_lee: file(relativePath: { eq: "team/esther_lee.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
             ...GatsbyImageSharpFluid
@@ -364,6 +378,24 @@ const AboutUs = ({ mobile }) => {
       img: "paraag_sarva",
     },
     {
+      name: "Sarah Baker",
+      title: "Head of Strategic Initiatives",
+      team: "operating",
+      img: "sarah_baker",
+    },
+    {
+      name: "Eddy Kleinhaus",
+      title: "General Counsel",
+      team: "operating",
+      img: "eddy_kleinhaus",
+    },
+    {
+      name: "Sylvan Gu",
+      title: "Content Manager, Video",
+      team: "operating",
+      img: "sylvan_gu",
+    },
+    {
       name: "Bobbi Brown",
       title: "Founder, Bobbi Brown",
       team: "advisory",
@@ -417,12 +449,6 @@ const AboutUs = ({ mobile }) => {
       team: "advisory",
       img: "omar_sultan_al_olama",
     },
-    {
-      name: "Esther Lee",
-      title: "Chief Marketing Officer, MetLife",
-      team: "advisory",
-      img: "esther_lee",
-    },
   ]
   return (
     <Container fluid id="aboutUs" className={`bg-white`}>
@@ -461,20 +487,20 @@ const AboutUs = ({ mobile }) => {
             })}
         </Flickity>
       ) : (
-        <Row className="team-row">
-          {team
-            .filter(i => i.team === "operating")
-            .map((i, idx) => {
-              return (
-                <Col key={idx} md="4">
-                  <Img fluid={data[i.img].childImageSharp.fluid} />
-                  <p className="mt-2 mb-1">{i.name}</p>
-                  <p className="text-light-black">{i.title}</p>
-                </Col>
-              )
-            })}
-        </Row>
-      )}
+          <Row className="team-row">
+            {team
+              .filter(i => i.team === "operating")
+              .map((i, idx) => {
+                return (
+                  <Col key={idx} md="4">
+                    <Img fluid={data[i.img].childImageSharp.fluid} />
+                    <p className="mt-2 mb-1">{i.name}</p>
+                    <p className="text-light-black">{i.title}</p>
+                  </Col>
+                )
+              })}
+          </Row>
+        )}
 
       <Row>
         <Col md={{ size: 5, offset: 0 }}>
@@ -501,20 +527,20 @@ const AboutUs = ({ mobile }) => {
             })}
         </Flickity>
       ) : (
-        <Row className="team-row">
-          {team
-            .filter(i => i.team === "advisory")
-            .map((i, idx) => {
-              return (
-                <Col key={idx} md="4">
-                  <Img fluid={data[i.img].childImageSharp.fluid} />
-                  <p className="mt-2 mb-1">{i.name}</p>
-                  <p className="text-light-black">{i.title}</p>
-                </Col>
-              )
-            })}
-        </Row>
-      )}
+          <Row className="team-row">
+            {team
+              .filter(i => i.team === "advisory")
+              .map((i, idx) => {
+                return (
+                  <Col key={idx} md="4">
+                    <Img fluid={data[i.img].childImageSharp.fluid} />
+                    <p className="mt-2 mb-1">{i.name}</p>
+                    <p className="text-light-black">{i.title}</p>
+                  </Col>
+                )
+              })}
+          </Row>
+        )}
     </Container>
   )
 }

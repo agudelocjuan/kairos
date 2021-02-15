@@ -85,25 +85,24 @@ const Layout = ({
     return false
   }
 
-  const [isEmailActive, setEmailActive] = useState(false);
+  const [isEmailActive, setEmailActive] = useState(false)
 
   const handleEmailToggle = () => {
-    setEmailActive(!isEmailActive);
-  };
+    setEmailActive(!isEmailActive)
+  }
 
   // automatic email popup
   useEffect(
     () => {
       if (!loaded) {
-        setTimeout(()=> handleEmailToggle(),5000)
+        setTimeout(() => handleEmailToggle(), 5000)
         dispatch(setLoaded(true))
       }
-      return () => {
-      }
+      return () => {}
     },
     [] //useEffect will run only one time
   )
-  
+
   function _onSelect() {
     setTimeout(() => {
       colorIndex === colorCount
@@ -114,10 +113,9 @@ const Layout = ({
 
   return (
     <div id="site-background" className={`${menu && "stop-scroll"}`}>
-      
-      { pageType === "blog" ? <HeaderBlog /> : "" }
-      { pageType === "article" ? <HeaderArticle /> : "" }
-      { pageType !== "article" && pageType !== "blog" ? <Header /> : "" }
+      {pageType === "blog" ? <HeaderBlog /> : ""}
+      {pageType === "article" ? <HeaderArticle /> : ""}
+      {pageType !== "article" && pageType !== "blog" ? <Header /> : ""}
 
       <Menu />
       <div
@@ -126,23 +124,24 @@ const Layout = ({
         onMouseDown={_onSelect.bind(this)}
         className={isEmailActive ? "email-active" : null}
       >
-        <main className={pageColor}>
-          {children}
-        </main>
+        <main className={pageColor}>{children}</main>
         <Footer jobs={jobs} color={footerColor} borderColor={borderColor} />
       </div>
 
       <div id="email-popup" className={isEmailActive ? "active" : null}>
-        <img className="email-toggle" src={crossWhite} onClick={handleEmailToggle} />
+        <img
+          className="email-toggle"
+          src={crossWhite}
+          onClick={handleEmailToggle}
+        />
         {subscribed ? (
           <div>Thank you for signing up! Check your inbox for updates.</div>
         ) : (
           <div id="email-signup-container">
-            <div id="email-cta">
-              help us help you.
-            </div>
+            <div id="email-cta">help us help you.</div>
             <div id="email-subtitle">
-              Let’s navigate these tough times together. Always helpful, never harmful.
+              Let’s navigate these tough times together. Always helpful, never
+              harmful.
             </div>
             <form action="" onSubmit={e => _submit(e)}>
               <input
@@ -162,6 +161,10 @@ const Layout = ({
 }
 
 export default connect(
-  state => ({ mobile: state.global.mobile, menu: state.global.menu, loaded: state.global.loaded }),
+  state => ({
+    mobile: state.global.mobile,
+    menu: state.global.menu,
+    loaded: state.global.loaded,
+  }),
   null
 )(Layout)

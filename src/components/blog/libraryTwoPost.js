@@ -16,18 +16,18 @@ class LibraryTwoPost extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      carouselIndex: 0 // carousel counter
+      carouselIndex: 0, // carousel counter
     }
     // binding functions
     this.myCustomNext = this.myCustomNext.bind(this)
     this.myCustomPrev = this.myCustomPrev.bind(this)
   }
 
-  // function to change carousel counters 
-  function () {
-      this.flkty.on('change', () => {
-        this.setState({carouselIndex: this.flkty.selectedIndex})
-      })
+  // function to change carousel counters
+  function() {
+    this.flkty.on("change", () => {
+      this.setState({ carouselIndex: this.flkty.selectedIndex })
+    })
   }
 
   // flickity - carousel counter logic on mobile dragging
@@ -49,106 +49,117 @@ class LibraryTwoPost extends React.Component {
   // flickity - next/previous functions
   myCustomNext = () => {
     this.flkty.next()
-    this.setState({carouselIndex: this.flkty.selectedIndex})
+    this.setState({ carouselIndex: this.flkty.selectedIndex })
   }
   myCustomPrev = () => {
     this.flkty.previous()
-    this.setState({carouselIndex: this.flkty.selectedIndex})
-
+    this.setState({ carouselIndex: this.flkty.selectedIndex })
   }
 
-render() {
+  render() {
+    let { mobile, posts, count } = this.props
 
-  let {mobile, posts, count} = this.props
+    // flickity options
+    let options = {
+      contain: true,
+      draggable: true,
+      initialIndex: 0,
+      cellAlign: "left",
+      wrapAround: false,
+      pageDots: false,
+      freeScroll: false,
+      adaptiveHeight: true,
+      fade: true,
+      // groupCells: true,
+      groupCells: false,
+      prevNextButtons: false,
+    }
 
-  // flickity options
-  let options = {
-    contain: true,
-    draggable: true,
-    initialIndex: 0,
-    cellAlign: 'left',
-    wrapAround: false,
-    pageDots: false,
-    freeScroll: false,
-    adaptiveHeight: true,
-    fade: true,
-    // groupCells: true,
-    groupCells: false,
-    prevNextButtons: false,
-  }
+    if (posts.length === 0) {
+      return ""
+    }
 
-  if (posts.length === 0) {
-    return ""
-  }
-
-  let display = posts.map((i, idx) => {
-    return (
-      <Col key={idx} xs="12" md="12" className="post-wrapper">
-        <div className="post-container">
+    let display = posts.map((i, idx) => {
+      return (
+        <Col key={idx} xs="12" md="12" className="post-wrapper">
+          <div className="post-container">
             <div className="post-text-container">
               <Link to={"/blog/" + i.node.slug}>
+                {mobile ? (
+                  <div className="cta-franklin post-title">{i.node.title}</div>
+                ) : (
+                  <span className="cta-franklin post-title">
+                    {i.node.title}
+                  </span>
+                )}
 
-              {mobile ? (
-                <div className="cta-franklin post-title">{i.node.title}</div>
-              ) : (
-                <span className="cta-franklin post-title">{i.node.title}</span>
-              )}
-              
-              <p className="post__excerpt" dangerouslySetInnerHTML={{
-                __html: i.node.body.childMarkdownRemark.excerpt,
-              }}>
-              </p>
-              <span className="cta inline-text-link">
-                Read More <img src={arrow} alt="" />
-              </span>
-              
-              </Link>
-            </div>
-        </div>
-      </Col>
-    )
-  })
-
-  // chunking posts into grousp of 3 for mobile
-  let i
-  let blogChunk = []
-
-  for (i = 0; i < posts.length; i += 2) {
-    blogChunk.push(posts.slice(i, i + 2));
-  } 
-
-  let blogListArray = blogChunk.map((blog, index) => {
-
-    return (<div className="group">
-      {blog.map((article, index) => (
-          <article key={index} className="post" onTouchStart={() => this._onTouchMobile()}>
-            <Link to={`/blog/${article.node.slug}`} className="">
-              <div className="post__meta">
-                <h3 className="post__title">{article.node.title}</h3>
-                <p className="post__excerpt" dangerouslySetInnerHTML={{
-                __html: article.node.body.childMarkdownRemark.excerpt,
-                }}>
-                </p>
-      
+                <p
+                  className="post__excerpt"
+                  dangerouslySetInnerHTML={{
+                    __html: i.node.body.childMarkdownRemark.excerpt,
+                  }}
+                ></p>
                 <span className="cta inline-text-link">
                   Read More <img src={arrow} alt="" />
                 </span>
-              </div>
-            </Link>
-          </article> 
-      ))}
-      </div>);
-  });
+              </Link>
+            </div>
+          </div>
+        </Col>
+      )
+    })
 
-  return (
-    <Container fluid id="libraryTwoPost">
-      <Row className="display-desktop">{display}</Row>
-      <div className="display-mobile">
-        <Flickity flickityRef={c => this.flkty = c} options={options} className="display-mobile">
-          {blogListArray}
-        </Flickity>
+    // chunking posts into grousp of 3 for mobile
+    let i
+    let blogChunk = []
 
-        <div className="carousel__controls">
+    for (i = 0; i < posts.length; i += 2) {
+      blogChunk.push(posts.slice(i, i + 2))
+    }
+
+    let blogListArray = blogChunk.map((blog, index) => {
+      return (
+        <div className="group" key={index}>
+          {blog.map((article, index) => (
+            <article
+              key={index}
+              className="post"
+              onTouchStart={() => this._onTouchMobile()}
+            >
+              <Link to={`/blog/${article.node.slug}`} className="">
+                <div className="post__meta">
+                  <h3 className="post__title">{article.node.title}</h3>
+                  <p
+                    className="post__excerpt"
+                    dangerouslySetInnerHTML={{
+                      __html: article.node.body.childMarkdownRemark.excerpt,
+                    }}
+                  ></p>
+
+                  <span className="cta inline-text-link">
+                    Read More <img src={arrow} alt="" />
+                  </span>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
+      )
+    })
+
+    return (
+      <Container fluid id="libraryTwoPost">
+        <Row className="display-desktop">{display}</Row>
+        <div className="display-mobile">
+          <Flickity
+            flickityRef={c => (this.flkty = c)}
+            options={options}
+            className="display-mobile"
+          >
+            {blogListArray}
+          </Flickity>
+
+          <div className="carousel__controls">
             <div onClick={this.myCustomPrev} className="prev">
               <img src={arrowLeftBlack} />
             </div>
@@ -165,11 +176,11 @@ render() {
             <div onClick={this.myCustomNext} className="next">
               <img src={arrowRightBlack} />
             </div>
+          </div>
         </div>
-      </div>
-    </Container>
-  )
-}
+      </Container>
+    )
+  }
 }
 
 export default connect(

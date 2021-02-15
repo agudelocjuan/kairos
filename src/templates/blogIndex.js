@@ -1,12 +1,9 @@
-import React, {useState} from "react"
-import ReactDOM from "react-dom"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import get from "lodash/get"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 import Flickity from "react-flickity-component"
-
-import { connect } from "react-redux"
 
 import SEO from "../components/global/seo"
 import Layout from "../components/global/layout"
@@ -34,7 +31,6 @@ import searchIcon from "../images/icons/search.svg"
 import bellIcon from "../images/icons/bell.svg"
 import menu_close from "../images/icons/menu-close.svg"
 import menu_open from "../images/icons/menu-open.svg"
-
 import arrow from "../images/icons/arrow-diag-red.svg"
 
 class BlogIndex extends React.Component {
@@ -44,7 +40,7 @@ class BlogIndex extends React.Component {
       tag: null,
       filterTags: [],
       showFilterTags: true,
-      carouselIndex: 0 // carousel counter
+      carouselIndex: 0, // carousel counter
     }
     // binding functions
     this._editFilterTags = this._editFilterTags.bind(this)
@@ -52,10 +48,10 @@ class BlogIndex extends React.Component {
     this.myCustomPrev = this.myCustomPrev.bind(this)
   }
 
-  // function to change carousel counters 
+  // function to change carousel counters
   componentDidMount = () => {
-    this.flktyMobile.on('settle', () => {
-      this.setState({carouselIndex: this.flktyMobile.selectedIndex})
+    this.flktyMobile.on("settle", () => {
+      this.setState({ carouselIndex: this.flktyMobile.selectedIndex })
     })
   }
 
@@ -87,15 +83,15 @@ class BlogIndex extends React.Component {
   // tag selection logic for FAQ index
   _editFilterTags(tag) {
     if (this.state.tag === tag) {
-      this.setState({tag: null})
+      this.setState({ tag: null })
     } else {
-      this.setState({tag: tag})
+      this.setState({ tag: tag })
     }
   }
 
   render() {
     const pageColor = "yellow"
-    const borderColor = "site-border-yellow" 
+    const borderColor = "site-border-yellow"
     //// Import state
     const { filterTags, showFilterTags } = this.state
     const { pageContext, location } = this.props
@@ -117,11 +113,11 @@ class BlogIndex extends React.Component {
 
     // tag based color scheme
     const colorLookup = {
-      'money': 'is-blue',
-      'health': 'is-purple',
-      'home': 'is-cream',
-      'work': 'is-pale-yellow',
-      'news': 'is-pale-red'
+      money: "is-blue",
+      health: "is-purple",
+      home: "is-cream",
+      work: "is-pale-yellow",
+      news: "is-pale-red",
     }
 
     const style = colorLookup[this.state.tag]
@@ -133,9 +129,8 @@ class BlogIndex extends React.Component {
     //// Logic to match articles to filter tags
     let filteredPosts
 
-    if ( this.state.tag ) {
-      filteredPosts = faqPosts.filter((i) =>
-      i.node.tags[0] === this.state.tag)
+    if (this.state.tag) {
+      filteredPosts = faqPosts.filter(i => i.node.tags[0] === this.state.tag)
     }
 
     //// Create list of available tags from the CMS
@@ -161,9 +156,7 @@ class BlogIndex extends React.Component {
           className={
             "position-relative tag body-small " + (active ? "active" : "")
           }
-          onClick={
-            () => this._editFilterTags(i)
-          }
+          onClick={() => this._editFilterTags(i)}
         >
           {i}
         </div>
@@ -183,32 +176,38 @@ class BlogIndex extends React.Component {
 
     // grouping blog array into chunks of 3 for mobile
     for (i = 0; i < pageArticles.length; i += 2) {
-      blogChunk.push(pageArticles.slice(i, i + 2));
-    } 
+      blogChunk.push(pageArticles.slice(i, i + 2))
+    }
 
     let unfilteredMobile = blogChunk.map((blog, index) => {
-
-      return (<div className="group">
-        {blog.map((article, index) => (
-            <article key={index} className="post" onTouchStart={() => this._onTouchMobile()}>
+      return (
+        <div className="group" key={index}>
+          {blog.map((article, index) => (
+            <article
+              key={index}
+              className="post"
+              onTouchStart={() => this._onTouchMobile()}
+            >
               <Link to={`/blog/${article.node.slug}`} className="">
-        
                 <div className="post__meta">
                   <h3 className="post__title">{article.node.title}</h3>
-                  <p className="post__excerpt" dangerouslySetInnerHTML={{
-                    __html: article.node.body.childMarkdownRemark.excerpt,
-                  }}>
-                  </p>
-        
+                  <p
+                    className="post__excerpt"
+                    dangerouslySetInnerHTML={{
+                      __html: article.node.body.childMarkdownRemark.excerpt,
+                    }}
+                  ></p>
+
                   <span className="cta inline-text-link">
                     Read More <img src={arrowBlack} alt="" />
                   </span>
                 </div>
               </Link>
-            </article> 
-        ))}
-        </div>);
-    });
+            </article>
+          ))}
+        </div>
+      )
+    })
 
     let carouselLength = unfilteredMobile.length
 
@@ -217,7 +216,7 @@ class BlogIndex extends React.Component {
       contain: true,
       draggable: true,
       initialIndex: 0,
-      cellAlign: 'left',
+      cellAlign: "left",
       wrapAround: false,
       pageDots: false,
       freeScroll: false,
@@ -227,7 +226,7 @@ class BlogIndex extends React.Component {
       groupCells: false,
       prevNextButtons: false,
     }
-    
+
     // unfiltered FAQ posts
 
     let unfiltered = (
@@ -238,36 +237,36 @@ class BlogIndex extends React.Component {
           <LibraryTwoPost posts={pageArticles.slice(6, 9)} />
           <LibraryTwoPost posts={pageArticles.slice(9, 12)} />
           <LibraryTwoPost posts={pageArticles.slice(12, 15)} />
-          
           <LibraryTwoPost posts={pageArticles.slice(15, 18)} />
           <LibraryTwoPost posts={pageArticles.slice(18, 21)} />
           <LibraryTwoPost posts={pageArticles.slice(21, 24)} />
           <LibraryTwoPost posts={pageArticles.slice(24, 27)} />
         </div>
 
-        <Flickity flickityRef={c => this.flktyMobile = c} options={options} className="display-mobile">
+        <Flickity
+          flickityRef={c => (this.flktyMobile = c)}
+          options={options}
+          className="display-mobile"
+        >
           {unfilteredMobile}
         </Flickity>
 
         <div className="carousel__controls">
-            <div onClick={this.myCustomPrev} className="prev">
-              <img src={arrowLeftBlack} />
+          <div onClick={this.myCustomPrev} className="prev">
+            <img src={arrowLeftBlack} />
+          </div>
+          <div className="carousel-status">
+            <span className="current-slide">
+              {this.state.carouselIndex + 1}&nbsp;/
+            </span>
+            <div className="total-slides">
+              <span className="display-mobile">&nbsp;{carouselLength}</span>
             </div>
-            <div className="carousel-status">
-              <span className="current-slide">
-                {this.state.carouselIndex + 1}&nbsp;/
-              </span>
-              <div className="total-slides">
-                <span className="display-mobile">
-                  &nbsp;{carouselLength}
-                </span>
-              </div>
-            </div>
-            <div onClick={this.myCustomNext} className="next">
-              <img src={arrowRightBlack} />
-            </div>
+          </div>
+          <div onClick={this.myCustomNext} className="next">
+            <img src={arrowRightBlack} />
+          </div>
         </div>
-        
       </div>
     )
 
@@ -277,7 +276,7 @@ class BlogIndex extends React.Component {
 
     // choosing filtered vs unfiltered based on tag selection
     let pageRender = this.state.tag ? filtered : unfiltered
-    
+
     return (
       <Layout
         location={location}
@@ -287,7 +286,6 @@ class BlogIndex extends React.Component {
         footerColor={pageColor}
         pageType="blog"
       >
-
         <SEO title="Blog" />
 
         <BlogIndex__BrokeNote data={blogPosts} count={blogCount} />
@@ -296,9 +294,7 @@ class BlogIndex extends React.Component {
 
         <section className={`blogIndex__FAQ ${style}`}>
           <div className="display-mobile cta-graffiti">FAQS</div>
-          <div className="faq__tags">
-            {tagOptions}
-          </div>
+          <div className="faq__tags">{tagOptions}</div>
 
           <Container fluid id="" className="faq__main">
             <Row id="">
@@ -311,7 +307,7 @@ class BlogIndex extends React.Component {
             </Row>
           </Container>
         </section>
-      
+
         <BlogIndex__Questions />
       </Layout>
     )

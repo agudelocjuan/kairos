@@ -44,7 +44,8 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "redux-devtools-extension": "^2.13.8"
   },
   "keywords": [
     "gatsby"
@@ -52,7 +53,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "ntl dev",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

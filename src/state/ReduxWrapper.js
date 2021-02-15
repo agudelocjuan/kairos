@@ -1,10 +1,15 @@
 import React from "react"
 import { Provider } from "react-redux"
-import { createStore as reduxCreateStore } from "redux"
+import { createStore } from "redux"
+import { composeWithDevTools } from "redux-devtools-extension"
 import rootReducer from "."
 
-const createStore = () => reduxCreateStore(rootReducer)
+const initStore = () => {
+  const composeEnhancers = composeWithDevTools({ trace: true, traceLimit: 25 })
+  const store = createStore(rootReducer, composeEnhancers())
+  return store
+}
 
-export default ({ element }) => (
-  <Provider store={createStore()}>{element}</Provider>
-)
+export const store = initStore()
+
+export default ({ element }) => <Provider store={store}>{element}</Provider>

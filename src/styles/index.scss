@@ -20,15 +20,16 @@ $black: #0e1726;
 $light-black: rgba(14, 23, 38, 0.6);
 $salmon: #f15953;
 $mustard: #ecc86f;
+$off-white: #f7f7f7;
 
 $blue: #c0e7ed;
-$purple: #E8E3F0;
-$dark-purple: #B18BE6;
-$pale-yellow: #F0EEDE;
-$pale-red: #F2E3E2;
-$cream: #F5F0E3;
+$purple: #e8e3f0;
+$dark-purple: #b18be6;
+$pale-yellow: #f0eede;
+$pale-red: #f2e3e2;
+$cream: #f5f0e3;
 
-$dark-blue: #0E1726;
+$dark-blue: #0e1726;
 $yellow: #ebe4a3;
 $light-yellow: rgba(235, 228, 163, 0.6);
 
@@ -42,6 +43,14 @@ $site-border-black: #101725;
 $site-border-blue: #c8e6ec;
 $site-border-orange: #df6359;
 $site-border-yellow: #e6c87c;
+
+.bg-mustard {
+  background-color: #ecc86f;
+}
+
+.bg-blue {
+  background-color: #c0e7ed;
+}
 
 $theme-colors: (
   "white": $white,
@@ -120,13 +129,15 @@ $theme-colors: (
 @import "./applicationForm.scss";
 
 // Campaign Page Styles
-@import './campaignHero.scss';
-@import './campaignSubHero.scss';
-@import './campaignMap.scss';
-@import './campaignPetition.scss';
-@import './campaignCarousel.scss';
+@import "./campaignHero.scss";
+@import "./campaignSubHero.scss";
+@import "./campaignMap.scss";
+@import "./campaignPetition.scss";
+@import "./campaignCarousel.scss";
 
 // Blog Styles
-@import './blogArticle.scss';
-@import './blogIndex.scss';
+@import "./blogArticle.scss";
+@import "./blogIndex.scss";
 
+// Search
+@import "./search.scss";

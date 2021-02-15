@@ -1,19 +1,18 @@
-const proxy = require("http-proxy-middleware")
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+// const proxy = require("http-proxy-middleware")
+require("dotenv").config()
+
 module.exports = {
-  developMiddleware: app => {
-    app.use(
-      "/.netlify/functions/",
-      proxy({
-        target: "http://localhost:34567",
-        pathRewrite: {
-          "/.netlify/functions/": "",
-        },
-      })
-    )
-  },
+  // developMiddleware: app => {
+  //   app.use(
+  //     "/.netlify/functions/",
+  //     proxy({
+  //       target: "http://localhost:34567",
+  //       pathRewrite: {
+  //         "/.netlify/functions/": "/api",
+  //       },
+  //     })
+  //   )
+  // },
   siteMetadata: {
     title: `Kairos HQ`,
     description: `We build companies that have your back on the issues that matter`,
@@ -58,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `a0qogpwu12ej`,
-        accessToken: `vbeSb_Rq-6z2OV7DUSktdbkI4_qJMMFkxZL1vET2G3E`,
+        spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
     },
     `gatsby-transformer-sharp`,

@@ -26,7 +26,7 @@ const slogans = [
 ]
 
 const Footer = ({ color, borderColor, mobile, jobs }) => {
-  let [index, setIndex] = useState(_getRandomInt(slogans.length))
+  let [index, setIndex] = useState(0)
   let [hover, setHover] = useState(false)
 
   let icon = degree_navy
@@ -47,7 +47,7 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
     return Math.floor(Math.random() * Math.floor(max))
   }
   function _cycle() {
-    setIndex(index => _getRandomInt(slogans.length))
+    setIndex(_getRandomInt(slogans.length))
   }
   return (
     <Container fluid id="footer" className={`bg-${color}`}>
@@ -87,7 +87,13 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
               <Link to="/about">About Us</Link>
               <Link to="/our-companies">Our Companies</Link>
               <Link to="/10kjobs">10k Jobs</Link>
-              <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com">Careers</a>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://jobs.kairoshq.com"
+              >
+                Careers
+              </a>
               <Link to="/contact">Contact Us</Link>
               <Link to="/terms">Terms</Link>
               <Link to="/privacy">Privacy Policy</Link>
@@ -114,7 +120,13 @@ const Footer = ({ color, borderColor, mobile, jobs }) => {
             </div>
             <div className="footer-link-column">
               <Link to="/10kjobs">10k Jobs</Link>
-              <a target="_blank" rel="noreferrer noopener" href="https://jobs.kairoshq.com">Careers</a>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://jobs.kairoshq.com"
+              >
+                Careers
+              </a>
               <Link to="/terms">Terms</Link>
               <Link to="/privacy">Privacy Policy</Link>
             </div>

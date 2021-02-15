@@ -35,8 +35,12 @@ exports.handler = async function (event) {
         .filter(item => allowedTypes.includes(item.sys.contentType.sys.id))
         .map(item => ({
           heroImage: {
-            url: item.fields.heroImage?.fields.file.url,
-            alt: item.fields.heroImage?.fields.description,
+            url: item.fields.heroImage
+              ? item.fields.heroImage.fields.file.url
+              : null,
+            alt: item.fields.heroImage
+              ? item.fields.heroImage.fields.description
+              : null,
           },
           description: item.fields.description,
           title: item.fields.title,

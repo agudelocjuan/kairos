@@ -51,9 +51,23 @@
       margin: 0.5em 0 1em;
     }
   }
+
   .search-results__result {
+    display: flex;
+    flex-wrap: nowrap;
     margin: 0;
     border-bottom: 2px solid $dark-blue;
+    color: $dark-blue;
+
+    > p {
+      font-family: helvetica;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 auto;
+      padding: 1em;
+    }
 
     > div:first-of-type {
       padding: 0;
@@ -66,6 +80,12 @@
     }
     > div:last-of-type {
       padding: 22px 33px;
+      @media (max-width: map-get($grid-breakpoints,md)) {
+        padding: 22px;
+      }
+      @media (max-width: map-get($grid-breakpoints,sm)) {
+        padding: 16px 8px;
+      }
     }
 
     ul {
@@ -90,15 +110,55 @@
     }
 
     a.search-result__title {
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
       font-family: "franklin gothic std";
-      font-size: 64px;
+      font-size: clamp(24px, 7vw, 64px);
       line-height: 0.925em;
-      max-height: 1.85em;
+      max-height: 1.8em;
       text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
       margin: 0;
     }
 
+    p.search-result__description {
+      font-size: clamp(24px, 7vw, 64px);
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: normal;
+      font-size: clamp(16px, 7vw, 20px);
+      line-height: 1.3em;
+      letter-spacing: -0.0125em;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
     a.search-result__more {
+      font-size: clamp(16px, 7vw, 20px);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .search-results__image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-family: "summer loving reg";
+      text-transform: lowercase;
+      font-size: clamp(50px, 12.5vw, 200px);
+    }
+    @media (max-width: map-get($grid-breakpoints,sm)) {
+      display: none;
     }
   }
 
@@ -114,15 +174,27 @@
 
     p {
       font-family: "franklin gothic std";
-      font-size: 64px;
+      font-size: clamp(24px, 7vw, 64px);
       line-height: 0.921875;
       margin: 0;
 
       span {
         opacity: 0.6;
       }
+      span:nth-child(2) {
+        display: none;
+      }
       span:last-of-type {
         opacity: 1;
+      }
+
+      @media (max-width: map-get($grid-breakpoints,sm)) {
+        span:first-of-type {
+          display: none;
+        }
+        span:nth-child(2) {
+          display: inline-block;
+        }
       }
     }
   }

@@ -45,11 +45,19 @@ $site-border-orange: #df6359;
 $site-border-yellow: #e6c87c;
 
 .bg-mustard {
-  background-color: #ecc86f;
+  background-color: $mustard;
 }
 
 .bg-blue {
-  background-color: #c0e7ed;
+  background-color: $blue;
+}
+
+.bg-dark-purp {
+  background-color: $dark-purple;
+}
+
+.bg-salmon {
+  background-color: $salmon;
 }
 
 $theme-colors: (

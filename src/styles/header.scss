@@ -244,6 +244,16 @@
       display: flex;
     }
 
+    .search-error {
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      font-style: italic;
+      margin: 0;
+    }
+
     #search-toggle {
       cursor: pointer;
       position: absolute;

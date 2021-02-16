@@ -22,10 +22,16 @@ export const SearchResults = ({ searchResults, resultsOpen, dispatch }) => {
     switch (tag.toLowerCase()) {
       case "work":
         return "bg-mustard"
+      case "home":
+        return "bg-mustard"
       case "money":
         return "bg-blue"
+      case "health":
+        return "bg-dark-purp"
+      case "news":
+        return "bg-salmon"
       default:
-        return ""
+        return "bg-blue"
     }
   }
 
@@ -50,22 +56,32 @@ export const SearchResults = ({ searchResults, resultsOpen, dispatch }) => {
         </button>
         <p>
           <span>Search results for:</span>
+          <span>Results for:</span>
           <span>&nbsp;{searchResults?.query}</span>
         </p>
       </Row>
       <div className="search-results__container">
         {searchResults?.items &&
           searchResults.items.map((item, idx) => (
-            <Row key={item.slug + idx} className="search-results__result">
-              <Col md={3} className="search-results__image">
-                {item.heroImage && (
+            <div key={item.slug + idx} className={`search-results__result`}>
+              <Col
+                xs={0}
+                sm={4}
+                md={3}
+                className={`search-results__image ${
+                  !item.heroImage.url && item.tags[0] && tagColor(item.tags[0])
+                }`}
+              >
+                {item.heroImage.url ? (
                   <img
                     src={item.heroImage.url + "?w=400"}
                     alt={item.heroImage.alt}
                   />
+                ) : (
+                  <span>{item.tags[0].toUpperCase()}</span>
                 )}
               </Col>
-              <Col md={9} className="search-results__details">
+              <Col xs={12} sm={8} md={9} className="search-results__details">
                 <ul>
                   {item?.tags &&
                     item.tags.map(tag => (
@@ -78,7 +94,11 @@ export const SearchResults = ({ searchResults, resultsOpen, dispatch }) => {
                 >
                   {item.title}
                 </Link>
-                {item?.description && <p>{item.description}</p>}
+                {item?.description && (
+                  <p className={`search-result__description`}>
+                    {item.description}
+                  </p>
+                )}
                 <Link
                   className="search-result__more"
                   to={linkGenerator(item.slug, item.type)}
@@ -86,8 +106,13 @@ export const SearchResults = ({ searchResults, resultsOpen, dispatch }) => {
                   READ MORE
                 </Link>
               </Col>
-            </Row>
+            </div>
           ))}
+        <Row className={`search-results__result`}>
+          <p>
+            {searchResults?.items.length > 0 ? "End of results" : "No results"}
+          </p>
+        </Row>
       </div>
     </Col>
   )

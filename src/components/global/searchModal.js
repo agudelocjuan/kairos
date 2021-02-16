@@ -13,6 +13,7 @@ import cross from "../../images/icons/cross.svg"
 
 export const SearchModal = ({ searchOpen, dispatch }) => {
   const [searchQuery, setSearchQuery] = useState("")
+  const [error, setError] = useState(false)
   const disabled = searchQuery === "" || searchQuery.length < 2
 
   const handleSearchToggle = () => {
@@ -23,11 +24,13 @@ export const SearchModal = ({ searchOpen, dispatch }) => {
     e.preventDefault()
     try {
       const { data } = await search(searchQuery)
+      setError(false)
       dispatch(setSearchResults(data))
       dispatch(setSearchResultsOpen(true))
       handleSearchToggle()
     } catch (err) {
       console.error(err)
+      setError("Sorry. Something went wrong. Please try again")
       dispatch(setSearchResults({ items: [], total: 0 }))
     }
   }
@@ -51,6 +54,7 @@ export const SearchModal = ({ searchOpen, dispatch }) => {
                 SEARCH
               </button>
             </form>
+            {error && <p className="search-error">{error}</p>}
           </Col>
         </Row>
       </Container>

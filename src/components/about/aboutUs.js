@@ -384,7 +384,7 @@ const AboutUs = ({ mobile }) => {
       img: "sarah_baker",
     },
     {
-      name: "Eddy Kleinhaus",
+      name: "Eddy Kleinhans",
       title: "General Counsel",
       team: "operating",
       img: "eddy_kleinhaus",
